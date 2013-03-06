@@ -1,12 +1,13 @@
 package org.apache.hadoop.hbase.trigger;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
+import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
 
 /**
  * Created with IntelliJ IDEA.
  * User: daidong
  * Date: 13-3-2
- * Time: 下午10:34
+ * Time:
  * To change this template use File | Settings | File Templates.
  */
 public class ActionThread implements Runnable {
@@ -24,7 +25,25 @@ public class ActionThread implements Runnable {
      */
     @Override
     public void run() {
-
+		//Init Actionclass
+		HTriggerAction userAction = null;
+		long lastTS = EnvironmentEdgeManager.currentTimeMillis();
+		while (true){
+			if (inputDS.isEmpty()){
+				this.wait();
+			} else {
+				HTriggerEvent currEvent = inputDS.poll();
+				if (userAction.filter(currEvent)){
+					userAction.action(currEvent);
+				}
+			}
+			long currTS = EnvironmentEdgeManager.currentTimeMillis();
+			if (currTS - lastTS > 1000){
+				report(ht);
+				lastTS = currTS;
+			}
+		}
+		
     }
 
     public void report(HTrigger ht){
@@ -40,6 +59,7 @@ public class ActionThread implements Runnable {
 
     public void feed(HTriggerEvent hte){
         inputDS.add(hte);
+		this.Notify();
     }
 
 }

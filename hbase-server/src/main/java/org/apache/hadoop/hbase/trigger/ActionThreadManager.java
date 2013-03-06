@@ -9,10 +9,22 @@ import java.util.HashMap;
  * Time: 下午10:30
  * To change this template use File | Settings | File Templates.
  */
-public class ActionThreadManager {
+public class ActionThreadManager implements Runnable{
     HashMap<HTrigger, ActionThread> actionThreads = null;
     HashMap<HTrigger, HTriggerStatus> Reports = null;
+	private boolean registed = false;
 
+	@Override
+	public void run(){
+		if (!this.registed){
+			TriggerEventQueue.register(this);
+			this.registed = true;
+		}
+		while (true){
+			dispatch();
+		}
+		
+	}
     public void dispatch(){
         HTriggerEvent hte = null;
         hte = TriggerEventQueue.poll();

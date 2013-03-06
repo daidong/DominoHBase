@@ -1215,8 +1215,10 @@ class FSHLog implements HLog, Syncable {
     }
     try {
       long now = EnvironmentEdgeManager.currentTimeMillis();
-      // coprocessor hook:
-      if (!coprocessorHost.preWALWrite(info, logKey, logEdit)) {
+	  // Here is the PreWalWrite Code Stuff. Our WALDetection will detect the operation on WAL Log
+	  // coprocessor hook:
+      if (WALDetection.checkDispatch(htd.name, logEdit)&&
+	  	!coprocessorHost.preWALWrite(info, logKey, logEdit)) {
         // write to our buffer for the Hlog file.
         logSyncerThread.append(new FSHLog.Entry(logKey, logEdit));
       }
