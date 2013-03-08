@@ -1,7 +1,0 @@
-2013-03-06 20:00:58,438 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestCheckTestClasses#checkClasses Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:00:58,490 DEBUG [pool-1-thread-1] hbase.ClassFinder(111): Will look for classes in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-classes/org/apache/hadoop/hbase
-2013-03-06 20:00:58,491 DEBUG [pool-1-thread-1] hbase.ClassFinder(111): Will look for classes in /Users/daidong/github/local/DominoHBase/hbase-server/target/classes/org/apache/hadoop/hbase
-2013-03-06 20:00:58,491 DEBUG [pool-1-thread-1] hbase.ClassFinder(111): Will look for classes in /Users/daidong/.m2/repository/org/apache/hbase/hbase-common/0.95-SNAPSHOT/hbase-common-0.95-SNAPSHOT.jar
-2013-03-06 20:00:58,491 DEBUG [pool-1-thread-1] hbase.ClassFinder(111): Will look for classes in /Users/daidong/.m2/repository/org/apache/hbase/hbase-protocol/0.95-SNAPSHOT/hbase-protocol-0.95-SNAPSHOT.jar
-2013-03-06 20:00:58,491 DEBUG [pool-1-thread-1] hbase.ClassFinder(111): Will look for classes in /Users/daidong/.m2/repository/org/apache/hbase/hbase-common/0.95-SNAPSHOT/hbase-common-0.95-SNAPSHOT-tests.jar
-2013-03-06 20:01:01,667 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestCheckTestClasses#checkClasses Thread=104 (was 104), OpenFileDescriptor=225 (was 222) - OpenFileDescriptor LEAK? -, MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

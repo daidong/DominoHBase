@@ -1,2 +1,0 @@
-2013-03-06 20:00:40,789 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestMultiVersionConsistencyControl#testParallelism Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:00:50,821 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestMultiVersionConsistencyControl#testParallelism Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

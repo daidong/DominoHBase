@@ -1,2 +1,0 @@
-2013-03-06 19:59:29,406 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: filter.TestFirstKeyValueMatchingQualifiersFilter#testFirstKeyMatchingQualifierFilter Thread=12, OpenFileDescriptor=114, MaxFileDescriptor=1000000, ConnectionCount=0
-INCLUDE2013-03-06 19:59:29,408 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: filter.TestFirstKeyValueMatchingQualifiersFilter#testFirstKeyMatchingQualifierFilter Thread=12 (was 12), OpenFileDescriptor=114 (was 114), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

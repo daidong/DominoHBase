@@ -1,6 +1,0 @@
-2013-03-06 19:58:58,124 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: client.TestGet#testAttributesSerialization Thread=8, OpenFileDescriptor=105, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 19:58:58,388 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: client.TestGet#testAttributesSerialization Thread=8 (was 8), OpenFileDescriptor=105 (was 105), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
-2013-03-06 19:58:58,388 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: client.TestGet#testGetAttributes Thread=8, OpenFileDescriptor=105, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 19:58:58,389 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: client.TestGet#testGetAttributes Thread=8 (was 8), OpenFileDescriptor=105 (was 105), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
-2013-03-06 19:58:58,390 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: client.TestGet#testNullQualifier Thread=8, OpenFileDescriptor=105, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 19:58:58,391 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: client.TestGet#testNullQualifier Thread=8 (was 8), OpenFileDescriptor=105 (was 105), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

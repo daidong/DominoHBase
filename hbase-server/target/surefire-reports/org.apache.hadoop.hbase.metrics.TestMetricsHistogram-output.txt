@@ -1,4 +1,0 @@
-2013-03-06 20:00:27,111 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: metrics.TestMetricsHistogram#testBasicUniform Thread=84, OpenFileDescriptor=182, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:00:27,116 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: metrics.TestMetricsHistogram#testBasicUniform Thread=84 (was 84), OpenFileDescriptor=182 (was 182), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
-2013-03-06 20:00:27,118 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: metrics.TestMetricsHistogram#testRandom Thread=84, OpenFileDescriptor=182, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:00:27,173 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: metrics.TestMetricsHistogram#testRandom Thread=84 (was 84), OpenFileDescriptor=182 (was 182), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

@@ -1,2 +1,0 @@
-2013-03-06 19:59:01,106 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: client.TestOperation#testOperationJSON Thread=9, OpenFileDescriptor=107, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 19:59:01,193 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: client.TestOperation#testOperationJSON Thread=9 (was 9), OpenFileDescriptor=107 (was 107), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

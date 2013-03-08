@@ -1,4 +1,0 @@
-2013-03-06 20:01:06,618 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestServerLoad#testToString Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:01:06,631 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestServerLoad#testToString Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
-2013-03-06 20:01:06,634 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestServerLoad#testRegionLoadAggregation Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:01:06,637 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestServerLoad#testRegionLoadAggregation Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

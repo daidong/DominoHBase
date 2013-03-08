@@ -1,4 +1,0 @@
-2013-03-06 19:59:35,622 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: filter.TestRandomRowFilter#testSerialization Thread=12, OpenFileDescriptor=114, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 19:59:35,627 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: filter.TestRandomRowFilter#testSerialization Thread=12 (was 12), OpenFileDescriptor=114 (was 114), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
-2013-03-06 19:59:35,628 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: filter.TestRandomRowFilter#testBasics Thread=12, OpenFileDescriptor=114, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 19:59:36,150 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: filter.TestRandomRowFilter#testBasics Thread=12 (was 12), OpenFileDescriptor=114 (was 114), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

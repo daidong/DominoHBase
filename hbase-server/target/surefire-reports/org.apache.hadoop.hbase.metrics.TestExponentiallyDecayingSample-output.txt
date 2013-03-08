@@ -1,4 +1,0 @@
-2013-03-06 20:00:27,074 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: metrics.TestExponentiallyDecayingSample#testBasic Thread=84, OpenFileDescriptor=182, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:00:27,086 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: metrics.TestExponentiallyDecayingSample#testBasic Thread=84 (was 84), OpenFileDescriptor=182 (was 182), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
-2013-03-06 20:00:27,089 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: metrics.TestExponentiallyDecayingSample#testTooBig Thread=84, OpenFileDescriptor=182, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:00:27,091 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: metrics.TestExponentiallyDecayingSample#testTooBig Thread=84 (was 84), OpenFileDescriptor=182 (was 182), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

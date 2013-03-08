@@ -1,6 +1,0 @@
-2013-03-06 20:00:09,840 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.TestImmutableBytesWritable#testHash Thread=49, OpenFileDescriptor=135, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 20:00:09,842 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.TestImmutableBytesWritable#testHash Thread=49 (was 49), OpenFileDescriptor=135 (was 135), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
-2013-03-06 20:00:09,843 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.TestImmutableBytesWritable#testSpecificCompare Thread=49, OpenFileDescriptor=135, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 20:00:09,845 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.TestImmutableBytesWritable#testSpecificCompare Thread=49 (was 49), OpenFileDescriptor=135 (was 135), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
-2013-03-06 20:00:09,846 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.TestImmutableBytesWritable#testComparison Thread=49, OpenFileDescriptor=135, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 20:00:09,848 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.TestImmutableBytesWritable#testComparison Thread=49 (was 49), OpenFileDescriptor=135 (was 135), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

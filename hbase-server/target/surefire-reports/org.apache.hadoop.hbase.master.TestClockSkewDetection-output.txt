@@ -1,9 +1,0 @@
-2013-03-06 20:00:26,863 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: master.TestClockSkewDetection#testClockSkewDetection Thread=84, OpenFileDescriptor=182, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:00:26,912 DEBUG [pool-1-thread-1] master.TestClockSkewDetection(82): regionServerStartup 1
-2013-03-06 20:00:26,948 INFO  [pool-1-thread-1] master.ServerManager(353): Registering server=daidongmac-3.local,1234,-1
-2013-03-06 20:00:26,956 DEBUG [pool-1-thread-1] master.TestClockSkewDetection(91): regionServerStartup 2
-2013-03-06 20:00:26,957 WARN  [pool-1-thread-1] master.ServerManager(308): Server daidongmac-3.local,1235,-1 has been rejected; Reported time is too far out of sync with master.  Time difference of 60000ms > max allowed of 30000ms
-2013-03-06 20:00:26,957 INFO  [pool-1-thread-1] master.TestClockSkewDetection(97): Recieved expected exception: org.apache.hadoop.hbase.ClockOutOfSyncException: Server daidongmac-3.local,1235,-1 has been rejected; Reported time is too far out of sync with master.  Time difference of 60000ms > max allowed of 30000ms
-2013-03-06 20:00:26,957 DEBUG [pool-1-thread-1] master.TestClockSkewDetection(101): regionServerStartup 3
-2013-03-06 20:00:26,957 INFO  [pool-1-thread-1] master.ServerManager(353): Registering server=daidongmac-3.local,1236,-1
-2013-03-06 20:00:26,959 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: master.TestClockSkewDetection#testClockSkewDetection Thread=84 (was 84), OpenFileDescriptor=182 (was 182), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

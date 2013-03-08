@@ -1,2 +1,0 @@
-2013-03-06 19:59:36,152 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: filter.TestSingleColumnValueExcludeFilter#testFilterKeyValue Thread=12, OpenFileDescriptor=114, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 19:59:36,153 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: filter.TestSingleColumnValueExcludeFilter#testFilterKeyValue Thread=12 (was 12), OpenFileDescriptor=114 (was 114), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

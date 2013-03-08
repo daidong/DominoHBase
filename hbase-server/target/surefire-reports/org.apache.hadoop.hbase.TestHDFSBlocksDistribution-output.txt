@@ -1,4 +1,0 @@
-2013-03-06 20:01:01,772 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestHDFSBlocksDistribution#testAdd Thread=104, OpenFileDescriptor=225, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:01:01,774 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestHDFSBlocksDistribution#testAdd Thread=104 (was 104), OpenFileDescriptor=225 (was 225), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
-2013-03-06 20:01:01,777 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestHDFSBlocksDistribution#testAddHostsAndBlockWeight Thread=104, OpenFileDescriptor=225, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:01:01,779 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestHDFSBlocksDistribution#testAddHostsAndBlockWeight Thread=104 (was 104), OpenFileDescriptor=225 (was 225), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

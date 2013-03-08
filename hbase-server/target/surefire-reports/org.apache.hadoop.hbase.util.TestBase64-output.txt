@@ -1,2 +1,0 @@
-2013-03-06 20:01:06,950 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: util.TestBase64#testBase64 Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
-2013-03-06 20:01:06,956 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: util.TestBase64#testBase64 Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

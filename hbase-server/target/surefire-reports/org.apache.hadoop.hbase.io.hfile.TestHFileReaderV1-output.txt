@@ -1,2 +1,0 @@
-2013-03-06 20:00:07,120 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileReaderV1#testReadingExistingVersion1HFile Thread=40, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
-2013-03-06 20:00:07,237 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileReaderV1#testReadingExistingVersion1HFile Thread=40 (was 40), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
