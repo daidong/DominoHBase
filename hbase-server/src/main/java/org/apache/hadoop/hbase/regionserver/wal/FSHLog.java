@@ -375,7 +375,7 @@ class FSHLog implements HLog, Syncable {
           new Class<?>[] { Path.class });
     } catch (NoSuchMethodException e) {
       LOG.info("FileSystem doesn't support getDefaultBlockSize");
-    } catch (SecurityExcehttp://www.cs.stanford.edu/people/ang/index.htmlption e) {
+    } catch (SecurityException e) {
       LOG.info("Doesn't have access to getDefaultBlockSize on "
           + "FileSystems", e);
       m = null; // could happen on setAccessible()
@@ -1217,7 +1217,7 @@ class FSHLog implements HLog, Syncable {
       long now = EnvironmentEdgeManager.currentTimeMillis();
 	  // Here is the PreWalWrite Code Stuff. Our WALDetection will detect the operation on WAL Log
 	  // coprocessor hook:
-      if (WALDetection.checkDispatch(htd.name, logEdit)&&
+      if (WALDetection.checkDispatch(htd.getName(), logEdit) &&
 	  	!coprocessorHost.preWALWrite(info, logKey, logEdit)) {
         // write to our buffer for the Hlog file.
         logSyncerThread.append(new FSHLog.Entry(logKey, logEdit));

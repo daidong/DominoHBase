@@ -10,44 +10,45 @@ import java.util.HashMap;
  * To change this template use File | Settings | File Templates.
  */
 public class ActionThreadManager implements Runnable{
-    HashMap<HTrigger, ActionThread> actionThreads = null;
-    HashMap<HTrigger, HTriggerStatus> Reports = null;
-	private boolean registed = false;
+  HashMap<HTrigger, ActionThread> actionThreads = null;
+  HashMap<HTrigger, HTriggerStatus> Reports = null;
+  private boolean registed = false;
 
-	@Override
-	public void run(){
-		if (!this.registed){
-			TriggerEventQueue.register(this);
-			this.registed = true;
-		}
-		while (true){
-			dispatch();
-		}
-		
-	}
-    public void dispatch(){
-        HTriggerEvent hte = null;
-        hte = TriggerEventQueue.poll();
-        if (actionThreads.containsKey(hte)){
-            dispatch((ActionThread) actionThreads.get(hte.getBelongTo()), hte);
-        } else {
-            ActionThread curThread = new ActionThread();
-            actionThreads.put(hte.getBelongTo(), curThread);
-            dispatch(curThread, hte);
-        }
+  @Override
+  public void run(){
+    while (true){
+      if (!this.registed){
+        TriggerEventQueue.register(this);
+        this.registed = true;
+      }
+      dispatch();
     }
+  }
+  public void dispatch(){
+    HTriggerEvent hte = null;
+    try {
+      hte = TriggerEventQueue.poll();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    if (actionThreads.containsKey(hte)){
+      dispatch((ActionThread) actionThreads.get(hte.getBelongTo()), hte);
+    } else {
+      ActionThread curThread = new ActionThread();
+      actionThreads.put(hte.getBelongTo(), curThread);
+      dispatch(curThread, hte);
+    }
+  }
 
-    public void report(HTrigger ht, HTriggerStatus hts){
-        Reports.put(ht, hts);
-    }
-    private void dispatch(ActionThread actionThread, HTriggerEvent hte) {
-        actionThread.feed(hte);
-    }
+  public void report(HTrigger ht, HTriggerStatus hts){
+    Reports.put(ht, hts);
+  }
+  private void dispatch(ActionThread actionThread, HTriggerEvent hte) {
+    actionThread.feed(hte);
+  }
 
-    public void restart(HTrigger t){
-
-    }
-    public void kill(HTrigger t){
-
-    }
+  public void restart(HTrigger t){
+  }
+  public void kill(HTrigger t){
+  }
 }

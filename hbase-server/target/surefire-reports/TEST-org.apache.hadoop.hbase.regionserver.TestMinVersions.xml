@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.002" errors="6" skipped="0" tests="6" name="org.apache.hadoop.hbase.regionserver.TestMinVersions">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
+    <property name="java.vm.version" value="20.12-b01-434"/>
+    <property name="awt.nativeDoubleBuffering" value="true"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="mrj.build" value="10M3909"/>
+    <property name="java.vm.vendor" value="Apple Inc."/>
+    <property name="java.vendor.url" value="http://www.apple.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/daidong/github/local/DominoHBase/hbase-server"/>
+    <property name="java.runtime.version" value="1.6.0_37-b06-434-10M3909"/>
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/0i/0iKbaNeXF8qPmXBYB20ZzE+++TI/-Tmp-/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Users/daidong/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf122008558292673198.tmp"/>
+    <property name="maven.test.skip" value="true"/>
+    <property name="sun.jnu.encoding" value="EUC_CN"/>
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.6.8"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|douban.fm|*.douban.fm|weibo.com|*.weibo.com|ustc.edu.cn|*.ustc.edu.cn|youku.com|*.youku.com|tudou.com|*.tudou.com|56.com|*.56.com|weibo.com|*.weibo.com|sinaimg.cn|*.sinaimg.cn|sina.cn|*.sina.cn|sina.com.cn|*.sina.com.cn|sina.com|*.sina.com|google.com.hk|*.google.com.hk|qq.com|*.qq.com|taobao.com|*.taobao.com|alipay.com|*.alipay.com|360buy.com|*.360buy.com|unimip.cn|*.unimip.cn|apple.com|*.apple.com|douban.com|*.douban.com|ustcsz.edu.cn|*.ustcsz.edu.cn"/>
+    <property name="user.home" value="/Users/daidong"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="daidong"/>
+    <property name="java.class.path" value="/Applications/Eclipse/configuration/org.eclipse.osgi/bundles/963/1/.cp/jars/plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -Dmaven.test.skip=true package"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="apple.awt.CToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_37"/>
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
+    <property name="java.vendor" value="Apple Inc."/>
+    <property name="maven.home" value="/Users/daidong/github/local/DominoHBase/hbase-server/EMBEDDED"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="mrj.version" value="1060.1.6.0_37-434"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|douban.fm|*.douban.fm|weibo.com|*.weibo.com|ustc.edu.cn|*.ustc.edu.cn|youku.com|*.youku.com|tudou.com|*.tudou.com|56.com|*.56.com|weibo.com|*.weibo.com|sinaimg.cn|*.sinaimg.cn|sina.cn|*.sina.cn|sina.com.cn|*.sina.com.cn|sina.com|*.sina.com|google.com.hk|*.google.com.hk|qq.com|*.qq.com|taobao.com|*.taobao.com|alipay.com|*.alipay.com|360buy.com|*.360buy.com|unimip.cn|*.unimip.cn|apple.com|*.apple.com|douban.com|*.douban.com|ustcsz.edu.cn|*.ustcsz.edu.cn"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|douban.fm|*.douban.fm|weibo.com|*.weibo.com|ustc.edu.cn|*.ustc.edu.cn|youku.com|*.youku.com|tudou.com|*.tudou.com|56.com|*.56.com|weibo.com|*.weibo.com|sinaimg.cn|*.sinaimg.cn|sina.cn|*.sina.cn|sina.com.cn|*.sina.com.cn|sina.com|*.sina.com|google.com.hk|*.google.com.hk|qq.com|*.qq.com|taobao.com|*.taobao.com|alipay.com|*.alipay.com|360buy.com|*.360buy.com|unimip.cn|*.unimip.cn|apple.com|*.apple.com|douban.com|*.douban.com|ustcsz.edu.cn|*.ustcsz.edu.cn"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0" classname="org.apache.hadoop.hbase.regionserver.TestMinVersions" name="testFilters">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at org.apache.hadoop.hbase.trigger.LocalTriggerManage.containsTrigger(LocalTriggerManage.java:39)
+	at org.apache.hadoop.hbase.regionserver.wal.WALDetection.checkDispatch(WALDetection.java:27)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.doWrite(FSHLog.java:1220)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.append(FSHLog.java:915)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.appendNoSync(FSHLog.java:937)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doMiniBatchMutation(HRegion.java:2261)
+	at org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2010)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doBatchMutate(HRegion.java:2465)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1935)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1883)
+	at org.apache.hadoop.hbase.regionserver.TestMinVersions.testFilters(TestMinVersions.java:385)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:24)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+</error>
+    <system-err>2013-03-06 20:00:40,510 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestMinVersions#testFilters Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:40,518 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.log.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir so I do NOT create it in target/test-data/93c05153-859e-40b2-911f-1cd851dab002
+2013-03-06 20:00:40,526 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.log.dir property value differs in configuration and system: Configuration=/Users/daidong/github/local/DominoHBase/hbase-server/../logs while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,526 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.tmp.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir so I do NOT create it in target/test-data/93c05153-859e-40b2-911f-1cd851dab002
+2013-03-06 20:00:40,526 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.tmp.dir property value differs in configuration and system: Configuration=/tmp/hadoop-daidong while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,527 INFO  [pool-1-thread-1] regionserver.HRegion(3895): creating HRegion testFilters HTD == &apos;testFilters&apos;, {NAME =&gt; &apos;colfamily11&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;2&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily21&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;2&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily31&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;2&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;} RootDir = /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/93c05153-859e-40b2-911f-1cd851dab002/testFilters Table name == testFilters
+2013-03-06 20:00:40,528 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:40,530 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:40,530 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/93c05153-859e-40b2-911f-1cd851dab002/testFilters/testFilters/a983d64a3f75a412e342025f608f8668/.logs/hlog.1362571240528, compression=false
+2013-03-06 20:00:40,530 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/93c05153-859e-40b2-911f-1cd851dab002/testFilters/testFilters/a983d64a3f75a412e342025f608f8668/.logs/hlog.1362571240528
+2013-03-06 20:00:40,530 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem&apos;s output stream doesn&apos;t support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:40,531 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.
+2013-03-06 20:00:40,531 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/93c05153-859e-40b2-911f-1cd851dab002/testFilters/testFilters/a983d64a3f75a412e342025f608f8668/.tmp/.regioninfo with permission=rwxrwxrwx
+2013-03-06 20:00:40,536 INFO  [StoreOpenerThread-testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,538 INFO  [StoreOpenerThread-testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,539 INFO  [StoreOpenerThread-testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,540 INFO  [pool-1-thread-1] regionserver.HRegion(640): Onlined testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.; next sequenceid=1
+2013-03-06 20:00:40,554 DEBUG [pool-1-thread-1] regionserver.HRegion(2657): rollbackMemstore rolled back 2 keyvalues from start:0 to end:1
+2013-03-06 20:00:40,554 DEBUG [pool-1-thread-1] regionserver.HRegion(975): Closing testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.: disabling compactions &amp; flushes
+2013-03-06 20:00:40,554 DEBUG [pool-1-thread-1] regionserver.HRegion(997): Updates disabled for region testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.
+2013-03-06 20:00:40,555 INFO  [StoreCloserThread-testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.-1] regionserver.HStore(681): Closed colfamily11
+2013-03-06 20:00:40,555 INFO  [StoreCloserThread-testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.-1] regionserver.HStore(681): Closed colfamily21
+2013-03-06 20:00:40,555 INFO  [StoreCloserThread-testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.-1] regionserver.HStore(681): Closed colfamily31
+2013-03-06 20:00:40,555 INFO  [pool-1-thread-1] regionserver.HRegion(1050): Closed testFilters,,1362571240527.a983d64a3f75a412e342025f608f8668.
+2013-03-06 20:00:40,555 INFO  [pool-1-thread-1.logSyncer] wal.FSHLog$LogSyncer(998): pool-1-thread-1.logSyncer exiting
+2013-03-06 20:00:40,555 DEBUG [pool-1-thread-1] wal.FSHLog(802): closing hlog writer in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/93c05153-859e-40b2-911f-1cd851dab002/testFilters/testFilters/a983d64a3f75a412e342025f608f8668/.logs
+2013-03-06 20:00:40,556 DEBUG [pool-1-thread-1] wal.FSHLog(774): Moved 1 log files to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/93c05153-859e-40b2-911f-1cd851dab002/testFilters/testFilters/a983d64a3f75a412e342025f608f8668/.oldlogs
+2013-03-06 20:00:40,560 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestMinVersions#testFilters Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+</system-err>
+  </testcase>
+  <testcase time="0" classname="org.apache.hadoop.hbase.regionserver.TestMinVersions" name="testDelete">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at org.apache.hadoop.hbase.trigger.LocalTriggerManage.containsTrigger(LocalTriggerManage.java:39)
+	at org.apache.hadoop.hbase.regionserver.wal.WALDetection.checkDispatch(WALDetection.java:27)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.doWrite(FSHLog.java:1220)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.append(FSHLog.java:915)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.appendNoSync(FSHLog.java:937)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doMiniBatchMutation(HRegion.java:2261)
+	at org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2010)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doBatchMutate(HRegion.java:2465)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1935)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1883)
+	at org.apache.hadoop.hbase.regionserver.TestMinVersions.testDelete(TestMinVersions.java:162)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:24)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+</error>
+    <system-err>2013-03-06 20:00:40,562 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestMinVersions#testDelete Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:40,571 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.log.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir so I do NOT create it in target/test-data/f395ad10-6e23-4d2a-9c9f-35d5dc72972e
+2013-03-06 20:00:40,579 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.log.dir property value differs in configuration and system: Configuration=/Users/daidong/github/local/DominoHBase/hbase-server/../logs while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,579 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.tmp.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir so I do NOT create it in target/test-data/f395ad10-6e23-4d2a-9c9f-35d5dc72972e
+2013-03-06 20:00:40,579 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.tmp.dir property value differs in configuration and system: Configuration=/tmp/hadoop-daidong while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,580 INFO  [pool-1-thread-1] regionserver.HRegion(3895): creating HRegion testDelete HTD == &apos;testDelete&apos;, {NAME =&gt; &apos;colfamily11&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;3&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily21&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;3&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily31&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;3&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;} RootDir = /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/f395ad10-6e23-4d2a-9c9f-35d5dc72972e/testDelete Table name == testDelete
+2013-03-06 20:00:40,581 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:40,583 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:40,583 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/f395ad10-6e23-4d2a-9c9f-35d5dc72972e/testDelete/testDelete/94de3b396265782d0dc2ca5c38e66bc3/.logs/hlog.1362571240581, compression=false
+2013-03-06 20:00:40,583 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/f395ad10-6e23-4d2a-9c9f-35d5dc72972e/testDelete/testDelete/94de3b396265782d0dc2ca5c38e66bc3/.logs/hlog.1362571240581
+2013-03-06 20:00:40,584 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem&apos;s output stream doesn&apos;t support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:40,585 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.
+2013-03-06 20:00:40,585 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/f395ad10-6e23-4d2a-9c9f-35d5dc72972e/testDelete/testDelete/94de3b396265782d0dc2ca5c38e66bc3/.tmp/.regioninfo with permission=rwxrwxrwx
+2013-03-06 20:00:40,590 INFO  [StoreOpenerThread-testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,591 INFO  [StoreOpenerThread-testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,592 INFO  [StoreOpenerThread-testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,592 INFO  [pool-1-thread-1] regionserver.HRegion(640): Onlined testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.; next sequenceid=1
+2013-03-06 20:00:40,593 DEBUG [pool-1-thread-1] regionserver.HRegion(2657): rollbackMemstore rolled back 1 keyvalues from start:0 to end:1
+2013-03-06 20:00:40,594 DEBUG [pool-1-thread-1] regionserver.HRegion(975): Closing testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.: disabling compactions &amp; flushes
+2013-03-06 20:00:40,594 DEBUG [pool-1-thread-1] regionserver.HRegion(997): Updates disabled for region testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.
+2013-03-06 20:00:40,594 INFO  [StoreCloserThread-testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.-1] regionserver.HStore(681): Closed colfamily11
+2013-03-06 20:00:40,594 INFO  [StoreCloserThread-testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.-1] regionserver.HStore(681): Closed colfamily21
+2013-03-06 20:00:40,594 INFO  [StoreCloserThread-testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.-1] regionserver.HStore(681): Closed colfamily31
+2013-03-06 20:00:40,595 INFO  [pool-1-thread-1] regionserver.HRegion(1050): Closed testDelete,,1362571240580.94de3b396265782d0dc2ca5c38e66bc3.
+2013-03-06 20:00:40,595 INFO  [pool-1-thread-1.logSyncer] wal.FSHLog$LogSyncer(998): pool-1-thread-1.logSyncer exiting
+2013-03-06 20:00:40,595 DEBUG [pool-1-thread-1] wal.FSHLog(802): closing hlog writer in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/f395ad10-6e23-4d2a-9c9f-35d5dc72972e/testDelete/testDelete/94de3b396265782d0dc2ca5c38e66bc3/.logs
+2013-03-06 20:00:40,596 DEBUG [pool-1-thread-1] wal.FSHLog(774): Moved 1 log files to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/f395ad10-6e23-4d2a-9c9f-35d5dc72972e/testDelete/testDelete/94de3b396265782d0dc2ca5c38e66bc3/.oldlogs
+2013-03-06 20:00:40,602 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestMinVersions#testDelete Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+</system-err>
+  </testcase>
+  <testcase time="0" classname="org.apache.hadoop.hbase.regionserver.TestMinVersions" name="testGetClosestBefore">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at org.apache.hadoop.hbase.trigger.LocalTriggerManage.containsTrigger(LocalTriggerManage.java:39)
+	at org.apache.hadoop.hbase.regionserver.wal.WALDetection.checkDispatch(WALDetection.java:27)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.doWrite(FSHLog.java:1220)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.append(FSHLog.java:915)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.appendNoSync(FSHLog.java:937)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doMiniBatchMutation(HRegion.java:2261)
+	at org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2010)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doBatchMutate(HRegion.java:2465)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1935)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1883)
+	at org.apache.hadoop.hbase.regionserver.TestMinVersions.testGetClosestBefore(TestMinVersions.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:24)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+</error>
+    <system-err>2013-03-06 20:00:40,604 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestMinVersions#testGetClosestBefore Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:40,612 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.log.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir so I do NOT create it in target/test-data/e93ba2f4-38ae-42a0-959c-11dbd5eb2f6c
+2013-03-06 20:00:40,620 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.log.dir property value differs in configuration and system: Configuration=/Users/daidong/github/local/DominoHBase/hbase-server/../logs while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,620 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.tmp.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir so I do NOT create it in target/test-data/e93ba2f4-38ae-42a0-959c-11dbd5eb2f6c
+2013-03-06 20:00:40,620 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.tmp.dir property value differs in configuration and system: Configuration=/tmp/hadoop-daidong while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,621 INFO  [pool-1-thread-1] regionserver.HRegion(3895): creating HRegion testGetClosestBefore HTD == &apos;testGetClosestBefore&apos;, {NAME =&gt; &apos;colfamily11&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;1&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily21&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;1&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily31&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;1&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;} RootDir = /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e93ba2f4-38ae-42a0-959c-11dbd5eb2f6c/testGetClosestBefore Table name == testGetClosestBefore
+2013-03-06 20:00:40,621 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:40,623 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:40,623 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e93ba2f4-38ae-42a0-959c-11dbd5eb2f6c/testGetClosestBefore/testGetClosestBefore/3cd56242c3e99914c49afde9387b4fd7/.logs/hlog.1362571240622, compression=false
+2013-03-06 20:00:40,624 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e93ba2f4-38ae-42a0-959c-11dbd5eb2f6c/testGetClosestBefore/testGetClosestBefore/3cd56242c3e99914c49afde9387b4fd7/.logs/hlog.1362571240622
+2013-03-06 20:00:40,624 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem&apos;s output stream doesn&apos;t support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:40,641 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.
+2013-03-06 20:00:40,642 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e93ba2f4-38ae-42a0-959c-11dbd5eb2f6c/testGetClosestBefore/testGetClosestBefore/3cd56242c3e99914c49afde9387b4fd7/.tmp/.regioninfo with permission=rwxrwxrwx
+2013-03-06 20:00:40,645 INFO  [StoreOpenerThread-testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,647 INFO  [StoreOpenerThread-testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,648 INFO  [StoreOpenerThread-testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,648 INFO  [pool-1-thread-1] regionserver.HRegion(640): Onlined testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.; next sequenceid=1
+2013-03-06 20:00:40,649 DEBUG [pool-1-thread-1] regionserver.HRegion(2657): rollbackMemstore rolled back 1 keyvalues from start:0 to end:1
+2013-03-06 20:00:40,649 DEBUG [pool-1-thread-1] regionserver.HRegion(975): Closing testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.: disabling compactions &amp; flushes
+2013-03-06 20:00:40,650 DEBUG [pool-1-thread-1] regionserver.HRegion(997): Updates disabled for region testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.
+2013-03-06 20:00:40,650 INFO  [StoreCloserThread-testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.-1] regionserver.HStore(681): Closed colfamily11
+2013-03-06 20:00:40,650 INFO  [StoreCloserThread-testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.-1] regionserver.HStore(681): Closed colfamily21
+2013-03-06 20:00:40,650 INFO  [StoreCloserThread-testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.-1] regionserver.HStore(681): Closed colfamily31
+2013-03-06 20:00:40,650 INFO  [pool-1-thread-1] regionserver.HRegion(1050): Closed testGetClosestBefore,,1362571240621.3cd56242c3e99914c49afde9387b4fd7.
+2013-03-06 20:00:40,650 INFO  [pool-1-thread-1.logSyncer] wal.FSHLog$LogSyncer(998): pool-1-thread-1.logSyncer exiting
+2013-03-06 20:00:40,651 DEBUG [pool-1-thread-1] wal.FSHLog(802): closing hlog writer in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e93ba2f4-38ae-42a0-959c-11dbd5eb2f6c/testGetClosestBefore/testGetClosestBefore/3cd56242c3e99914c49afde9387b4fd7/.logs
+2013-03-06 20:00:40,652 DEBUG [pool-1-thread-1] wal.FSHLog(774): Moved 1 log files to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e93ba2f4-38ae-42a0-959c-11dbd5eb2f6c/testGetClosestBefore/testGetClosestBefore/3cd56242c3e99914c49afde9387b4fd7/.oldlogs
+2013-03-06 20:00:40,656 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestMinVersions#testGetClosestBefore Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+</system-err>
+  </testcase>
+  <testcase time="0.001" classname="org.apache.hadoop.hbase.regionserver.TestMinVersions" name="testStoreMemStore">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at org.apache.hadoop.hbase.trigger.LocalTriggerManage.containsTrigger(LocalTriggerManage.java:39)
+	at org.apache.hadoop.hbase.regionserver.wal.WALDetection.checkDispatch(WALDetection.java:27)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.doWrite(FSHLog.java:1220)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.append(FSHLog.java:915)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.appendNoSync(FSHLog.java:937)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doMiniBatchMutation(HRegion.java:2261)
+	at org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2010)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doBatchMutate(HRegion.java:2465)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1935)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1883)
+	at org.apache.hadoop.hbase.regionserver.TestMinVersions.testStoreMemStore(TestMinVersions.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:24)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+</error>
+    <system-err>2013-03-06 20:00:40,658 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestMinVersions#testStoreMemStore Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:40,667 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.log.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir so I do NOT create it in target/test-data/2ded3f07-53fa-4942-bbc2-f7f2f3637fbc
+2013-03-06 20:00:40,675 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.log.dir property value differs in configuration and system: Configuration=/Users/daidong/github/local/DominoHBase/hbase-server/../logs while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,675 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.tmp.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir so I do NOT create it in target/test-data/2ded3f07-53fa-4942-bbc2-f7f2f3637fbc
+2013-03-06 20:00:40,675 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.tmp.dir property value differs in configuration and system: Configuration=/tmp/hadoop-daidong while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,676 INFO  [pool-1-thread-1] regionserver.HRegion(3895): creating HRegion testStoreMemStore HTD == &apos;testStoreMemStore&apos;, {NAME =&gt; &apos;colfamily11&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;3&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily21&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;3&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily31&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;3&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;} RootDir = /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/2ded3f07-53fa-4942-bbc2-f7f2f3637fbc/testStoreMemStore Table name == testStoreMemStore
+2013-03-06 20:00:40,677 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:40,678 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:40,679 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/2ded3f07-53fa-4942-bbc2-f7f2f3637fbc/testStoreMemStore/testStoreMemStore/552691dec79d0a23d17ee11a53c40dfa/.logs/hlog.1362571240677, compression=false
+2013-03-06 20:00:40,679 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/2ded3f07-53fa-4942-bbc2-f7f2f3637fbc/testStoreMemStore/testStoreMemStore/552691dec79d0a23d17ee11a53c40dfa/.logs/hlog.1362571240677
+2013-03-06 20:00:40,679 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem&apos;s output stream doesn&apos;t support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:40,679 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.
+2013-03-06 20:00:40,680 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/2ded3f07-53fa-4942-bbc2-f7f2f3637fbc/testStoreMemStore/testStoreMemStore/552691dec79d0a23d17ee11a53c40dfa/.tmp/.regioninfo with permission=rwxrwxrwx
+2013-03-06 20:00:40,683 INFO  [StoreOpenerThread-testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,684 INFO  [StoreOpenerThread-testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,685 INFO  [StoreOpenerThread-testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,690 INFO  [pool-1-thread-1] regionserver.HRegion(640): Onlined testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.; next sequenceid=1
+2013-03-06 20:00:40,691 DEBUG [pool-1-thread-1] regionserver.HRegion(2657): rollbackMemstore rolled back 1 keyvalues from start:0 to end:1
+2013-03-06 20:00:40,691 DEBUG [pool-1-thread-1] regionserver.HRegion(975): Closing testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.: disabling compactions &amp; flushes
+2013-03-06 20:00:40,692 DEBUG [pool-1-thread-1] regionserver.HRegion(997): Updates disabled for region testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.
+2013-03-06 20:00:40,692 INFO  [StoreCloserThread-testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.-1] regionserver.HStore(681): Closed colfamily11
+2013-03-06 20:00:40,692 INFO  [StoreCloserThread-testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.-1] regionserver.HStore(681): Closed colfamily21
+2013-03-06 20:00:40,692 INFO  [StoreCloserThread-testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.-1] regionserver.HStore(681): Closed colfamily31
+2013-03-06 20:00:40,693 INFO  [pool-1-thread-1] regionserver.HRegion(1050): Closed testStoreMemStore,,1362571240676.552691dec79d0a23d17ee11a53c40dfa.
+2013-03-06 20:00:40,693 INFO  [pool-1-thread-1.logSyncer] wal.FSHLog$LogSyncer(998): pool-1-thread-1.logSyncer exiting
+2013-03-06 20:00:40,693 DEBUG [pool-1-thread-1] wal.FSHLog(802): closing hlog writer in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/2ded3f07-53fa-4942-bbc2-f7f2f3637fbc/testStoreMemStore/testStoreMemStore/552691dec79d0a23d17ee11a53c40dfa/.logs
+2013-03-06 20:00:40,697 DEBUG [pool-1-thread-1] wal.FSHLog(774): Moved 1 log files to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/2ded3f07-53fa-4942-bbc2-f7f2f3637fbc/testStoreMemStore/testStoreMemStore/552691dec79d0a23d17ee11a53c40dfa/.oldlogs
+2013-03-06 20:00:40,702 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestMinVersions#testStoreMemStore Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+</system-err>
+  </testcase>
+  <testcase time="0" classname="org.apache.hadoop.hbase.regionserver.TestMinVersions" name="testMemStore">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at org.apache.hadoop.hbase.trigger.LocalTriggerManage.containsTrigger(LocalTriggerManage.java:39)
+	at org.apache.hadoop.hbase.regionserver.wal.WALDetection.checkDispatch(WALDetection.java:27)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.doWrite(FSHLog.java:1220)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.append(FSHLog.java:915)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.appendNoSync(FSHLog.java:937)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doMiniBatchMutation(HRegion.java:2261)
+	at org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2010)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doBatchMutate(HRegion.java:2465)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1935)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1883)
+	at org.apache.hadoop.hbase.regionserver.TestMinVersions.testMemStore(TestMinVersions.java:220)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:24)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+</error>
+    <system-err>2013-03-06 20:00:40,705 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestMinVersions#testMemStore Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:40,720 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.log.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir so I do NOT create it in target/test-data/19910a2c-e28c-4dfd-aba3-d33c72d74d29
+2013-03-06 20:00:40,728 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.log.dir property value differs in configuration and system: Configuration=/Users/daidong/github/local/DominoHBase/hbase-server/../logs while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,729 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.tmp.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir so I do NOT create it in target/test-data/19910a2c-e28c-4dfd-aba3-d33c72d74d29
+2013-03-06 20:00:40,729 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.tmp.dir property value differs in configuration and system: Configuration=/tmp/hadoop-daidong while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,729 INFO  [pool-1-thread-1] regionserver.HRegion(3895): creating HRegion testMemStore HTD == &apos;testMemStore&apos;, {NAME =&gt; &apos;colfamily11&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;2&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily21&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;2&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily31&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;2&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;} RootDir = /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/19910a2c-e28c-4dfd-aba3-d33c72d74d29/testMemStore Table name == testMemStore
+2013-03-06 20:00:40,730 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:40,732 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:40,732 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/19910a2c-e28c-4dfd-aba3-d33c72d74d29/testMemStore/testMemStore/92dd660e9208ff869c2134da7ac30dd6/.logs/hlog.1362571240731, compression=false
+2013-03-06 20:00:40,733 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/19910a2c-e28c-4dfd-aba3-d33c72d74d29/testMemStore/testMemStore/92dd660e9208ff869c2134da7ac30dd6/.logs/hlog.1362571240731
+2013-03-06 20:00:40,733 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem&apos;s output stream doesn&apos;t support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:40,733 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.
+2013-03-06 20:00:40,734 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/19910a2c-e28c-4dfd-aba3-d33c72d74d29/testMemStore/testMemStore/92dd660e9208ff869c2134da7ac30dd6/.tmp/.regioninfo with permission=rwxrwxrwx
+2013-03-06 20:00:40,737 INFO  [StoreOpenerThread-testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,738 INFO  [StoreOpenerThread-testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,739 INFO  [StoreOpenerThread-testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,740 INFO  [pool-1-thread-1] regionserver.HRegion(640): Onlined testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.; next sequenceid=1
+2013-03-06 20:00:40,741 DEBUG [pool-1-thread-1] regionserver.HRegion(2657): rollbackMemstore rolled back 1 keyvalues from start:0 to end:1
+2013-03-06 20:00:40,741 DEBUG [pool-1-thread-1] regionserver.HRegion(975): Closing testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.: disabling compactions &amp; flushes
+2013-03-06 20:00:40,742 DEBUG [pool-1-thread-1] regionserver.HRegion(997): Updates disabled for region testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.
+2013-03-06 20:00:40,742 INFO  [StoreCloserThread-testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.-1] regionserver.HStore(681): Closed colfamily11
+2013-03-06 20:00:40,742 INFO  [StoreCloserThread-testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.-1] regionserver.HStore(681): Closed colfamily21
+2013-03-06 20:00:40,742 INFO  [StoreCloserThread-testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.-1] regionserver.HStore(681): Closed colfamily31
+2013-03-06 20:00:40,743 INFO  [pool-1-thread-1] regionserver.HRegion(1050): Closed testMemStore,,1362571240729.92dd660e9208ff869c2134da7ac30dd6.
+2013-03-06 20:00:40,743 INFO  [pool-1-thread-1.logSyncer] wal.FSHLog$LogSyncer(998): pool-1-thread-1.logSyncer exiting
+2013-03-06 20:00:40,743 DEBUG [pool-1-thread-1] wal.FSHLog(802): closing hlog writer in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/19910a2c-e28c-4dfd-aba3-d33c72d74d29/testMemStore/testMemStore/92dd660e9208ff869c2134da7ac30dd6/.logs
+2013-03-06 20:00:40,745 DEBUG [pool-1-thread-1] wal.FSHLog(774): Moved 1 log files to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/19910a2c-e28c-4dfd-aba3-d33c72d74d29/testMemStore/testMemStore/92dd660e9208ff869c2134da7ac30dd6/.oldlogs
+2013-03-06 20:00:40,748 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestMinVersions#testMemStore Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+</system-err>
+  </testcase>
+  <testcase time="0.001" classname="org.apache.hadoop.hbase.regionserver.TestMinVersions" name="testBaseCase">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at org.apache.hadoop.hbase.trigger.LocalTriggerManage.containsTrigger(LocalTriggerManage.java:39)
+	at org.apache.hadoop.hbase.regionserver.wal.WALDetection.checkDispatch(WALDetection.java:27)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.doWrite(FSHLog.java:1220)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.append(FSHLog.java:915)
+	at org.apache.hadoop.hbase.regionserver.wal.FSHLog.appendNoSync(FSHLog.java:937)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doMiniBatchMutation(HRegion.java:2261)
+	at org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2010)
+	at org.apache.hadoop.hbase.regionserver.HRegion.doBatchMutate(HRegion.java:2465)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1935)
+	at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1883)
+	at org.apache.hadoop.hbase.regionserver.TestMinVersions.testBaseCase(TestMinVersions.java:294)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:24)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+</error>
+    <system-err>2013-03-06 20:00:40,751 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestMinVersions#testBaseCase Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:40,760 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.log.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir so I do NOT create it in target/test-data/e1129453-b53b-4f57-81d8-9f997cb18dc5
+2013-03-06 20:00:40,769 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.log.dir property value differs in configuration and system: Configuration=/Users/daidong/github/local/DominoHBase/hbase-server/../logs while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,769 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty(&quot;hadoop.tmp.dir&quot;) already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir so I do NOT create it in target/test-data/e1129453-b53b-4f57-81d8-9f997cb18dc5
+2013-03-06 20:00:40,769 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.tmp.dir property value differs in configuration and system: Configuration=/tmp/hadoop-daidong while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir Erasing configuration value by system value.
+2013-03-06 20:00:40,770 INFO  [pool-1-thread-1] regionserver.HRegion(3895): creating HRegion testBaseCase HTD == &apos;testBaseCase&apos;, {NAME =&gt; &apos;colfamily11&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;2&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily21&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;2&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;}, {NAME =&gt; &apos;colfamily31&apos;, DATA_BLOCK_ENCODING =&gt; &apos;NONE&apos;, BLOOMFILTER =&gt; &apos;NONE&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;, COMPRESSION =&gt; &apos;NONE&apos;, VERSIONS =&gt; &apos;1000&apos;, TTL =&gt; &apos;1&apos;, MIN_VERSIONS =&gt; &apos;2&apos;, KEEP_DELETED_CELLS =&gt; &apos;false&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, ENCODE_ON_DISK =&gt; &apos;true&apos;, IN_MEMORY =&gt; &apos;false&apos;, BLOCKCACHE =&gt; &apos;false&apos;} RootDir = /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e1129453-b53b-4f57-81d8-9f997cb18dc5/testBaseCase Table name == testBaseCase
+2013-03-06 20:00:40,770 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:40,772 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:40,772 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e1129453-b53b-4f57-81d8-9f997cb18dc5/testBaseCase/testBaseCase/34b72924755d3e49146950d81da4ca54/.logs/hlog.1362571240771, compression=false
+2013-03-06 20:00:40,772 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e1129453-b53b-4f57-81d8-9f997cb18dc5/testBaseCase/testBaseCase/34b72924755d3e49146950d81da4ca54/.logs/hlog.1362571240771
+2013-03-06 20:00:40,772 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem&apos;s output stream doesn&apos;t support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:40,773 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.
+2013-03-06 20:00:40,773 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e1129453-b53b-4f57-81d8-9f997cb18dc5/testBaseCase/testBaseCase/34b72924755d3e49146950d81da4ca54/.tmp/.regioninfo with permission=rwxrwxrwx
+2013-03-06 20:00:40,777 INFO  [StoreOpenerThread-testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,778 INFO  [StoreOpenerThread-testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,779 INFO  [StoreOpenerThread-testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:40,779 INFO  [pool-1-thread-1] regionserver.HRegion(640): Onlined testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.; next sequenceid=1
+2013-03-06 20:00:40,780 DEBUG [pool-1-thread-1] regionserver.HRegion(2657): rollbackMemstore rolled back 1 keyvalues from start:0 to end:1
+2013-03-06 20:00:40,781 DEBUG [pool-1-thread-1] regionserver.HRegion(975): Closing testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.: disabling compactions &amp; flushes
+2013-03-06 20:00:40,781 DEBUG [pool-1-thread-1] regionserver.HRegion(997): Updates disabled for region testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.
+2013-03-06 20:00:40,781 INFO  [StoreCloserThread-testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.-1] regionserver.HStore(681): Closed colfamily11
+2013-03-06 20:00:40,782 INFO  [StoreCloserThread-testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.-1] regionserver.HStore(681): Closed colfamily21
+2013-03-06 20:00:40,782 INFO  [StoreCloserThread-testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.-1] regionserver.HStore(681): Closed colfamily31
+2013-03-06 20:00:40,782 INFO  [pool-1-thread-1] regionserver.HRegion(1050): Closed testBaseCase,,1362571240769.34b72924755d3e49146950d81da4ca54.
+2013-03-06 20:00:40,782 INFO  [pool-1-thread-1.logSyncer] wal.FSHLog$LogSyncer(998): pool-1-thread-1.logSyncer exiting
+2013-03-06 20:00:40,782 DEBUG [pool-1-thread-1] wal.FSHLog(802): closing hlog writer in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e1129453-b53b-4f57-81d8-9f997cb18dc5/testBaseCase/testBaseCase/34b72924755d3e49146950d81da4ca54/.logs
+2013-03-06 20:00:40,784 DEBUG [pool-1-thread-1] wal.FSHLog(774): Moved 1 log files to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/e1129453-b53b-4f57-81d8-9f997cb18dc5/testBaseCase/testBaseCase/34b72924755d3e49146950d81da4ca54/.oldlogs
+2013-03-06 20:00:40,787 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestMinVersions#testBaseCase Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+</system-err>
+  </testcase>
+</testsuite>

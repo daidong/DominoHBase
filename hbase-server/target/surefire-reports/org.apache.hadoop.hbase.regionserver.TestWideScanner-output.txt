@@ -1,0 +1,175 @@
+2013-03-06 20:00:54,633 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestWideScanner#testWideScanBatching Thread=102, OpenFileDescriptor=220, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:54,644 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty("hadoop.log.dir") already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir so I do NOT create it in target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5
+2013-03-06 20:00:54,666 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.log.dir property value differs in configuration and system: Configuration=/Users/daidong/github/local/DominoHBase/hbase-server/../logs while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir Erasing configuration value by system value.
+2013-03-06 20:00:54,666 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty("hadoop.tmp.dir") already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir so I do NOT create it in target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5
+2013-03-06 20:00:54,666 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.tmp.dir property value differs in configuration and system: Configuration=/tmp/hadoop-daidong while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir Erasing configuration value by system value.
+2013-03-06 20:00:54,667 INFO  [pool-1-thread-1] regionserver.HRegion(3895): creating HRegion testwidescan HTD == 'testwidescan', {NAME => 'A', DATA_BLOCK_ENCODING => 'NONE', BLOOMFILTER => 'NONE', REPLICATION_SCOPE => '0', COMPRESSION => 'NONE', VERSIONS => '100', TTL => '2147483647', MIN_VERSIONS => '0', KEEP_DELETED_CELLS => 'false', BLOCKSIZE => '8192', ENCODE_ON_DISK => 'true', IN_MEMORY => 'false', BLOCKCACHE => 'true'}, {NAME => 'B', DATA_BLOCK_ENCODING => 'NONE', BLOOMFILTER => 'NONE', REPLICATION_SCOPE => '0', COMPRESSION => 'NONE', VERSIONS => '100', TTL => '2147483647', MIN_VERSIONS => '0', KEEP_DELETED_CELLS => 'false', BLOCKSIZE => '8192', ENCODE_ON_DISK => 'true', IN_MEMORY => 'false', BLOCKCACHE => 'true'}, {NAME => 'C', DATA_BLOCK_ENCODING => 'NONE', BLOOMFILTER => 'NONE', REPLICATION_SCOPE => '0', COMPRESSION => 'NONE', VERSIONS => '100', TTL => '2147483647', MIN_VERSIONS => '0', KEEP_DELETED_CELLS => 'false', BLOCKSIZE => '8192', ENCODE_ON_DISK => 'true', IN_MEMORY => 'false', BLOCKCACHE => 'true'} RootDir = /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching Table name == testwidescan
+2013-03-06 20:00:54,668 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:54,670 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:54,670 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.logs/hlog.1362571254669, compression=false
+2013-03-06 20:00:54,670 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.logs/hlog.1362571254669
+2013-03-06 20:00:54,670 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem's output stream doesn't support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:54,671 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.
+2013-03-06 20:00:54,671 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/.regioninfo with permission=rwxrwxrwx
+2013-03-06 20:00:54,674 INFO  [StoreOpenerThread-testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:54,675 INFO  [StoreOpenerThread-testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:54,676 INFO  [StoreOpenerThread-testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.-1] compactions.CompactionConfiguration(97): Compaction configuration size [134217728, 9223372036854775807); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 2684354560; delete expired; major period 86400000, major jitter 0.200000
+2013-03-06 20:00:54,676 INFO  [pool-1-thread-1] regionserver.HRegion(640): Onlined testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.; next sequenceid=1
+2013-03-06 20:00:54,677 INFO  [pool-1-thread-1] regionserver.HRegion(5337): writing data to region testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730. with WAL disabled. Data may be lost in the event of a crash.
+2013-03-06 20:00:55,830 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #1, results.size=256
+2013-03-06 20:00:55,832 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #2, results.size=256
+2013-03-06 20:00:55,834 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #3, results.size=256
+2013-03-06 20:00:55,835 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #4, results.size=256
+2013-03-06 20:00:55,837 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #5, results.size=256
+2013-03-06 20:00:55,838 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #6, results.size=256
+2013-03-06 20:00:55,840 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #7, results.size=256
+2013-03-06 20:00:55,842 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #8, results.size=256
+2013-03-06 20:00:55,844 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #9, results.size=256
+2013-03-06 20:00:55,846 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #10, results.size=256
+2013-03-06 20:00:55,847 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #11, results.size=256
+2013-03-06 20:00:55,849 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #12, results.size=256
+2013-03-06 20:00:55,850 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #13, results.size=256
+2013-03-06 20:00:55,852 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #14, results.size=256
+2013-03-06 20:00:55,854 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #15, results.size=256
+2013-03-06 20:00:55,856 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #16, results.size=256
+2013-03-06 20:00:55,858 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #17, results.size=256
+2013-03-06 20:00:55,859 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #18, results.size=256
+2013-03-06 20:00:55,861 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #19, results.size=256
+2013-03-06 20:00:55,863 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #20, results.size=256
+2013-03-06 20:00:55,892 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #21, results.size=256
+2013-03-06 20:00:55,938 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #22, results.size=256
+2013-03-06 20:00:55,939 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #23, results.size=256
+2013-03-06 20:00:55,967 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #24, results.size=256
+2013-03-06 20:00:55,968 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #25, results.size=256
+2013-03-06 20:00:55,969 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #26, results.size=256
+2013-03-06 20:00:55,970 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #27, results.size=256
+2013-03-06 20:00:55,971 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #28, results.size=256
+2013-03-06 20:00:55,972 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #29, results.size=256
+2013-03-06 20:00:55,973 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #30, results.size=256
+2013-03-06 20:00:55,974 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #31, results.size=256
+2013-03-06 20:00:55,975 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #32, results.size=256
+2013-03-06 20:00:55,976 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #33, results.size=256
+2013-03-06 20:00:55,977 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #34, results.size=256
+2013-03-06 20:00:55,978 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #35, results.size=256
+2013-03-06 20:00:55,979 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #36, results.size=256
+2013-03-06 20:00:55,980 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #37, results.size=256
+2013-03-06 20:00:55,981 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #38, results.size=256
+2013-03-06 20:00:55,982 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #39, results.size=256
+2013-03-06 20:00:55,982 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #40, results.size=16
+2013-03-06 20:00:55,983 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #41, results.size=256
+2013-03-06 20:00:55,984 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #42, results.size=256
+2013-03-06 20:00:55,987 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #43, results.size=256
+2013-03-06 20:00:55,988 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #44, results.size=256
+2013-03-06 20:00:55,990 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #45, results.size=256
+2013-03-06 20:00:55,992 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #46, results.size=256
+2013-03-06 20:00:55,993 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #47, results.size=256
+2013-03-06 20:00:55,994 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #48, results.size=256
+2013-03-06 20:00:55,996 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #49, results.size=256
+2013-03-06 20:00:55,997 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #50, results.size=256
+2013-03-06 20:00:55,997 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #51, results.size=256
+2013-03-06 20:00:56,032 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #52, results.size=256
+2013-03-06 20:00:56,039 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #53, results.size=256
+2013-03-06 20:00:56,040 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #54, results.size=256
+2013-03-06 20:00:56,041 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #55, results.size=256
+2013-03-06 20:00:56,042 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #56, results.size=256
+2013-03-06 20:00:56,042 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #57, results.size=256
+2013-03-06 20:00:56,043 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #58, results.size=256
+2013-03-06 20:00:56,044 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #59, results.size=256
+2013-03-06 20:00:56,045 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #60, results.size=256
+2013-03-06 20:00:56,046 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #61, results.size=256
+2013-03-06 20:00:56,047 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #62, results.size=256
+2013-03-06 20:00:56,048 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #63, results.size=256
+2013-03-06 20:00:56,049 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #64, results.size=256
+2013-03-06 20:00:56,053 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #65, results.size=256
+2013-03-06 20:00:56,098 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #66, results.size=256
+2013-03-06 20:00:56,109 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #67, results.size=256
+2013-03-06 20:00:56,110 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #68, results.size=256
+2013-03-06 20:00:56,111 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #69, results.size=256
+2013-03-06 20:00:56,112 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #70, results.size=256
+2013-03-06 20:00:56,112 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #71, results.size=256
+2013-03-06 20:00:56,113 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #72, results.size=256
+2013-03-06 20:00:56,113 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #73, results.size=256
+2013-03-06 20:00:56,113 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #74, results.size=256
+2013-03-06 20:00:56,114 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #75, results.size=256
+2013-03-06 20:00:56,114 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #76, results.size=256
+2013-03-06 20:00:56,114 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #77, results.size=256
+2013-03-06 20:00:56,115 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #78, results.size=256
+2013-03-06 20:00:56,117 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #79, results.size=256
+2013-03-06 20:00:56,118 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #80, results.size=16
+2013-03-06 20:00:56,118 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #81, results.size=256
+2013-03-06 20:00:56,119 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #82, results.size=256
+2013-03-06 20:00:56,119 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #83, results.size=256
+2013-03-06 20:00:56,120 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #84, results.size=256
+2013-03-06 20:00:56,120 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #85, results.size=256
+2013-03-06 20:00:56,121 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #86, results.size=256
+2013-03-06 20:00:56,129 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #87, results.size=256
+2013-03-06 20:00:56,130 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #88, results.size=256
+2013-03-06 20:00:56,131 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #89, results.size=256
+2013-03-06 20:00:56,131 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #90, results.size=256
+2013-03-06 20:00:56,131 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #91, results.size=256
+2013-03-06 20:00:56,132 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #92, results.size=256
+2013-03-06 20:00:56,132 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #93, results.size=256
+2013-03-06 20:00:56,133 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #94, results.size=256
+2013-03-06 20:00:56,133 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #95, results.size=256
+2013-03-06 20:00:56,133 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #96, results.size=256
+2013-03-06 20:00:56,134 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #97, results.size=256
+2013-03-06 20:00:56,134 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #98, results.size=256
+2013-03-06 20:00:56,134 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #99, results.size=256
+2013-03-06 20:00:56,135 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #100, results.size=256
+2013-03-06 20:00:56,135 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #101, results.size=256
+2013-03-06 20:00:56,135 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #102, results.size=256
+2013-03-06 20:00:56,138 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #103, results.size=256
+2013-03-06 20:00:56,139 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #104, results.size=256
+2013-03-06 20:00:56,140 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #105, results.size=256
+2013-03-06 20:00:56,150 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #106, results.size=256
+2013-03-06 20:00:56,151 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #107, results.size=256
+2013-03-06 20:00:56,153 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #108, results.size=256
+2013-03-06 20:00:56,153 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #109, results.size=256
+2013-03-06 20:00:56,153 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #110, results.size=256
+2013-03-06 20:00:56,154 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #111, results.size=256
+2013-03-06 20:00:56,154 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #112, results.size=256
+2013-03-06 20:00:56,154 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #113, results.size=256
+2013-03-06 20:00:56,155 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #114, results.size=256
+2013-03-06 20:00:56,155 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #115, results.size=256
+2013-03-06 20:00:56,155 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #116, results.size=256
+2013-03-06 20:00:56,156 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #117, results.size=256
+2013-03-06 20:00:56,156 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #118, results.size=256
+2013-03-06 20:00:56,157 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #119, results.size=256
+2013-03-06 20:00:56,157 INFO  [pool-1-thread-1] regionserver.TestWideScanner(101): iteration #120, results.size=16
+2013-03-06 20:00:56,157 INFO  [pool-1-thread-1] regionserver.TestWideScanner(128): inserted 30000, scanned 30000
+2013-03-06 20:00:56,157 DEBUG [pool-1-thread-1] regionserver.HRegion(975): Closing testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.: disabling compactions & flushes
+2013-03-06 20:00:56,157 INFO  [pool-1-thread-1] regionserver.HRegion(983): Running close preflush of testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.
+2013-03-06 20:00:56,157 DEBUG [pool-1-thread-1] regionserver.HRegion(1497): Started memstore flush for testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730., current region memstore size 5.3m
+2013-03-06 20:00:56,158 DEBUG [pool-1-thread-1] regionserver.HRegion(1545): Finished snapshotting testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730., commencing wait for mvcc, flushsize=5520000
+2013-03-06 20:00:56,158 DEBUG [pool-1-thread-1] regionserver.HRegion(1555): Finished snapshotting, commencing flushing stores
+2013-03-06 20:00:56,159 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a33eee0612a547f2801692a3606b990b with permission=rwxrwxrwx
+2013-03-06 20:00:56,176 DEBUG [pool-1-thread-1] hfile.HFileWriterV2(141): Initialized with CacheConfig:enabled [cacheDataOnRead=true] [cacheDataOnWrite=false] [cacheIndexesOnWrite=false] [cacheBloomsOnWrite=false] [cacheEvictOnClose=false] [cacheCompressed=false]
+2013-03-06 20:00:56,176 INFO  [pool-1-thread-1] regionserver.StoreFile$Writer(1040): Delete Family Bloom filter type for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a33eee0612a547f2801692a3606b990b: CompoundBloomFilterWriter
+2013-03-06 20:00:56,366 INFO  [pool-1-thread-1] regionserver.StoreFile$Writer(1260): NO General Bloom and NO DeleteFamily was added to HFile (/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a33eee0612a547f2801692a3606b990b) 
+2013-03-06 20:00:56,367 INFO  [pool-1-thread-1] regionserver.HStore(816): Flushed , sequenceid=1, memsize=1.8m, into tmp file /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a33eee0612a547f2801692a3606b990b
+2013-03-06 20:00:56,368 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/1d8e2b7571854171ae8041e8551c4352 with permission=rwxrwxrwx
+2013-03-06 20:00:56,369 DEBUG [pool-1-thread-1] hfile.HFileWriterV2(141): Initialized with CacheConfig:enabled [cacheDataOnRead=true] [cacheDataOnWrite=false] [cacheIndexesOnWrite=false] [cacheBloomsOnWrite=false] [cacheEvictOnClose=false] [cacheCompressed=false]
+2013-03-06 20:00:56,369 INFO  [pool-1-thread-1] regionserver.StoreFile$Writer(1040): Delete Family Bloom filter type for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/1d8e2b7571854171ae8041e8551c4352: CompoundBloomFilterWriter
+2013-03-06 20:00:56,392 INFO  [pool-1-thread-1] regionserver.StoreFile$Writer(1260): NO General Bloom and NO DeleteFamily was added to HFile (/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/1d8e2b7571854171ae8041e8551c4352) 
+2013-03-06 20:00:56,392 INFO  [pool-1-thread-1] regionserver.HStore(816): Flushed , sequenceid=1, memsize=1.8m, into tmp file /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/1d8e2b7571854171ae8041e8551c4352
+2013-03-06 20:00:56,393 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a10b194a709441a3aa2229fef4f2355f with permission=rwxrwxrwx
+2013-03-06 20:00:56,395 DEBUG [pool-1-thread-1] hfile.HFileWriterV2(141): Initialized with CacheConfig:enabled [cacheDataOnRead=true] [cacheDataOnWrite=false] [cacheIndexesOnWrite=false] [cacheBloomsOnWrite=false] [cacheEvictOnClose=false] [cacheCompressed=false]
+2013-03-06 20:00:56,397 INFO  [pool-1-thread-1] regionserver.StoreFile$Writer(1040): Delete Family Bloom filter type for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a10b194a709441a3aa2229fef4f2355f: CompoundBloomFilterWriter
+2013-03-06 20:00:56,424 INFO  [pool-1-thread-1] regionserver.StoreFile$Writer(1260): NO General Bloom and NO DeleteFamily was added to HFile (/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a10b194a709441a3aa2229fef4f2355f) 
+2013-03-06 20:00:56,424 INFO  [pool-1-thread-1] regionserver.HStore(816): Flushed , sequenceid=1, memsize=1.7m, into tmp file /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a10b194a709441a3aa2229fef4f2355f
+2013-03-06 20:00:56,426 DEBUG [pool-1-thread-1] regionserver.HStore(841): Renaming flushed file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a33eee0612a547f2801692a3606b990b to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/A/a33eee0612a547f2801692a3606b990b
+2013-03-06 20:00:56,428 INFO  [pool-1-thread-1] regionserver.HStore(856): Added /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/A/a33eee0612a547f2801692a3606b990b, entries=10093, sequenceid=1, filesize=448.4k
+2013-03-06 20:00:56,430 DEBUG [pool-1-thread-1] regionserver.HStore(841): Renaming flushed file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/1d8e2b7571854171ae8041e8551c4352 to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/B/1d8e2b7571854171ae8041e8551c4352
+2013-03-06 20:00:56,431 INFO  [pool-1-thread-1] regionserver.HStore(856): Added /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/B/1d8e2b7571854171ae8041e8551c4352, entries=10016, sequenceid=1, filesize=444.9k
+2013-03-06 20:00:56,433 DEBUG [pool-1-thread-1] regionserver.HStore(841): Renaming flushed file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.tmp/a10b194a709441a3aa2229fef4f2355f to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/C/a10b194a709441a3aa2229fef4f2355f
+2013-03-06 20:00:56,435 INFO  [pool-1-thread-1] regionserver.HStore(856): Added /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/C/a10b194a709441a3aa2229fef4f2355f, entries=9891, sequenceid=1, filesize=439.4k
+2013-03-06 20:00:56,435 INFO  [pool-1-thread-1] regionserver.HRegion(1634): Finished memstore flush of ~5.3m/5520000, currentsize=0.0/0 for region testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730. in 278ms, sequenceid=1, compaction requested=false
+2013-03-06 20:00:56,436 DEBUG [pool-1-thread-1] regionserver.HRegion(997): Updates disabled for region testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.
+2013-03-06 20:00:56,437 INFO  [StoreCloserThread-testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.-1] regionserver.HStore(681): Closed A
+2013-03-06 20:00:56,438 INFO  [StoreCloserThread-testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.-1] regionserver.HStore(681): Closed B
+2013-03-06 20:00:56,440 INFO  [StoreCloserThread-testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.-1] regionserver.HStore(681): Closed C
+2013-03-06 20:00:56,441 INFO  [pool-1-thread-1] regionserver.HRegion(1050): Closed testwidescan,,1362571254667.652f6e8980d90fa66c5c222df0bd9730.
+2013-03-06 20:00:56,441 INFO  [pool-1-thread-1.logSyncer] wal.FSHLog$LogSyncer(998): pool-1-thread-1.logSyncer exiting
+2013-03-06 20:00:56,441 DEBUG [pool-1-thread-1] wal.FSHLog(802): closing hlog writer in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.logs
+2013-03-06 20:00:56,442 DEBUG [pool-1-thread-1] wal.FSHLog(774): Moved 1 log files to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/5ffe8499-250d-440d-9e80-f52742d2c4c5/testWideScanBatching/testwidescan/652f6e8980d90fa66c5c222df0bd9730/.oldlogs
+2013-03-06 20:00:56,449 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestWideScanner#testWideScanBatching Thread=102 (was 102), OpenFileDescriptor=218 (was 220), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

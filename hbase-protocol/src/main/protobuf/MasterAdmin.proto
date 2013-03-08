@@ -177,7 +177,22 @@ message IsCatalogJanitorEnabledResponse {
   required bool value = 1;
 }
 
+message TriggerSubRequest {
+  required bytes tableName = 1;
+  required bytes columnFamily = 2;
+  required bytes column = 3;
+  required bytes classRowKey = 4;
+}
+
+message TriggerSubResponse {
+  required bool success = 1;
+}
+
 service MasterAdminService {
+  /** Submit a trigger to specified table, column-family and column. */
+  rpc submitTrigger(TriggerSubRequest)
+  	returns(TriggerSubResponse);
+  	
   /** Adds a column to the specified table. */
   rpc addColumn(AddColumnRequest)
     returns(AddColumnResponse);

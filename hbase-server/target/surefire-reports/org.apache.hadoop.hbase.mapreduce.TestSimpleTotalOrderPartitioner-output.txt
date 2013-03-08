@@ -1,0 +1,37 @@
+2013-03-06 20:00:11,174 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: mapreduce.TestSimpleTotalOrderPartitioner#testSplit Thread=66, OpenFileDescriptor=158, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:11,212 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty("hadoop.log.dir") already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir so I do NOT create it in target/test-data/772744b1-844f-4d35-a192-f874db9b4980
+2013-03-06 20:00:11,221 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.log.dir property value differs in configuration and system: Configuration=/Users/daidong/github/local/DominoHBase/hbase-server/../logs while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir Erasing configuration value by system value.
+2013-03-06 20:00:11,222 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty("hadoop.tmp.dir") already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir so I do NOT create it in target/test-data/772744b1-844f-4d35-a192-f874db9b4980
+2013-03-06 20:00:11,222 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.tmp.dir property value differs in configuration and system: Configuration=/tmp/hadoop-daidong while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir Erasing configuration value by system value.
+2013-03-06 20:00:11,299 WARN  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(95): Using deprecated configuration hbase.simpletotalorder.start - please use static accessor methods instead.
+2013-03-06 20:00:11,300 WARN  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(95): Using deprecated configuration hbase.simpletotalorder.end - please use static accessor methods instead.
+2013-03-06 20:00:11,300 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(139): startkey=a, endkey={
+2013-03-06 20:00:11,318 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): a
+2013-03-06 20:00:11,318 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): n
+2013-03-06 20:00:11,318 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): {
+2013-03-06 20:00:11,318 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): a
+2013-03-06 20:00:11,318 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): i
+2013-03-06 20:00:11,318 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): q
+2013-03-06 20:00:11,318 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): {
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): a
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): n
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): {
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): a
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): i
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): q
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): {
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): a
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): n
+2013-03-06 20:00:11,319 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): {
+2013-03-06 20:00:11,320 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): a
+2013-03-06 20:00:11,320 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): i
+2013-03-06 20:00:11,320 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): q
+2013-03-06 20:00:11,320 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): {
+2013-03-06 20:00:11,320 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): a
+2013-03-06 20:00:11,320 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): n
+2013-03-06 20:00:11,320 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): {
+2013-03-06 20:00:11,320 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): a
+2013-03-06 20:00:11,320 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): i
+2013-03-06 20:00:11,321 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): q
+2013-03-06 20:00:11,321 INFO  [pool-1-thread-1] mapreduce.SimpleTotalOrderPartitioner(107): {
+2013-03-06 20:00:11,323 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: mapreduce.TestSimpleTotalOrderPartitioner#testSplit Thread=66 (was 66), OpenFileDescriptor=158 (was 158), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

@@ -22,6 +22,13 @@ public class HTriggerEvent {
         this.lastTS = tso;
 
     }
+    public HTriggerEvent(long tsn, byte[] vn, long tso, byte[] vo){
+      this.currTS = tsn;
+      this.newValue = vn;
+      this.oldValue = vo;
+      this.lastTS = tso;
+    }
+    
     public HTrigger getBelongTo(){
         return this.belongTo;
     }

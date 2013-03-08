@@ -1,0 +1,8 @@
+2013-03-06 19:59:01,195 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: client.TestPutDotHas#testHasIgnoreValueIgnoreTS Thread=9, OpenFileDescriptor=107, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 19:59:01,197 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: client.TestPutDotHas#testHasIgnoreValueIgnoreTS Thread=9 (was 9), OpenFileDescriptor=107 (was 107), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 19:59:01,198 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: client.TestPutDotHas#testHasIgnoreValue Thread=9, OpenFileDescriptor=107, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 19:59:01,199 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: client.TestPutDotHas#testHasIgnoreValue Thread=9 (was 9), OpenFileDescriptor=107 (was 107), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 19:59:01,200 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: client.TestPutDotHas#testHasIgnoreTS Thread=9, OpenFileDescriptor=107, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 19:59:01,201 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: client.TestPutDotHas#testHasIgnoreTS Thread=9 (was 9), OpenFileDescriptor=107 (was 107), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 19:59:01,202 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: client.TestPutDotHas#testHas Thread=9, OpenFileDescriptor=107, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 19:59:01,202 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: client.TestPutDotHas#testHas Thread=9 (was 9), OpenFileDescriptor=107 (was 107), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

@@ -1,0 +1,2 @@
+2013-03-06 19:58:58,111 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: client.TestConnectionUtils#testRetryTimeJitter Thread=8, OpenFileDescriptor=105, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 19:58:58,121 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: client.TestConnectionUtils#testRetryTimeJitter Thread=8 (was 8), OpenFileDescriptor=105 (was 105), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

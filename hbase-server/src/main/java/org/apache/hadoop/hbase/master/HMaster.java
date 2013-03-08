@@ -109,6 +109,8 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.NameStringPair;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.RegionSpecifier.RegionSpecifierType;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.TriggerSubRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.TriggerSubResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.AddColumnRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.AddColumnResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.AssignRegionRequest;
@@ -166,6 +168,8 @@ import org.apache.hadoop.hbase.protobuf.generated.RegionServerStatusProtos.Repor
 import org.apache.hadoop.hbase.replication.regionserver.Replication;
 import org.apache.hadoop.hbase.security.User;
 import org.apache.hadoop.hbase.trace.SpanReceiverHost;
+import org.apache.hadoop.hbase.trigger.HTriggerAction;
+import org.apache.hadoop.hbase.trigger.HTriggerKey;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.hbase.util.CompressionTest;
 import org.apache.hadoop.hbase.util.FSTableDescriptors;
@@ -403,6 +407,9 @@ Server {
 
     this.metricsMaster = new MetricsMaster( new MetricsMasterWrapperImpl(this));
 
+    // trigger init
+    this.GlobalTriggerInfo = new HashMap();
+    
     // Health checker thread.
     int sleepTime = this.conf.getInt(HConstants.HEALTH_CHORE_WAKE_FREQ,
       HConstants.DEFAULT_THREAD_WAKE_FREQUENCY);
@@ -1601,6 +1608,28 @@ Server {
     }
   }
 
+  private HashMap<HTriggerKey, HTriggerAction> GlobalTriggerInfo; 
+  @Override
+  public TriggerSubResponse submitTrigger(RpcController controller, TriggerSubRequest request)
+      throws ServiceException{
+    byte[] tableName = request.getTableName().toByteArray();
+    byte[] columnFmaily = request.getColumnFamily().toByteArray();
+    byte[] column = request.getColumn().toByteArray();
+    byte[] rowKeyClass = request.getClassRowKey().toByteArray();
+    this.GlobalTriggerInfo.put(new HTriggerKey(tableName, columnFmaily, column), null);
+    //1, Create Class by rowKeyClass
+    //2, distribute triggers into region servers
+    Pair<HRegionInfo, ServerName>  regions = null;
+    try {
+      regions = getTableRegionForRow(tableName, null);
+    } catch (IOException e) {    
+      e.printStackTrace();
+    }
+    //3, return all the regions and the user codes fnished all submission
+    //@TODO: Here
+    return TriggerSubResponse.newBuilder().setSuccess(true).build();
+    
+  }
   @Override
   public void addColumn(final byte[] tableName, final HColumnDescriptor column)
       throws IOException {

@@ -13,21 +13,21 @@ public class TriggerEventQueue {
     private static ConcurrentLinkedQueue<HTriggerEvent> EventQueue =
             new ConcurrentLinkedQueue<HTriggerEvent>();
 
-	private static Runnable consumer = null;
-	
-	public static void register(Runnable t){
-		this.consumer = t;	
-	}
+    private static Runnable consumer = null;
+
+    public static void register(Runnable t){
+      TriggerEventQueue.consumer = t;	
+    }
     public static void append(HTriggerEvent hte){
-        EventQueue.add(hte);
-		t.Notify();
+      EventQueue.add(hte);
+      consumer.notify();
     }
 
-    public static HTriggerEvent poll(){
-		if (EventQueue.isEmpty()){
-			t.wait();
-			return null;
-		}
-        return EventQueue.poll();
+    public static HTriggerEvent poll() throws InterruptedException{
+      if (EventQueue.isEmpty()){
+        consumer.wait();
+        return null;
+      }
+      return EventQueue.poll();
     }
 }

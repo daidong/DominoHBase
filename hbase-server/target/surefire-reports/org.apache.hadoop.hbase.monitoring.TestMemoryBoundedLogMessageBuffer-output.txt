@@ -1,0 +1,4 @@
+2013-03-06 20:00:28,294 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: monitoring.TestMemoryBoundedLogMessageBuffer#testBuffer Thread=84, OpenFileDescriptor=182, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:28,329 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: monitoring.TestMemoryBoundedLogMessageBuffer#testBuffer Thread=84 (was 84), OpenFileDescriptor=182 (was 182), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:00:28,332 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: monitoring.TestMemoryBoundedLogMessageBuffer#testNonAsciiEncoding Thread=84, OpenFileDescriptor=182, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:28,334 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: monitoring.TestMemoryBoundedLogMessageBuffer#testNonAsciiEncoding Thread=84 (was 84), OpenFileDescriptor=182 (was 182), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

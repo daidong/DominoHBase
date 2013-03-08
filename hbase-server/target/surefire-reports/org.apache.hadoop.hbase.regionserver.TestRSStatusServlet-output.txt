@@ -1,0 +1,4 @@
+2013-03-06 20:00:51,363 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestRSStatusServlet#testBasic Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:51,991 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestRSStatusServlet#testBasic Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:00:51,994 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestRSStatusServlet#testWithRegions Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:52,029 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestRSStatusServlet#testWithRegions Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

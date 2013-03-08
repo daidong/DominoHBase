@@ -1,0 +1,53 @@
+2013-03-06 20:01:06,696 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testPutTake[0] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,765 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testPutTake[0] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,765 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:100 elementsRemoved:0
+2013-03-06 20:01:06,770 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testOfferPoll[0] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,775 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testOfferPoll[0] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,776 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:100 elementsRemoved:20
+2013-03-06 20:01:06,779 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testPutTake[1] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,784 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testPutTake[1] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,784 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:100 elementsRemoved:20
+2013-03-06 20:01:06,787 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testOfferPoll[1] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,792 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testOfferPoll[1] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,792 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:100 elementsRemoved:100
+2013-03-06 20:01:06,795 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testPutTake[2] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,811 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testPutTake[2] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,812 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:100 elementsRemoved:100
+2013-03-06 20:01:06,814 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testOfferPoll[2] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,819 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testOfferPoll[2] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,819 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:200 elementsRemoved:0
+2013-03-06 20:01:06,822 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testPutTake[3] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,826 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testPutTake[3] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,826 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:200 elementsRemoved:0
+2013-03-06 20:01:06,830 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testOfferPoll[3] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,834 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testOfferPoll[3] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,835 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:200 elementsRemoved:20
+2013-03-06 20:01:06,837 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testPutTake[4] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,841 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testPutTake[4] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,841 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:200 elementsRemoved:20
+2013-03-06 20:01:06,844 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testOfferPoll[4] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,848 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testOfferPoll[4] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,848 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:200 elementsRemoved:100
+2013-03-06 20:01:06,850 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testPutTake[5] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,855 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testPutTake[5] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,855 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:200 elementsRemoved:100
+2013-03-06 20:01:06,858 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testOfferPoll[5] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,861 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testOfferPoll[5] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,862 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:300 elementsRemoved:0
+2013-03-06 20:01:06,864 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testPutTake[6] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,868 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testPutTake[6] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,874 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:300 elementsRemoved:0
+2013-03-06 20:01:06,880 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testOfferPoll[6] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,891 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testOfferPoll[6] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,891 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:300 elementsRemoved:20
+2013-03-06 20:01:06,894 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testPutTake[7] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,900 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testPutTake[7] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,903 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:300 elementsRemoved:20
+2013-03-06 20:01:06,907 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testOfferPoll[7] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,911 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testOfferPoll[7] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,912 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:300 elementsRemoved:100
+2013-03-06 20:01:06,915 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testPutTake[8] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,920 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testPutTake[8] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,921 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:300 elementsRemoved:100
+2013-03-06 20:01:06,924 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: thrift.TestCallQueue#testOfferPoll[8] Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,930 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: thrift.TestCallQueue#testOfferPoll[8] Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

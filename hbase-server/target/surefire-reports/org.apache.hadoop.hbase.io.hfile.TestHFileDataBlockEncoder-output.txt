@@ -1,0 +1,131 @@
+2013-03-06 20:00:06,405 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[0] Thread=12, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,409 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[0] Thread=14 (was 12)
+Potentially hanging thread: pool-1-thread-1.LruBlockCache.EvictionThread
+	java.lang.Object.wait(Native Method)
+	java.lang.Object.wait(Object.java:485)
+	org.apache.hadoop.hbase.io.hfile.LruBlockCache$EvictionThread.run(LruBlockCache.java:659)
+	java.lang.Thread.run(Thread.java:680)
+ - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: NONE, includesMemstoreTS: false
+2013-03-06 20:00:06,419 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[0] Thread=14, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,421 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[0] Thread=14 (was 14), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: NONE, includesMemstoreTS: false
+2013-03-06 20:00:06,430 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[0] Thread=14, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,432 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[0] Thread=14 (was 14), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: NONE, includesMemstoreTS: true
+2013-03-06 20:00:06,443 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[1] Thread=14, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,446 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[1] Thread=16 (was 14) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: NONE, includesMemstoreTS: true
+2013-03-06 20:00:06,457 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[1] Thread=16, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,459 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[1] Thread=16 (was 16), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: NONE, includesMemstoreTS: true
+2013-03-06 20:00:06,468 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[1] Thread=16, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,470 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[1] Thread=16 (was 16), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: PREFIX, includesMemstoreTS: false
+2013-03-06 20:00:06,484 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[2] Thread=16, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,493 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[2] Thread=18 (was 16) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: PREFIX, includesMemstoreTS: false
+2013-03-06 20:00:06,514 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[2] Thread=18, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,516 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[2] Thread=18 (was 18), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: PREFIX, includesMemstoreTS: false
+2013-03-06 20:00:06,527 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[2] Thread=18, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,529 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[2] Thread=18 (was 18), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: PREFIX, includesMemstoreTS: true
+2013-03-06 20:00:06,539 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[3] Thread=18, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,542 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[3] Thread=20 (was 18) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: PREFIX, includesMemstoreTS: true
+2013-03-06 20:00:06,551 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[3] Thread=20, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,555 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[3] Thread=20 (was 20), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: PREFIX, includesMemstoreTS: true
+2013-03-06 20:00:06,568 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[3] Thread=20, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,570 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[3] Thread=20 (was 20), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,580 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[4] Thread=20, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,582 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[4] Thread=22 (was 20) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,593 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[4] Thread=22, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,594 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[4] Thread=22 (was 22), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,605 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[4] Thread=22, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,608 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[4] Thread=22 (was 22), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,621 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[5] Thread=22, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,624 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[5] Thread=24 (was 22) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,635 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[5] Thread=24, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,638 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[5] Thread=24 (was 24), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,649 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[5] Thread=24, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,651 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[5] Thread=24 (was 24), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: FAST_DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,660 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[6] Thread=24, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,662 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[6] Thread=26 (was 24) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: FAST_DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,672 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[6] Thread=26, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,673 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[6] Thread=26 (was 26), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: FAST_DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,686 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[6] Thread=26, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,688 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[6] Thread=26 (was 26), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: FAST_DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,700 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[7] Thread=26, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,707 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[7] Thread=28 (was 26) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: FAST_DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,718 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[7] Thread=28, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,720 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[7] Thread=28 (was 28), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: FAST_DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,731 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[7] Thread=28, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,733 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[7] Thread=28 (was 28), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: PREFIX, in-cache encoding: PREFIX, includesMemstoreTS: false
+2013-03-06 20:00:06,743 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[8] Thread=28, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,745 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[8] Thread=30 (was 28) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: PREFIX, in-cache encoding: PREFIX, includesMemstoreTS: false
+2013-03-06 20:00:06,756 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[8] Thread=30, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,758 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[8] Thread=30 (was 30), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: PREFIX, in-cache encoding: PREFIX, includesMemstoreTS: false
+2013-03-06 20:00:06,767 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[8] Thread=30, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,769 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[8] Thread=30 (was 30), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: PREFIX, in-cache encoding: PREFIX, includesMemstoreTS: true
+2013-03-06 20:00:06,797 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[9] Thread=30, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,800 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[9] Thread=32 (was 30) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: PREFIX, in-cache encoding: PREFIX, includesMemstoreTS: true
+2013-03-06 20:00:06,810 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[9] Thread=32, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,812 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[9] Thread=32 (was 32), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: PREFIX, in-cache encoding: PREFIX, includesMemstoreTS: true
+2013-03-06 20:00:06,823 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[9] Thread=32, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,825 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[9] Thread=32 (was 32), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: DIFF, in-cache encoding: DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,835 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[10] Thread=32, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,837 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[10] Thread=34 (was 32) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: DIFF, in-cache encoding: DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,847 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[10] Thread=34, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,849 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[10] Thread=34 (was 34), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: DIFF, in-cache encoding: DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,861 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[10] Thread=34, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,863 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[10] Thread=34 (was 34), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: DIFF, in-cache encoding: DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,878 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[11] Thread=34, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,881 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[11] Thread=36 (was 34) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: DIFF, in-cache encoding: DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,902 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[11] Thread=36, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,905 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[11] Thread=36 (was 36), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: DIFF, in-cache encoding: DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,916 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[11] Thread=36, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,918 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[11] Thread=36 (was 36), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: FAST_DIFF, in-cache encoding: FAST_DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,931 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[12] Thread=36, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,934 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[12] Thread=38 (was 36) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: FAST_DIFF, in-cache encoding: FAST_DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,945 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[12] Thread=38, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,953 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[12] Thread=38 (was 38), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: FAST_DIFF, in-cache encoding: FAST_DIFF, includesMemstoreTS: false
+2013-03-06 20:00:06,963 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[12] Thread=38, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,965 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[12] Thread=38 (was 38), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: FAST_DIFF, in-cache encoding: FAST_DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,977 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[13] Thread=38, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,986 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWithCache[13] Thread=40 (was 38) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: FAST_DIFF, in-cache encoding: FAST_DIFF, includesMemstoreTS: true
+2013-03-06 20:00:06,998 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[13] Thread=40, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:07,000 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingWritePath[13] Thread=40 (was 40), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: FAST_DIFF, in-cache encoding: FAST_DIFF, includesMemstoreTS: true
+2013-03-06 20:00:07,016 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[13] Thread=40, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:07,018 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileDataBlockEncoder#testEncodingReadPath[13] Thread=40 (was 40), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

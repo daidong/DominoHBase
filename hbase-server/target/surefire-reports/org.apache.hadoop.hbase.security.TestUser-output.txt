@@ -1,0 +1,7 @@
+2013-03-06 20:00:58,230 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: security.TestUser#testBasicAttributes Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:58,276 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: security.TestUser#testBasicAttributes Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:00:58,279 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: security.TestUser#testRunAs Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:58,425 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: security.TestUser#testRunAs Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:00:58,428 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: security.TestUser#testGetCurrent Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:58,428 DEBUG [pool-1-thread-1] security.TestUser(98): User1 is daidong
+2013-03-06 20:00:58,434 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: security.TestUser#testGetCurrent Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

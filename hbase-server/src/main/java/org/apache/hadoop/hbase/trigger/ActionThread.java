@@ -30,7 +30,12 @@ public class ActionThread implements Runnable {
 		long lastTS = EnvironmentEdgeManager.currentTimeMillis();
 		while (true){
 			if (inputDS.isEmpty()){
-				this.wait();
+				try {
+          this.wait();
+        } catch (InterruptedException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
 			} else {
 				HTriggerEvent currEvent = inputDS.poll();
 				if (userAction.filter(currEvent)){
@@ -59,7 +64,7 @@ public class ActionThread implements Runnable {
 
     public void feed(HTriggerEvent hte){
         inputDS.add(hte);
-		this.Notify();
+        this.notify();
     }
 
 }

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Built-By: daidong
+Build-Jdk: 1.6.0_37
+Specification-Title: HBase - Server
+Specification-Version: 0.95-SNAPSHOT
+Specification-Vendor: The Apache Software Foundation
+Implementation-Title: HBase - Server
+Implementation-Version: 0.95-SNAPSHOT
+Implementation-Vendor-Id: org.apache.hbase
+Implementation-Vendor: The Apache Software Foundation
+Main-Class: org/apache/hadoop/hbase/mapreduce/Driver
+Created-By: Maven Integration for Eclipse
+

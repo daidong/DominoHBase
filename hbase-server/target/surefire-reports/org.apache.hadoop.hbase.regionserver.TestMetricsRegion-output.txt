@@ -1,0 +1,3 @@
+2013-03-06 20:00:40,216 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestMetricsRegion#testRegionWrapperMetrics Thread=99, OpenFileDescriptor=212, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:40,321 DEBUG [pool-1-thread-1] regionserver.MetricsRegionSourceImpl(54): Creating new MetricsRegionSourceImpl for table MetricsRegionWrapperStub DEADBEEF001
+2013-03-06 20:00:40,328 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestMetricsRegion#testRegionWrapperMetrics Thread=99 (was 99), OpenFileDescriptor=212 (was 212), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

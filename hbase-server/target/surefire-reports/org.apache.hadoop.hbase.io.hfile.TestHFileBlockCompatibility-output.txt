@@ -1,0 +1,93 @@
+2013-03-06 20:00:05,230 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testNoCompression[0] Thread=12, OpenFileDescriptor=117, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:05,245 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:05,245 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:05,287 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testNoCompression[0] Thread=12 (was 12), OpenFileDescriptor=117 (was 117), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:05,288 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testGzipCompression[0] Thread=12, OpenFileDescriptor=117, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:05,289 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:05,289 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:05,293 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testGzipCompression[0] Thread=12 (was 12), OpenFileDescriptor=117 (was 117), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:05,294 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testReaderV1[0] Thread=12, OpenFileDescriptor=117, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:05,294 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:05,295 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:05,295 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty("hadoop.log.dir") already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir so I do NOT create it in target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330
+2013-03-06 20:00:05,295 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.log.dir property value differs in configuration and system: Configuration=/Users/daidong/github/local/DominoHBase/hbase-server/../logs while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-log-dir Erasing configuration value by system value.
+2013-03-06 20:00:05,295 INFO  [pool-1-thread-1] hbase.HBaseTestingUtility(291): System.getProperty("hadoop.tmp.dir") already set to: /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir so I do NOT create it in target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330
+2013-03-06 20:00:05,295 WARN  [pool-1-thread-1] hbase.HBaseTestingUtility(295): hadoop.tmp.dir property value differs in configuration and system: Configuration=/tmp/hadoop-daidong while System=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/c7e3b3bf-66f3-482b-9613-8cbfd1163ed8/hadoop-tmp-dir Erasing configuration value by system value.
+2013-03-06 20:00:05,296 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(178): Creating temporary file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330/blocks_v1_NONE
+2013-03-06 20:00:05,310 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(178): Creating temporary file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330/blocks_v1_NONE
+2013-03-06 20:00:05,390 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(178): Creating temporary file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330/blocks_v1_GZ
+2013-03-06 20:00:05,419 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(178): Creating temporary file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330/blocks_v1_GZ
+2013-03-06 20:00:05,477 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testReaderV1[0] Thread=12 (was 12), OpenFileDescriptor=117 (was 117), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:05,478 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testReaderV2[0] Thread=12, OpenFileDescriptor=117, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:05,479 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:05,479 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:05,479 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(210): testReaderV2: Compression algorithm: NONE, pread=false
+2013-03-06 20:00:05,482 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(210): testReaderV2: Compression algorithm: NONE, pread=true
+2013-03-06 20:00:05,486 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(210): testReaderV2: Compression algorithm: GZ, pread=false
+2013-03-06 20:00:05,493 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(210): testReaderV2: Compression algorithm: GZ, pread=true
+2013-03-06 20:00:05,502 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testReaderV2[0] Thread=12 (was 12), OpenFileDescriptor=117 (was 117), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:05,503 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testDataBlockEncoding[0] Thread=12, OpenFileDescriptor=117, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:05,503 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:05,503 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:05,504 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = false encoding NONE
+2013-03-06 20:00:05,511 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = false encoding PREFIX
+2013-03-06 20:00:05,552 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = false encoding DIFF
+2013-03-06 20:00:05,566 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = false encoding FAST_DIFF
+2013-03-06 20:00:05,576 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = true encoding NONE
+2013-03-06 20:00:05,582 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = true encoding PREFIX
+2013-03-06 20:00:05,590 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = true encoding DIFF
+2013-03-06 20:00:05,614 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = true encoding FAST_DIFF
+2013-03-06 20:00:05,672 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = false encoding NONE
+2013-03-06 20:00:05,691 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = false encoding PREFIX
+2013-03-06 20:00:05,730 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = false encoding DIFF
+2013-03-06 20:00:05,792 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = false encoding FAST_DIFF
+2013-03-06 20:00:05,815 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = true encoding NONE
+2013-03-06 20:00:05,826 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = true encoding PREFIX
+2013-03-06 20:00:05,837 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = true encoding DIFF
+2013-03-06 20:00:05,854 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = true encoding FAST_DIFF
+2013-03-06 20:00:05,866 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testDataBlockEncoding[0] Thread=12 (was 12), OpenFileDescriptor=115 (was 117), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:05,868 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testNoCompression[1] Thread=12, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:05,868 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:05,868 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:05,869 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testNoCompression[1] Thread=12 (was 12), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:05,870 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testGzipCompression[1] Thread=12, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:05,870 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:05,870 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:05,873 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testGzipCompression[1] Thread=12 (was 12), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:05,874 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testReaderV1[1] Thread=12, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:05,874 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:05,874 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:05,874 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(178): Creating temporary file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330/blocks_v1_NONE
+2013-03-06 20:00:05,904 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(178): Creating temporary file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330/blocks_v1_NONE
+2013-03-06 20:00:05,945 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(178): Creating temporary file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330/blocks_v1_GZ
+2013-03-06 20:00:05,953 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(178): Creating temporary file at /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/536b88c8-c9bc-4df6-bd03-3c9dbf43b330/blocks_v1_GZ
+2013-03-06 20:00:05,981 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testReaderV1[1] Thread=12 (was 12), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:05,982 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testReaderV2[1] Thread=12, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:05,982 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:05,982 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:05,982 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(210): testReaderV2: Compression algorithm: NONE, pread=false
+2013-03-06 20:00:05,986 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(210): testReaderV2: Compression algorithm: NONE, pread=true
+2013-03-06 20:00:05,989 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(210): testReaderV2: Compression algorithm: GZ, pread=false
+2013-03-06 20:00:05,997 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(210): testReaderV2: Compression algorithm: GZ, pread=true
+2013-03-06 20:00:06,016 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testReaderV2[1] Thread=12 (was 12), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:06,017 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestHFileBlockCompatibility#testDataBlockEncoding[1] Thread=12, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:06,017 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:06,017 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:06,018 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = false encoding NONE
+2013-03-06 20:00:06,026 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = false encoding PREFIX
+2013-03-06 20:00:06,040 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = false encoding DIFF
+2013-03-06 20:00:06,054 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = false encoding FAST_DIFF
+2013-03-06 20:00:06,100 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = true encoding NONE
+2013-03-06 20:00:06,159 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = true encoding PREFIX
+2013-03-06 20:00:06,175 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = true encoding DIFF
+2013-03-06 20:00:06,207 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo NONE pread = true encoding FAST_DIFF
+2013-03-06 20:00:06,249 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = false encoding NONE
+2013-03-06 20:00:06,308 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = false encoding PREFIX
+2013-03-06 20:00:06,322 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = false encoding DIFF
+2013-03-06 20:00:06,338 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = false encoding FAST_DIFF
+2013-03-06 20:00:06,346 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = true encoding NONE
+2013-03-06 20:00:06,357 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = true encoding PREFIX
+2013-03-06 20:00:06,367 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = true encoding DIFF
+2013-03-06 20:00:06,378 INFO  [pool-1-thread-1] hfile.TestHFileBlockCompatibility(275): testDataBlockEncoding algo GZ pread = true encoding FAST_DIFF
+2013-03-06 20:00:06,389 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestHFileBlockCompatibility#testDataBlockEncoding[1] Thread=12 (was 12), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+On-disk encoding: NONE, in-cache encoding: NONE, includesMemstoreTS: false

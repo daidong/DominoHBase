@@ -1,0 +1,183 @@
+2013-03-06 20:00:09,917 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: ipc.TestIPC#testRTEDuringConnectionSetup Thread=49, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:11,015 INFO  [pool-1-thread-1] ipc.TestIPC(94): Caught expected exception: java.io.IOException: Coundn't set up IO Streams
+2013-03-06 20:00:11,040 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: ipc.TestIPC#testRTEDuringConnectionSetup Thread=66 (was 49)
+Potentially hanging thread: IPC Reader 0 on port 53319
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:554)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: IPC Reader 8 on port 53319
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:554)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: IPC Reader 7 on port 53319
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:554)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: IPC Reader 1 on port 53319
+	java.lang.Object.wait(Native Method)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:556)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: IPC Server listener on 53319
+	java.lang.ClassLoader.findBootstrapClass(Native Method)
+	java.lang.ClassLoader.findBootstrapClassOrNull(ClassLoader.java:926)
+	java.lang.ClassLoader.loadClass(ClassLoader.java:297)
+	java.lang.ClassLoader.loadClass(ClassLoader.java:295)
+	sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	org.apache.hadoop.hbase.ipc.HBaseServer.getConnection(HBaseServer.java:1935)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener.doAccept(HBaseServer.java:748)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener.run(HBaseServer.java:670)
+
+Potentially hanging thread: IPC Reader 5 on port 53319
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:554)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: IPC Reader 6 on port 53319
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:554)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: IPC Reader 3 on port 53319
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:554)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: REPL IPC Server handler 0 on 53319
+	sun.misc.Unsafe.park(Native Method)
+	java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1751)
+
+Potentially hanging thread: IPC Reader 4 on port 53319
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:554)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: IPC Reader 2 on port 53319
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:554)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: IPC Server Responder
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Responder.doRunLoop(HBaseServer.java:850)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Responder.run(HBaseServer.java:833)
+
+Potentially hanging thread: IPC Server handler 0 on 53319
+	sun.misc.Unsafe.park(Native Method)
+	java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1751)
+
+Potentially hanging thread: REPL IPC Server handler 2 on 53319
+	sun.misc.Unsafe.park(Native Method)
+	java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1751)
+
+Potentially hanging thread: IPC Reader 9 on port 53319
+	sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:136)
+	sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.doRunLoop(HBaseServer.java:554)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Listener$Reader.run(HBaseServer.java:540)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	java.lang.Thread.run(Thread.java:680)
+
+Potentially hanging thread: REPL IPC Server handler 1 on 53319
+	sun.misc.Unsafe.park(Native Method)
+	java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1751)
+
+Potentially hanging thread: PRI IPC Server handler 0 on 53319
+	sun.misc.Unsafe.park(Native Method)
+	java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1751)
+ - Thread LEAK? -, OpenFileDescriptor=158 (was 115) - OpenFileDescriptor LEAK? -, MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

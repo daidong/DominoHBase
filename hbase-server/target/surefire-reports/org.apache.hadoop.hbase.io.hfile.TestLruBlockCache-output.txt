@@ -1,0 +1,46 @@
+2013-03-06 20:00:09,002 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestLruBlockCache#testCacheSimple Thread=40, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:09,027 DEBUG [LruBlockCache.StatisticsThread] hfile.LruBlockCache(709): Stats: total=520.7 KB, free=455.86 KB, max=976.56 KB, blocks=100, accesses=300, hits=200, hitRatio=66.66%, , cachingAccesses=300, cachingHits=200, cachingHitsRatio=66.66%, , evictions=0, evicted=0, evictedPerRun=NaN
+2013-03-06 20:00:09,038 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestLruBlockCache#testCacheSimple Thread=42 (was 40) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:09,050 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestLruBlockCache#testBackgroundEvictionThread Thread=42, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:09,062 DEBUG [pool-1-thread-1.LruBlockCache.EvictionThread] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 4.88 KB of total=97.65 KB
+2013-03-06 20:00:09,092 DEBUG [pool-1-thread-1.LruBlockCache.EvictionThread] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=10.64 KB, total=97.65 KB, single=106.41 KB, multi=0 KB, memory=0 KB
+Background Evictions run: 1
+2013-03-06 20:00:09,264 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestLruBlockCache#testBackgroundEvictionThread Thread=44 (was 42) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:09,266 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestLruBlockCache#testCacheEvictionSimple Thread=44, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:09,267 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 4.87 KB of total=97.64 KB
+2013-03-06 20:00:09,267 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=9.57 KB, total=88.07 KB, single=95.7 KB, multi=0 KB, memory=0 KB
+2013-03-06 20:00:09,269 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestLruBlockCache#testCacheEvictionSimple Thread=45 (was 44) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:09,270 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestLruBlockCache#testCacheEvictionTwoPriorities Thread=45, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:09,271 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 9.32 KB of total=102.09 KB
+2013-03-06 20:00:09,271 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=20.03 KB, total=82.06 KB, single=50.08 KB, multi=50.08 KB, memory=0 KB
+2013-03-06 20:00:09,273 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestLruBlockCache#testCacheEvictionTwoPriorities Thread=46 (was 45) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:09,274 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestLruBlockCache#testCacheEvictionThreePriorities Thread=46, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:09,275 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 1.94 KB of total=97.64 KB
+2013-03-06 20:00:09,275 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=9.57 KB, total=88.07 KB, single=38.28 KB, multi=28.71 KB, memory=28.71 KB
+2013-03-06 20:00:09,276 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 1.94 KB of total=97.64 KB
+2013-03-06 20:00:09,276 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=9.57 KB, total=88.07 KB, single=28.71 KB, multi=38.28 KB, memory=28.71 KB
+2013-03-06 20:00:09,276 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 1.94 KB of total=97.64 KB
+2013-03-06 20:00:09,276 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=9.57 KB, total=88.07 KB, single=28.71 KB, multi=28.71 KB, memory=38.28 KB
+2013-03-06 20:00:09,276 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 20.57 KB of total=116.27 KB
+2013-03-06 20:00:09,277 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=28.71 KB, total=87.56 KB, single=56.91 KB, multi=28.71 KB, memory=28.71 KB
+2013-03-06 20:00:09,277 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 20.06 KB of total=115.77 KB
+2013-03-06 20:00:09,277 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=28.71 KB, total=87.05 KB, single=28.2 KB, multi=56.91 KB, memory=28.71 KB
+2013-03-06 20:00:09,277 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 19.55 KB of total=115.26 KB
+2013-03-06 20:00:09,277 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=28.71 KB, total=86.55 KB, single=28.2 KB, multi=28.2 KB, memory=56.91 KB
+2013-03-06 20:00:09,280 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestLruBlockCache#testCacheEvictionThreePriorities Thread=47 (was 46) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:09,282 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestLruBlockCache#testScanResistance Thread=47, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:09,282 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 33.19 KB of total=97.64 KB
+2013-03-06 20:00:09,283 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=38.28 KB, total=59.36 KB, single=47.85 KB, multi=47.85 KB, memory=0 KB
+2013-03-06 20:00:09,283 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 33.19 KB of total=97.64 KB
+2013-03-06 20:00:09,283 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=38.28 KB, total=59.36 KB, single=66.99 KB, multi=28.71 KB, memory=0 KB
+2013-03-06 20:00:09,283 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 33.19 KB of total=97.64 KB
+2013-03-06 20:00:09,284 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=38.28 KB, total=59.36 KB, single=76.56 KB, multi=19.14 KB, memory=0 KB
+2013-03-06 20:00:09,284 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 33.19 KB of total=97.64 KB
+2013-03-06 20:00:09,284 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=38.28 KB, total=59.36 KB, single=76.56 KB, multi=19.14 KB, memory=0 KB
+2013-03-06 20:00:09,286 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestLruBlockCache#testScanResistance Thread=48 (was 47) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:09,287 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestLruBlockCache#testResizeBlockCache Thread=48, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:09,288 DEBUG [pool-1-thread-1] hfile.LruBlockCache(448): Block cache LRU eviction started; Attempting to free 139.65 KB of total=283.2 KB
+2013-03-06 20:00:09,289 DEBUG [pool-1-thread-1] hfile.LruBlockCache(506): Block cache LRU eviction completed; freed=139.92 KB, total=143.28 KB, single=93.28 KB, multi=93.28 KB, memory=93.28 KB
+2013-03-06 20:00:09,290 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestLruBlockCache#testResizeBlockCache Thread=49 (was 48) - Thread LEAK? -, OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:09,292 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestLruBlockCache#testPastNPeriodsMetrics Thread=49, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:09,294 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestLruBlockCache#testPastNPeriodsMetrics Thread=49 (was 49), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

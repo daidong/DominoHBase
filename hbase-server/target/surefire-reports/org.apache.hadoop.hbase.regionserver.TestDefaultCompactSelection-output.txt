@@ -1,0 +1,269 @@
+2013-03-06 20:00:36,162 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestDefaultCompactSelection#testCompactionRatio Thread=85, OpenFileDescriptor=184, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:36,174 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:36,178 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:36,178 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/logs/hlog.1362571236177, compression=false
+2013-03-06 20:00:36,179 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/logs/hlog.1362571236177
+2013-03-06 20:00:36,179 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem's output stream doesn't support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:36,179 INFO  [pool-1-thread-1] regionserver.HRegion(3895): creating HRegion table HTD == 'table', {NAME => 'family', DATA_BLOCK_ENCODING => 'NONE', BLOOMFILTER => 'NONE', REPLICATION_SCOPE => '0', COMPRESSION => 'NONE', VERSIONS => '3', TTL => '2147483647', MIN_VERSIONS => '0', KEEP_DELETED_CELLS => 'false', BLOCKSIZE => '65536', ENCODE_ON_DISK => 'true', IN_MEMORY => 'false', BLOCKCACHE => 'true'} RootDir = /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection Table name == table
+2013-03-06 20:00:36,181 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:36,184 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:36,184 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/c796cb82e5ae2176d6508fe752baa783/.logs/hlog.1362571236181, compression=false
+2013-03-06 20:00:36,184 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/c796cb82e5ae2176d6508fe752baa783/.logs/hlog.1362571236181
+2013-03-06 20:00:36,184 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem's output stream doesn't support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:36,186 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated table,,1362571236174.c796cb82e5ae2176d6508fe752baa783.
+2013-03-06 20:00:36,186 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/c796cb82e5ae2176d6508fe752baa783/.tmp/.regioninfo with permission=rwxrwxrwx
+2013-03-06 20:00:36,192 INFO  [StoreOpenerThread-table,,1362571236174.c796cb82e5ae2176d6508fe752baa783.-1] compactions.CompactionConfiguration(97): Compaction configuration size [10, 1000); files [3, 5); ratio 1.000000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 100; delete expired; major period 0, major jitter 0.200000
+2013-03-06 20:00:36,198 INFO  [pool-1-thread-1] regionserver.HRegion(640): Onlined table,,1362571236174.c796cb82e5ae2176d6508fe752baa783.; next sequenceid=1
+2013-03-06 20:00:36,199 DEBUG [pool-1-thread-1] regionserver.HRegion(975): Closing table,,1362571236174.c796cb82e5ae2176d6508fe752baa783.: disabling compactions & flushes
+2013-03-06 20:00:36,199 DEBUG [pool-1-thread-1] regionserver.HRegion(997): Updates disabled for region table,,1362571236174.c796cb82e5ae2176d6508fe752baa783.
+2013-03-06 20:00:36,200 INFO  [StoreCloserThread-table,,1362571236174.c796cb82e5ae2176d6508fe752baa783.-1] regionserver.HStore(681): Closed family
+2013-03-06 20:00:36,201 INFO  [pool-1-thread-1] regionserver.HRegion(1050): Closed table,,1362571236174.c796cb82e5ae2176d6508fe752baa783.
+2013-03-06 20:00:36,201 INFO  [pool-1-thread-1.logSyncer] wal.FSHLog$LogSyncer(998): pool-1-thread-1.logSyncer exiting
+2013-03-06 20:00:36,201 DEBUG [pool-1-thread-1] wal.FSHLog(802): closing hlog writer in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/c796cb82e5ae2176d6508fe752baa783/.logs
+2013-03-06 20:00:36,202 DEBUG [pool-1-thread-1] wal.FSHLog(774): Moved 1 log files to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/c796cb82e5ae2176d6508fe752baa783/.oldlogs
+2013-03-06 20:00:36,203 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated table,,1362571236174.c796cb82e5ae2176d6508fe752baa783.
+2013-03-06 20:00:36,204 INFO  [pool-1-thread-1] compactions.CompactionConfiguration(97): Compaction configuration size [10, 1000); files [3, 5); ratio 1.000000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 100; delete expired; major period 0, major jitter 0.200000
+2013-03-06 20:00:36,403 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,404 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,404 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,404 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,404 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,405 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,405 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,405 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,405 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,405 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,406 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 3 files from 5 candidates
+2013-03-06 20:00:36,406 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,406 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,406 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,406 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,407 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,407 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,407 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,407 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,407 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,407 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,408 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 2 files from 5 candidates
+2013-03-06 20:00:36,408 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(224): Not compacting files because we only have 2 files ready for compaction.  Need 3 to initiate.
+2013-03-06 20:00:36,408 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,408 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,408 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,408 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,409 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,409 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,409 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,409 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,409 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,409 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,410 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(170): Some files are too large. Excluding 2 files from compaction candidates
+2013-03-06 20:00:36,410 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 3 files from 3 candidates
+2013-03-06 20:00:36,410 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,410 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,410 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,411 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,411 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,411 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,411 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,411 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,412 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(170): Some files are too large. Excluding 2 files from compaction candidates
+2013-03-06 20:00:36,412 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 2 files from 2 candidates
+2013-03-06 20:00:36,412 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(224): Not compacting files because we only have 2 files ready for compaction.  Need 3 to initiate.
+2013-03-06 20:00:36,412 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,412 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,412 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,412 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,413 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,413 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,413 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 3 files from 3 candidates
+2013-03-06 20:00:36,413 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,413 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,413 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,414 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,414 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,414 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,414 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,414 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,414 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,415 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,415 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,415 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,415 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,415 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,416 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 7 files from 7 candidates
+2013-03-06 20:00:36,416 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(207): Too many admissible files. Excluding 2 files from compaction candidates
+2013-03-06 20:00:36,416 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,416 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,416 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,416 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,417 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,417 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,417 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,417 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,417 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,417 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,418 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,418 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,418 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,418 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,418 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,418 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,419 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,419 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,419 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,419 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,419 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,420 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,420 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,420 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,420 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,420 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,421 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,421 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,421 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,421 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,421 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,421 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,422 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 7 files from 7 candidates
+2013-03-06 20:00:36,422 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(207): Too many admissible files. Excluding 2 files from compaction candidates
+2013-03-06 20:00:36,422 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,422 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,422 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,422 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,423 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,423 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,423 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,423 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,423 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,423 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,424 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 3 files from 5 candidates
+2013-03-06 20:00:36,424 INFO  [pool-1-thread-1] compactions.CompactionConfiguration(97): Compaction configuration size [10, 1000); files [3, 5); ratio 1.000000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 100; delete expired; major period 1, major jitter 0.000000
+2013-03-06 20:00:36,424 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,424 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,424 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,425 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,425 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,425 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,425 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,425 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,426 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(347): Major compaction triggered on store org.apache.hadoop.hbase.regionserver.compactions.CompactionPolicy@34a45fc1; time since last major compaction 425ms
+2013-03-06 20:00:36,426 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,426 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,426 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,426 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,426 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,427 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,427 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,427 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,427 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,427 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,428 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(347): Major compaction triggered on store org.apache.hadoop.hbase.regionserver.compactions.CompactionPolicy@34a45fc1; time since last major compaction 428ms
+2013-03-06 20:00:36,428 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 3 files from 5 candidates
+2013-03-06 20:00:36,428 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,428 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,428 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,429 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,429 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,429 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,429 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,429 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,430 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,430 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,430 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(347): Major compaction triggered on store org.apache.hadoop.hbase.regionserver.compactions.CompactionPolicy@34a45fc1; time since last major compaction 430ms
+2013-03-06 20:00:36,430 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,430 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,430 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,432 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,432 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,432 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,432 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(347): Major compaction triggered on store org.apache.hadoop.hbase.regionserver.compactions.CompactionPolicy@34a45fc1; time since last major compaction 432ms
+2013-03-06 20:00:36,432 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,433 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,433 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,433 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,434 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,434 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,434 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,434 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,434 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,434 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,435 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,435 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,435 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,435 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,435 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(347): Major compaction triggered on store org.apache.hadoop.hbase.regionserver.compactions.CompactionPolicy@34a45fc1; time since last major compaction 435ms
+2013-03-06 20:00:36,435 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(207): Too many admissible files. Excluding 2 files from compaction candidates
+2013-03-06 20:00:36,436 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(224): Not compacting files because we only have 0 files ready for compaction.  Need 3 to initiate.
+2013-03-06 20:00:36,436 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,436 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,436 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,436 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,436 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(170): Some files are too large. Excluding 2 files from compaction candidates
+2013-03-06 20:00:36,437 DEBUG [pool-1-thread-1] compactions.CompactionPolicy(224): Not compacting files because we only have 0 files ready for compaction.  Need 3 to initiate.
+2013-03-06 20:00:36,439 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestDefaultCompactSelection#testCompactionRatio Thread=86 (was 85) - Thread LEAK? -, OpenFileDescriptor=188 (was 184) - OpenFileDescriptor LEAK? -, MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:00:36,441 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.TestDefaultCompactSelection#testOffPeakCompactionRatio Thread=86, OpenFileDescriptor=188, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:36,442 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:36,443 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:36,443 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/logs/hlog.1362571236442, compression=false
+2013-03-06 20:00:36,443 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/logs/hlog.1362571236442
+2013-03-06 20:00:36,444 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem's output stream doesn't support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:36,444 INFO  [pool-1-thread-1] regionserver.HRegion(3895): creating HRegion table HTD == 'table', {NAME => 'family', DATA_BLOCK_ENCODING => 'NONE', BLOOMFILTER => 'NONE', REPLICATION_SCOPE => '0', COMPRESSION => 'NONE', VERSIONS => '3', TTL => '2147483647', MIN_VERSIONS => '0', KEEP_DELETED_CELLS => 'false', BLOCKSIZE => '65536', ENCODE_ON_DISK => 'true', IN_MEMORY => 'false', BLOCKCACHE => 'true'} RootDir = /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection Table name == table
+2013-03-06 20:00:36,444 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:36,446 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:36,447 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/38bb0cc5ca2a4d8ff6311e15b6197153/.logs/hlog.1362571236445, compression=false
+2013-03-06 20:00:36,447 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/38bb0cc5ca2a4d8ff6311e15b6197153/.logs/hlog.1362571236445
+2013-03-06 20:00:36,447 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem's output stream doesn't support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:36,447 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated table,,1362571236442.38bb0cc5ca2a4d8ff6311e15b6197153.
+2013-03-06 20:00:36,447 DEBUG [pool-1-thread-1] util.FSUtils(165): Creating file=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/38bb0cc5ca2a4d8ff6311e15b6197153/.tmp/.regioninfo with permission=rwxrwxrwx
+2013-03-06 20:00:36,451 INFO  [StoreOpenerThread-table,,1362571236442.38bb0cc5ca2a4d8ff6311e15b6197153.-1] compactions.CompactionConfiguration(97): Compaction configuration size [10, 1000); files [3, 5); ratio 1.000000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 100; delete expired; major period 0, major jitter 0.200000
+2013-03-06 20:00:36,452 INFO  [pool-1-thread-1] regionserver.HRegion(640): Onlined table,,1362571236442.38bb0cc5ca2a4d8ff6311e15b6197153.; next sequenceid=1
+2013-03-06 20:00:36,452 DEBUG [pool-1-thread-1] regionserver.HRegion(975): Closing table,,1362571236442.38bb0cc5ca2a4d8ff6311e15b6197153.: disabling compactions & flushes
+2013-03-06 20:00:36,452 DEBUG [pool-1-thread-1] regionserver.HRegion(997): Updates disabled for region table,,1362571236442.38bb0cc5ca2a4d8ff6311e15b6197153.
+2013-03-06 20:00:36,453 INFO  [StoreCloserThread-table,,1362571236442.38bb0cc5ca2a4d8ff6311e15b6197153.-1] regionserver.HStore(681): Closed family
+2013-03-06 20:00:36,453 INFO  [pool-1-thread-1] regionserver.HRegion(1050): Closed table,,1362571236442.38bb0cc5ca2a4d8ff6311e15b6197153.
+2013-03-06 20:00:36,453 INFO  [pool-1-thread-1.logSyncer] wal.FSHLog$LogSyncer(998): pool-1-thread-1.logSyncer exiting
+2013-03-06 20:00:36,453 DEBUG [pool-1-thread-1] wal.FSHLog(802): closing hlog writer in /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/38bb0cc5ca2a4d8ff6311e15b6197153/.logs
+2013-03-06 20:00:36,454 DEBUG [pool-1-thread-1] wal.FSHLog(774): Moved 1 log files to /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/38f4c224-cb41-4b06-b0db-806bbb8053ec/TestDefaultCompactSelection/table/38bb0cc5ca2a4d8ff6311e15b6197153/.oldlogs
+2013-03-06 20:00:36,455 DEBUG [pool-1-thread-1] regionserver.HRegion(495): Instantiated table,,1362571236442.38bb0cc5ca2a4d8ff6311e15b6197153.
+2013-03-06 20:00:36,455 INFO  [pool-1-thread-1] compactions.CompactionConfiguration(97): Compaction configuration size [10, 1000); files [3, 5); ratio 1.000000; off-peak ratio 5.000000; off-peak hours -1--1; throttle point 100; delete expired; major period 0, major jitter 0.200000
+2013-03-06 20:00:36,457 DEBUG [pool-1-thread-1] regionserver.TestDefaultCompactSelection(293): Hour of day = 20
+2013-03-06 20:00:36,457 DEBUG [pool-1-thread-1] regionserver.TestDefaultCompactSelection(299): Testing compact selection without off-peak settings...
+2013-03-06 20:00:36,457 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,457 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,457 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,457 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,458 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,458 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,458 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,458 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,459 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,459 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,459 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 3 files from 5 candidates
+2013-03-06 20:00:36,459 DEBUG [pool-1-thread-1] regionserver.TestDefaultCompactSelection(308): Testing compact selection with off-peak settings (19, 21)
+2013-03-06 20:00:36,459 INFO  [pool-1-thread-1] compactions.CompactionConfiguration(97): Compaction configuration size [10, 1000); files [3, 5); ratio 1.000000; off-peak ratio 5.000000; off-peak hours 19-21; throttle point 100; delete expired; major period 0, major jitter 0.200000
+2013-03-06 20:00:36,459 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,460 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,460 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,460 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,460 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,460 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,460 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,461 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,461 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,461 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,461 INFO  [pool-1-thread-1] compactions.CompactionPolicy(273): Running an off-peak compaction, selection ratio = 5.0, numOutstandingOffPeakCompactions is now 1
+2013-03-06 20:00:36,461 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 4 files from 5 candidates
+2013-03-06 20:00:36,462 INFO  [pool-1-thread-1] compactions.CompactionConfiguration(97): Compaction configuration size [10, 1000); files [3, 5); ratio 1.000000; off-peak ratio 5.000000; off-peak hours 18-19; throttle point 100; delete expired; major period 0, major jitter 0.200000
+2013-03-06 20:00:36,462 DEBUG [pool-1-thread-1] regionserver.TestDefaultCompactSelection(317): Testing compact selection with off-peak settings (18, 19)
+2013-03-06 20:00:36,462 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,462 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,462 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,462 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,462 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,463 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,463 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,463 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,464 DEBUG [pool-1-thread-1] fs.HFileSystem(199): Starting addLocationsOrderInterceptor with class class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2013-03-06 20:00:36,464 WARN  [pool-1-thread-1] fs.HFileSystem(215): The file system is not a DistributedFileSystem.Not adding block location reordering
+2013-03-06 20:00:36,465 INFO  [pool-1-thread-1] compactions.CompactionPolicy(299): Default compaction algorithm has selected 3 files from 5 candidates
+2013-03-06 20:00:36,467 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.TestDefaultCompactSelection#testOffPeakCompactionRatio Thread=87 (was 86) - Thread LEAK? -, OpenFileDescriptor=192 (was 188) - OpenFileDescriptor LEAK? -, MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

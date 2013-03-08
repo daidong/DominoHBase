@@ -1,0 +1,7 @@
+2013-03-06 20:01:01,783 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestHRegionLocation#testHashAndEqualsCode Thread=104, OpenFileDescriptor=225, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:01,786 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestHRegionLocation#testHashAndEqualsCode Thread=104 (was 104), OpenFileDescriptor=225 (was 225), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:01,789 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestHRegionLocation#testToString Thread=104, OpenFileDescriptor=225, MaxFileDescriptor=1000000, ConnectionCount=1
+region=.META.,,1.1028785192, hostname=localhost, port=1234
+2013-03-06 20:01:01,792 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestHRegionLocation#testToString Thread=104 (was 104), OpenFileDescriptor=225 (was 225), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:01,794 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestHRegionLocation#testCompareTo Thread=104, OpenFileDescriptor=225, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:01,797 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestHRegionLocation#testCompareTo Thread=104 (was 104), OpenFileDescriptor=225 (was 225), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

@@ -1,0 +1,4 @@
+2013-03-06 20:00:04,231 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestCachedBlockQueue#testQueue Thread=12, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:04,247 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestCachedBlockQueue#testQueue Thread=12 (was 12), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
+2013-03-06 20:00:04,248 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.TestCachedBlockQueue#testQueueSmallBlockEdgeCase Thread=12, OpenFileDescriptor=115, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:04,250 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.TestCachedBlockQueue#testQueueSmallBlockEdgeCase Thread=12 (was 12), OpenFileDescriptor=115 (was 115), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)

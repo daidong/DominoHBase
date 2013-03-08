@@ -1,0 +1,7 @@
+2013-03-06 20:00:57,345 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: regionserver.wal.TestWALActionsListener#testActionListener Thread=103, OpenFileDescriptor=220, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:57,347 INFO  [pool-1-thread-1] wal.FSHLog(333): HLog configuration: blocksize=32 MB, rollsize=30.4 MB, enabled=true, optionallogflushinternal=1000ms
+2013-03-06 20:00:57,349 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(189): using new createWriter -- HADOOP-6840
+2013-03-06 20:00:57,349 DEBUG [pool-1-thread-1] wal.SequenceFileLogWriter(193): Path=/Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/488bcabc-0ab6-4cfe-94c2-243e3fbbebb6/.logs/hlog.1362571257348, compression=false
+2013-03-06 20:00:57,349 INFO  [pool-1-thread-1] wal.FSHLog(519):  for /Users/daidong/github/local/DominoHBase/hbase-server/target/test-data/488bcabc-0ab6-4cfe-94c2-243e3fbbebb6/.logs/hlog.1362571257348
+2013-03-06 20:00:57,349 INFO  [pool-1-thread-1] wal.FSHLog(409): FileSystem's output stream doesn't support getNumCurrentReplicas; --HDFS-826 not available; fsOut=org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer
+2013-03-06 20:00:57,354 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: regionserver.wal.TestWALActionsListener#testActionListener Thread=104 (was 103) - Thread LEAK? -, OpenFileDescriptor=222 (was 220) - OpenFileDescriptor LEAK? -, MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

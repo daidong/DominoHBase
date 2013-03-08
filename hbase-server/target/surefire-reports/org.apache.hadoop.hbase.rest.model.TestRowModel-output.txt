@@ -1,0 +1,4 @@
+2013-03-06 20:00:57,801 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: rest.model.TestRowModel#testBuildModel Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:57,804 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: rest.model.TestRowModel#testBuildModel Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:00:57,806 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: rest.model.TestRowModel#testFromXML Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:00:57,812 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: rest.model.TestRowModel#testFromXML Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)

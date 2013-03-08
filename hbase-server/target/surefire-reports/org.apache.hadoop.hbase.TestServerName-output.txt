@@ -1,0 +1,9 @@
+2013-03-06 20:01:06,642 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestServerName#getServerStartcodeFromServerName Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,645 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestServerName#getServerStartcodeFromServerName Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,652 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestServerName#testRegexPatterns Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,680 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestServerName#testRegexPatterns Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,682 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestServerName#testParseOfBytes Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,685 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestServerName#testParseOfBytes Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,688 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: TestServerName#testServerName Thread=104, OpenFileDescriptor=222, MaxFileDescriptor=1000000, ConnectionCount=1
+2013-03-06 20:01:06,690 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: TestServerName#testServerName Thread=104 (was 104), OpenFileDescriptor=222 (was 222), MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=1 (was 1)
+2013-03-06 20:01:06,691 DEBUG [pool-1-thread-1] thrift.TestCallQueue(74): elementsAdded:100 elementsRemoved:0

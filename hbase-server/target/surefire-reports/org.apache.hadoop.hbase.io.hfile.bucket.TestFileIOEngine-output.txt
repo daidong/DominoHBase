@@ -1,0 +1,3 @@
+2013-03-06 20:00:03,974 INFO  [pool-1-thread-1] hbase.ResourceChecker(147): before: io.hfile.bucket.TestFileIOEngine#testFileIOEngine Thread=12, OpenFileDescriptor=114, MaxFileDescriptor=1000000, ConnectionCount=0
+2013-03-06 20:00:04,051 INFO  [pool-1-thread-1] bucket.FileIOEngine(46): Allocating 2 MB, on the path:testFileIOEngine
+2013-03-06 20:00:04,113 INFO  [pool-1-thread-1] hbase.ResourceChecker(171): after: io.hfile.bucket.TestFileIOEngine#testFileIOEngine Thread=12 (was 12), OpenFileDescriptor=115 (was 114) - OpenFileDescriptor LEAK? -, MaxFileDescriptor=1000000 (was 1000000), ConnectionCount=0 (was 0)
