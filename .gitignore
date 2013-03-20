@@ -1,4 +1,5 @@
+.DS_Store
 *.class
 *.jar
 target/
-.DS_Store
+
