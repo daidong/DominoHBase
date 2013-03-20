@@ -35,6 +35,8 @@ import org.apache.hadoop.hbase.MasterNotRunningException;
 import org.apache.hadoop.hbase.ZooKeeperConnectionException;
 import org.apache.hadoop.hbase.catalog.CatalogTracker;
 import org.apache.hadoop.hbase.client.coprocessor.Batch;
+import org.apache.hadoop.hbase.trigger.TriggerConf;
+import org.apache.hadoop.hbase.trigger.TriggerStatus;
 import org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher;
 
 /**
@@ -196,6 +198,24 @@ public interface HConnection extends Abortable, Closeable {
    */
   public MasterAdminProtocol getMasterAdmin() throws IOException;
 
+  /**
+   * @author daidong
+   * Get staging area for a trigger
+   */
+  public String getStagingAreaDir() throws IOException;
+  
+  /**
+   * @author daidong
+   * Returns a new trigger id from HMaster
+   */
+  public int getNewTriggerId() throws IOException;
+  
+  /**
+   * @author daidong
+   * Submit a trigger to HMaster
+   */
+  public TriggerStatus submitTrigger(final int triggerId, final String triggerDir, final TriggerConf conf) throws IOException;
+  
   /**
    * Returns an {@link MasterMonitorProtocol} to the active master
    */

@@ -85,6 +85,32 @@ message OfflineRegionRequest {
 message OfflineRegionResponse {
 }
 
+/* Trigger-Related protobufs */
+message GetTriggerIdRequest{
+}
+message GetTriggerIdResponse{
+  required int32 id = 1;
+}
+
+message TriggerConf {
+	required 
+}
+message SubmitTriggerRequest{
+	required int32 id = 1;
+	required string dir = 2;
+	required TriggerConf conf = 3;
+}
+message SubmitTriggerResponse{
+	required TriggerStatus ts = 1;
+}
+
+message GetStagingDirRequest {
+	required int32 id = 1;
+}
+message GetStagingDirResponse {
+	required string dir = 1;
+}
+
 /* Table-level protobufs */
 
 message CreateTableRequest {

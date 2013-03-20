@@ -81,6 +81,8 @@ import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.TableSchema;
 import org.apache.hadoop.hbase.protobuf.generated.MasterMonitorProtos.GetTableDescriptorsRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterMonitorProtos.GetTableDescriptorsResponse;
 import org.apache.hadoop.hbase.security.User;
+import org.apache.hadoop.hbase.trigger.TriggerConf;
+import org.apache.hadoop.hbase.trigger.TriggerStatus;
 import org.apache.hadoop.hbase.util.Addressing;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.hbase.util.Pair;
@@ -625,6 +627,29 @@ public class HConnectionManager {
       retrieveClusterId();
     }
 
+    @Override
+    public int getNewTriggerId() throws IOException {
+      MasterAdminProtocol masterAdmin = this.getMasterAdmin();
+      GetTriggerIdRequest request - RequestConvert.buildGetTriggerIdRequest();
+      int id = masterAdmin.getTriggerId(request);
+      return id;
+    }
+
+    @Override
+    public TriggerStatus submitTrigger(int triggerId, String triggerDir,
+        TriggerConf conf) throws IOException {
+      SubmitTriggerRequest request = RequestConvert.buildSubmitTriggerRequest();
+      TriggerStatus ts= masterAdmin.submitTrigger(request);
+      return ts;
+    }
+    
+    public String getStagingAreaDir() throws IOException{
+      GetStagingDirRequest request = RequestConvert.buildStagingDirRequest();
+      String dirs = masterAdmin.getStagingAreaDir(request);
+      return dirs;
+    }
+    
+    
     /**
      * An identifier that will remain the same for a given connection.
      * @return
