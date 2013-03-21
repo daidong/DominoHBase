@@ -18,6 +18,12 @@ import org.apache.hadoop.fs.Path;
 
 public class Utils {
 
+	/**
+	 * copy jar file from local disk to HDFS
+	 * @param jarPath: The jar path in local disk
+	 * @param submitPath: the submit path in HDFS
+	 * @throws IOException
+	 */
   public static void submitTrigger(String jarPath, String submitPath)
 			throws IOException {
 
@@ -29,6 +35,12 @@ public class Utils {
 
 	}
 
+	/**
+	 * get jar file from HDFS to local disk
+	 * @param localPath
+	 * @param remotefile
+	 * @throws IOException
+	 */
 	public static void getFromRemote(String localPath, String remotefile)
 			throws IOException {
 		Configuration conf = new Configuration();
