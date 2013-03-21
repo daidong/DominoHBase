@@ -4,11 +4,12 @@ import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.trigger.HTriggerEvent;
 import org.apache.hadoop.hbase.trigger.HTriggerKey;
 import org.apache.hadoop.hbase.trigger.LocalTriggerManage;
-import org.apache.hadoop.hbase.trigger.TriggerEventQueue;
+import org.apache.hadoop.hbase.trigger.HTriggerEventQueue;
 
 import java.util.List;
 
 /**
+ * @author daidong
  * Created with IntelliJ IDEA.
  * User: daidong
  * Date: 13-3-2
@@ -27,8 +28,9 @@ public class WALDetection {
             if (LocalTriggerManage.containsTrigger(triggerMeta)){
                 byte[] values = kv.getValue();
                 long ts = kv.getTimestamp();
-                HTriggerEvent firedEvent = new HTriggerEvent(ts, values, ts, values);
-                TriggerEventQueue.append(firedEvent);
+                HTriggerKey key = new HTriggerKey(tableName, columnFamily, column);
+                HTriggerEvent firedEvent = new HTriggerEvent(key, ts, values, ts, values);
+                HTriggerEventQueue.append(firedEvent);
             }
         }
         return true;

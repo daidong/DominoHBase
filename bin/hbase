@@ -86,6 +86,9 @@ if [ $# = 0 ]; then
   echo "  thrift           run the HBase Thrift server" 
   echo "  thrift2          run the HBase Thrift2 server"
   echo ""
+  echo "TRIGGER MANAGEMENT"
+  echo "  trigger <jar>    run triggers into other servers"
+  echo ""
   echo "PACKAGE MANAGEMENT"
   echo "  classpath        dump hbase CLASSPATH"
   echo "  version          print the version"
@@ -326,7 +329,8 @@ elif [ "$COMMAND" = "zookeeper" ] ; then
   if [ "$1" != "stop" ] ; then
     HBASE_OPTS="$HBASE_OPTS $HBASE_ZOOKEEPER_OPTS"
   fi
-
+elif [ "COMMAND" = "trigger" ] ; then
+  CLASS='org.apache.hadoop.hbase.util.RunTrigger'
 elif [ "$COMMAND" = "classpath" ] ; then
   echo $CLASSPATH
   exit 0

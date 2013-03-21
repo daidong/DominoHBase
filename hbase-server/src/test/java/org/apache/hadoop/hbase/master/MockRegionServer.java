@@ -72,6 +72,8 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.LockRowResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MultiRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateResponse;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.ScanRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.ScanResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.UnlockRowRequest;
@@ -496,6 +498,13 @@ class MockRegionServer implements AdminProtocol, ClientProtocol, RegionServerSer
 
   @Override
   public HLog getWAL(HRegionInfo regionInfo) throws IOException {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public RSTriggerResponse createRSTrigger(RpcController controller,
+      RSTriggerRequest request) throws ServiceException {
     // TODO Auto-generated method stub
     return null;
   }

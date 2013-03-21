@@ -197,24 +197,18 @@ public interface HConnection extends Abortable, Closeable {
    * Returns a {@link MasterAdminProtocol} to the active master
    */
   public MasterAdminProtocol getMasterAdmin() throws IOException;
-
-  /**
-   * @author daidong
-   * Get staging area for a trigger
-   */
-  public String getStagingAreaDir() throws IOException;
   
   /**
    * @author daidong
    * Returns a new trigger id from HMaster
    */
-  public int getNewTriggerId() throws IOException;
+  public int getNewTriggerId(boolean isCreated) throws Exception;
   
   /**
    * @author daidong
    * Submit a trigger to HMaster
    */
-  public TriggerStatus submitTrigger(final int triggerId, final String triggerDir, final TriggerConf conf) throws IOException;
+  public void submitTrigger(final int triggerId) throws Exception;
   
   /**
    * Returns an {@link MasterMonitorProtocol} to the active master

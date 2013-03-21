@@ -13,9 +13,13 @@ import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
 public class ActionThread implements Runnable {
 
     private ConcurrentLinkedQueue<HTriggerEvent> inputDS = null;
-    private HTriggerAction actionClass = null;
+    private HTriggerAction action = null;
     private HTrigger ht = null;
 
+    public ActionThread(HTriggerAction action){
+      inputDS = new ConcurrentLinkedQueue<HTriggerEvent>();
+      this.action = action;
+    }
     /**
      * The work in run() is simple:
      * 1, init actionClass according to users submission;
@@ -25,8 +29,6 @@ public class ActionThread implements Runnable {
      */
     @Override
     public void run() {
-		//Init Actionclass
-		HTriggerAction userAction = null;
 		long lastTS = EnvironmentEdgeManager.currentTimeMillis();
 		while (true){
 			if (inputDS.isEmpty()){
@@ -38,28 +40,17 @@ public class ActionThread implements Runnable {
         }
 			} else {
 				HTriggerEvent currEvent = inputDS.poll();
-				if (userAction.filter(currEvent)){
-					userAction.action(currEvent);
+				if (action.filter(currEvent)){
+				  action.action(currEvent);
 				}
 			}
 			long currTS = EnvironmentEdgeManager.currentTimeMillis();
 			if (currTS - lastTS > 1000){
-				report(ht);
+				//report(ht);
 				lastTS = currTS;
 			}
 		}
 		
-    }
-
-    public void report(HTrigger ht){
-
-    }
-    public ActionThread(){
-        inputDS = new ConcurrentLinkedQueue<HTriggerEvent>();
-    }
-    public ActionThread(HTrigger ht){
-        this();
-        this.ht = ht;
     }
 
     public void feed(HTriggerEvent hte){

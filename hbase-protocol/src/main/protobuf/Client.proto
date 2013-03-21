@@ -313,8 +313,18 @@ message MultiResponse {
   repeated ActionResult result = 1;
 }
 
+message RSTriggerRequest{
+  required int32 id = 1;
+}
+
+message RSTriggerResponse{
+  required bool succ = 1;
+}
 
 service ClientService {
+  rpc createRSTrigger(RSTriggerRequest)
+    returns(RSTriggerResponse);
+    
   rpc get(GetRequest)
     returns(GetResponse);
 

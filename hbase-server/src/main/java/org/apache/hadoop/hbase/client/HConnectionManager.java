@@ -78,6 +78,9 @@ import org.apache.hadoop.hbase.ipc.HBaseClientRPC;
 import org.apache.hadoop.hbase.protobuf.ProtobufUtil;
 import org.apache.hadoop.hbase.protobuf.RequestConverter;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.TableSchema;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdResponse;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SubmitTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterMonitorProtos.GetTableDescriptorsRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterMonitorProtos.GetTableDescriptorsResponse;
 import org.apache.hadoop.hbase.security.User;
@@ -628,27 +631,20 @@ public class HConnectionManager {
     }
 
     @Override
-    public int getNewTriggerId() throws IOException {
+    public int getNewTriggerId(boolean isCreated) throws Exception {
       MasterAdminProtocol masterAdmin = this.getMasterAdmin();
-      GetTriggerIdRequest request - RequestConvert.buildGetTriggerIdRequest();
-      int id = masterAdmin.getTriggerId(request);
-      return id;
+      GetTriggerIdRequest request = RequestConverter.buildGetTriggerIdRequest(isCreated);
+      GetTriggerIdResponse id = masterAdmin.getTriggerId(null, request);
+      return id.getId();
     }
 
     @Override
-    public TriggerStatus submitTrigger(int triggerId, String triggerDir,
-        TriggerConf conf) throws IOException {
-      SubmitTriggerRequest request = RequestConvert.buildSubmitTriggerRequest();
-      TriggerStatus ts= masterAdmin.submitTrigger(request);
-      return ts;
+    public void submitTrigger(int triggerId) throws Exception {
+      MasterAdminProtocol masterAdmin = this.getMasterAdmin();
+      SubmitTriggerRequest request = RequestConverter.buildSubmitTriggerRequest(triggerId);
+      masterAdmin.submitTrigger(null, request);
     }
-    
-    public String getStagingAreaDir() throws IOException{
-      GetStagingDirRequest request = RequestConvert.buildStagingDirRequest();
-      String dirs = masterAdmin.getStagingAreaDir(request);
-      return dirs;
-    }
-    
+
     
     /**
      * An identifier that will remain the same for a given connection.

@@ -75,6 +75,7 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate.ColumnValu
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate.ColumnValue.QualifierValue;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate.MutateType;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.ScanRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.UnlockRowRequest;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.CompareType;
@@ -90,12 +91,14 @@ import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.DeleteTableR
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.DisableTableRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.EnableCatalogJanitorRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.EnableTableRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.IsCatalogJanitorEnabledRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.ModifyColumnRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.ModifyTableRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.MoveRegionRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.OfflineRegionRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SetBalancerRunningRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SubmitTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.UnassignRegionRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterMonitorProtos.GetClusterStatusRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterMonitorProtos.GetSchemaAlterStatusRequest;
@@ -1213,4 +1216,23 @@ public final class RequestConverter {
     }
     return builder.build();
   }
+
+  public static SubmitTriggerRequest buildSubmitTriggerRequest(int triggerId) {
+    SubmitTriggerRequest.Builder builder = SubmitTriggerRequest.newBuilder();
+    builder.setId(triggerId);
+    return builder.build();
+  }
+
+  public static GetTriggerIdRequest buildGetTriggerIdRequest(boolean isCreated) {
+    GetTriggerIdRequest.Builder builder = GetTriggerIdRequest.newBuilder();
+    builder.setCreated(true);
+    return builder.build();
+  }
+
+  public static RSTriggerRequest buildRSTriggerRequest(int triggerId) {
+    RSTriggerRequest.Builder builder = RSTriggerRequest.newBuilder();
+    builder.setId(triggerId);
+    return builder.build();
+  }
+
 }

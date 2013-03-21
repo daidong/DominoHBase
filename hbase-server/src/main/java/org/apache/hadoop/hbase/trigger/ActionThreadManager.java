@@ -1,48 +1,55 @@
 package org.apache.hadoop.hbase.trigger;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created with IntelliJ IDEA.
  * User: daidong
  * Date: 13-3-2
- * Time: 下午10:30
  * To change this template use File | Settings | File Templates.
  */
 public class ActionThreadManager implements Runnable{
-  HashMap<HTrigger, ActionThread> actionThreads = null;
-  HashMap<HTrigger, HTriggerStatus> Reports = null;
-  private boolean registed = false;
+  ConcurrentHashMap<HTrigger, ActionThread> actionThreads = null;
+  private boolean registed;
 
+  public ActionThreadManager(){
+    actionThreads = new ConcurrentHashMap<HTrigger, ActionThread>();
+    HTriggerEventQueue.register(this);
+  }
+  
   @Override
   public void run(){
     while (true){
-      if (!this.registed){
-        TriggerEventQueue.register(this);
-        this.registed = true;
-      }
       dispatch();
     }
   }
   public void dispatch(){
     HTriggerEvent hte = null;
+    
+    //This hte will wait until has an event
     try {
-      hte = TriggerEventQueue.poll();
+      hte = HTriggerEventQueue.poll();
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-    if (actionThreads.containsKey(hte)){
-      dispatch((ActionThread) actionThreads.get(hte.getBelongTo()), hte);
-    } else {
-      ActionThread curThread = new ActionThread();
-      actionThreads.put(hte.getBelongTo(), curThread);
-      dispatch(curThread, hte);
+    
+    HTriggerKey currentFiredKey = hte.getEventTriggerKey();
+    ArrayList<HTrigger> waitOnTriggers = LocalTriggerManage.getTriggerByMeta(currentFiredKey);
+    
+    for (HTrigger ht : waitOnTriggers){
+      if (actionThreads.containsKey(ht)){
+        dispatch(actionThreads.get(ht), hte);
+      } else {
+        ActionThread curThread = new ActionThread(ht.getActionClass());
+        actionThreads.put(ht, curThread);
+        dispatch(curThread, hte);
+      }
     }
   }
 
-  public void report(HTrigger ht, HTriggerStatus hts){
-    Reports.put(ht, hts);
-  }
   private void dispatch(ActionThread actionThread, HTriggerEvent hte) {
     actionThread.feed(hte);
   }

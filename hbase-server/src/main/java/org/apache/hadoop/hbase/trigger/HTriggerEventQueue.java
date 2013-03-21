@@ -9,14 +9,14 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * Time: 下午9:32
  * To change this template use File | Settings | File Templates.
  */
-public class TriggerEventQueue {
+public class HTriggerEventQueue {
     private static ConcurrentLinkedQueue<HTriggerEvent> EventQueue =
             new ConcurrentLinkedQueue<HTriggerEvent>();
 
     private static Runnable consumer = null;
 
     public static void register(Runnable t){
-      TriggerEventQueue.consumer = t;	
+      HTriggerEventQueue.consumer = t;	
     }
     public static void append(HTriggerEvent hte){
       EventQueue.add(hte);

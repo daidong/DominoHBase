@@ -12,24 +12,18 @@ public class HTriggerEvent {
     private long lastTS;
     private byte[] newValue;
     private byte[] oldValue;
-    private HTrigger belongTo;
+    private HTriggerKey htk;
 
-    public HTriggerEvent(HTrigger ht, long tsn, byte[] vn, long tso, byte[] vo){
-        this.belongTo = ht;
+    public HTriggerEvent(HTriggerKey htk, long tsn, byte[] vn, long tso, byte[] vo){
+        this.htk = htk;
         this.currTS = tsn;
         this.newValue = vn;
         this.oldValue = vo;
         this.lastTS = tso;
 
     }
-    public HTriggerEvent(long tsn, byte[] vn, long tso, byte[] vo){
-      this.currTS = tsn;
-      this.newValue = vn;
-      this.oldValue = vo;
-      this.lastTS = tso;
-    }
     
-    public HTrigger getBelongTo(){
-        return this.belongTo;
+    public HTriggerKey getEventTriggerKey(){
+        return this.htk;
     }
 }

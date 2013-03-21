@@ -58,8 +58,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.classification.InterfaceAudience;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FSDataInputStream;
+import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.permission.FsPermission;
 import org.apache.hadoop.hbase.Chore;
 import org.apache.hadoop.hbase.ClockOutOfSyncException;
 import org.apache.hadoop.hbase.DoNotRetryIOException;
@@ -157,6 +160,8 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate.MutateType;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateResponse;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.ScanRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.ScanResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.UnlockRowRequest;
@@ -187,6 +192,12 @@ import org.apache.hadoop.hbase.regionserver.wal.HLogFactory;
 import org.apache.hadoop.hbase.regionserver.wal.HLogUtil;
 import org.apache.hadoop.hbase.regionserver.wal.WALActionsListener;
 import org.apache.hadoop.hbase.security.User;
+import org.apache.hadoop.hbase.trigger.ActionThreadManager;
+import org.apache.hadoop.hbase.trigger.HTrigger;
+import org.apache.hadoop.hbase.trigger.HTriggerKey;
+import org.apache.hadoop.hbase.trigger.LocalTriggerManage;
+import org.apache.hadoop.hbase.trigger.TriggerConf;
+import org.apache.hadoop.hbase.trigger.TriggerSubmissionFiles;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.hbase.util.CompressionTest;
 import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
@@ -206,6 +217,7 @@ import org.apache.hadoop.hbase.zookeeper.ZKUtil;
 import org.apache.hadoop.hbase.zookeeper.ZooKeeperNodeTracker;
 import org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher;
 import org.apache.hadoop.ipc.RemoteException;
+import org.apache.hadoop.mapreduce.JobSubmissionFiles;
 import org.apache.hadoop.metrics.util.MBeanUtil;
 import org.apache.hadoop.net.DNS;
 import org.apache.hadoop.util.ReflectionUtils;
@@ -487,6 +499,14 @@ public class  HRegionServer implements ClientProtocol,
     this.scannerLeaseTimeoutPeriod = conf.getInt(HConstants.HBASE_CLIENT_SCANNER_TIMEOUT_PERIOD,
       HConstants.DEFAULT_HBASE_CLIENT_SCANNER_TIMEOUT_PERIOD);
 
+    /**
+     * @author daidong
+     * Start ActionThreadManager thread.
+     */
+    ActionThreadManager atm = new ActionThreadManager();
+    Thread atmThread = new Thread(atm);
+    atmThread.start();
+    
     // Server to handle client requests.
     String hostname = Strings.domainNamePointerToHostName(DNS.getDefaultHost(
       conf.get("hbase.regionserver.dns.interface", "default"),
@@ -3256,6 +3276,52 @@ public class  HRegionServer implements ClientProtocol,
     }
   }
 
+  /**
+   * @author daidong
+   */
+  @Override
+  public RSTriggerResponse createRSTrigger(final RpcController controller, RSTriggerRequest request){
+    int triggerId = request.getId();
+    TriggerConf trigger = new TriggerConf();
+    try {
+      Path triggerStagingArea = TriggerSubmissionFiles.getStagingDir(trigger);
+      Path submitTriggerDir = new Path(triggerStagingArea, String.valueOf(triggerId));
+      Path submitTriggerFile = TriggerSubmissionFiles.getJobConfPath(submitTriggerDir);
+      
+      /**
+       * load trigger's xml file into current trigger configuration object
+       */
+      FileSystem fs = submitTriggerDir.getFileSystem(trigger);
+      FSDataInputStream in = fs.open(submitTriggerFile);
+      trigger.addResource(in);
+      
+      /**
+       * load hdfs jar file into local dir
+       */
+      Path submitTriggerJar = TriggerSubmissionFiles.getTriggerJar(submitTriggerDir);
+      Path localJarPath =  new Path("/tmp/hbase/triggerJar/"+String.valueOf(triggerId)+"/");
+      //String localJarPath = trigger.getJar();
+      if (localJarPath != null){
+        fs.copyToLocalFile(submitTriggerJar, localJarPath);
+        fs.setPermission(submitTriggerJar, TriggerSubmissionFiles.TRIGGER_FILE_PERMISSION);
+      }
+      
+      /**
+       * setup the trigger
+       */
+      String tableName = trigger.getTriggerOnTable();
+      String columnFamily = trigger.getTriggerOnColumnFamily();
+      String column = trigger.getTriggerOnColumn();
+      HTriggerKey htk = new HTriggerKey(tableName.getBytes(), columnFamily.getBytes(), column.getBytes());
+      HTrigger newTrigger = new HTrigger(triggerId, htk, trigger);
+      LocalTriggerManage.register(newTrigger);
+      
+    } catch (Exception e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    return null;
+  }
   /**
    * Execute multiple actions on a table: get, mutate, and/or execCoprocessor
    *

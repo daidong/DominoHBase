@@ -86,30 +86,20 @@ message OfflineRegionResponse {
 }
 
 /* Trigger-Related protobufs */
+
 message GetTriggerIdRequest{
+	required bool created = 1;
 }
 message GetTriggerIdResponse{
-  required int32 id = 1;
+  	required int32 id = 1;
 }
 
-message TriggerConf {
-	required 
-}
 message SubmitTriggerRequest{
 	required int32 id = 1;
-	required string dir = 2;
-	required TriggerConf conf = 3;
 }
 message SubmitTriggerResponse{
-	required TriggerStatus ts = 1;
 }
 
-message GetStagingDirRequest {
-	required int32 id = 1;
-}
-message GetStagingDirResponse {
-	required string dir = 1;
-}
 
 /* Table-level protobufs */
 
@@ -203,21 +193,13 @@ message IsCatalogJanitorEnabledResponse {
   required bool value = 1;
 }
 
-message TriggerSubRequest {
-  required bytes tableName = 1;
-  required bytes columnFamily = 2;
-  required bytes column = 3;
-  required bytes classRowKey = 4;
-}
-
-message TriggerSubResponse {
-  required bool success = 1;
-}
-
 service MasterAdminService {
   /** Submit a trigger to specified table, column-family and column. */
-  rpc submitTrigger(TriggerSubRequest)
-  	returns(TriggerSubResponse);
+  rpc submitTrigger(SubmitTriggerRequest)
+  	returns(SubmitTriggerResponse);
+  	
+  rpc getTriggerId(GetTriggerIdRequest)
+  	returns(GetTriggerIdResponse);
   	
   /** Adds a column to the specified table. */
   rpc addColumn(AddColumnRequest)

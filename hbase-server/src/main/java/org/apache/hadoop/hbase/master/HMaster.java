@@ -109,8 +109,10 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.NameStringPair;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.RegionSpecifier.RegionSpecifierType;
-import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.TriggerSubRequest;
-import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.TriggerSubResponse;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdResponse;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SubmitTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SubmitTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.AddColumnRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.AddColumnResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.AssignRegionRequest;
@@ -1608,26 +1610,18 @@ Server {
     }
   }
 
+  private static int CURRENT_TRIGGER_ID = 0;
   private HashMap<HTriggerKey, HTriggerAction> GlobalTriggerInfo; 
+  
+  @Override 
+  public GetTriggerIdResponse getTriggerId(RpcController controller, GetTriggerIdRequest request){
+    int id = HMaster.CURRENT_TRIGGER_ID++;
+    return GetTriggerIdResponse.newBuilder().setId(id).build();
+  }
   @Override
-  public TriggerSubResponse submitTrigger(RpcController controller, TriggerSubRequest request)
+  public SubmitTriggerResponse submitTrigger(RpcController controller, SubmitTriggerRequest request)
       throws ServiceException{
-    byte[] tableName = request.getTableName().toByteArray();
-    byte[] columnFmaily = request.getColumnFamily().toByteArray();
-    byte[] column = request.getColumn().toByteArray();
-    byte[] rowKeyClass = request.getClassRowKey().toByteArray();
-    this.GlobalTriggerInfo.put(new HTriggerKey(tableName, columnFmaily, column), null);
-    //1, Create Class by rowKeyClass
-    //2, distribute triggers into region servers
-    Pair<HRegionInfo, ServerName>  regions = null;
-    try {
-      regions = getTableRegionForRow(tableName, null);
-    } catch (IOException e) {    
-      e.printStackTrace();
-    }
-    //3, return all the regions and the user codes fnished all submission
-    //@TODO: Here
-    return TriggerSubResponse.newBuilder().setSuccess(true).build();
+    return SubmitTriggerResponse.newBuilder().build();
     
   }
   @Override
