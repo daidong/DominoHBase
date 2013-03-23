@@ -85,6 +85,7 @@ public class RunTrigger {
       mainClassName = manifest.getMainAttributes().getValue("Main-Class");
     }
     jarFile.close();
+    System.out.println("Manifest From Jar: " + mainClassName);
     
     if (mainClassName == null){
       if (args.length < 2){
@@ -93,6 +94,8 @@ public class RunTrigger {
       }
       mainClassName = args[firstArg++];
     }
+    System.out.println("Manifest class from argument: " + mainClassName);
+    
     mainClassName = mainClassName.replace("/", ".");
     
     //'hbase.tmp.dir'
@@ -110,6 +113,7 @@ public class RunTrigger {
       System.exit(-1);
     }
     
+    /*
     Runtime.getRuntime().addShutdownHook(new Thread(){
       public void run(){
         try {
@@ -118,7 +122,7 @@ public class RunTrigger {
         }
       }
     });
-    
+    */
     unJar(file, workDir);
     
     ArrayList<URL> classPath = new ArrayList<URL>();

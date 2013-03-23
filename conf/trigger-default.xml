@@ -1,0 +1,8 @@
+<configuration>
+	<property>
+		<name>trigger.work.dir</name>
+		<value>/tmp/trigger/</value>
+	</property>
+	
+	
+</configuration>

@@ -21,4 +21,14 @@
  */
 -->
 <configuration>
+	<property>
+		<name>hbase.rootdir</name>
+		<value>hdfs://localhost:9000/hbase</value>
+	</property>
+	
+	<property>
+		<name>dfs.replication</name>
+		<value>1</value>
+	</property>
+	
 </configuration>

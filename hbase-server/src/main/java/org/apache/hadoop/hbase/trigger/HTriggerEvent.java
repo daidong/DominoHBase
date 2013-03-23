@@ -26,4 +26,17 @@ public class HTriggerEvent {
     public HTriggerKey getEventTriggerKey(){
         return this.htk;
     }
+    
+    public byte[] getNewValue(){
+      return this.newValue;
+    }
+    public long getNewTS(){
+      return this.currTS;
+    }
+    public byte[] getOldValue(){
+      return this.oldValue;
+    }
+    public long getOldTS(){
+      return this.lastTS;
+    }
 }

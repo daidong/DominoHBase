@@ -12,11 +12,7 @@ public class Trigger {
   private RunningTrigger info;
   
   public Trigger(){
-    this(new Configuration());
-  }
-  
-  public Trigger(Configuration configuration) {
-    this(configuration, null);
+    this.conf = new TriggerConf();
   }
   
   public Trigger(Configuration conf, String triggerName){

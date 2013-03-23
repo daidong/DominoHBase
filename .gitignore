@@ -2,4 +2,7 @@
 *.class
 *.jar
 target/
+logs/
+
+
 

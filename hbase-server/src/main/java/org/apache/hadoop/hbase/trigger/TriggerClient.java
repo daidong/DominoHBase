@@ -73,15 +73,20 @@ public class TriggerClient {
   public RunningTrigger submitJobInternal(final TriggerConf trigger) throws Exception {
     TriggerConf triggerCopy = trigger;
     Path triggerStagingArea = TriggerSubmissionFiles.getStagingDir(triggerCopy);
+    System.out.println("in submitJobInternal: triggerStagingArea: " + triggerStagingArea.toString());
+    
     int triggerId = this.connection.getNewTriggerId(true);
     
     Path submitTriggerDir = new Path(triggerStagingArea, String.valueOf(triggerId));
+    System.out.println("in submitJobInternal: submitTriggerDir: " + submitTriggerDir.toString());
+    
     triggerCopy.set("trigger.dir", submitTriggerDir.toString());
     FileSystem fs = null;
     TriggerStatus status = null;
     try{
       TriggerSubmissionFiles.copyAndConfigureFiles(triggerCopy, submitTriggerDir);
       Path submitTriggerFile = TriggerSubmissionFiles.getJobConfPath(submitTriggerDir);
+      System.out.println("in submitJobInternal: submitTriggerFile: " + submitTriggerFile.toString());
       
       /**
        * Write trigger configuration file into HDFS /trigger/id/jobconf.xml
