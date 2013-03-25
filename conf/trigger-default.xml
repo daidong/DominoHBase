@@ -3,6 +3,10 @@
 		<name>trigger.work.dir</name>
 		<value>/tmp/trigger/</value>
 	</property>
+	<property>
+		<name>trigger.staging.root.dir</name>
+		<value>hdfs://localhost:9000/hbase/tmp/trigger/staging</value>
+	</property>
 	
 	
 </configuration>

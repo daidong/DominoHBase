@@ -20,9 +20,9 @@ public class HelloWorld extends HTriggerAction{
   public static void main(String[] args) throws Exception{
     Trigger trigger = new Trigger();
     trigger.setTriggerName("HelloWorldTrigger");
-    trigger.setTriggerOnTable("hello".getBytes());
-    trigger.setTriggerOnColumFamily("content".getBytes());
-    trigger.setTriggerOnColumn("zh".getBytes());
+    trigger.setTriggerOnTable("hello");
+    trigger.setTriggerOnColumFamily("content");
+    trigger.setTriggerOnColumn("zh");
     
     trigger.setActionClass(HelloWorld.class);
     trigger.setActionClassName("HelloWorld");

@@ -1621,6 +1621,8 @@ Server {
   @Override
   public SubmitTriggerResponse submitTrigger(RpcController controller, SubmitTriggerRequest request)
       throws ServiceException{
+    LOG.debug("submit trigger......");
+    System.out.println("Submit Trigger: " + request.getId());
     return SubmitTriggerResponse.newBuilder().build();
     
   }

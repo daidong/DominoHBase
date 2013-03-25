@@ -211,6 +211,12 @@ public interface HConnection extends Abortable, Closeable {
   public void submitTrigger(final int triggerId) throws Exception;
   
   /**
+   * @author daidong
+   * Submit a trigger to RegionServers
+   */
+  public void submitTriggerToRS(String tableName, final int triggerId) throws Exception;
+  
+  /**
    * Returns an {@link MasterMonitorProtocol} to the active master
    */
   public MasterMonitorProtocol getMasterMonitor() throws IOException;

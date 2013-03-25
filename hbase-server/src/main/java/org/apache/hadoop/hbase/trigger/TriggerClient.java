@@ -44,41 +44,13 @@ public class TriggerClient {
     this.connection = HConnectionManager.getConnection(conf);
   }
   
-  public void submitTriggerToRS(int triggerId) throws Exception{
-    
-    String tableName = conf.getTriggerOnTable();
-    if (tableName == null || tableName.length() == 0){
-      throw new IllegalArgumentException(
-      "triggered table name cannot be null or zero length");
-    }
-    HTable ht = new HTable(conf, tableName.getBytes());
-    NavigableMap<HRegionInfo, ServerName> locations = ht.getRegionLocations();
-    int relevantNodesNumber = locations.values().size();
-    // We keep the number of retry per action.
-    int[] nbRetries = new int[relevantNodesNumber];
-    for (ServerName sn: locations.values()){
-      ClientProtocol server =
-        this.connection.getClient(sn.getHostname(), sn.getPort());
-      boolean succ = false;
-      int retries = 0;
-      while (succ == false && retries < 3){
-        RSTriggerRequest request = RequestConverter.buildRSTriggerRequest(triggerId);
-        RSTriggerResponse rr = server.createRSTrigger(null, request);
-        succ = rr.getSucc();
-        retries++;
-      }
-    }
-  }
-  
-  public RunningTrigger submitJobInternal(final TriggerConf trigger) throws Exception {
+  public int submitJobInternal(final TriggerConf trigger) throws Exception {
     TriggerConf triggerCopy = trigger;
-    Path triggerStagingArea = TriggerSubmissionFiles.getStagingDir(triggerCopy);
-    System.out.println("in submitJobInternal: triggerStagingArea: " + triggerStagingArea.toString());
-    
+    Path triggerStagingArea = TriggerSubmissionFiles.getHDFSStagingDir();
     int triggerId = this.connection.getNewTriggerId(true);
     
     Path submitTriggerDir = new Path(triggerStagingArea, String.valueOf(triggerId));
-    System.out.println("in submitJobInternal: submitTriggerDir: " + submitTriggerDir.toString());
+    //System.out.println("in submitJobInternal: submitTriggerDir: " + submitTriggerDir.toString());
     
     triggerCopy.set("trigger.dir", submitTriggerDir.toString());
     FileSystem fs = null;
@@ -86,14 +58,14 @@ public class TriggerClient {
     try{
       TriggerSubmissionFiles.copyAndConfigureFiles(triggerCopy, submitTriggerDir);
       Path submitTriggerFile = TriggerSubmissionFiles.getJobConfPath(submitTriggerDir);
-      System.out.println("in submitJobInternal: submitTriggerFile: " + submitTriggerFile.toString());
+      //System.out.println("in submitJobInternal: submitTriggerFile: " + submitTriggerFile.toString());
       
       /**
        * Write trigger configuration file into HDFS /trigger/id/jobconf.xml
        */
       fs = submitTriggerDir.getFileSystem(triggerCopy);
-      FSDataOutputStream out = FileSystem.create(fs, submitTriggerFile, new FsPermission(JobSubmissionFiles.JOB_FILE_PERMISSION));
-      triggerCopy.write(out);
+      FSDataOutputStream out = FileSystem.create(fs, submitTriggerFile, new FsPermission(TriggerSubmissionFiles.TRIGGER_FILE_PERMISSION));
+      triggerCopy.writeXml(out);
       
       /**
        * really submit this trigger. @TODO, should remove submitTriggerDir.toString() and triggerCopy
@@ -104,14 +76,16 @@ public class TriggerClient {
       /**
        * really submit the trigger to all the relevant region servers
        */
-      submitTriggerToRS(triggerId);
+      this.connection.submitTriggerToRS(conf.getTriggerOnTable(), triggerId);
       
     } finally {
+      /*
       if (status == null){
         if (fs != null && submitTriggerDir != null)
           fs.delete(submitTriggerDir, true);
       }
+      */
     }
-    return null;
+    return triggerId;
   }
 }

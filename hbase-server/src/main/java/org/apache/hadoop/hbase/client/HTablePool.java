@@ -330,6 +330,9 @@ public class HTablePool implements Closeable {
       this.table = table;
     }
 
+    public boolean submitTriggerToTable(byte[] tableName, int triggerId) throws Exception{
+      return true;
+    }
     @Override
     public byte[] getTableName() {
       return table.getTableName();

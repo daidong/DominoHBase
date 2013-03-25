@@ -14,15 +14,23 @@ public class TriggerConf extends Configuration{
     addTriggerResources(this);
   }
   
-  public static Configuration addTriggerResources(Configuration conf){
-    conf.addResource("trigger-default.xml");
-    return conf;
+  public TriggerConf(Configuration conf){
+    super(conf);
+    addTriggerResources(this);
   }
   
+  private void addTriggerResources(Configuration conf){
+    //conf.addResource("core-site.xml");
+    //conf.addResource("hdfs-site.xml");
+    conf.addResource("trigger-default.xml");
+  }
+
+  /*
   public static Configuration create(){
     Configuration conf = new Configuration();
     return addTriggerResources(conf);
   }
+  */
   
   public String getTriggerName() {
     return get("trigger.name");

@@ -18,7 +18,9 @@
  */
 package org.apache.hadoop.hbase.regionserver;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -3282,29 +3284,34 @@ public class  HRegionServer implements ClientProtocol,
   @Override
   public RSTriggerResponse createRSTrigger(final RpcController controller, RSTriggerRequest request){
     int triggerId = request.getId();
-    TriggerConf trigger = new TriggerConf();
+    TriggerConf trigger = new TriggerConf(conf);
+    
     try {
-      Path triggerStagingArea = TriggerSubmissionFiles.getStagingDir(trigger);
+      Path triggerStagingArea = TriggerSubmissionFiles.getHDFSStagingDir();
       Path submitTriggerDir = new Path(triggerStagingArea, String.valueOf(triggerId));
       Path submitTriggerFile = TriggerSubmissionFiles.getJobConfPath(submitTriggerDir);
+      Path submitTriggerJar = TriggerSubmissionFiles.getTriggerJar(submitTriggerDir);
       
-      /**
-       * load trigger's xml file into current trigger configuration object
-       */
-      FileSystem fs = submitTriggerDir.getFileSystem(trigger);
-      FSDataInputStream in = fs.open(submitTriggerFile);
-      trigger.addResource(in);
+      LOG.debug("in createRSTrigger, step 3, get submitTriggerFile: " + submitTriggerFile.toString());
+      FileSystem fs = submitTriggerFile.getFileSystem(trigger);
       
       /**
        * load hdfs jar file into local dir
        */
-      Path submitTriggerJar = TriggerSubmissionFiles.getTriggerJar(submitTriggerDir);
-      Path localJarPath =  new Path("/tmp/hbase/triggerJar/"+String.valueOf(triggerId)+"/");
-      //String localJarPath = trigger.getJar();
-      if (localJarPath != null){
-        fs.copyToLocalFile(submitTriggerJar, localJarPath);
-        fs.setPermission(submitTriggerJar, TriggerSubmissionFiles.TRIGGER_FILE_PERMISSION);
-      }
+      Path localJarPath =  new Path("/tmp/trigger/triggerJar/"+String.valueOf(triggerId)+"/trigger.jar");
+      fs.copyToLocalFile(submitTriggerJar, localJarPath);
+
+      
+      /**
+       * load trigger's xml file into current trigger configuration object
+       */
+      Path localTriggerXMLFile = new Path("/tmp/trigger/staging/"+String.valueOf(triggerId)+"/trigger.xml");
+      fs.copyToLocalFile(submitTriggerFile, localTriggerXMLFile);
+      
+      /*
+      trigger.addResource(localTriggerXMLFile);
+      LOG.debug("Test configuration file loading: trigger.name: " + trigger.get("trigger.name"));
+      */
       
       /**
        * setup the trigger
@@ -3320,7 +3327,10 @@ public class  HRegionServer implements ClientProtocol,
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
-    return null;
+    
+    RSTriggerResponse.Builder builder = RSTriggerResponse.newBuilder();
+    builder.setSucc(true);
+    return builder.build();
   }
   /**
    * Execute multiple actions on a table: get, mutate, and/or execCoprocessor

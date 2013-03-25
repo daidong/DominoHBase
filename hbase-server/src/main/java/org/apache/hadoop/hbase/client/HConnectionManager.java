@@ -77,6 +77,10 @@ import org.apache.hadoop.hbase.client.coprocessor.Batch;
 import org.apache.hadoop.hbase.ipc.HBaseClientRPC;
 import org.apache.hadoop.hbase.protobuf.ProtobufUtil;
 import org.apache.hadoop.hbase.protobuf.RequestConverter;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.LockRowRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.LockRowResponse;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.TableSchema;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdResponse;
@@ -632,7 +636,8 @@ public class HConnectionManager {
 
     @Override
     public int getNewTriggerId(boolean isCreated) throws Exception {
-      MasterAdminProtocol masterAdmin = this.getMasterAdmin();
+      //MasterAdminProtocol masterAdmin = this.getMasterAdmin();
+      MasterAdminKeepAliveConnection masterAdmin = this.getKeepAliveMasterAdmin();
       GetTriggerIdRequest request = RequestConverter.buildGetTriggerIdRequest(isCreated);
       GetTriggerIdResponse id = masterAdmin.getTriggerId(null, request);
       return id.getId();
@@ -640,11 +645,37 @@ public class HConnectionManager {
 
     @Override
     public void submitTrigger(int triggerId) throws Exception {
-      MasterAdminProtocol masterAdmin = this.getMasterAdmin();
+      //MasterAdminProtocol masterAdmin = this.getMasterAdmin();
+      MasterAdminKeepAliveConnection masterAdmin = this.getKeepAliveMasterAdmin();
       SubmitTriggerRequest request = RequestConverter.buildSubmitTriggerRequest(triggerId);
+      System.out.println("call masterAdmin's submitTrigger");
       masterAdmin.submitTrigger(null, request);
     }
 
+    @Override
+    public void submitTriggerToRS(String tableName, final int triggerId) throws Exception{
+      
+      System.out.println("Inside submitTriggerToRS...Table Name: " + tableName);
+      if (tableName == null || tableName.length() == 0){
+        throw new IllegalArgumentException(
+        "triggered table name cannot be null or zero length");
+      }
+      HTable ht = new HTable(conf, tableName.getBytes());
+      NavigableMap<HRegionInfo, ServerName> locations = ht.getRegionLocations();
+      
+      for (ServerName sn: locations.values()){
+        
+        ClientProtocol server = getClient(sn.getHostname(), sn.getPort());
+        boolean succ = false;
+        int retries = 0;
+        while (succ == false && retries < 3){
+          RSTriggerRequest request = RequestConverter.buildRSTriggerRequest(triggerId);
+          RSTriggerResponse rr = server.createRSTrigger(null, request);
+          succ = rr.getSucc();
+          retries++;
+        }
+      }
+    }
     
     /**
      * An identifier that will remain the same for a given connection.

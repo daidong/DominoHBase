@@ -1,5 +1,6 @@
 package org.apache.hadoop.hbase.trigger;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -19,10 +20,16 @@ public class TriggerSubmissionFiles {
   
   public static Path getStagingDir(TriggerConf conf) throws IOException{
     Path stagingRoot = new Path(conf.get("trigger.staging.root.dir", "/tmp/trigger/staging"));
-    final FileSystem fs = stagingRoot.getFileSystem(conf);
-    return fs.makeQualified(new Path(stagingRoot, "/.staging"));
+    //final FileSystem fs = stagingRoot.getFileSystem(conf);
+    //return fs.makeQualified(new Path(stagingRoot, "/.staging"));
+    return stagingRoot;
   }
-
+  
+  public static Path getHDFSStagingDir(){
+    Path hdfsRemote = new Path("hdfs://localhost:9000/hbase/tmp/trigger/staging");
+    return hdfsRemote;
+  }
+  
   public static Path getJobConfPath(Path submitTriggerDir) {
     return new Path(submitTriggerDir, "trigger.xml");
   }
@@ -35,17 +42,14 @@ public class TriggerSubmissionFiles {
       Path submitTriggerDir) throws IOException, InterruptedException {
     
     FileSystem fs = submitTriggerDir.getFileSystem(triggerCopy);
-    submitTriggerDir = fs.makeQualified(submitTriggerDir);
+    //submitTriggerDir = fs.makeQualified(submitTriggerDir);
     FsPermission triggerSysPerms = new FsPermission(TriggerSubmissionFiles.TRIGGER_FILE_PERMISSION);
     FileSystem.mkdirs(fs, submitTriggerDir, triggerSysPerms);
     
-    String originalJarPath = triggerCopy.getJar();
+    String originalJarPath = "/tmp/hbase/triggerJar/trigger.jar";
+    //String originalJarPath = triggerCopy.getJar();
 
     if (originalJarPath != null) {           // copy jar to JobTracker's fs
-      // use jar name if job is not named. 
-      if ("".equals(triggerCopy.getTriggerName())){
-        triggerCopy.setTriggerName(new Path(originalJarPath).getName());
-      }
       Path submitJarFile = TriggerSubmissionFiles.getTriggerJar(submitTriggerDir);
       triggerCopy.setJar(submitJarFile.toString());
       fs.copyFromLocalFile(new Path(originalJarPath), submitJarFile);
@@ -53,5 +57,4 @@ public class TriggerSubmissionFiles {
           new FsPermission(TriggerSubmissionFiles.TRIGGER_FILE_PERMISSION));
     } 
   }
-
 }

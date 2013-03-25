@@ -9,7 +9,6 @@ public class Trigger {
 
   private TriggerConf conf;
   private TriggerClient triggerClient;
-  private RunningTrigger info;
   
   public Trigger(){
     this.conf = new TriggerConf();
@@ -20,18 +19,18 @@ public class Trigger {
     setTriggerName(triggerName);
   }
   
-  public void setTriggerOnTable(byte[] tableName){
-    conf.set("trigger.on.table", tableName.toString());
+  public void setTriggerOnTable(String tableName){
+    conf.set("trigger.on.table", tableName);
   }
   public String getTriggerOnTable(){
     return conf.get("trigger.on.table");
   }
   
-  public void setTriggerOnColumFamily(byte[] columnFamily){
-    conf.set("trigger.on.table.columnfamily", columnFamily.toString());
+  public void setTriggerOnColumFamily(String columnFamily){
+    conf.set("trigger.on.table.columnfamily", columnFamily);
   }
-  public void setTriggerOnColumn(byte[] column){
-    conf.set("trigger.on.table.column", column.toString());
+  public void setTriggerOnColumn(String column){
+    conf.set("trigger.on.table.column", column);
   }
   public String getTriggerOnColumnFamily(){
     return conf.get("trigger.on.table.columfamily");
@@ -84,13 +83,12 @@ public class Trigger {
   public void submit() throws Exception {
     // connect to the HMaster and submit the job
     triggerClient = new TriggerClient(conf);
-    info = triggerClient.submitJobInternal(conf);
-    setTriggerId(info.getID());
+    int id  = triggerClient.submitJobInternal(conf);
+    setTriggerId(id);
   }
 
   public boolean waitForCompletion() throws Exception{
     submit();
-    info.waitForCompletion();
     return true;
   }
 }

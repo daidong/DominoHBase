@@ -17,6 +17,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.fs.FileUtil;
 
 public class RunTrigger {
@@ -72,6 +73,12 @@ public class RunTrigger {
     int firstArg = 0;
     String fileName = args[firstArg++];
     File file = new File(fileName);
+    File tmpJarFile = new File("/tmp/hbae/triggerJar/trigger.jar");
+    if (tmpJarFile.exists()){
+      tmpJarFile.delete();
+    }
+    FileUtils.copyFile(file, tmpJarFile);
+    
     String mainClassName = null;
     JarFile jarFile;
     try {
@@ -100,6 +107,7 @@ public class RunTrigger {
     
     //'hbase.tmp.dir'
     File tmpDir = new File("/tmp/hbase/trigger/");
+    
     tmpDir.mkdirs();
     if (!tmpDir.isDirectory()){
       System.err.println("Mkdirs failed to create " + tmpDir);

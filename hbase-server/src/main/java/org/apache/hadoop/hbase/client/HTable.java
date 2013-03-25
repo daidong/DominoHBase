@@ -62,6 +62,8 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.LockRowResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MultiRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateResponse;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.UnlockRowRequest;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.CompareType;
 import org.apache.hadoop.hbase.util.Bytes;
@@ -618,6 +620,44 @@ public class HTable implements HTableInterface {
     return results;
   }
 
+  /*
+  @Override
+  public boolean submitTriggerToTable(byte[] tableName, final int triggerId) throws Exception{
+    NavigableMap<HRegionInfo, ServerName> locations = getRegionLocations();
+    for (HRegionInfo hri : locations.keySet()){
+      ServerName sn = locations.get(hri);
+      HRegionLocation hrl = new HRegionLocation(hri, sn.getHostname(), sn.getPort());
+      ClientProtocol server =
+        this.connection.getClient(hrl.getHostname(), hrl.getPort());
+      
+      LOG.debug(" connection: " + this.connection);
+      boolean succ = false;
+      int retries = 0;
+      while (succ == false && retries < 3){
+        RSTriggerRequest request = RequestConverter.buildRSTriggerRequest(triggerId);
+        RSTriggerResponse rr = server.createRSTrigger(null, request);
+        succ = rr.getSucc();
+        retries++;
+      }
+    
+      new ServerCallable<Boolean>(connection, tableName, null, operationTimeout) {
+        public Boolean call() throws IOException {
+          try {
+            LOG.debug("SERVER: " + server + " connection: " + this.connection);
+            RSTriggerRequest request = RequestConverter.buildRSTriggerRequest(triggerId);
+            RSTriggerResponse response = server.createRSTrigger(null, request);
+            return response.getSucc();
+          } catch (ServiceException se) {
+            throw ProtobufUtil.getRemoteException(se);
+          }
+        }
+      }.withoutRetries();
+ 
+    }
+    return true;
+  }
+       */
+  
   /**
    * {@inheritDoc}
    */
