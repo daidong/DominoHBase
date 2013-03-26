@@ -77,7 +77,7 @@ public class TriggerConf extends Configuration{
   }
   
   public String getTriggerOnColumnFamily(){
-    return get("trigger.on.table.columfamily");
+    return get("trigger.on.table.columnfamily");
   }
   public String getTriggerOnColumn(){
     return get("trigger.on.table.column");
@@ -90,7 +90,7 @@ public class TriggerConf extends Configuration{
   }
 
   public String getActionClassName() {
-    return get("trigger.action.classname");
+    return get("trigger.action.class.name");
   }
   
 

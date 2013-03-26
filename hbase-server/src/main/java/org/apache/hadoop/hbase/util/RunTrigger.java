@@ -73,7 +73,7 @@ public class RunTrigger {
     int firstArg = 0;
     String fileName = args[firstArg++];
     File file = new File(fileName);
-    File tmpJarFile = new File("/tmp/hbae/triggerJar/trigger.jar");
+    File tmpJarFile = new File("/tmp/hbase/triggerJar/trigger.jar");
     if (tmpJarFile.exists()){
       tmpJarFile.delete();
     }

@@ -47,9 +47,9 @@ public class HTrigger {
       /**
        * setup action class
        */
-      File jarFile = new File("/tmp/hbase/triggerJar/" + String.valueOf(triggerId) + "/trigger.jar");
+      File jarFile = new File("/tmp/trigger/triggerJar/" + String.valueOf(triggerId) + "/trigger.jar");
       
-      File tmpDir = new File("/tmp/hbase/trigger/"+String.valueOf(triggerId)+"/");
+      File tmpDir = new File("/tmp/hbase/triggerJar/"+String.valueOf(triggerId)+"/");
       tmpDir.mkdirs();
       if (!tmpDir.isDirectory()){
         System.err.println("Mkdirs failed to create " + tmpDir);
@@ -63,6 +63,7 @@ public class HTrigger {
         System.exit(-1);
       }
       
+      /*
       Runtime.getRuntime().addShutdownHook(new Thread(){
         public void run(){
           try {
@@ -71,8 +72,10 @@ public class HTrigger {
           }
         }
       });
+      */
       
       RunTrigger.unJar(jarFile, workDir);
+      System.out.println("init class middle, unjar finishes");
       
       ArrayList<URL> classPath = new ArrayList<URL>();
       classPath.add(new File(workDir+"/").toURL());
@@ -84,12 +87,17 @@ public class HTrigger {
           classPath.add(libs[i].toURL());
         }
       }
-      
+    
       ClassLoader loader = new URLClassLoader(classPath.toArray(new URL[0]));
       Thread.currentThread().setContextClassLoader(loader);
+      System.out.println("init class middle, 1");
       String actionClassName = conf.getActionClassName();
+      System.out.println("init class middle, actionClassName: " + actionClassName);
       Class actionClassWithLoader = Class.forName(actionClassName, true, loader);
+      System.out.println("init class middle, 3");
       this.action = (HTriggerAction) actionClassWithLoader.newInstance();
+      System.out.println("init class finished, test: action class: " + this.action.TestAlive());
+      
     }
     
     public void setAction(HTriggerAction naction){

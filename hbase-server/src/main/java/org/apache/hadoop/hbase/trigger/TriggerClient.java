@@ -61,11 +61,12 @@ public class TriggerClient {
       //System.out.println("in submitJobInternal: submitTriggerFile: " + submitTriggerFile.toString());
       
       /**
-       * Write trigger configuration file into HDFS /trigger/id/jobconf.xml
+       * Write trigger configuration file into HDFS /trigger/id/
        */
       fs = submitTriggerDir.getFileSystem(triggerCopy);
       FSDataOutputStream out = FileSystem.create(fs, submitTriggerFile, new FsPermission(TriggerSubmissionFiles.TRIGGER_FILE_PERMISSION));
       triggerCopy.writeXml(out);
+      out.close();
       
       /**
        * really submit this trigger. @TODO, should remove submitTriggerDir.toString() and triggerCopy

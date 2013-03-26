@@ -8,6 +8,9 @@ package org.apache.hadoop.hbase.trigger;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class HTriggerAction{
+    public String TestAlive(){
+      return "Lives";
+    }
     public abstract void action(HTriggerEvent hte);
     public abstract boolean filter(HTriggerEvent hte);
 }

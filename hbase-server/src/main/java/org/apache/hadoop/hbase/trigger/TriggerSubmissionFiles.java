@@ -18,12 +18,14 @@ public class TriggerSubmissionFiles {
   final public static FsPermission TRIGGER_FILE_PERMISSION = 
     FsPermission.createImmutable((short) 0644);
   
+  /*
   public static Path getStagingDir(TriggerConf conf) throws IOException{
     Path stagingRoot = new Path(conf.get("trigger.staging.root.dir", "/tmp/trigger/staging"));
     //final FileSystem fs = stagingRoot.getFileSystem(conf);
     //return fs.makeQualified(new Path(stagingRoot, "/.staging"));
     return stagingRoot;
   }
+  */
   
   public static Path getHDFSStagingDir(){
     Path hdfsRemote = new Path("hdfs://localhost:9000/hbase/tmp/trigger/staging");

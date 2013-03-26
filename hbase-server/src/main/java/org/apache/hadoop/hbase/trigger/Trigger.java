@@ -33,7 +33,7 @@ public class Trigger {
     conf.set("trigger.on.table.column", column);
   }
   public String getTriggerOnColumnFamily(){
-    return conf.get("trigger.on.table.columfamily");
+    return conf.get("trigger.on.table.columnfamily");
   }
   public String getTriggerOnColumn(){
     return conf.get("trigger.on.table.column");

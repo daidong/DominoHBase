@@ -3292,7 +3292,7 @@ public class  HRegionServer implements ClientProtocol,
       Path submitTriggerFile = TriggerSubmissionFiles.getJobConfPath(submitTriggerDir);
       Path submitTriggerJar = TriggerSubmissionFiles.getTriggerJar(submitTriggerDir);
       
-      LOG.debug("in createRSTrigger, step 3, get submitTriggerFile: " + submitTriggerFile.toString());
+      
       FileSystem fs = submitTriggerFile.getFileSystem(trigger);
       
       /**
@@ -3307,11 +3307,13 @@ public class  HRegionServer implements ClientProtocol,
        */
       Path localTriggerXMLFile = new Path("/tmp/trigger/staging/"+String.valueOf(triggerId)+"/trigger.xml");
       fs.copyToLocalFile(submitTriggerFile, localTriggerXMLFile);
+      //fs.copyToLocalFile(submitTriggerJar, localTriggerXMLFile);
       
-      /*
+      System.out.println("After Copy XML File to Local");
+      
       trigger.addResource(localTriggerXMLFile);
       LOG.debug("Test configuration file loading: trigger.name: " + trigger.get("trigger.name"));
-      */
+      
       
       /**
        * setup the trigger
@@ -3320,9 +3322,11 @@ public class  HRegionServer implements ClientProtocol,
       String columnFamily = trigger.getTriggerOnColumnFamily();
       String column = trigger.getTriggerOnColumn();
       HTriggerKey htk = new HTriggerKey(tableName.getBytes(), columnFamily.getBytes(), column.getBytes());
+      System.out.println("Registered HTriggerKey: " + htk.toString());
       HTrigger newTrigger = new HTrigger(triggerId, htk, trigger);
+      System.out.println("registed begin");
       LocalTriggerManage.register(newTrigger);
-      
+      System.out.println("current registed htrigger key: " + LocalTriggerManage.prettyPrint());
     } catch (Exception e) {
       // TODO Auto-generated catch block
       e.printStackTrace();

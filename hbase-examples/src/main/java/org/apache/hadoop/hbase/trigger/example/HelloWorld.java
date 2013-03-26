@@ -25,7 +25,7 @@ public class HelloWorld extends HTriggerAction{
     trigger.setTriggerOnColumn("zh");
     
     trigger.setActionClass(HelloWorld.class);
-    trigger.setActionClassName("HelloWorld");
+    trigger.setActionClassName("org.apache.hadoop.hbase.trigger.example.HelloWorld");
     trigger.setJarByClass(HelloWorld.class);
     
     trigger.submit();

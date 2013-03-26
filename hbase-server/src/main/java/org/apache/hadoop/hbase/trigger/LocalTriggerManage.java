@@ -13,6 +13,15 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class LocalTriggerManage {
+     
+    public static String prettyPrint() {
+      StringBuilder sb = new StringBuilder();
+      for (HTriggerKey htk:activeTriggers.keySet()){
+        sb.append(htk.toString());
+      }
+      return sb.toString();
+    }
+    
     private static HashMap<HTriggerKey, ArrayList<HTrigger>> activeTriggers = new HashMap<HTriggerKey, ArrayList<HTrigger>>();
 
     public static boolean register(HTrigger trigger){
@@ -22,6 +31,7 @@ public class LocalTriggerManage {
       }
       currTriggers.add(trigger);
       activeTriggers.put(trigger.getHTriggerKey(), currTriggers);
+      System.out.println("register finished");
       return true;
     }
 

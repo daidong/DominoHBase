@@ -18,16 +18,21 @@ public class HTriggerEventQueue {
     public static void register(Runnable t){
       HTriggerEventQueue.consumer = t;	
     }
+    
     public static void append(HTriggerEvent hte){
-      EventQueue.add(hte);
-      consumer.notify();
+      synchronized(consumer){
+        System.out.println("HTriggerEventQueue append");
+        EventQueue.add(hte);
+        consumer.notify();
+      }
     }
 
     public static HTriggerEvent poll() throws InterruptedException{
-      if (EventQueue.isEmpty()){
-        consumer.wait();
-        return null;
+      synchronized (consumer) {
+        while (EventQueue.isEmpty()) {
+          consumer.wait();
+        }
+        return EventQueue.poll();
       }
-      return EventQueue.poll();
     }
 }
