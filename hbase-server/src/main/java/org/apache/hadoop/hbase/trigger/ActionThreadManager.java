@@ -37,7 +37,7 @@ public class ActionThreadManager implements Runnable{
     }
     
     HTriggerKey currentFiredKey = hte.getEventTriggerKey();
-    System.out.println("ActionThreadManager get a fired event: " + currentFiredKey.toString());
+    //System.out.println("ActionThreadManager get a fired event: " + currentFiredKey.toString());
     
     ArrayList<HTrigger> waitOnTriggers = LocalTriggerManage.getTriggerByMeta(currentFiredKey);
     

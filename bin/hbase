@@ -87,7 +87,7 @@ if [ $# = 0 ]; then
   echo "  thrift2          run the HBase Thrift2 server"
   echo ""
   echo "TRIGGER MANAGEMENT"
-  echo "  trigger <jar>    run triggers into other servers"
+  echo "  trigger <jar> -libjars <lib-Jars> run triggers into other servers"
   echo ""
   echo "PACKAGE MANAGEMENT"
   echo "  classpath        dump hbase CLASSPATH"

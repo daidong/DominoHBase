@@ -77,6 +77,7 @@ public class TriggerClient {
       /**
        * really submit the trigger to all the relevant region servers
        */
+      System.out.println("Submit Trigger To RS!");
       this.connection.submitTriggerToRS(conf.getTriggerOnTable(), triggerId);
       
     } finally {

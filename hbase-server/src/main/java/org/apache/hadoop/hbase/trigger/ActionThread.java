@@ -30,7 +30,7 @@ public class ActionThread implements Runnable {
       while (true) {
         if (inputDS.isEmpty()) {
           try {
-            this.wait();
+            inputDS.wait();
           } catch (InterruptedException e) {
             e.printStackTrace();
           }
@@ -52,7 +52,7 @@ public class ActionThread implements Runnable {
   public void feed(HTriggerEvent hte) {
     synchronized(inputDS) {
       inputDS.add(hte);
-      this.notify();
+      inputDS.notify();
     }
   }
 

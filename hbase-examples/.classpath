@@ -22,5 +22,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/weibo4j-oauth2"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

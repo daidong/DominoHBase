@@ -19,8 +19,12 @@
 package org.apache.hadoop.hbase.regionserver;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -62,7 +66,9 @@ import org.apache.hadoop.classification.InterfaceAudience;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.FileUtil;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.permission.FsPermission;
 import org.apache.hadoop.hbase.Chore;
@@ -218,6 +224,7 @@ import org.apache.hadoop.hbase.zookeeper.ZKClusterId;
 import org.apache.hadoop.hbase.zookeeper.ZKUtil;
 import org.apache.hadoop.hbase.zookeeper.ZooKeeperNodeTracker;
 import org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher;
+import org.apache.hadoop.io.IOUtils;
 import org.apache.hadoop.ipc.RemoteException;
 import org.apache.hadoop.mapreduce.JobSubmissionFiles;
 import org.apache.hadoop.metrics.util.MBeanUtil;
@@ -3283,6 +3290,7 @@ public class  HRegionServer implements ClientProtocol,
    */
   @Override
   public RSTriggerResponse createRSTrigger(final RpcController controller, RSTriggerRequest request){
+    System.out.println("Create RS Trigger");
     int triggerId = request.getId();
     TriggerConf trigger = new TriggerConf(conf);
     
@@ -3291,8 +3299,7 @@ public class  HRegionServer implements ClientProtocol,
       Path submitTriggerDir = new Path(triggerStagingArea, String.valueOf(triggerId));
       Path submitTriggerFile = TriggerSubmissionFiles.getJobConfPath(submitTriggerDir);
       Path submitTriggerJar = TriggerSubmissionFiles.getTriggerJar(submitTriggerDir);
-      
-      
+      Path submitTriggerLibDir = TriggerSubmissionFiles.getTriggerLibJars(submitTriggerDir);
       FileSystem fs = submitTriggerFile.getFileSystem(trigger);
       
       /**
@@ -3300,7 +3307,37 @@ public class  HRegionServer implements ClientProtocol,
        */
       Path localJarPath =  new Path("/tmp/trigger/triggerJar/"+String.valueOf(triggerId)+"/trigger.jar");
       fs.copyToLocalFile(submitTriggerJar, localJarPath);
+      
+      /**
+       * load tmpjars into local dir
+       */
+      if (fs.exists(submitTriggerLibDir)){
+        File localJarDir = new File("/tmp/trigger/triggerJar/"+String.valueOf(triggerId)+"/lib");
+        if (!localJarDir.exists())
+          localJarDir.mkdirs();
+        FileStatus[] contents = fs.listStatus(submitTriggerLibDir);
+        
+        for (int i = 0; i < contents.length; i++){
+          System.out.println("LOAD Lib Jars: " + contents[i].getPath().toString());
+          InputStream in = null;
+          OutputStream out = null;
+          try {
+            in = fs.open(contents[i].getPath());
+            File localJarLib = new File(localJarDir.getPath(), contents[i].getPath().getName());
+            out = new FileOutputStream(localJarLib);
+            IOUtils.copyBytes(in, out, trigger, true);
+          } catch (IOException e){
+            IOUtils.closeStream(in);
+            IOUtils.closeStream(out);
+          }
+        }
+      }
 
+      /*
+      FileUtil.copy(fs, submitTriggerLibDir, 
+          localExternalJarDir.getFileSystem(trigger), localExternalJarDir, false, trigger);
+      System.out.println("After Copy External Jars to Local");
+      */
       
       /**
        * load trigger's xml file into current trigger configuration object
@@ -3309,12 +3346,9 @@ public class  HRegionServer implements ClientProtocol,
       fs.copyToLocalFile(submitTriggerFile, localTriggerXMLFile);
       //fs.copyToLocalFile(submitTriggerJar, localTriggerXMLFile);
       
-      System.out.println("After Copy XML File to Local");
       
       trigger.addResource(localTriggerXMLFile);
-      LOG.debug("Test configuration file loading: trigger.name: " + trigger.get("trigger.name"));
-      
-      
+      System.out.println("HRegionServer: ");
       /**
        * setup the trigger
        */
@@ -3322,9 +3356,7 @@ public class  HRegionServer implements ClientProtocol,
       String columnFamily = trigger.getTriggerOnColumnFamily();
       String column = trigger.getTriggerOnColumn();
       HTriggerKey htk = new HTriggerKey(tableName.getBytes(), columnFamily.getBytes(), column.getBytes());
-      System.out.println("Registered HTriggerKey: " + htk.toString());
       HTrigger newTrigger = new HTrigger(triggerId, htk, trigger);
-      System.out.println("registed begin");
       LocalTriggerManage.register(newTrigger);
       System.out.println("current registed htrigger key: " + LocalTriggerManage.prettyPrint());
     } catch (Exception e) {

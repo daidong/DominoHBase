@@ -15,7 +15,7 @@ public class HTriggerKey {
     public String toString() {
       return "HTriggerKey [tableName=" + new String(tableName)
           + ", columnFamily=" + new String(columnFamily) + ", column="
-          + new String(column) + "]";
+          + new String(column) + "]\n";
     }
 
     private byte[] tableName;
@@ -28,6 +28,15 @@ public class HTriggerKey {
         this.column = column;
     }
 
+    public byte[] getTableName(){
+      return this.tableName;
+    }
+    public byte[] getColumnFamily(){
+      return this.columnFamily;
+    }
+    public byte[] getColumn(){
+      return this.column;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

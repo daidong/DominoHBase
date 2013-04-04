@@ -1215,15 +1215,15 @@ class FSHLog implements HLog, Syncable {
     }
     try {
       long now = EnvironmentEdgeManager.currentTimeMillis();
-	  // Here is the PreWalWrite Code Stuff. Our WALDetection will detect the operation on WAL Log
-	  // coprocessor hook:
-      if (WALDetection.checkDispatch(htd.getName(), logEdit) &&
-	  	!coprocessorHost.preWALWrite(info, logKey, logEdit)) {
+      if (!coprocessorHost.preWALWrite(info, logKey, logEdit)) {
         // write to our buffer for the Hlog file.
         logSyncerThread.append(new FSHLog.Entry(logKey, logEdit));
       }
       long took = EnvironmentEdgeManager.currentTimeMillis() - now;
       coprocessorHost.postWALWrite(info, logKey, logEdit);
+      //we add the WALDetection after we really write the WAL already to avoid
+      //the situation that retry.
+      WALDetection.checkDispatch(htd.getName(), logEdit);
       long len = 0;
       for (KeyValue kv : logEdit.getKeyValues()) {
         len += kv.getLength();

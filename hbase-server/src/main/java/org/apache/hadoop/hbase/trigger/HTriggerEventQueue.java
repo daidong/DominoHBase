@@ -21,7 +21,7 @@ public class HTriggerEventQueue {
     
     public static void append(HTriggerEvent hte){
       synchronized(consumer){
-        System.out.println("HTriggerEventQueue append");
+        //System.out.println("HTriggerEventQueue append");
         EventQueue.add(hte);
         consumer.notify();
       }

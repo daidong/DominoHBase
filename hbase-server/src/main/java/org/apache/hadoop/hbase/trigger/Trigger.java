@@ -14,8 +14,12 @@ public class Trigger {
     this.conf = new TriggerConf();
   }
   
+  public Trigger(Configuration conf){
+    this.conf = (TriggerConf) conf;
+  }
+  
   public Trigger(Configuration conf, String triggerName){
-    conf = (TriggerConf) conf;
+    this.conf = (TriggerConf) conf;
     setTriggerName(triggerName);
   }
   

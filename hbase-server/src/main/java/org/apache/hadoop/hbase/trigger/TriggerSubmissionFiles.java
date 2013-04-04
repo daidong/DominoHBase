@@ -11,6 +11,8 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.permission.FsPermission;
 import org.apache.hadoop.mapreduce.JobSubmissionFiles;
 
+import com.sun.org.apache.commons.logging.Log;
+
 public class TriggerSubmissionFiles {
 
   final public static FsPermission TRIGGER_DIR_PERMISSION = 
@@ -28,7 +30,7 @@ public class TriggerSubmissionFiles {
   */
   
   public static Path getHDFSStagingDir(){
-    Path hdfsRemote = new Path("hdfs://localhost:9000/hbase/tmp/trigger/staging");
+    Path hdfsRemote = new Path("hdfs://localhost:9000/tmp/hbase/trigger/staging");
     return hdfsRemote;
   }
   
@@ -38,6 +40,10 @@ public class TriggerSubmissionFiles {
 
   public static Path getTriggerJar(Path submitTriggerDir) {
     return new Path(submitTriggerDir, "trigger.jar");
+  }
+  
+  public static Path getTriggerLibJars(Path submitTriggerDir) {
+    return new Path(submitTriggerDir, "libjars/");
   }
 
   public static void copyAndConfigureFiles(TriggerConf triggerCopy,
@@ -51,12 +57,34 @@ public class TriggerSubmissionFiles {
     String originalJarPath = "/tmp/hbase/triggerJar/trigger.jar";
     //String originalJarPath = triggerCopy.getJar();
 
-    if (originalJarPath != null) {           // copy jar to JobTracker's fs
+    /**
+     * copy jar file to HMaster's fs
+     */
+    if (originalJarPath != null) { 
       Path submitJarFile = TriggerSubmissionFiles.getTriggerJar(submitTriggerDir);
       triggerCopy.setJar(submitJarFile.toString());
       fs.copyFromLocalFile(new Path(originalJarPath), submitJarFile);
       fs.setPermission(submitJarFile, 
           new FsPermission(TriggerSubmissionFiles.TRIGGER_FILE_PERMISSION));
     } 
+    
+    /**
+     * copy libjars to HMaster's fs
+     */
+    String libjars = triggerCopy.get("tmpjars");
+    Path libjarsDir = TriggerSubmissionFiles.getTriggerLibJars(submitTriggerDir);
+    
+    if (libjars != null){
+      System.out.println("We have LibJars, so copy them to hdfs, target: " + libjarsDir.toString());
+      FileSystem.mkdirs(fs, libjarsDir, TriggerSubmissionFiles.TRIGGER_DIR_PERMISSION);
+      String[] libjarsArr = libjars.split(",");
+      for (String tmpJar : libjarsArr){
+        Path localLibJar = new Path(tmpJar);
+        Path hdfsLibJar = new Path(libjarsDir, localLibJar.getName());
+        fs.copyFromLocalFile(localLibJar, hdfsLibJar);
+        fs.setPermission(hdfsLibJar, new FsPermission(TriggerSubmissionFiles.TRIGGER_FILE_PERMISSION));
+      }
+    }
+    
   }
 }

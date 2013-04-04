@@ -12,6 +12,7 @@ public class HTriggerEvent {
     private long lastTS;
     private byte[] newValue;
     private byte[] oldValue;
+    private byte[] rowKey;
     private HTriggerKey htk;
 
     public HTriggerEvent(HTriggerKey htk, long tsn, byte[] vn, long tso, byte[] vo){
@@ -20,9 +21,16 @@ public class HTriggerEvent {
         this.newValue = vn;
         this.oldValue = vo;
         this.lastTS = tso;
-
     }
     
+    public HTriggerEvent(HTriggerKey htk, byte[] rowKey, long tsn, byte[] vn, long tso, byte[] vo){
+      this(htk, tsn, vn, tso, vo);
+      this.rowKey = rowKey;
+    }
+    
+    public byte[] getRowKey(){
+      return this.rowKey;
+    }
     public HTriggerKey getEventTriggerKey(){
         return this.htk;
     }

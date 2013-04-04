@@ -48,6 +48,7 @@ public class HTrigger {
        * setup action class
        */
       File jarFile = new File("/tmp/trigger/triggerJar/" + String.valueOf(triggerId) + "/trigger.jar");
+      File libDir = new File("/tmp/trigger/triggerJar/"+String.valueOf(triggerId)+"/lib");
       
       File tmpDir = new File("/tmp/hbase/triggerJar/"+String.valueOf(triggerId)+"/");
       tmpDir.mkdirs();
@@ -74,28 +75,44 @@ public class HTrigger {
       });
       */
       
+      System.out.println("work dir: " + workDir.getPath());
       RunTrigger.unJar(jarFile, workDir);
       System.out.println("init class middle, unjar finishes");
       
       ArrayList<URL> classPath = new ArrayList<URL>();
+
+      /**
+       * add classpath added from "tmpjars"
+       */
+      if (libDir.exists()){
+        File[] jarLibs = libDir.listFiles();
+        if (jarLibs != null){
+          for (int i = 0; i < jarLibs.length; i++){
+            System.out.println("load jar libs..." + jarLibs[i].toURL().getPath());
+            classPath.add(jarLibs[i].toURL());
+          }
+        }
+      }
+      
       classPath.add(new File(workDir+"/").toURL());
       classPath.add(jarFile.toURL());
       classPath.add(new File(workDir, "classes/").toURL());
       File[] libs = new File(workDir, "lib").listFiles();
       if (libs != null){
         for (int i = 0; i < libs.length; i++){
+          System.out.println("load libs..." + libs[i].toURL().getPath());
           classPath.add(libs[i].toURL());
         }
       }
-    
+      
       ClassLoader loader = new URLClassLoader(classPath.toArray(new URL[0]));
       Thread.currentThread().setContextClassLoader(loader);
-      System.out.println("init class middle, 1");
+     
       String actionClassName = conf.getActionClassName();
       System.out.println("init class middle, actionClassName: " + actionClassName);
       Class actionClassWithLoader = Class.forName(actionClassName, true, loader);
-      System.out.println("init class middle, 3");
-      this.action = (HTriggerAction) actionClassWithLoader.newInstance();
+      System.out.println("init class middle, 2");
+      this.action = (HTriggerAction) actionClassWithLoader.getConstructor().newInstance();
       System.out.println("init class finished, test: action class: " + this.action.TestAlive());
       
     }

@@ -69,7 +69,6 @@ public class RunTrigger {
       System.err.println(usage);
       System.exit(-1);
     }
-    
     int firstArg = 0;
     String fileName = args[firstArg++];
     File file = new File(fileName);
@@ -121,7 +120,7 @@ public class RunTrigger {
       System.exit(-1);
     }
     
-    /*
+    
     Runtime.getRuntime().addShutdownHook(new Thread(){
       public void run(){
         try {
@@ -130,7 +129,7 @@ public class RunTrigger {
         }
       }
     });
-    */
+    
     unJar(file, workDir);
     
     ArrayList<URL> classPath = new ArrayList<URL>();
