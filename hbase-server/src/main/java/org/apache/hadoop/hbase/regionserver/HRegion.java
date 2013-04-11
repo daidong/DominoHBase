@@ -442,6 +442,9 @@ public class HRegion implements HeapSize { // , Writable{
 
     this.isLoadingCfsOnDemandDefault = conf.getBoolean(LOAD_CFS_ON_DEMAND_CONFIG_KEY, false);
     this.regionInfo = regionInfo;
+    //add by Daidong for trigger operations. In fact, this is not safe, as hbase allows different HRegion
+    //implementaion, if other implementations do not set this value, there would be null exceptions.
+    this.regionInfo.theRegion = this;
     this.htableDescriptor = htd;
     this.rsServices = rsServices;
     this.threadWakeFrequency = conf.getLong(HConstants.THREAD_WAKE_FREQUENCY,
@@ -2054,7 +2057,11 @@ public class HRegion implements HeapSize { // , Writable{
     }
   }
 
-
+  /**
+   * doMiniBatchMutation is the core of Put operation on HBase.
+   * CF: Column Family
+   * 
+   */
   @SuppressWarnings("unchecked")
   private long doMiniBatchMutation(
     BatchOperationInProgress<Pair<Mutation, Integer>> batchOp) throws IOException {
@@ -2626,6 +2633,9 @@ public class HRegion implements HeapSize { // , Writable{
    * Remove all the keys listed in the map from the memstore. This method is
    * called when a Put/Delete has updated memstore but subequently fails to update
    * the wal. This method is then invoked to rollback the memstore.
+   * 
+   * This is also the key point we retrieve the old value and old timestamp when the write
+   * operations are success. 
    */
   private void rollbackMemstore(BatchOperationInProgress<Pair<Mutation, Integer>> batchOp,
                                 Map<byte[], List<KeyValue>>[] familyMaps,
@@ -4400,6 +4410,9 @@ public class HRegion implements HeapSize { // , Writable{
 
   /*
    * Do a get based on the get parameter.
+   * No matter how we call a Get, we still finally come here.
+   * No Direct Get Operation In HBase. ALL OPERATIONS ARE ISSUSED AS
+   * SCAN INSTANCE.
    * @param withCoprocessor invoke coprocessor or not. We don't want to
    * always invoke cp for this private method.
    */
@@ -4414,12 +4427,16 @@ public class HRegion implements HeapSize { // , Writable{
          return results;
        }
     }
-
+    
+    //build scan object from a get instance
     Scan scan = new Scan(get);
 
+    //get scanner returns all the usable RegionScanner. In this case, 
+    //we will get a StoreScanner, which can both handle KeyValue in Memstore and in HFile
     RegionScanner scanner = null;
     try {
       scanner = getScanner(scan);
+      //next operation will process all possible results
       scanner.next(results);
     } finally {
       if (scanner != null)

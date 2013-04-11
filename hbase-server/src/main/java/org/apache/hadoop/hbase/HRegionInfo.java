@@ -38,6 +38,7 @@ import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.protobuf.ProtobufUtil;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.RegionInfo;
+import org.apache.hadoop.hbase.regionserver.HRegion;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.hbase.util.JenkinsHash;
 import org.apache.hadoop.hbase.util.MD5Hash;
@@ -81,6 +82,15 @@ public class HRegionInfo implements Comparable<HRegionInfo> {
   public static final byte VERSION = 1;
   private static final Log LOG = LogFactory.getLog(HRegionInfo.class);
 
+  /**
+   * @author daidong
+   * Add HRegion instance here. It is not necessary because most hbase operations 
+   * do not need this, but in our trigger implementation, we need HRegion instance 
+   * to get the old value. To accomplish this, we add this reverse-instance.
+   * When HRegion is constructing itself, we will fill this variable for accessing in the 
+   * future.
+   */
+  public HRegion theRegion = null;
   /**
    * The new format for a region name contains its encodedName at the end.
    * The encoded name also serves as the directory name for the region

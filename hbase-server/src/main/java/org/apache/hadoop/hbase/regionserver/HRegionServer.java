@@ -2798,6 +2798,7 @@ public class  HRegionServer implements ClientProtocol,
         }
         if (existence == null) {
           Integer lock = getLockFromId(clientGet.getLockId());
+          //call HRegion's Get method with lock and Get instance
           r = region.get(clientGet, lock);
           if (request.getExistenceOnly()) {
             boolean exists = r != null && !r.isEmpty();
