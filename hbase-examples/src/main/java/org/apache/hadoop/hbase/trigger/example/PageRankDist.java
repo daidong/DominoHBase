@@ -48,6 +48,7 @@ public class PageRankDist extends HTriggerAction{
   @Override
   public void action(HTriggerEvent hte) {
     byte[] currentPageId = hte.getRowKey();
+    System.out.println("PageRankDist processes: " + new String(currentPageId));
     byte[] values = hte.getNewValue();
     String svalue = new String(values);
     float fvalue = Float.parseFloat(svalue);
@@ -59,8 +60,13 @@ public class PageRankDist extends HTriggerAction{
     try {
       Result r = myTable.get(g);
       NavigableMap<byte[],byte[]> outlinks = r.getFamilyMap("outlinks".getBytes());
-      int n = outlinks.size();
-      float weight = fvalue / n;
+      int n = 0;
+      if (outlinks != null){
+        n = outlinks.size();
+      }
+      float weight = 0;
+      if (n != 0)
+        weight = fvalue / n;
       String sweight = String.valueOf(weight);
       
       for (byte[] link: outlinks.values()){
@@ -74,7 +80,6 @@ public class PageRankDist extends HTriggerAction{
     } catch (IOException e) {
       e.printStackTrace();
     }
-    
   }
 
   @Override
@@ -83,6 +88,7 @@ public class PageRankDist extends HTriggerAction{
     byte[] oldValue = hte.getOldValue();
     float fnv = Float.parseFloat(new String(nvalue));
     float fov = Float.parseFloat(new String(oldValue));
+    System.out.println("Inside PageRankDist: " + fnv + " : " + fov);
     if (Math.abs((fnv - fov)) < 0.001){
       return false;
     }

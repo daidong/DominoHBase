@@ -22,7 +22,7 @@ import java.util.List;
 public class WALDetection {
 
   public static boolean checkDispatch(HRegionInfo info, byte[] tableName, WALEdit currWal) {
-    System.out.println("in checkDispatch, tableName: " + new String(tableName));
+    //System.out.println("in checkDispatch, tableName: " + new String(tableName));
     List<KeyValue> syncPairs = currWal.getKeyValues();
     for (KeyValue kv : syncPairs) {
       //byte[] rowKey = kv.getKey();
@@ -31,7 +31,7 @@ public class WALDetection {
       byte[] column = kv.getQualifier();
       
       HTriggerKey triggerMeta = new HTriggerKey(tableName, columnFamily, column);
-      //System.out.println("processing trigger key: " + triggerMeta.toString());
+      System.out.println("processing trigger key: " + triggerMeta.toString() + " at Row: " + new String(rowKey));
       //System.out.println("current registered trigger key: " + LocalTriggerManage.prettyPrint());
       
       if (LocalTriggerManage.containsTrigger(triggerMeta)) {

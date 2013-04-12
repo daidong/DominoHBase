@@ -44,21 +44,28 @@ public class PageRankSum extends HTriggerAction{
   @Override
   public void action(HTriggerEvent hte) {
     byte[] pageId = hte.getRowKey();
+    System.out.println("PageRankSum proceses: " + new String(pageId));
     Get g = new Get(pageId);
     g.addFamily("nodes".getBytes());
     try {
       Result r = this.myTable.get(g);
+      //System.out.println("PageRankSum get result on pageId: " + new String(pageId) + " size " + r.size());
       float sum = 0F;
       Map<byte[], byte[]> nodes  = r.getFamilyMap("nodes".getBytes());
-      for (byte[] weight:nodes.values()){
-        String sw = new String(weight);
-        float fw = Float.parseFloat(sw);
-        sum += fw;
+      if (nodes != null){
+        //System.out.println("PageRankSum get nodes not null on pageId: " + new String(pageId));
+        for (byte[] weight:nodes.values()){
+          String sw = new String(weight);
+          float fw = Float.parseFloat(sw);
+          sum += fw;
+        }
       }
       Put p = new Put(pageId);
       String ssum = String.valueOf(sum);
       p.add("prvalues".getBytes(), "pr".getBytes(), ssum.getBytes());
+      System.out.println("PageRankSum Start to write wbpages table: " + new String(pageId));
       this.remoteTable.put(p);
+      System.out.println("PageRankSum End to  write wbpages table: " + new String(pageId));
       
     } catch (IOException e) {
       // TODO Auto-generated catch block

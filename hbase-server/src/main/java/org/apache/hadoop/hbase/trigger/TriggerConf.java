@@ -79,8 +79,13 @@ public class TriggerConf extends Configuration{
   public String getTriggerOnColumnFamily(){
     return get("trigger.on.table.columnfamily");
   }
+  /**
+   * If users do not specify which column the trigger should monitor at, 
+   * then we return the default "*". The default "*" will used in HTriggerKey comparator
+   * @return trigger.on.table.column
+   */
   public String getTriggerOnColumn(){
-    return get("trigger.on.table.column");
+    return get("trigger.on.table.column", "*");
   }
   public String getTriggerOnTable(){
     return get("trigger.on.table");

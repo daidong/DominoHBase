@@ -22,7 +22,7 @@ public class PageRank extends TriggerConfigured implements TriggerTool {
     Trigger tg2 = new Trigger(tmp, "PageRankSum");
     tg2.setTriggerOnTable("PageRankAcc");
     tg2.setTriggerOnColumFamily("nodes");
-    tg2.setTriggerOnColumn("weight");
+    tg2.setTriggerOnColumn("*");
     tg2.setActionClassName("org.apache.hadoop.hbase.trigger.example.PageRankSum");
     tg2.submit();
    

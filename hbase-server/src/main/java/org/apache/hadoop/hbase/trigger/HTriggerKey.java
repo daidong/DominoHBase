@@ -44,10 +44,23 @@ public class HTriggerKey {
 
         HTriggerKey that = (HTriggerKey) o;
         
-        if (!Arrays.equals(column, that.column)) return false;
         if (!Arrays.equals(columnFamily, that.columnFamily)) return false;
         if (!Arrays.equals(tableName, that.tableName)) return false;
 
+        /**
+         * There is possible that we do not set column when we submit the trigger.
+         * In this case, we should not compare column any more.
+         * What we do here is: 
+         * 1) judge whether this.column or that.column equals to "*". 
+         * 2) if yes, return true;
+         * 2) if not, compare their byte
+         */
+        if ("*".compareToIgnoreCase(new String(column)) == 0)
+          return true;
+        if ("*".compareToIgnoreCase(new String(that.column)) == 0)
+          return true;
+        
+        if (!Arrays.equals(column, that.column)) return false;
         return true;
     }
 
@@ -55,7 +68,10 @@ public class HTriggerKey {
     public int hashCode() {
         int result = tableName != null ? Arrays.hashCode(tableName) : 0;
         result = 31 * result + (columnFamily != null ? Arrays.hashCode(columnFamily) : 0);
-        result = 31 * result + (column != null ? Arrays.hashCode(column) : 0);
+        /**
+         * We also should ignore column while computing hashCode of this object.
+         */
+        //result = 31 * result + (column != null ? Arrays.hashCode(column) : 0);
         return result;
     }
     
@@ -66,7 +82,7 @@ public class HTriggerKey {
       
       String n2 = "hello";
       String cf2 = "content";
-      String c2 = "zh";
+      String c2 = "*";
       
       HTriggerKey ht1 = new HTriggerKey(n1.getBytes(), cf1.getBytes(), c1.getBytes());
       HTriggerKey ht2 = new HTriggerKey(n2.getBytes(), cf2.getBytes(), c2.getBytes());
