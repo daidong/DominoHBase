@@ -111,6 +111,8 @@ import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.NameStringPair;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.RegionSpecifier.RegionSpecifierType;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdResponse;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.StopTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.StopTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SubmitTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SubmitTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.AddColumnRequest;
@@ -1624,8 +1626,13 @@ Server {
     LOG.debug("submit trigger......");
     System.out.println("Submit Trigger: " + request.getId());
     return SubmitTriggerResponse.newBuilder().build();
-    
   }
+  @Override
+  public StopTriggerResponse stopTrigger(RpcController controller, StopTriggerRequest request)
+      throws ServiceException{
+     return StopTriggerResponse.newBuilder().setStopped(true).build();
+  }
+  
   @Override
   public void addColumn(final byte[] tableName, final HColumnDescriptor column)
       throws IOException {
@@ -2451,4 +2458,5 @@ Server {
     String healthScriptLocation = this.conf.get(HConstants.HEALTH_SCRIPT_LOC);
     return org.apache.commons.lang.StringUtils.isNotBlank(healthScriptLocation);
   }
+
 }

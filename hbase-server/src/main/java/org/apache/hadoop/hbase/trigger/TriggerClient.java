@@ -40,6 +40,12 @@ public class TriggerClient {
     init();
   }
   
+  public boolean stop(String tableName, int triggerId) throws Exception{
+    this.connection.stopTrigger(triggerId);
+    this.connection.stopTriggerToRS(tableName, triggerId);
+    return true;
+  }
+  
   public void init() throws ZooKeeperConnectionException{
     this.connection = HConnectionManager.getConnection(conf);
   }

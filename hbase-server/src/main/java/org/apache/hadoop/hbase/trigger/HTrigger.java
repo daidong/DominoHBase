@@ -23,10 +23,14 @@ import org.apache.hadoop.hbase.util.RunTrigger;
  * To change this template use File | Settings | File Templates.
  */
 public class HTrigger {
-    private int triggerId;
+    public int triggerId;
     private HTriggerKey htk;
     private TriggerConf conf;
     private HTriggerAction action;
+    
+    public HTrigger(int triggerId){
+      this.triggerId = triggerId;
+    }
     
     public HTrigger(int triggerId, HTriggerKey htk, TriggerConf conf) throws Exception{
       this.triggerId = triggerId;
@@ -121,7 +125,7 @@ public class HTrigger {
       this.action = naction;
     }
 
-    public long getTriggerId(){
+    public int getTriggerId(){
         return this.triggerId;
     }
     
@@ -135,9 +139,10 @@ public class HTrigger {
         if (o == null || getClass() != o.getClass()) return false;
 
         HTrigger hTrigger = (HTrigger) o;
-
-        if (triggerId != hTrigger.triggerId) return false;
-
+        
+        if (triggerId != hTrigger.triggerId) 
+          return false;
+        
         return true;
     }
 

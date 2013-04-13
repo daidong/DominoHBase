@@ -249,7 +249,8 @@ Shell.load_command_group(
     show_filters
     alter_status
     alter_async
-    get_table
+    get_table	
+	stop_trigger
   ]
 )
 

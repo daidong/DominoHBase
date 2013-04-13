@@ -75,6 +75,7 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate.ColumnValu
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate.ColumnValue.QualifierValue;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate.MutateType;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSStopTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.ScanRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.UnlockRowRequest;
@@ -98,6 +99,7 @@ import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.ModifyTableR
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.MoveRegionRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.OfflineRegionRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SetBalancerRunningRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.StopTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SubmitTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.UnassignRegionRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterMonitorProtos.GetClusterStatusRequest;
@@ -1222,6 +1224,13 @@ public final class RequestConverter {
     builder.setId(triggerId);
     return builder.build();
   }
+  
+  public static StopTriggerRequest buildStopTriggerRequest(int triggerId) {
+    StopTriggerRequest.Builder builder = StopTriggerRequest.newBuilder();
+    builder.setId(triggerId);
+    return builder.build();
+  }
+  
 
   public static GetTriggerIdRequest buildGetTriggerIdRequest(boolean isCreated) {
     GetTriggerIdRequest.Builder builder = GetTriggerIdRequest.newBuilder();
@@ -1234,5 +1243,12 @@ public final class RequestConverter {
     builder.setId(triggerId);
     return builder.build();
   }
+  
+  public static RSStopTriggerRequest buildRSStopTriggerRequest(int triggerId) {
+    RSStopTriggerRequest.Builder builder = RSStopTriggerRequest.newBuilder();
+    builder.setId(triggerId);
+    return builder.build();
+  }
+  
 
 }

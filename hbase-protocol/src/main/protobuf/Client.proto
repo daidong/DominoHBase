@@ -321,9 +321,19 @@ message RSTriggerResponse{
   required bool succ = 1;
 }
 
+message RSStopTriggerRequest{
+  required int32 id = 1;
+}
+message RSStopTriggerResponse{
+  required bool stopped = 1;
+}
+
 service ClientService {
   rpc createRSTrigger(RSTriggerRequest)
     returns(RSTriggerResponse);
+  
+  rpc stopRSTrigger(RSStopTriggerRequest)
+    returns(RSStopTriggerResponse);
     
   rpc get(GetRequest)
     returns(GetResponse);

@@ -168,6 +168,8 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.Mutate.MutateType;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateResponse;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSStopTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSStopTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.ScanRequest;
@@ -3286,6 +3288,17 @@ public class  HRegionServer implements ClientProtocol,
     }
   }
 
+  @Override
+  public RSStopTriggerResponse stopRSTrigger(final RpcController controller, RSStopTriggerRequest request)
+      throws com.google.protobuf.ServiceException{
+    int triggerId = request.getId();
+    System.out.println("Stop RS Trigger: " + triggerId);
+    HTrigger needToStopTrigger = new HTrigger(triggerId);
+    boolean rtn = LocalTriggerManage.unregister(needToStopTrigger);
+    RSStopTriggerResponse.Builder builder = RSStopTriggerResponse.newBuilder();
+    builder.setStopped(rtn);
+    return builder.build();
+  }
   /**
    * @author daidong
    */

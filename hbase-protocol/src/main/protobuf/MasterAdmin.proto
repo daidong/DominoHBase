@@ -100,6 +100,12 @@ message SubmitTriggerRequest{
 message SubmitTriggerResponse{
 }
 
+message StopTriggerRequest{
+	required int32 id = 1;
+}
+message StopTriggerResponse{
+	required bool stopped = 1;
+}
 
 /* Table-level protobufs */
 
@@ -200,6 +206,9 @@ service MasterAdminService {
   	
   rpc getTriggerId(GetTriggerIdRequest)
   	returns(GetTriggerIdResponse);
+  	
+  rpc stopTrigger(StopTriggerRequest)
+  	returns(StopTriggerResponse);
   	
   /** Adds a column to the specified table. */
   rpc addColumn(AddColumnRequest)

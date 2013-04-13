@@ -79,11 +79,15 @@ import org.apache.hadoop.hbase.protobuf.ProtobufUtil;
 import org.apache.hadoop.hbase.protobuf.RequestConverter;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.LockRowRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.LockRowResponse;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSStopTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSStopTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.TableSchema;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdResponse;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.StopTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.StopTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.SubmitTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterMonitorProtos.GetTableDescriptorsRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterMonitorProtos.GetTableDescriptorsResponse;
@@ -642,7 +646,16 @@ public class HConnectionManager {
       GetTriggerIdResponse id = masterAdmin.getTriggerId(null, request);
       return id.getId();
     }
-
+    
+    @Override
+    public boolean stopTrigger(int triggerId) throws Exception{
+    //MasterAdminProtocol masterAdmin = this.getMasterAdmin();
+      MasterAdminKeepAliveConnection masterAdmin = this.getKeepAliveMasterAdmin();
+      StopTriggerRequest request = RequestConverter.buildStopTriggerRequest(triggerId);
+      StopTriggerResponse stopped = masterAdmin.stopTrigger(null, request);
+      return stopped.getStopped();
+    }
+    
     @Override
     public void submitTrigger(int triggerId) throws Exception {
       //MasterAdminProtocol masterAdmin = this.getMasterAdmin();
@@ -652,6 +665,30 @@ public class HConnectionManager {
       masterAdmin.submitTrigger(null, request);
     }
 
+    @Override
+    public boolean stopTriggerToRS(String tableName, final int triggerId) throws Exception {
+      System.out.println("Inside stopTriggerToRS...Table Name: " + tableName);
+      if (tableName == null || tableName.length() == 0){
+        throw new IllegalArgumentException(
+        "triggered table name cannot be null or zero length");
+      }
+      HTable ht = new HTable(conf, tableName.getBytes());
+      NavigableMap<HRegionInfo, ServerName> locations = ht.getRegionLocations();
+      
+      for (ServerName sn: locations.values()){
+        ClientProtocol server = getClient(sn.getHostname(), sn.getPort());
+        boolean succ = false;
+        int retries = 0;
+        while (succ == false && retries < 3){
+          RSStopTriggerRequest request = RequestConverter.buildRSStopTriggerRequest(triggerId);
+          RSStopTriggerResponse rr = server.stopRSTrigger(null, request);
+          succ = rr.getStopped();
+          retries++;
+        }
+      }
+      return true;
+    }
+    
     @Override
     public void submitTriggerToRS(String tableName, final int triggerId) throws Exception{
       

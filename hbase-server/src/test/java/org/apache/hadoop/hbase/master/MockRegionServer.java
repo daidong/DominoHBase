@@ -72,6 +72,8 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.LockRowResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MultiRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.MutateResponse;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSStopTriggerRequest;
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSStopTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.ScanRequest;
@@ -505,6 +507,13 @@ class MockRegionServer implements AdminProtocol, ClientProtocol, RegionServerSer
   @Override
   public RSTriggerResponse createRSTrigger(RpcController controller,
       RSTriggerRequest request) throws ServiceException {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public RSStopTriggerResponse stopRSTrigger(RpcController controller,
+      RSStopTriggerRequest request) throws ServiceException {
     // TODO Auto-generated method stub
     return null;
   }

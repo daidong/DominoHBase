@@ -47,6 +47,9 @@ public class Trigger {
   public void setTriggerName(String tn){
     conf.set("trigger.name", tn);
   }
+  public String getTriggerName(){
+    return conf.get("trigger.name");
+  }
   
   public TriggerClient getTriggerClient(){
     return this.triggerClient;
@@ -94,5 +97,10 @@ public class Trigger {
   public boolean waitForCompletion() throws Exception{
     submit();
     return true;
+  }
+  
+  public boolean stop(String tn, int tid) throws Exception{
+    triggerClient = new TriggerClient(conf);
+    return triggerClient.stop(tn, tid);
   }
 }

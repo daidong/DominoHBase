@@ -206,6 +206,12 @@ public interface HConnection extends Abortable, Closeable {
   
   /**
    * @author daidong
+   * Stop a trigger by its name.
+   */
+  public boolean stopTrigger(int triggerId) throws Exception;
+  public boolean stopTriggerToRS(String tableName, final int triggerId) throws Exception;
+  /**
+   * @author daidong
    * Submit a trigger to HMaster
    */
   public void submitTrigger(final int triggerId) throws Exception;

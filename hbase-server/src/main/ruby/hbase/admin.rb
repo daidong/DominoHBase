@@ -29,6 +29,7 @@ module Hbase
 
     def initialize(configuration, formatter)
       @admin = org.apache.hadoop.hbase.client.HBaseAdmin.new(configuration)
+	  @trigger = org.apache.hadoop.hbase.trigger.Trigger.new()
       connection = @admin.getConnection()
       @conf = configuration
       @zk_wrapper = connection.getZooKeeperWatcher()
@@ -36,7 +37,15 @@ module Hbase
       @zk_main = org.apache.zookeeper.ZooKeeperMain.new(zk)
       @formatter = formatter
     end
-
+	
+	
+    #----------------------------------------------------------------------------------------------
+    # Stop a trigger in hbase
+	def stop_trigger(tname, trigger_id)
+		@trigger.stop(tname, trigger_id)
+	end
+    
+	
     #----------------------------------------------------------------------------------------------
     # Returns a list of tables in hbase
     def list(regex = ".*")
