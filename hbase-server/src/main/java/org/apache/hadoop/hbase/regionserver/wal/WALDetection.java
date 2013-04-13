@@ -31,7 +31,7 @@ public class WALDetection {
       byte[] column = kv.getQualifier();
       
       HTriggerKey triggerMeta = new HTriggerKey(tableName, columnFamily, column);
-      System.out.println("processing trigger key: " + triggerMeta.toString() + " at Row: " + new String(rowKey));
+      //System.out.println("processing trigger key: " + triggerMeta.toString() + " at Row: " + new String(rowKey));
       //System.out.println("current registered trigger key: " + LocalTriggerManage.prettyPrint());
       
       if (LocalTriggerManage.containsTrigger(triggerMeta)) {
@@ -59,15 +59,15 @@ public class WALDetection {
               oldValues = "0".getBytes();
             } else {
               KeyValue[] olds = result.raw();
-              System.out.println("olds: " + olds.length);
+              //System.out.println("olds: " + olds.length);
               oldValues = olds[0].getValue();
               oldTs = olds[0].getTimestamp();
             }
           }
           
-          System.out.println("this update fires a trigger: values: " + new String(values, "utf-8") + " | "
+          /*System.out.println("this update fires a trigger: values: " + new String(values, "utf-8") + " | "
               + "old values: " + new String(oldValues, "utf-8"));
-          
+          */
           
           HTriggerKey key = new HTriggerKey(tableName, columnFamily, column);
           HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, ts, values, oldTs, oldValues);

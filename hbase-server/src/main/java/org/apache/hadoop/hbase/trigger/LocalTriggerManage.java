@@ -54,13 +54,11 @@ public class LocalTriggerManage {
       System.out.println("inside unregister");
       HTriggerKey currentTriggerKey = registeredTriggers.get(t.getTriggerId());
       if (currentTriggerKey != null){
-        System.out.println("find currentTriggerKey responding to trigger id: " + t.getTriggerId() + " is " + currentTriggerKey);
-        
+        //System.out.println("find currentTriggerKey responding to trigger id: " + t.getTriggerId() + " is " + currentTriggerKey);
         ArrayList<HTrigger> currTriggers = activeTriggers.get(currentTriggerKey);
         if (currTriggers == null)
           return true;
-        
-        System.out.println("find current trigger: " + currTriggers.get(0) + " for trigger id: " + t.getTriggerId());
+        //System.out.println("find current trigger: " + currTriggers.get(0) + " for trigger id: " + t.getTriggerId());
         currTriggers.remove(t);
         if (currTriggers.size() == 0){
           activeTriggers.remove(currentTriggerKey);
