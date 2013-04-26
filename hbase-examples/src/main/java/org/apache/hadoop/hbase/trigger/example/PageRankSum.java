@@ -60,7 +60,7 @@ public class PageRankSum extends HTriggerAction{
   @Override
   public void action(HTriggerEvent hte) {
     byte[] pageId = hte.getRowKey();
-    System.out.println("PageRankSum proceses: " + new String(pageId));
+    //System.out.println("PageRankSum proceses: " + new String(pageId));
     Get g = new Get(pageId);
     g.addFamily("nodes".getBytes());
     try {
@@ -78,10 +78,11 @@ public class PageRankSum extends HTriggerAction{
       }
       Put p = new Put(pageId);
       String ssum = String.valueOf(sum);
+      //System.out.println("--------------> PageRankSum get sum: " + ssum);
       p.add("prvalues".getBytes(), "pr".getBytes(), ssum.getBytes());
-      System.out.println("PageRankSum Start to write wbpages table: " + new String(pageId));
+      //System.out.println("PageRankSum Start to write wbpages table: " + new String(pageId));
       this.remoteTable.put(p);
-      System.out.println("PageRankSum End to  write wbpages table: " + new String(pageId));
+      //System.out.println("PageRankSum End to  write wbpages table: " + new String(pageId));
       
     } catch (IOException e) {
       // TODO Auto-generated catch block

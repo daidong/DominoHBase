@@ -26,21 +26,18 @@ import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
 
-public class GenerateRandomWebGraph {
+public class GenerateFullWebGraph {
 
   
   HTable webpage;
   HTable PageRankAcc;
   int LARGEST_OUT_LINKS = 30;
-  long LARGEST_PAGE_ID = 1000000;
-  int PAGES_NUMBER = 100;
-  ArrayList<Long> allPages = new ArrayList<Long>();
-  ArrayList<Long> waitForCreate = new ArrayList<Long>();
-  
-  String pagePrefix = "pageid";
+  int PAGES_NUMBER = 10000;
   Random rand = null;
   
-  public GenerateRandomWebGraph()  throws IOException{
+  String pagePrefix = "pageid";
+    
+  public GenerateFullWebGraph()  throws IOException{
     rand = new Random(System.currentTimeMillis());
     Configuration conf = HBaseConfiguration.create();
     webpage = new HTable(conf, "wbpages".getBytes());
@@ -49,44 +46,27 @@ public class GenerateRandomWebGraph {
   
   
   public void createWebGraph() throws IOException{
-    waitForCreate.add(Math.abs(rand.nextLong()) % LARGEST_PAGE_ID);
-    while (!waitForCreate.isEmpty()){
-      long id = waitForCreate.get(0);
-      waitForCreate.remove(0);
-      //waitForCreate.remove(id);
-      createPage(id);
+    for (long i = 0; i < PAGES_NUMBER; i++){
+      createPage(i);
     }
     webpage.close();    
   }
   
-  
   public void createPage(long pageId) throws IOException{
-    if (allPages.contains(pageId))
-      return;
-    allPages.add(pageId);
-      
+          
     int outlinks = rand.nextInt(LARGEST_OUT_LINKS) + 5;
     
     ArrayList<Long> ols = new ArrayList<Long>();
 
-    if (allPages.size() > PAGES_NUMBER){
-      while (ols.size() < outlinks){
-        int randomIndex = rand.nextInt(allPages.size());
-        long reverseLink = allPages.get(randomIndex);
-        ols.add(reverseLink);
-      }
-    } else {
-      while (ols.size() < outlinks){
-        long outlink = Math.abs(rand.nextLong())%LARGEST_PAGE_ID;
-        ols.add(outlink);
-        if (!allPages.contains(outlink))
-          waitForCreate.add(outlink);
-      }
+    for (int i = 0; i < outlinks; i++){
+      long outlink = Math.abs(rand.nextLong())%PAGES_NUMBER;
+      if (outlink == pageId) continue;
+      ols.add(outlink);
     }
-    
+              
     byte[] rowKey = (pagePrefix+String.valueOf(pageId)).getBytes();
     Put p = new Put(rowKey);
-    p.add("prvalues".getBytes(), "pr".getBytes(), String.valueOf(0.5).getBytes());
+    p.add("prvalues".getBytes(), "pr".getBytes(), String.valueOf(1).getBytes());
     for (long link:ols){
       String vs = pagePrefix+String.valueOf(link);
       p.add("outlinks".getBytes(), vs.getBytes(), vs.getBytes());
@@ -100,7 +80,7 @@ public class GenerateRandomWebGraph {
    * @throws IOException 
    */
   public static void main(String[] args) throws IOException {
-    GenerateRandomWebGraph gen = new GenerateRandomWebGraph();
+    GenerateFullWebGraph gen = new GenerateFullWebGraph();
     gen.createWebGraph();
   }
 

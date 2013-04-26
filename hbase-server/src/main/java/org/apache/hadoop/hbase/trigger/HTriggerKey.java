@@ -35,9 +35,9 @@ public class HTriggerKey {
           + new String(column) + "]\n";
     }
 
-    private byte[] tableName;
-    private byte[] columnFamily;
-    private byte[] column;
+    public byte[] tableName;
+    public byte[] columnFamily;
+    public byte[] column;
 
     public HTriggerKey(byte[] tableName, byte[] columnFamily, byte[] column){
         this.tableName = tableName;

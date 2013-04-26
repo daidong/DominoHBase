@@ -17,6 +17,8 @@
 
 package org.apache.hadoop.hbase.trigger;
 
+import java.util.Comparator;
+
 /**
  * Created with IntelliJ IDEA.
  * User: daidong
@@ -24,13 +26,14 @@ package org.apache.hadoop.hbase.trigger;
  * Time: 下午11:31
  * To change this template use File | Settings | File Templates.
  */
-public class HTriggerEvent {
+public class HTriggerEvent{
     private long currTS;
     private long lastTS;
     private byte[] newValue;
     private byte[] oldValue;
     private byte[] rowKey;
     private HTriggerKey htk;
+    public long buildTs;
 
     public HTriggerEvent(HTriggerKey htk, long tsn, byte[] vn, long tso, byte[] vo){
         this.htk = htk;
@@ -38,6 +41,7 @@ public class HTriggerEvent {
         this.newValue = vn;
         this.oldValue = vo;
         this.lastTS = tso;
+        this.buildTs = System.currentTimeMillis(); 
     }
     
     public HTriggerEvent(HTriggerKey htk, byte[] rowKey, long tsn, byte[] vn, long tso, byte[] vo){
@@ -63,5 +67,19 @@ public class HTriggerEvent {
     }
     public long getOldTS(){
       return this.lastTS;
+    }
+ 
+    @Override
+    public int hashCode() {
+      return htk.hashCode();
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+      if (o instanceof HTriggerEvent){
+        HTriggerEvent that = (HTriggerEvent)o;
+        return htk.equals(that.getEventTriggerKey());
+      }
+      return false;
     }
 }

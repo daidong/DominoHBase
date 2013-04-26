@@ -69,7 +69,7 @@ public class TriggerClient {
   
   public int submitJobInternal(final TriggerConf trigger) throws Exception {
     TriggerConf triggerCopy = trigger;
-    Path triggerStagingArea = TriggerSubmissionFiles.getHDFSStagingDir();
+    Path triggerStagingArea = TriggerSubmissionFiles.getHDFSStagingDir(trigger);
     int triggerId = this.connection.getNewTriggerId(true);
     
     Path submitTriggerDir = new Path(triggerStagingArea, String.valueOf(triggerId));

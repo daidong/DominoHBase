@@ -3309,7 +3309,7 @@ public class  HRegionServer implements ClientProtocol,
     TriggerConf trigger = new TriggerConf(conf);
     
     try {
-      Path triggerStagingArea = TriggerSubmissionFiles.getHDFSStagingDir();
+      Path triggerStagingArea = TriggerSubmissionFiles.getHDFSStagingDir(trigger);
       Path submitTriggerDir = new Path(triggerStagingArea, String.valueOf(triggerId));
       Path submitTriggerFile = TriggerSubmissionFiles.getJobConfPath(submitTriggerDir);
       Path submitTriggerJar = TriggerSubmissionFiles.getTriggerJar(submitTriggerDir);

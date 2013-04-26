@@ -1,371 +1,624 @@
-352676 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129890
-352677 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129890
-352679 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129891
-352680 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129891
-352683 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129892
-352683 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129892
-352692 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129893
-352693 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129893
-352697 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129894
-352698 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129894
-352700 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129895
-352701 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129895
-352704 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129896
-352706 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129896
-352707 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129897
-352709 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129897
-352711 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129898
-352712 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129898
-352714 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129899
-352715 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129899
-352717 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129900
-352718 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129900
-352723 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129901
-352724 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129901
-352725 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129902
-352726 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129902
-352730 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129903
-352732 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129903
-352735 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129904
-352736 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129904
-352738 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129905
-352738 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129905
-352740 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129906
-352741 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129906
-352745 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129907
-352745 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129907
-352747 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129908
-352748 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129908
-352750 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129909
-352751 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129909
-352754 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129910
-352754 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129910
-352756 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129911
-352757 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129911
-352759 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129912
-352760 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129912
-352762 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129913
-352763 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129913
-352765 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129914
-352765 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129914
-352767 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129915
-352768 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129915
-352770 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129916
-352771 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129916
-352773 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129917
-352773 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129917
-352776 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129918
-352777 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129918
-352779 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129919
-352779 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129919
-352781 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129920
-352782 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129920
-352783 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129921
-352784 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129921
-352789 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129922
-352790 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129922
-352792 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129923
-352795 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129923
-352797 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129924
-352798 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129924
-352800 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129925
-352802 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129925
-352804 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129926
-352805 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129926
-352807 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129927
-352810 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129927
-352812 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129928
-352813 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129928
-352815 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129929
-352815 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129929
-352817 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129930
-352820 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129930
-352823 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129931
-352825 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129931
-352829 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129932
-352830 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129932
-352832 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129933
-352833 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129933
-352836 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129934
-352837 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129934
-352839 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129935
-352840 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129935
-352842 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129936
-352844 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129936
-352847 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129937
-352848 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129937
-352850 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129938
-352850 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129938
-352854 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129939
-352856 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129939
-352858 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129940
-352859 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129940
-352863 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129941
-352864 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129941
-352867 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129942
-352868 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129942
-352870 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129943
-352871 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129943
-352873 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129944
-352874 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129944
-352876 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129945
-352877 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129945
-352879 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129946
-352879 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129946
-352881 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129947
-352882 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129947
-352884 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129948
-352888 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129948
-352890 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129949
-352891 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129949
-352893 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129950
-352894 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129950
-352897 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129951
-352899 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129951
-352903 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129952
-352904 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129952
-352905 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129953
-352906 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129953
-352908 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129954
-352910 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129954
-352912 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129955
-352913 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129955
-352915 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129956
-352916 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129956
-352918 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129957
-352919 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129957
-352922 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129958
-352923 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129958
-352926 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129959
-352927 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129959
-352929 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129960
-352930 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129960
-352932 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129961
-352933 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129961
-352935 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129962
-352936 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129962
-352938 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129963
-352939 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129963
-352941 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129964
-352943 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129964
-352945 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129965
-352946 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129965
-352947 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129966
-352948 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129966
-352950 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129967
-352956 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129967
-352958 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129968
-352959 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129968
-352963 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129969
-352964 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129969
-352966 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129970
-352968 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129970
-352970 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129971
-352972 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129971
-352974 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129972
-352975 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129972
-352977 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129973
-352977 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129973
-352979 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129974
-352980 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129974
-352981 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129975
-352982 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129975
-352984 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129976
-352985 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129976
-352990 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129977
-352991 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129977
-352993 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129978
-352996 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129978
-352998 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129979
-352999 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129979
-353003 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129980
-353004 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129980
-353007 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129981
-353008 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129981
-353010 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129982
-353011 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129982
-353012 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129983
-353013 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129983
-353015 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129984
-353016 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129984
-353018 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129985
-353019 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129985
-353020 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129986
-353022 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129986
-353024 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129987
-353025 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129987
-353027 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129988
-353028 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129988
-353030 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129989
-353031 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129989
-353033 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129990
-353034 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129990
-353036 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129991
-353038 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129991
-353041 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129992
-353042 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129992
-353044 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129993
-353044 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129993
-353046 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129994
-353047 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129994
-353048 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129995
-353049 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129995
-353051 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129996
-353055 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129996
-353057 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129997
-353058 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129997
-353062 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129998
-353063 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129998
-353065 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #129999
-353078 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #129999
-353080 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130000
-353081 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130000
-353083 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130001
-353084 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130001
-353085 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130002
-353087 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130002
-353088 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130003
-353089 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130003
-353091 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130004
-353092 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130004
-353094 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130005
-353095 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130005
-353097 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130006
-353098 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130006
-353100 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130007
-353101 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130007
-353103 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130008
-353104 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130008
-353106 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130009
-353107 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130009
-353109 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130010
-353110 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130010
-353112 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130011
-353113 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130011
-353116 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130012
-353118 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130012
-353119 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130013
-353121 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130013
-353122 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130014
-353123 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130014
-353125 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130015
-353127 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130015
-353128 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130016
-353129 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130016
-353131 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130017
-353132 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130017
-353136 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130018
-353137 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130018
-353139 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130019
-353139 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130019
-353141 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130020
-353142 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130020
-353144 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130021
-353145 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130021
-353146 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130022
-353147 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130022
-353150 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130023
-353151 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130023
-353152 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130024
-353154 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130024
-353155 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130025
-353156 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130025
-353158 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130026
-353160 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130026
-353162 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130027
-353163 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130027
-353166 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130028
-353167 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130028
-353169 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130029
-353170 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130029
-353172 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130030
-353172 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130030
-353174 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130031
-353175 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130031
-353176 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130032
-353177 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130032
-353179 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130033
-353180 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130033
-353181 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130034
-353182 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130034
-353183 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130035
-353185 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130035
-353186 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130036
-353188 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130036
-353189 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130037
-353190 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130037
-353193 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130038
-353194 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130038
-353196 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130039
-353197 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130039
-353198 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130040
-353199 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130040
-353201 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130041
-353201 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130041
-353203 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130042
-353204 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130042
-353205 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130043
-353206 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130043
-353208 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130044
-353209 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130044
-353210 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130045
-353212 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130045
-353213 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130046
-353214 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130046
-353216 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130047
-353217 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130047
-353219 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130048
-353220 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130048
-353222 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130049
-353223 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130049
-353225 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130050
-353226 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130050
-353228 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130051
-353229 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130051
-353230 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130052
-353231 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130052
-353233 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130053
-353234 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130053
-353236 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130054
-353237 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130054
-353238 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130055
-353239 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130055
-353241 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130056
-353241 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130056
-353243 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130057
-353244 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130057
-353245 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130058
-353246 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130058
-353248 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130059
-353248 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130059
-353250 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130060
-353251 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130060
-353252 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130061
-353258 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130061
-353260 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130062
-353261 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130062
-353263 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130063
-353264 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130063
-353265 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130064
-353266 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130064
-353268 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130065
-353269 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130065
-353270 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130066
-353271 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130066
-353272 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130067
-353273 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130067
-353275 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130068
-353276 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130068
-353277 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130069
-353278 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130069
-353280 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130070
-353280 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130070
-353282 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130071
-353283 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130071
-353284 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130072
-353285 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130072
-353287 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130073
-353287 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130073
-353289 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130074
-353290 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong got value #130074
-353295 DEBUG [2013-04-24 23:40:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:52333 from daidong sending #130075
+14147 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #824
+14148 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #825
+14159 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #825
+14167 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #826
+14169 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #826
+14170 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #827
+14172 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #827
+14173 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #828
+14175 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #828
+14176 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #829
+14179 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #829
+14189 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #830
+14197 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #830
+14199 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #831
+14203 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #831
+14203 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #832
+14208 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #832
+14209 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #833
+14218 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #833
+14225 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #834
+14230 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #834
+14231 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #835
+14235 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #835
+14235 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #836
+14241 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #836
+14242 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #837
+14245 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #837
+14246 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #838
+14313 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #838
+14314 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #839
+14339 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #839
+14340 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #840
+14349 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #840
+14351 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #841
+14362 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #841
+14364 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #842
+14366 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #842
+14373 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #843
+14375 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #843
+14376 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #844
+14379 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #844
+14380 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #845
+14384 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #845
+14385 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #846
+14390 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #846
+14391 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #847
+14396 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #847
+14397 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #848
+14404 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #848
+14405 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #849
+14409 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #849
+14413 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #850
+14417 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #850
+14422 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #851
+14429 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #851
+14431 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #852
+14434 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #852
+14435 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #853
+14441 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #853
+14443 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #854
+14444 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #854
+14446 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #855
+14449 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #855
+14451 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #856
+14456 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #856
+14457 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #857
+14469 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #857
+14470 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #858
+14474 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #858
+14475 DEBUG [2013-04-26 12:17:19]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #859
+14480 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #859
+14480 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #860
+14487 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #860
+14488 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #861
+14497 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #861
+14498 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #862
+14505 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #862
+14506 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #863
+14508 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #863
+14509 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #864
+14512 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #864
+14524 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #865
+14534 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #865
+14536 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #866
+14542 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #866
+14544 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #867
+14547 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #867
+14548 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #868
+14551 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #868
+14553 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #869
+14570 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #869
+14572 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #870
+14575 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #870
+14576 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #871
+14578 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #871
+14586 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #872
+14589 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #872
+14592 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #873
+14597 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #873
+14602 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #874
+14606 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #874
+14606 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #875
+14608 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #875
+14609 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #876
+14611 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #876
+14612 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #877
+14625 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #877
+14628 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #878
+14631 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #878
+14631 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #879
+14633 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #879
+14634 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #880
+14636 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #880
+14636 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #881
+14638 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #881
+14639 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #882
+14646 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #882
+14647 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #883
+14663 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #883
+14664 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #884
+14666 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #884
+14666 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #885
+14668 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #885
+14669 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #886
+14671 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #886
+14672 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #887
+14676 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #887
+14677 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #888
+14680 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #888
+14681 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #889
+14682 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #889
+14683 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #890
+14685 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #890
+14686 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #891
+14688 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #891
+14695 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #892
+14698 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #892
+14699 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #893
+14701 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #893
+14702 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #894
+14704 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #894
+14704 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #895
+14712 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #895
+14713 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #896
+14716 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #896
+14721 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #897
+14724 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #897
+14724 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #898
+14727 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #898
+14728 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #899
+14737 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #899
+14740 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #900
+14742 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #900
+14743 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #901
+14750 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #901
+14752 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #902
+14787 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #902
+14788 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #903
+14826 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #903
+14827 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #904
+14860 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #904
+14861 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #905
+14883 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #905
+14884 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #906
+14891 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #906
+14893 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #907
+14895 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #907
+14900 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #908
+14902 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #908
+14904 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #909
+14910 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #909
+14912 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #910
+14921 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #910
+14923 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #911
+14929 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #911
+14930 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #912
+14932 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #912
+14933 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #913
+14938 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #913
+14941 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #914
+14978 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #914
+14986 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #915
+15000 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #915
+15001 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #916
+15003 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #916
+15006 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #917
+15012 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #917
+15018 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #918
+15027 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #918
+15028 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #919
+15039 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #919
+15040 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #920
+15045 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #920
+15046 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #921
+15051 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #921
+15053 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #922
+15053 DEBUG [2013-04-26 12:17:20]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+15054 DEBUG [2013-04-26 12:17:20]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+15054 DEBUG [2013-04-26 12:17:20]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+15054 DEBUG [2013-04-26 12:17:20]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+15054 DEBUG [2013-04-26 12:17:20]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+15055 DEBUG [2013-04-26 12:17:20]  Got ping response for sessionid: 0x13e448d85690005 after 1ms
+15055 DEBUG [2013-04-26 12:17:20]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+15059 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #922
+15065 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #923
+15068 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #923
+15070 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #924
+15073 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #924
+15075 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #925
+15077 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #925
+15078 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #926
+15083 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #926
+15083 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #927
+15085 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #927
+15086 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #928
+15088 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #928
+15089 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #929
+15098 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #929
+15099 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #930
+15103 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #930
+15104 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #931
+15112 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #931
+15113 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #932
+15119 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #932
+15120 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #933
+15126 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #933
+15130 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #934
+15134 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #934
+15135 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #935
+15140 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #935
+15141 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #936
+15144 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #936
+15145 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #937
+15151 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #937
+15152 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #938
+15162 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #938
+15164 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #939
+15166 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #939
+15174 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #940
+15178 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #940
+15180 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #941
+15187 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #941
+15188 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #942
+15196 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #942
+15199 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #943
+15204 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #943
+15206 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #944
+15216 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #944
+15217 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #945
+15234 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #945
+15235 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #946
+15238 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #946
+15239 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #947
+15246 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #947
+15247 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #948
+15250 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #948
+15255 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #949
+15257 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #949
+15259 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #950
+15262 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #950
+15263 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #951
+15276 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #951
+15280 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #952
+15283 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #952
+15284 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #953
+15292 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #953
+15293 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #954
+15296 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #954
+15305 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #955
+15309 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #955
+15310 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #956
+15315 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #956
+15316 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #957
+15318 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #957
+15319 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #958
+15321 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #958
+15322 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #959
+15324 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #959
+15325 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #960
+15342 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #960
+15343 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #961
+15346 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #961
+15347 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #962
+15352 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #962
+15361 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #963
+15370 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #963
+15371 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #964
+15375 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #964
+15382 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #965
+15391 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #965
+15392 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #966
+15400 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #966
+15401 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #967
+15410 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #967
+15415 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #968
+15418 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #968
+15425 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #969
+15429 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #969
+15430 DEBUG [2013-04-26 12:17:20]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #970
+15488 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #970
+15489 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #971
+15492 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #971
+15494 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #972
+15500 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #972
+15502 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #973
+15505 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #973
+15506 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #974
+15508 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #974
+15509 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #975
+15512 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #975
+15519 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #976
+15523 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #976
+15524 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #977
+15527 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #977
+15528 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #978
+15531 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #978
+15533 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #979
+15535 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #979
+15536 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #980
+15540 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #980
+15543 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #981
+15550 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #981
+15551 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #982
+15554 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #982
+15555 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #983
+15561 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #983
+15562 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #984
+15564 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #984
+15571 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #985
+15575 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #985
+15576 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #986
+15614 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #986
+15615 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #987
+15620 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #987
+15620 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #988
+15630 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #988
+15631 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #989
+15650 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #989
+15658 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #990
+15662 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #990
+15664 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #991
+15672 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #991
+15673 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #992
+15692 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #992
+15694 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #993
+15697 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #993
+15698 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #994
+15726 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #994
+15736 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #995
+15742 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #995
+15745 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #996
+15748 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #996
+15749 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #997
+15762 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #997
+15763 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #998
+15765 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #998
+15767 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #999
+15774 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #999
+15775 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1000
+15777 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1000
+15779 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1001
+15788 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1001
+15801 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1002
+15804 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1002
+15806 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1003
+15815 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1003
+15816 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1004
+15818 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1004
+15820 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1005
+15822 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1005
+15825 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1006
+15852 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1006
+15853 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1007
+15856 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1007
+15857 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1008
+15859 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1008
+15860 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1009
+15868 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1009
+15869 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1010
+15873 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1010
+15874 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1011
+15881 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1011
+15882 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1012
+15885 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1012
+15886 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1013
+15888 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1013
+15889 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1014
+15895 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1014
+15896 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1015
+15904 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1015
+15905 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1016
+15913 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1016
+15914 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1017
+15926 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1017
+15930 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1018
+15932 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1018
+15933 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1019
+15935 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1019
+15935 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1020
+15937 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1020
+15938 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1021
+15943 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1021
+15944 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1022
+15947 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1022
+15948 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1023
+15950 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1023
+15950 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1024
+15952 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1024
+15953 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1025
+15958 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1025
+15959 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1026
+15961 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1026
+15962 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1027
+15964 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1027
+15965 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1028
+15967 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1028
+15983 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1029
+15999 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1029
+16001 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1030
+16009 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1030
+16010 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1031
+16017 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1031
+16018 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1032
+16022 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1032
+16026 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1033
+16035 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1033
+16037 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1034
+16039 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1034
+16040 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1035
+16049 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1035
+16050 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1036
+16053 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1036
+16054 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1037
+16060 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1037
+16061 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1038
+16063 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1038
+16064 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1039
+16068 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1039
+16070 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1040
+16072 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1040
+16072 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1041
+16074 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1041
+16079 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1042
+16081 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1042
+16083 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1043
+16085 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1043
+16086 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1044
+16109 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1044
+16113 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1045
+16115 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1045
+16118 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1046
+16123 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1046
+16128 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1047
+16133 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1047
+16134 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1048
+16141 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1048
+16146 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1049
+16148 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1049
+16151 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1050
+16157 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1050
+16177 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1051
+16183 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1051
+16184 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1052
+16193 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1052
+16201 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1053
+16204 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1053
+16205 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1054
+16219 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1054
+16220 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1055
+16223 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1055
+16224 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1056
+16226 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1056
+16228 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1057
+16244 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1057
+16245 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1058
+16248 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1058
+16249 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1059
+16251 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1059
+16252 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1060
+16254 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1060
+16255 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1061
+16260 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1061
+16267 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong sending #1062
+16269 DEBUG [2013-04-26 12:17:21]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61037 from daidong got value #1062
+16275 INFO  [2013-04-26 12:17:21]  Closing zookeeper sessionid=0x13e448d85690005
+16275 DEBUG [2013-04-26 12:17:21]  Closing session: 0x13e448d85690005
+16275 DEBUG [2013-04-26 12:17:21]  Closing client for session: 0x13e448d85690005
+16276 DEBUG [2013-04-26 12:17:21]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+16276 DEBUG [2013-04-26 12:17:21]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+16276 DEBUG [2013-04-26 12:17:21]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+16278 DEBUG [2013-04-26 12:17:21]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+16278 DEBUG [2013-04-26 12:17:21]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+16279 DEBUG [2013-04-26 12:17:21]  Reading reply sessionid:0x13e448d85690005, packet:: clientPath:null serverPath:null finished:false header:: 4,-11  replyHeader:: 4,56,0  request:: null response:: null
+16279 DEBUG [2013-04-26 12:17:21]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+16279 DEBUG [2013-04-26 12:17:21]  Disconnecting client for session: 0x13e448d85690005
+16279 DEBUG [2013-04-26 12:17:21]  An exception was thrown while closing send thread for session 0x13e448d85690005 : Unable to read additional data from server sessionid 0x13e448d85690005, likely server has closed socket
+16279 INFO  [2013-04-26 12:17:21]  EventThread shut down
+16280 INFO  [2013-04-26 12:17:21]  Session: 0x13e448d85690005 closed
+0    DEBUG [2013-04-26 12:21:32]   Creating new Groups object
+82   DEBUG [2013-04-26 12:21:32]  Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping; cacheTimeout=300000
+293  DEBUG [2013-04-26 12:21:32]  hadoop login
+294  DEBUG [2013-04-26 12:21:32]  hadoop login commit
+300  DEBUG [2013-04-26 12:21:32]  using local user:UnixPrincipal： daidong
+303  DEBUG [2013-04-26 12:21:32]  UGI loginUser:daidong
+432  DEBUG [2013-04-26 12:21:32]  Skipped reading ZK properties file 'zoo.cfg' since 'hbase.config.read.zookeeper.config' was not set to true
+452  DEBUG [2013-04-26 12:21:32]  hconnection 0x7b5a6029 opening connection to ZooKeeper with ensemble (localhost:2181)
+1160 INFO  [2013-04-26 12:21:33]  Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+1160 INFO  [2013-04-26 12:21:33]  Client environment:host.name=host-a-52.ustcsz.edu.cn
+1160 INFO  [2013-04-26 12:21:33]  Client environment:java.version=1.6.0_45
+1160 INFO  [2013-04-26 12:21:33]  Client environment:java.vendor=Apple Inc.
+1160 INFO  [2013-04-26 12:21:33]  Client environment:java.home=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+1160 INFO  [2013-04-26 12:21:33]  Client environment:java.class.path=/Users/daidong/github/local/DominoHBase/hbase-examples/target/classes:/Users/daidong/Documents/research/weibo4j-oauth2/bin:/Users/daidong/Documents/research/weibo4j-oauth2/lib/commons-codec.jar:/Users/daidong/Documents/research/weibo4j-oauth2/lib/commons-logging-1.1.jar:/Users/daidong/Documents/research/weibo4j-oauth2/lib/log4j-1.2.16.jar:/Users/daidong/Documents/research/weibo4j-oauth2/lib/jackson-all-1.8.5.jar:/Users/daidong/Documents/research/weibo4j-oauth2/lib/commons-httpclient-3.1.jar:/Users/daidong/.m2/repository/com/google/guava/guava/12.0.1/guava-12.0.1.jar:/Users/daidong/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/daidong/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/daidong/.m2/repository/org/apache/hbase/hbase-server/0.95-SNAPSHOT/hbase-server-0.95-SNAPSHOT.jar:/Users/daidong/.m2/repository/org/apache/hbase/hbase-common/0.95-SNAPSHOT/hbase-common-0.95-SNAPSHOT.jar:/Users/daidong/.m2/repository/org/apache/hbase/hbase-protocol/0.95-SNAPSHOT/hbase-protocol-0.95-SNAPSHOT.jar:/Users/daidong/.m2/repository/org/apache/hbase/hbase-client/0.95-SNAPSHOT/hbase-client-0.95-SNAPSHOT.jar:/Users/daidong/.m2/repository/org/apache/hbase/hbase-hadoop-compat/0.95-SNAPSHOT/hbase-hadoop-compat-0.95-SNAPSHOT.jar:/Users/daidong/.m2/repository/org/apache/hbase/hbase-hadoop1-compat/0.95-SNAPSHOT/hbase-hadoop1-compat-0.95-SNAPSHOT.jar:/Users/daidong/.m2/repository/io/netty/netty/3.5.9.Final/netty-3.5.9.Final.jar:/Users/daidong/.m2/repository/com/yammer/metrics/metrics-core/2.1.2/metrics-core-2.1.2.jar:/Users/daidong/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/Users/daidong/.m2/repository/com/github/stephenc/high-scale-lib/high-scale-lib/1.1.1/high-scale-lib-1.1.1.jar:/Users/daidong/.m2/repository/commons-codec/commons-codec/1.7/commons-codec-1.7.jar:/Users/daidong/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/daidong/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/Users/daidong/.m2/repository/org/apache/commons/commons-math/2.1/commons-math-2.1.jar:/Users/daidong/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/daidong/.m2/repository/org/apache/zookeeper/zookeeper/3.4.5/zookeeper-3.4.5.jar:/Users/daidong/.m2/repository/org/jruby/jruby-complete/1.6.8/jruby-complete-1.6.8.jar:/Users/daidong/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar:/Users/daidong/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar:/Users/daidong/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/Users/daidong/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar:/Users/daidong/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/Users/daidong/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/Users/daidong/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.8.8/jackson-core-asl-1.8.8.jar:/Users/daidong/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.8.8/jackson-mapper-asl-1.8.8.jar:/Users/daidong/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.8.8/jackson-jaxrs-1.8.8.jar:/Users/daidong/.m2/repository/org/codehaus/jackson/jackson-xc/1.8.8/jackson-xc-1.8.8.jar:/Users/daidong/.m2/repository/tomcat/jasper-compiler/5.5.23/jasper-compiler-5.5.23.jar:/Users/daidong/.m2/repository/tomcat/jasper-runtime/5.5.23/jasper-runtime-5.5.23.jar:/Users/daidong/.m2/repository/org/jamon/jamon-runtime/2.3.1/jamon-runtime-2.3.1.jar:/Users/daidong/.m2/repository/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1.jar:/Users/daidong/.m2/repository/com/sun/jersey/jersey-core/1.8/jersey-core-1.8.jar:/Users/daidong/.m2/repository/com/sun/jersey/jersey-json/1.8/jersey-json-1.8.jar:/Users/daidong/.m2/repository/org/codehaus/jettison/jettison/1.3.1/jettison-1.3.1.jar:/Users/daidong/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar:/Users/daidong/.m2/repository/com/sun/jersey/jersey-server/1.8/jersey-server-1.8.jar:/Users/daidong/.m2/repository/asm/asm/3.1/asm-3.1.jar:/Users/daidong/.m2/repository/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar:/Users/daidong/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/daidong/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/Users/daidong/.m2/repository/org/cloudera/htrace/htrace/1.49/htrace-1.49.jar:/Users/daidong/.m2/repository/org/apache/thrift/libthrift/0.9.0/libthrift-0.9.0.jar:/Users/daidong/.m2/repository/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar:/Users/daidong/.m2/repository/org/apache/httpcomponents/httpcore/4.1.3/httpcore-4.1.3.jar:/Users/daidong/.m2/repository/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3.jar:/Users/daidong/.m2/repository/org/slf4j/slf4j-log4j12/1.4.3/slf4j-log4j12-1.4.3.jar:/Users/daidong/.m2/repository/org/apache/hadoop/hadoop-core/1.1.1/hadoop-core-1.1.1.jar:/Users/daidong/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/Users/daidong/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/Users/daidong/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/Users/daidong/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/daidong/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar:/Users/daidong/.m2/repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar:/Users/daidong/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar:/Users/daidong/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/Users/daidong/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/Users/daidong/.m2/repository/com/github/stephenc/findbugs/findbugs-annotations/1.3.9-1/findbugs-annotations-1.3.9-1.jar
+1161 INFO  [2013-04-26 12:21:33]  Client environment:java.library.path=.:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+1161 INFO  [2013-04-26 12:21:33]  Client environment:java.io.tmpdir=/var/folders/0i/0iKbaNeXF8qPmXBYB20ZzE+++TI/-Tmp-/
+1161 INFO  [2013-04-26 12:21:33]  Client environment:java.compiler=<NA>
+1161 INFO  [2013-04-26 12:21:33]  Client environment:os.name=Mac OS X
+1161 INFO  [2013-04-26 12:21:33]  Client environment:os.arch=x86_64
+1161 INFO  [2013-04-26 12:21:33]  Client environment:os.version=10.6.8
+1161 INFO  [2013-04-26 12:21:33]  Client environment:user.name=daidong
+1161 INFO  [2013-04-26 12:21:33]  Client environment:user.home=/Users/daidong
+1162 INFO  [2013-04-26 12:21:33]  Client environment:user.dir=/Users/daidong/github/local/DominoHBase/hbase-examples
+1163 INFO  [2013-04-26 12:21:33]  Initiating client connection, connectString=localhost:2181 sessionTimeout=180000 watcher=hconnection 0x7b5a6029
+1168 DEBUG [2013-04-26 12:21:33]  zookeeper.disableAutoWatchReset is false
+1197 INFO  [2013-04-26 12:21:33]  The identifier of this process is 12031@daidongmac-3.local
+1595 INFO  [2013-04-26 12:21:33]  Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (无法定位登录配置)
+1606 INFO  [2013-04-26 12:21:33]  Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+1607 DEBUG [2013-04-26 12:21:33]  Session establishment request sent on localhost/0:0:0:0:0:0:0:1:2181
+1608 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1611 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1619 INFO  [2013-04-26 12:21:33]  Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x13e44926f130005, negotiated timeout = 40000
+1622 DEBUG [2013-04-26 12:21:33]  hconnection 0x7b5a6029 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+1622 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1623 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1623 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1623 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1624 DEBUG [2013-04-26 12:21:33]  hconnection 0x7b5a6029-0x13e44926f130005 connected
+1628 DEBUG [2013-04-26 12:21:33]  Reading reply sessionid:0x13e44926f130005, packet:: clientPath:null serverPath:null finished:false header:: 1,3  replyHeader:: 1,55,0  request:: '/hbase/hbaseid,F  response:: s{10,11,1366950053527,1366950053531,1,0,0,0,79,0,10} 
+1628 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1630 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1631 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1631 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1632 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1632 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1634 DEBUG [2013-04-26 12:21:33]  Reading reply sessionid:0x13e44926f130005, packet:: clientPath:null serverPath:null finished:false header:: 2,4  replyHeader:: 2,55,0  request:: '/hbase/hbaseid,F  response:: #ffffffff00020313139383140646169646f6e676d61632d332e6c6f63616c112ffffffb7ffffffc862fffffffafffffffc50425546a2430623162643661322d643166362d343230382d396435392d633438623833306232313739,s{10,11,1366950053527,1366950053531,1,0,0,0,79,0,10} 
+1634 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1636 DEBUG [2013-04-26 12:21:33]  hconnection 0x7b5a6029-0x13e44926f130005 Retrieved 42 byte(s) of data from znode /hbase/hbaseid; data=PBUF\x0A$0b1bd6a2-d1f6-4208-9...
+1673 INFO  [2013-04-26 12:21:33]  ClusterId is 0b1bd6a2-d1f6-4208-9d59-c48b830b2179
+1681 DEBUG [2013-04-26 12:21:33]  Looking up root region location in ZK, connection=hconnection 0x7b5a6029
+1684 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1685 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1685 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1686 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1687 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1688 DEBUG [2013-04-26 12:21:33]  Reading reply sessionid:0x13e44926f130005, packet:: clientPath:null serverPath:null finished:false header:: 3,4  replyHeader:: 3,55,0  request:: '/hbase/root-region-server,F  response:: #ffffffff00020313139383140646169646f6e676d61632d332e6c6f63616cffffffeb231b1bffffffa7ffffffe43f7750425546a24a17686f73742d612d35322e75737463737a2e6564752e636e10ffffff99ffffffe1318fffffff7ffffff87ffffffcaffffffa4ffffffe427,s{22,22,1366950063260,1366950063260,0,0,0,0,79,0,22} 
+1689 DEBUG [2013-04-26 12:21:33]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+1694 DEBUG [2013-04-26 12:21:33]  hconnection 0x7b5a6029-0x13e44926f130005 Retrieved 42 byte(s) of data from znode /hbase/root-region-server; data=host-a-52.ustcsz.edu.cn,61593,1366950052855
+1695 DEBUG [2013-04-26 12:21:33]  Looked up root region location, connection=hconnection 0x7b5a6029; serverName=host-a-52.ustcsz.edu.cn,61593,1366950052855
+1702 DEBUG [2013-04-26 12:21:33]  Using org.apache.hadoop.hbase.ipc.ProtobufRpcClientEngine for org.apache.hadoop.hbase.client.ClientProtocol
+1744 DEBUG [2013-04-26 12:21:33]  The ping interval is60000ms.
+1828 DEBUG [2013-04-26 12:21:33]  Use SIMPLE authentication for protocol ClientProtocol
+1834 DEBUG [2013-04-26 12:21:33]  Connecting to host-a-52.ustcsz.edu.cn/219.219.216.52:61593
+1846 DEBUG [2013-04-26 12:21:33]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #0
+1846 DEBUG [2013-04-26 12:21:33]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong: starting, having connections 1
+1860 DEBUG [2013-04-26 12:21:33]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #0
+1882 DEBUG [2013-04-26 12:21:33]  Current INFO from scan results = {NAME => '.META.,,1', STARTKEY => '', ENDKEY => '', ENCODED => 1028785192,}
+1883 DEBUG [2013-04-26 12:21:33]  Cached location for .META.,,1.1028785192 is host-a-52.ustcsz.edu.cn:61593
+2069 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #1
+2072 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #1
+2079 DEBUG [2013-04-26 12:21:34]  Current INFO from scan results = {NAME => 'wbpages,,1366947759428.8dea5dc5a96de223a8a0c44968f877ca.', STARTKEY => '', ENDKEY => '', ENCODED => 8dea5dc5a96de223a8a0c44968f877ca,}
+2086 DEBUG [2013-04-26 12:21:34]  Scanning .META. starting at row=wbpages,,00000000000000 for max=10 rows using hconnection 0x7b5a6029
+2446 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #2
+2447 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #2
+2450 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #3
+2452 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #3
+2454 DEBUG [2013-04-26 12:21:34]  Current INFO from scan results = {NAME => 'wbpages,,1366947759428.8dea5dc5a96de223a8a0c44968f877ca.', STARTKEY => '', ENDKEY => '', ENCODED => 8dea5dc5a96de223a8a0c44968f877ca,}
+2455 DEBUG [2013-04-26 12:21:34]  Cached location for wbpages,,1366947759428.8dea5dc5a96de223a8a0c44968f877ca. is host-a-52.ustcsz.edu.cn:61593
+2455 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #4
+2456 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #4
+2457 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #5
+2458 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #5
+2485 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #6
+2515 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #6
+2524 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #7
+2541 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #7
+2547 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #8
+2740 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #8
+2742 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #9
+2746 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #9
+2750 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #10
+2792 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #10
+2800 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #11
+2809 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #11
+2810 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #12
+2873 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #12
+2875 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #13
+2880 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #13
+2882 DEBUG [2013-04-26 12:21:34]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #14
+2889 DEBUG [2013-04-26 12:21:35]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #14
+2890 DEBUG [2013-04-26 12:21:35]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #15
+2900 DEBUG [2013-04-26 12:21:35]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #15
+2902 DEBUG [2013-04-26 12:21:35]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong sending #16
+2908 DEBUG [2013-04-26 12:21:35]  IPC Client (47) connection to host-a-52.ustcsz.edu.cn/219.219.216.52:61593 from daidong got value #16
+2912 INFO  [2013-04-26 12:21:35]  Closing zookeeper sessionid=0x13e44926f130005
+2912 DEBUG [2013-04-26 12:21:35]  Closing session: 0x13e44926f130005
+2912 DEBUG [2013-04-26 12:21:35]  Closing client for session: 0x13e44926f130005
+2914 DEBUG [2013-04-26 12:21:35]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+2915 DEBUG [2013-04-26 12:21:35]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+2915 DEBUG [2013-04-26 12:21:35]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+2918 DEBUG [2013-04-26 12:21:35]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+2918 DEBUG [2013-04-26 12:21:35]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+2919 DEBUG [2013-04-26 12:21:35]  Reading reply sessionid:0x13e44926f130005, packet:: clientPath:null serverPath:null finished:false header:: 4,-11  replyHeader:: 4,56,0  request:: null response:: null
+2919 DEBUG [2013-04-26 12:21:35]  Could not retrieve login configuration: java.lang.SecurityException: 无法定位登录配置
+2920 DEBUG [2013-04-26 12:21:35]  Disconnecting client for session: 0x13e44926f130005
+2921 INFO  [2013-04-26 12:21:35]  EventThread shut down
+2921 INFO  [2013-04-26 12:21:35]  Session: 0x13e44926f130005 closed
+2922 DEBUG [2013-04-26 12:21:35]  An exception was thrown while closing send thread for session 0x13e44926f130005 : Unable to read additional data from server sessionid 0x13e44926f130005, likely server has closed socket
+2931 DEBUG [2013-04-26 12:21:35]  Ignoring exception during shutdown input
+java.net.SocketException: Socket is not connected
+	at sun.nio.ch.SocketChannelImpl.shutdown(Native Method)
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:665)
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:430)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:189)
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1157)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1109)

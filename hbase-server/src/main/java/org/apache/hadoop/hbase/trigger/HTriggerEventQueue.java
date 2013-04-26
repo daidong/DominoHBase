@@ -17,7 +17,9 @@
 
 package org.apache.hadoop.hbase.trigger;
 
+import java.util.Comparator;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,9 +29,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * To change this template use File | Settings | File Templates.
  */
 public class HTriggerEventQueue {
-    private static ConcurrentLinkedQueue<HTriggerEvent> EventQueue =
+    
+  private static ConcurrentLinkedQueue<HTriggerEvent> EventQueue =
             new ConcurrentLinkedQueue<HTriggerEvent>();
-
+    
     private static Runnable consumer = null;
 
     public static void register(Runnable t){
@@ -39,8 +42,10 @@ public class HTriggerEventQueue {
     public static void append(HTriggerEvent hte){
       synchronized(consumer){
         //System.out.println("HTriggerEventQueue append");
-        EventQueue.add(hte);
-        consumer.notify();
+        if (!EventQueue.contains(hte))
+          EventQueue.add(hte);
+        if (!EventQueue.isEmpty())
+          consumer.notify();
       }
     }
 

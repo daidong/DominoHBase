@@ -46,8 +46,9 @@ public class TriggerSubmissionFiles {
   }
   */
   
-  public static Path getHDFSStagingDir(){
-    Path hdfsRemote = new Path("hdfs://localhost:9000/tmp/hbase/trigger/staging");
+  public static Path getHDFSStagingDir(TriggerConf conf){
+    //Path hdfsRemote = new Path("hdfs://localhost:9000/tmp/hbase/trigger/staging");
+    Path hdfsRemote = new Path(conf.get("trigger.staging.root.dir", "/tmp/hbase/trigger/staging"));
     return hdfsRemote;
   }
   

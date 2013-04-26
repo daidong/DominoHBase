@@ -20,20 +20,18 @@
 package org.apache.hadoop.hbase.mapreduce;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.Map;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
-import org.apache.hadoop.hbase.mapreduce.SampleUploader.Uploader;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
 
 public class PageRank {
 
@@ -41,25 +39,28 @@ public class PageRank {
     public void map(ImmutableBytesWritable row, Result value, Context context) throws InterruptedException, IOException{
       byte[] prvalue = value.getValue("prvalues".getBytes(), "pr".getBytes());
       double d = Double.parseDouble(new String(prvalue));
+      BigDecimal pr = new BigDecimal(new String(prvalue));
+      
       Map<byte[], byte[]> alllinks = value.getFamilyMap("outlinks".getBytes());
       int k = alllinks.keySet().size();
       if (k == 0) k = 1;
-      double weight = d / k;
+      BigDecimal w = pr.divide(new BigDecimal(k), MathContext.DECIMAL128);
       for (byte[] page:alllinks.keySet()){
-        context.write(new ImmutableBytesWritable(page), new Text(String.valueOf(weight)));
+        context.write(new ImmutableBytesWritable(page), new Text(w.toPlainString()));
       }
     }
   }
   
   public static class PageRankReducer extends TableReducer<ImmutableBytesWritable, Text, ImmutableBytesWritable>{
     public void reduce(ImmutableBytesWritable key, Iterable<Text> value, Context context) throws InterruptedException, IOException{
-      double sum = 0;
+      BigDecimal sum = new BigDecimal(0);
       for (Text v : value){
-        double t = Double.parseDouble(new String(v.getBytes()));
-        sum += t;
+        String plainString = new String(v.getBytes());
+        BigDecimal t = new BigDecimal(plainString);
+        sum = sum.add(t);
       }
       Put p = new Put(key.get());
-      String newPr = String.valueOf(sum);
+      String newPr = sum.toPlainString();
       p.add("prvalues".getBytes(), "pr".getBytes(), newPr.getBytes());
       context.write(key, p);
     }

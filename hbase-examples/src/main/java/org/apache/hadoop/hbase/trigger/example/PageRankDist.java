@@ -64,7 +64,7 @@ public class PageRankDist extends HTriggerAction{
   @Override
   public void action(HTriggerEvent hte) {
     byte[] currentPageId = hte.getRowKey();
-    System.out.println("PageRankDist processes: " + new String(currentPageId));
+    //System.out.println("PageRankDist processes: " + new String(currentPageId));
     byte[] values = hte.getNewValue();
     String svalue = new String(values);
     float fvalue = Float.parseFloat(svalue);
@@ -84,9 +84,9 @@ public class PageRankDist extends HTriggerAction{
       if (n != 0)
         weight = fvalue / n;
       String sweight = String.valueOf(weight);
-      
+      System.out.println("=========> PageRankDist distribtues weight " + sweight);
       for (byte[] link: outlinks.values()){
-        Put p = new Put(link);
+        Put p = new Put(link);        
         p.add("nodes".getBytes(), currentPageId, sweight.getBytes());
         puts.add(p);
       }
@@ -104,8 +104,9 @@ public class PageRankDist extends HTriggerAction{
     byte[] oldValue = hte.getOldValue();
     float fnv = Float.parseFloat(new String(nvalue));
     float fov = Float.parseFloat(new String(oldValue));
-    System.out.println("Inside PageRankDist: " + fnv + " : " + fov);
+    //System.out.println("Inside PageRankDist: " + fnv + " : " + fov);
     if (Math.abs((fnv - fov)) < 0.001){
+      System.out.println("PageId: " + new String(hte.getRowKey()) + " has converged at " + System.currentTimeMillis() + " between " + fnv + ":" + fov + " .");
       return false;
     }
     return true;
