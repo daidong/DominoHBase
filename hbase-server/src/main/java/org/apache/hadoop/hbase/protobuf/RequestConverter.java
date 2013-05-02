@@ -92,6 +92,7 @@ import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.DeleteTableR
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.DisableTableRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.EnableCatalogJanitorRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.EnableTableRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetAliveRegionServersRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.IsCatalogJanitorEnabledRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.ModifyColumnRequest;
@@ -1247,6 +1248,13 @@ public final class RequestConverter {
   public static RSStopTriggerRequest buildRSStopTriggerRequest(int triggerId) {
     RSStopTriggerRequest.Builder builder = RSStopTriggerRequest.newBuilder();
     builder.setId(triggerId);
+    return builder.build();
+  }
+
+  public static GetAliveRegionServersRequest buildGetAliveRegionServersRequest(
+      boolean b) {
+    GetAliveRegionServersRequest.Builder builder = GetAliveRegionServersRequest.newBuilder();
+    builder.setAlive(b);
     return builder.build();
   }
   

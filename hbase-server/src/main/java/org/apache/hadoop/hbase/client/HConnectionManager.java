@@ -84,6 +84,8 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSStopTriggerResp
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerRequest;
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos.RSTriggerResponse;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.TableSchema;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetAliveRegionServersRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetAliveRegionServersResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.StopTriggerRequest;
@@ -697,17 +699,26 @@ public class HConnectionManager {
         throw new IllegalArgumentException(
         "triggered table name cannot be null or zero length");
       }
+      /*
       HTable ht = new HTable(conf, tableName.getBytes());
       NavigableMap<HRegionInfo, ServerName> locations = ht.getRegionLocations();
+      */
+      MasterAdminKeepAliveConnection masterAdmin = this.getKeepAliveMasterAdmin();
+      GetAliveRegionServersRequest request = RequestConverter.buildGetAliveRegionServersRequest(true);
+      GetAliveRegionServersResponse rslist = masterAdmin.getAllRegionServer(null, request);
+      List<String> servers = rslist.getAddPortList();
       
-      for (ServerName sn: locations.values()){
+      for (String sp : servers){
         
-        ClientProtocol server = getClient(sn.getHostname(), sn.getPort());
+        String host = sp.split(":")[0];
+        String port = sp.split(":")[1];
+        
+        ClientProtocol server = getClient(host, Integer.parseInt(port));
         boolean succ = false;
         int retries = 0;
         while (succ == false && retries < 3){
-          RSTriggerRequest request = RequestConverter.buildRSTriggerRequest(triggerId);
-          RSTriggerResponse rr = server.createRSTrigger(null, request);
+          RSTriggerRequest subRSrequest = RequestConverter.buildRSTriggerRequest(triggerId);
+          RSTriggerResponse rr = server.createRSTrigger(null, subRSrequest);
           succ = rr.getSucc();
           retries++;
         }

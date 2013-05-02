@@ -109,6 +109,8 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.NameStringPair;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.RegionSpecifier.RegionSpecifierType;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetAliveRegionServersRequest;
+import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetAliveRegionServersResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdRequest;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.GetTriggerIdResponse;
 import org.apache.hadoop.hbase.protobuf.generated.MasterAdminProtos.StopTriggerRequest;
@@ -1631,6 +1633,19 @@ Server {
   public StopTriggerResponse stopTrigger(RpcController controller, StopTriggerRequest request)
       throws ServiceException{
      return StopTriggerResponse.newBuilder().setStopped(true).build();
+  }
+  @Override
+  public GetAliveRegionServersResponse getAllRegionServer(
+      RpcController controller, GetAliveRegionServersRequest request)
+      throws ServiceException {
+    int i = 0;
+    GetAliveRegionServersResponse.Builder rtn = GetAliveRegionServersResponse.newBuilder();
+    //this.regionServerTracker.
+    List<ServerName> allRS = this.regionServerTracker.getOnlineServers();
+    for (ServerName sn : allRS){
+      rtn.setAddPort(i++, sn.getHostAndPort());
+    }
+    return rtn.build(); 
   }
   
   @Override

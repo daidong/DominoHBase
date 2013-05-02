@@ -86,7 +86,12 @@ message OfflineRegionResponse {
 }
 
 /* Trigger-Related protobufs */
-
+message GetAliveRegionServersRequest{
+	required bool alive = 1;
+}
+message GetAliveRegionServersResponse{
+	repeated string addPort = 1;
+} 
 message GetTriggerIdRequest{
 	required bool created = 1;
 }
@@ -209,6 +214,9 @@ service MasterAdminService {
   	
   rpc stopTrigger(StopTriggerRequest)
   	returns(StopTriggerResponse);
+  
+  rpc getAllRegionServer(GetAliveRegionServersRequest)
+  	returns(GetAliveRegionServersResponse);
   	
   /** Adds a column to the specified table. */
   rpc addColumn(AddColumnRequest)
