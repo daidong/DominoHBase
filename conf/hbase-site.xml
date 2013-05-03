@@ -22,11 +22,7 @@
 -->
 <configuration>
 
-  <property>
-    <name>fs.default.name</name>
-    <value>hdfs://localhost:9000</value>
-  </property>
-  
+
   <property>
     <name>hbase.cluster.distributed</name>
     <value>true</value>

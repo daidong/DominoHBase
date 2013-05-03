@@ -1638,12 +1638,11 @@ Server {
   public GetAliveRegionServersResponse getAllRegionServer(
       RpcController controller, GetAliveRegionServersRequest request)
       throws ServiceException {
-    int i = 0;
     GetAliveRegionServersResponse.Builder rtn = GetAliveRegionServersResponse.newBuilder();
     //this.regionServerTracker.
     List<ServerName> allRS = this.regionServerTracker.getOnlineServers();
     for (ServerName sn : allRS){
-      rtn.setAddPort(i++, sn.getHostAndPort());
+      rtn.addAddPort(sn.getHostAndPort());
     }
     return rtn.build(); 
   }
