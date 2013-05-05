@@ -53,7 +53,9 @@ public class ActionThread implements Runnable {
         } else {
           HTriggerEvent currEvent = inputDS.poll();
           if (action.filter(currEvent)) {
-            action.action(currEvent);
+            //Use wrapper instead of just action
+            action.actionWrapper(currEvent);
+            //action.action(currEvent);
           }
         }
         long currTS = EnvironmentEdgeManager.currentTimeMillis();

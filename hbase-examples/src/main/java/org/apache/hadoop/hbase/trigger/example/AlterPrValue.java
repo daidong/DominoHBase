@@ -47,7 +47,7 @@ public class AlterPrValue {
   public void alterWebGraph() throws IOException{
     long startTs = System.currentTimeMillis();
     for (long i = 0; i < PAGES_NUMBER; i++){
-      if (rand.nextDouble() < 0.001)
+      //if (rand.nextDouble() < 1)
         alterPrValue(i);
     }
     webpage.close();    
@@ -56,10 +56,10 @@ public class AlterPrValue {
   }
   
   public void alterPrValue(long pageId) throws IOException{
-          
     byte[] rowKey = (pagePrefix+String.valueOf(pageId)).getBytes();
     Put p = new Put(rowKey);
-    p.add("prvalues".getBytes(), "pr".getBytes(), String.valueOf(2).getBytes());
+    long ts = 0L;
+    p.add("prvalues".getBytes(), "pr".getBytes(), ts, String.valueOf(1).getBytes());
     webpage.put(p);
     webpage.flushCommits();
   }

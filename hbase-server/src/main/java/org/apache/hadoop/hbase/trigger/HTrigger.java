@@ -133,6 +133,7 @@ public class HTrigger {
       Class actionClassWithLoader = Class.forName(actionClassName, true, loader);
       System.out.println("init class middle, 2");
       this.action = (HTriggerAction) actionClassWithLoader.getConstructor().newInstance();
+      this.action.setHTrigger(this);
       System.out.println("init class finished, test: action class: " + this.action.TestAlive());
       
     }

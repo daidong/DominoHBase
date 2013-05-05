@@ -19,6 +19,8 @@ package org.apache.hadoop.hbase.trigger;
 
 import java.util.Comparator;
 
+import org.apache.hadoop.hbase.regionserver.HRegion;
+
 /**
  * Created with IntelliJ IDEA.
  * User: daidong
@@ -27,26 +29,42 @@ import java.util.Comparator;
  * To change this template use File | Settings | File Templates.
  */
 public class HTriggerEvent{
-    private long currTS;
-    private long lastTS;
+    /** Do not Use TS here in EVENT, we use TS as Version Control
+     * 
+      private long currTS;
+      private long lastTS;
+    */
     private byte[] newValue;
     private byte[] oldValue;
     private byte[] rowKey;
     private HTriggerKey htk;
-    public long buildTs;
+    private long version;
+    private HRegion r;
 
-    public HTriggerEvent(HTriggerKey htk, long tsn, byte[] vn, long tso, byte[] vo){
+    public HTriggerEvent(HTriggerKey htk, byte[] vn, byte[] vo, long ver){
         this.htk = htk;
-        this.currTS = tsn;
         this.newValue = vn;
         this.oldValue = vo;
-        this.lastTS = tso;
-        this.buildTs = System.currentTimeMillis(); 
+        this.version = ver;
     }
     
-    public HTriggerEvent(HTriggerKey htk, byte[] rowKey, long tsn, byte[] vn, long tso, byte[] vo){
-      this(htk, tsn, vn, tso, vo);
+    public HTriggerEvent(HTriggerKey htk, byte[] rowKey, byte[] vn, byte[] vo, long ver){
+      this(htk, vn, vo, ver);
       this.rowKey = rowKey;
+    }
+    
+    public HTriggerEvent(HTriggerKey htk, byte[] rowKey, byte[] vn, byte[] vo, long ver, HRegion region){
+      this(htk, vn, vo, ver);
+      this.rowKey = rowKey;
+      this.r = region;
+    }
+    
+    public HRegion getRegion(){
+      return this.r;
+    }
+    
+    public long getVersion(){
+      return this.version;
     }
     
     public byte[] getRowKey(){
@@ -59,14 +77,8 @@ public class HTriggerEvent{
     public byte[] getNewValue(){
       return this.newValue;
     }
-    public long getNewTS(){
-      return this.currTS;
-    }
     public byte[] getOldValue(){
       return this.oldValue;
-    }
-    public long getOldTS(){
-      return this.lastTS;
     }
  
     @Override

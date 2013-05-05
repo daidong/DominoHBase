@@ -19,6 +19,7 @@ package org.apache.hadoop.hbase.trigger.example;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 import org.apache.hadoop.conf.Configuration;
@@ -36,6 +37,8 @@ public class GenerateFullWebGraph {
   Random rand = null;
   
   String pagePrefix = "pageid";
+  
+  HashMap<Long, ArrayList<Long>> reverseMap = new HashMap<Long, ArrayList<Long>>();
     
   public GenerateFullWebGraph()  throws IOException{
     rand = new Random(System.currentTimeMillis());
@@ -49,9 +52,13 @@ public class GenerateFullWebGraph {
     for (long i = 0; i < PAGES_NUMBER; i++){
       createPage(i);
     }
-    webpage.close();    
+    webpage.close();
+    PageRankAcc.close();
   }
   
+  public void formPageRankAcc(long pageId) throws IOException{
+    
+  }
   public void createPage(long pageId) throws IOException{
           
     int outlinks = rand.nextInt(LARGEST_OUT_LINKS) + 5;
@@ -63,16 +70,26 @@ public class GenerateFullWebGraph {
       if (outlink == pageId) continue;
       ols.add(outlink);
     }
-              
+    
+    long ts = 0L;          
     byte[] rowKey = (pagePrefix+String.valueOf(pageId)).getBytes();
-    Put p = new Put(rowKey);
-    p.add("prvalues".getBytes(), "pr".getBytes(), String.valueOf(1).getBytes());
+    Put p = new Put(rowKey);   
+    ArrayList<Put> AccPuts = new ArrayList<Put>();
+    
+    p.add("prvalues".getBytes(), "pr".getBytes(), ts, String.valueOf(1).getBytes());
     for (long link:ols){
       String vs = pagePrefix+String.valueOf(link);
-      p.add("outlinks".getBytes(), vs.getBytes(), vs.getBytes());
+      p.add("outlinks".getBytes(), vs.getBytes(), ts, vs.getBytes());
+      
+      double avg = 1.0 / (double) outlinks;
+      Put AccPut = new Put(vs.getBytes());
+      AccPut.add("nodes".getBytes(), rowKey, ts, String.valueOf(avg).getBytes());
+      AccPuts.add(AccPut);
     }    
     webpage.put(p);
     webpage.flushCommits();
+    PageRankAcc.put(AccPuts);
+    PageRankAcc.flushCommits();
   }
   
   /**

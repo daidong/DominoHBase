@@ -25,9 +25,39 @@ package org.apache.hadoop.hbase.trigger;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class HTriggerAction{
+    long MAX_ROUND = Long.MAX_VALUE; 
+    
     public String TestAlive(){
       return "Lives";
     }
+    HTrigger belongToInst = null;
+    long round = 0L;
+    
     public abstract void action(HTriggerEvent hte);
     public abstract boolean filter(HTriggerEvent hte);
+    
+    public void setRound(long r){
+      this.round = r;
+    }
+    public long getRound(){
+      return this.round;
+    }
+    
+    public HTrigger getHTrigger(){
+      return this.belongToInst;
+    }
+    public long getCurrentRound(){
+      return round;
+    }
+
+    public void setHTrigger(HTrigger hTrigger) {
+      this.belongToInst = hTrigger;
+    }
+    
+    public void actionWrapper(HTriggerEvent hte){
+      //Do some before work
+      this.setRound((hte.getVersion() + 1) % MAX_ROUND); 
+      this.action(hte);
+      //Do some after work
+    }
 }

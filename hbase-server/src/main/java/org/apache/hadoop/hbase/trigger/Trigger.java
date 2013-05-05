@@ -40,6 +40,16 @@ public class Trigger {
     setTriggerName(triggerName);
   }
   
+  public Trigger(Configuration conf, String triggerName, String tableName, 
+                  String columnFamily, String column, String className){
+    this.conf = (TriggerConf) conf;
+    setTriggerName(triggerName);
+    setTriggerOnTable(tableName);
+    setTriggerOnColumFamily(columnFamily);
+    setTriggerOnColumn(column);
+    setActionClassName(className);
+  }
+  
   public void setTriggerOnTable(String tableName){
     conf.set("trigger.on.table", tableName);
   }

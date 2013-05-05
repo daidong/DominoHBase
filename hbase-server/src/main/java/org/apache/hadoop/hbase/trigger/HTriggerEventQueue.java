@@ -39,13 +39,19 @@ public class HTriggerEventQueue {
       HTriggerEventQueue.consumer = t;	
     }
     
+    /**
+     * @author daidong
+     * 2013/05/04  
+     * LOG: i modify append without check wether the HTriggerEvent is inside EventQueue or not.
+     * The Reason is Performnace is too low if we check each time wether current event is or is not 
+     * in the queue. It costs O(n) time!
+     * 
+     * @param hte
+     */
     public static void append(HTriggerEvent hte){
       synchronized(consumer){
-        //System.out.println("HTriggerEventQueue append");
-        if (!EventQueue.contains(hte))
-          EventQueue.add(hte);
-        if (!EventQueue.isEmpty())
-          consumer.notify();
+        EventQueue.add(hte);
+        consumer.notify();
       }
     }
 
