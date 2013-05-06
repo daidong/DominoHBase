@@ -43,7 +43,7 @@ public class AccumulatorReader {
   public AccumulatorReader(byte[] tableName, byte[] columnFamily, byte[] rowKey, long version, HRegion r) throws IOException{
     Get get = new Get(rowKey);
     //Get all elements that has version number less than 'version'
-    get.setTimeRange(0, version).addFamily(columnFamily);
+    get.setTimeRange(0, version).setMaxVersions(1).addFamily(columnFamily);
     this.result = r.get(get, null);
   }
   
