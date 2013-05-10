@@ -43,7 +43,9 @@ public class PageRankDistAPI2 extends HTriggerAction{
     
     Get g = new Get(currentPageId);
     g.addFamily("outlinks".getBytes());
-    ArrayList<Put> puts = new ArrayList<Put>();
+    
+    LOG.info("Round " + this.getCurrentRound() + " Action on " +
+              new String(currentPageId) + " with value: " + fvalue);
     
     try {
       Result r = myTable.get(g);
@@ -58,7 +60,8 @@ public class PageRankDistAPI2 extends HTriggerAction{
       String sweight = String.valueOf(weight);
 
       for (byte[] link: outlinks.values()){
-        WriteUnit write = new WriteUnit(this, "PageRankAcc".getBytes(), link, "nodes".getBytes(), currentPageId, sweight.getBytes());
+        WriteUnit write = new WriteUnit(this, "PageRankAcc".getBytes(), 
+                                        link, "nodes".getBytes(), currentPageId, sweight.getBytes());
         WritePrepared.append(this, write);
         LOG.info("Append WriteUnit: " + write);
       }
@@ -76,7 +79,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
     byte[] oldValue = hte.getOldValue();
     float fnv = Float.parseFloat(new String(nvalue));
     float fov = Float.parseFloat(new String(oldValue));
-    if (Math.abs((fnv - fov)) < 0.0001){
+    if (Math.abs((fnv - fov)) < 0.001){
       return false;
     }
     return true;

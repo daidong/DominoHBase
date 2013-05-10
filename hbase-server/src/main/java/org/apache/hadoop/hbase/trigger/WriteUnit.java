@@ -38,11 +38,13 @@ public class WriteUnit {
     this.p = p;
   }
   
-  public WriteUnit(HTriggerAction action, byte[] tname, byte[] row, byte[] columnFamilly, byte[] column ,byte[] value){
+  public WriteUnit(HTriggerAction action, byte[] tname, byte[] row, byte[] columnFamily, byte[] column ,byte[] value){
     this.tableName = tname;
     p = new Put(row);
-    LOG.info("In WriteUnit Construct, we create a Put instance on version: " + action.getCurrentRound());
-    p.add(columnFamilly, column, action.getCurrentRound(), value);
+    LOG.info("WriteUnit Put with version: " + action.getCurrentRound() + " to " + 
+              new String(tname) + " on " + new String(row) + "at " + new String(columnFamily) + ":" + 
+              new String(column) + " with value: " + new String(value));
+    p.add(columnFamily, column, action.getCurrentRound(), value);
   }
   
   public byte[] getTableName(){

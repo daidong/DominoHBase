@@ -49,18 +49,38 @@ public class WritePrepared{
   private static String CurrentRS = "current-rs-need-to-get";
   private static Configuration conf = HBaseConfiguration.create();
   
-  private static ConcurrentHashMap<Integer, ArrayList<WriteUnit>> cachedElements = 
+  public static ConcurrentHashMap<Integer, ArrayList<WriteUnit>> cachedElements = 
       new ConcurrentHashMap<Integer, ArrayList<WriteUnit>>();
   
+  private static byte[] lock = new byte[0];
+  
   //One Region Server shares the name to table mappping.
-  private static HashMap<byte[], HTable> nameToTableMap = new HashMap<byte[], HTable>();
+  private static ConcurrentHashMap<byte[], HTable> nameToTableMap = new ConcurrentHashMap<byte[], HTable>();
   
   
-  private static void recordZKActionRound(String node, int tid, long version){
+  public static void recordZKActionRound(String node, int tid, long version){
     
   }
-  private static void recordZKWritesFlushed(String node, int tid, long version){
+  public static void recordZKWritesFlushed(String node, int tid, long version){
     
+  }
+  public synchronized static void addElement(int k, WriteUnit v){
+    ArrayList<WriteUnit> curr = cachedElements.get(k);
+    if (curr == null){
+      curr = new ArrayList<WriteUnit>();
+      cachedElements.put(k, curr);
+    }
+    curr.add(v);
+  }
+  public synchronized static void removeElement(int k, WriteUnit w){
+    cachedElements.get(k).remove(w);
+  }
+  public synchronized static void logElements(int k, String KeyWord){
+    LOG.info("<=============" + KeyWord + "=================>");
+    for (WriteUnit w : cachedElements.get(k)){
+      LOG.info("Trigger" + k + " contains: " + w);
+    }
+    LOG.info("<==============================>");
   }
   /**
    * When trigger function users implelmented call append, it must provide a write instance,
@@ -77,55 +97,53 @@ public class WritePrepared{
       long round = action.getCurrentRound();
       int triggerId = action.getHTrigger().getTriggerId();
       recordZKActionRound(CurrentRS, triggerId, round);
-
-      ArrayList<WriteUnit> created = new ArrayList<WriteUnit>();
-      ArrayList<WriteUnit> existed = cachedElements.putIfAbsent(triggerId, created);
-      existed.add(write);
+      
+      addElement(triggerId, write);
     } catch (Exception e){
+      e.printStackTrace();
       return false;
     }
     return true;
   }
   
+  private synchronized static HTable getOrNewHTableInstance(byte[] name) throws IOException{
+    HTable ins = nameToTableMap.get(name);
+    if (ins == null){
+      ins = new HTable(conf, name);
+      nameToTableMap.put(name, ins);
+    }
+    return ins;
+  }
+  
   /**
    * Flush current action's pending Puts.
+   * TODO I am pretty sure there is an error while processing the flush operations
+   * It seems that the for statement does not work at all, and different flush may cause
+   * interacts. I need more information about Java Multi-Thread programming!
    * @param action
    */
   public static void flush(HTriggerAction action){
     int triggerId = action.getHTrigger().getTriggerId();
     long round = action.getCurrentRound();
     ArrayList<WriteUnit> writes= cachedElements.get(triggerId);
-    HashMap<HTable, ArrayList<Put>> aggWrites = new HashMap<HTable, ArrayList<Put>>();
-    
-    for (WriteUnit w:writes){
-      if (nameToTableMap.containsKey(w.getTableName())){
-        HTable instance = nameToTableMap.get(w.getTableName());
-        aggWrites.get(instance).add(w.getPut());
-      } else {
-        //We have not create table instance and its put lists
-        try {
-          HTable created = new HTable(conf, w.getTableName());
-          nameToTableMap.put(w.getTableName(), created);
-          ArrayList<Put> writesPerTable = new ArrayList<Put>();
-          writesPerTable.add(w.getPut());
-          aggWrites.put(created, writesPerTable);
-        }catch (IOException e) {
-          // TODO 
-          LOG.info("Can not create HTable instance due to bad configuration.");
+        
+    synchronized(lock){
+      for (WriteUnit w:writes){
+        try{
+          HTable ins = getOrNewHTableInstance(w.getTableName());
+          logElements(triggerId, "BEFORE REAL PUT AND REMOVE");
+          ins.put(w.getPut());
+          removeElement(triggerId, w);
+          logElements(triggerId, "AFTER REAL PUT AND REMOVE");
+        } catch (IOException e){
+          LOG.info("Exceptions While Calling HTable's Put");
         }
       }
     }
-    for (HTable t : aggWrites.keySet()){
-      try{
-        t.put(aggWrites.get(t));
-      } catch (IOException e){
-        //TODO do some reties here until a obvious fail happens.          
-      }
-      //record successful flush for future recovery.
-      //In fact, there should be a watcher monitoring on these dir and
-      //delete entries written by recordZKActionRound.
-      recordZKWritesFlushed(CurrentRS, triggerId, round);
-    }
+    //record successful flush for future recovery.
+    //In fact, there should be a watcher monitoring on these dir and
+    //delete entries written by recordZKActionRound.
+    recordZKWritesFlushed(CurrentRS, triggerId, round);
   }
 
 }
