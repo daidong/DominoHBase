@@ -1224,7 +1224,11 @@ class FSHLog implements HLog, Syncable {
       //@author: daidong
       //we add the WALDetection after we really write the WAL already to avoid
       //the situation that retry.
+//      long before = EnvironmentEdgeManager.currentTimeMillis();
       WALDetection.checkDispatch(info, htd.getName(), logEdit);
+//      long after = EnvironmentEdgeManager.currentTimeMillis();
+//      System.out.println(""+(after-before)+"\t:WALDetection.checkDispatch()" );
+      
       long len = 0;
       for (KeyValue kv : logEdit.getKeyValues()) {
         len += kv.getLength();

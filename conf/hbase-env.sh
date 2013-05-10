@@ -20,25 +20,27 @@
 # */
 
 # Set environment variables here.
-export HBASE_HOME=/Users/daidong/github/local/DominoHBase/
+
 # This script sets variables multiple times over the course of starting an hbase process,
 # so try to keep things idempotent unless you want to take an even deeper look
 # into the startup scripts (bin/hbase, etc.)
 
 # The java implementation to use.  Java 1.6 required.
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home/
+# export HADOOP_HOME=/home/hadoop/hadoop
+export JAVA_HOME=/home/hadoop/jdk1.7.0_05/
 
 # Extra Java CLASSPATH elements.  Optional.
-# export HBASE_CLASSPATH=
+# export HBASE_CLASSPATH=$HBASE_CLASSPATH
+
 
 # The maximum amount of heap to use, in MB. Default is 1000.
-# export HBASE_HEAPSIZE=1000
+export HBASE_HEAPSIZE=2000
 
 # Extra Java runtime options.
 # Below are what we set by default.  May only work with SUN JVM.
 # For more on why as well as other possible settings,
 # see http://wiki.apache.org/hadoop/PerformanceTuning
-export HBASE_OPTS="-XX:+UseConcMarkSweepGC"
+export HBASE_OPTS="$HBASE_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode"
 
 # Uncomment below to enable java garbage collection logging for the server-side processes
 # this enables basic gc logging for the server processes to the .out file
@@ -69,14 +71,11 @@ export HBASE_OPTS="-XX:+UseConcMarkSweepGC"
 # export HBASE_REGIONSERVER_OPTS="$HBASE_REGIONSERVER_OPTS $HBASE_JMX_BASE -Dcom.sun.management.jmxremote.port=10102"
 # export HBASE_THRIFT_OPTS="$HBASE_THRIFT_OPTS $HBASE_JMX_BASE -Dcom.sun.management.jmxremote.port=10103"
 # export HBASE_ZOOKEEPER_OPTS="$HBASE_ZOOKEEPER_OPTS $HBASE_JMX_BASE -Dcom.sun.management.jmxremote.port=10104"
-# export HBASE_REST_OPTS="$HBASE_REST_OPTS $HBASE_JMX_BASE -Dcom.sun.management.jmxremote.port=10105"
+
+export HBASE_HOME=/home/hadoop/DominoHBase
 
 # File naming hosts on which HRegionServers will run.  $HBASE_HOME/conf/regionservers by default.
 # export HBASE_REGIONSERVERS=${HBASE_HOME}/conf/regionservers
-
-# Uncomment and adjust to keep all the Region Server pages mapped to be memory resident
-#HBASE_REGIONSERVER_MLOCK=true
-#HBASE_REGIONSERVER_UID="hbase"
 
 # File naming hosts on which backup HMaster will run.  $HBASE_HOME/conf/backup-masters by default.
 # export HBASE_BACKUP_MASTERS=${HBASE_HOME}/conf/backup-masters
@@ -87,7 +86,7 @@ export HBASE_OPTS="-XX:+UseConcMarkSweepGC"
 # Where log files are stored.  $HBASE_HOME/logs by default.
 # export HBASE_LOG_DIR=${HBASE_HOME}/logs
 
-# Enable remote JDWP debugging of major HBase processes. Meant for Core Developers
+# Enable remote JDWP debugging of major HBase processes. Meant for Core Developers 
 # export HBASE_MASTER_OPTS="$HBASE_MASTER_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8070"
 # export HBASE_REGIONSERVER_OPTS="$HBASE_REGIONSERVER_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8071"
 # export HBASE_THRIFT_OPTS="$HBASE_THRIFT_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8072"
@@ -100,7 +99,8 @@ export HBASE_OPTS="-XX:+UseConcMarkSweepGC"
 # export HBASE_NICENESS=10
 
 # The directory where pid files are stored. /tmp by default.
-export HBASE_PID_DIR=/tmp/hadoop/pids
+export HBASE_PID_DIR=/home/hadoop/Downloads/KevinLu/tmp
+
 
 # Seconds to sleep between slave commands.  Unset by default.  This
 # can be useful in large clusters, where, e.g., slave rsyncs can
@@ -109,12 +109,3 @@ export HBASE_PID_DIR=/tmp/hadoop/pids
 
 # Tell HBase whether it should manage it's own instance of Zookeeper or not.
 export HBASE_MANAGES_ZK=true
-
-# The default log rolling policy is RFA, where the log file is rolled as per the size defined for the
-# RFA appender. Please refer to the log4j.properties file to see more details on this appender.
-# In case one needs to do log rolling on a date change, one should set the environment property
-# HBASE_ROOT_LOGGER to "<DESIRED_LOG LEVEL>,DRFA".
-# For example:
-# HBASE_ROOT_LOGGER=INFO,DRFA
-# The reason for changing default to RFA is to avoid the boundary case of filling out disk space as
-# DRFA doesn't put any cap on the log size. Please refer to HBase-5655 for more context.

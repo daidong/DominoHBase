@@ -36,9 +36,9 @@ public class HelloWorld extends HTriggerAction{
   public static void main(String[] args) throws Exception{
     Trigger trigger = new Trigger();
     trigger.setTriggerName("HelloWorldTrigger");
-    trigger.setTriggerOnTable("hello");
-    trigger.setTriggerOnColumFamily("content");
-    trigger.setTriggerOnColumn("zh");
+    trigger.setTriggerOnTable("TestTable");
+    trigger.setTriggerOnColumFamily("info");
+    trigger.setTriggerOnColumn("data");
     
     trigger.setActionClass(HelloWorld.class);
     trigger.setActionClassName("org.apache.hadoop.hbase.trigger.example.HelloWorld");

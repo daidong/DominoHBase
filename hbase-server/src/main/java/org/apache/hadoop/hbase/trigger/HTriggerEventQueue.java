@@ -21,46 +21,43 @@ import java.util.Comparator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentSkipListSet;
 
+import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
+
 /**
- * Created with IntelliJ IDEA.
- * User: daidong
- * Date: 13-3-2
- * Time: 下午9:32
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA. User: daidong Date: 13-3-2 Time: 下午9:32 To change
+ * this template use File | Settings | File Templates.
  */
 public class HTriggerEventQueue {
-    
-  private static ConcurrentLinkedQueue<HTriggerEvent> EventQueue =
-            new ConcurrentLinkedQueue<HTriggerEvent>();
-    
-    private static Runnable consumer = null;
 
-    public static void register(Runnable t){
-      HTriggerEventQueue.consumer = t;	
-    }
-    
-    /**
-     * @author daidong
-     * 2013/05/04  
-     * LOG: i modify append without check wether the HTriggerEvent is inside EventQueue or not.
-     * The Reason is Performnace is too low if we check each time wether current event is or is not 
-     * in the queue. It costs O(n) time!
-     * 
-     * @param hte
-     */
-    public static void append(HTriggerEvent hte){
-      synchronized(consumer){
-        EventQueue.add(hte);
-        consumer.notify();
-      }
-    }
+	private static ConcurrentLinkedQueue<HTriggerEvent> EventQueue = new ConcurrentLinkedQueue<HTriggerEvent>();
 
-    public static HTriggerEvent poll() throws InterruptedException{
-      synchronized (consumer) {
-        while (EventQueue.isEmpty()) {
-          consumer.wait();
-        }
-        return EventQueue.poll();
-      }
-    }
+	private static Runnable consumer = null;
+
+	public static void register(Runnable t) {
+		HTriggerEventQueue.consumer = t;
+	}
+
+	/**
+	 * @author daidong 2013/05/04 LOG: i modify append without check wether the
+	 *         HTriggerEvent is inside EventQueue or not. The Reason is
+	 *         Performnace is too low if we check each time wether current event
+	 *         is or is not in the queue. It costs O(n) time!
+	 * 
+	 * @param hte
+	 */
+	public static void append(HTriggerEvent hte) {
+		synchronized (consumer) {
+			EventQueue.add(hte);
+			consumer.notify();
+		}
+	}
+
+	public static HTriggerEvent poll() throws InterruptedException {
+		synchronized (consumer) {
+			while (EventQueue.isEmpty()) {
+				consumer.wait();
+			}
+			return EventQueue.poll();
+		}
+	}
 }

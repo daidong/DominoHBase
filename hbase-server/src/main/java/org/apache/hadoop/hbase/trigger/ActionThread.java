@@ -16,8 +16,7 @@
  */
 package org.apache.hadoop.hbase.trigger;
 
-import java.util.concurrent.ConcurrentLinkedQueue;
-import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created with IntelliJ IDEA. User: daidong Date: 13-3-2 Time: To change this
@@ -25,12 +24,19 @@ import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
  */
 public class ActionThread implements Runnable {
 
-  private ConcurrentLinkedQueue<HTriggerEvent> inputDS = null;
+  private LinkedBlockingQueue<HTriggerEvent> inputDS = null;
   private HTriggerAction action = null;
   private HTrigger ht = null;
+  
+  /*
+   * author : lukuen
+   * add the following variables only for test.
+   */
+  private volatile long feededNum = 0;
+  private volatile long  processedNum = 0;
 
   public ActionThread(HTriggerAction action) {
-    inputDS = new ConcurrentLinkedQueue<HTriggerEvent>();
+    inputDS = new LinkedBlockingQueue<HTriggerEvent>();
     this.action = action;
   }
 
@@ -40,8 +46,8 @@ public class ActionThread implements Runnable {
    * actionClass.action(newElement) 3, Report Status Periodically
    */
   @Override
+ /*
   public void run() {    
-    long lastTS = EnvironmentEdgeManager.currentTimeMillis();
     synchronized (inputDS) {
       while (true) {
         if (inputDS.isEmpty()) {
@@ -55,23 +61,52 @@ public class ActionThread implements Runnable {
           if (action.filter(currEvent)) {
             //Use wrapper instead of just action
             action.actionWrapper(currEvent);
-            //action.action(currEvent);
           }
         }
-        long currTS = EnvironmentEdgeManager.currentTimeMillis();
-        if (currTS - lastTS > 1000) {
-          // report(ht);
-          lastTS = currTS;
-        }
+        this.processedNum ++;
       }
     }
   }
-
+*/
+  public void run() {
+	  while(true) {
+		try {
+			HTriggerEvent currEvent;
+			currEvent = inputDS.take();
+		  if (action.filter(currEvent)) {
+			  action.action(currEvent);
+		  }
+		  this.processedNum++;
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	  }
+  }
+  
+  /*
   public void feed(HTriggerEvent hte) {
     synchronized(inputDS) {
       inputDS.add(hte);
       inputDS.notify();
+      this.feededNum++;
+      System.out.println("current haven't processed event num = " + (this.feededNum - this.processedNum) 
+    		  + " processedNum="+this.processedNum + " feededNum=" + this.feededNum);
     }
+  }
+  */
+  
+  public void feed(HTriggerEvent hte) {
+	  try {
+		inputDS.put(hte);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	  //lukuen: the following Statement if only for test
+	  this.feededNum++;
+	  System.out.println("current haven't processed event num = " + (this.feededNum - this.processedNum) 
+    		  + " processedNum="+this.processedNum + " feededNum=" + this.feededNum);
   }
 
 }

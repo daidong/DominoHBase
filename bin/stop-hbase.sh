@@ -69,6 +69,8 @@ then
   # stop any backup masters
   "$bin"/hbase-daemons.sh --config "${HBASE_CONF_DIR}" \
     --hosts "${HBASE_BACKUP_MASTERS}" stop master-backup
-
+  "$bin"/hbase-daemons.sh --config "${HBASE_CONF_DIR}" \
+    --hosts "${HBASE_REGIONSERVERS}" stop regionserver
+  "$bin"/hbase-daemon.sh --config "${HBASE_CONF_DIR}" stop master
   "$bin"/hbase-daemons.sh --config "${HBASE_CONF_DIR}" stop zookeeper
 fi

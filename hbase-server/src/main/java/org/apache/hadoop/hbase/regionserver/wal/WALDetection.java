@@ -29,6 +29,7 @@ import org.apache.hadoop.hbase.trigger.LocalTriggerManage;
 import org.apache.hadoop.hbase.trigger.HTriggerEventQueue;
 import org.apache.hadoop.hbase.trigger.WritePrepared;
 import org.apache.hadoop.hbase.util.Bytes;
+import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -59,12 +60,14 @@ public class WALDetection {
       //System.out.println("current registered trigger key: " + LocalTriggerManage.prettyPrint());
       
       if (LocalTriggerManage.containsTrigger(triggerMeta)) {
+    	
+    	  
         byte[] oldValues = null;
         byte[] values = null;
         values = kv.getValue();
         oldValues = values;
         
-        try {
+//        try {
           /**
            * 2013/05/04 REVISE 2
            * In fact, the execution of get old value inside the same Region is quite fast,  
@@ -80,8 +83,11 @@ public class WALDetection {
            */
           //long before = System.currentTimeMillis();
           //if contain this trigger, we construct the old value;
+        /*	
           HRegion r = info.theRegion;
+          
           if (r != null){
+        	  
             Get get = new Get(rowKey);
             get.addColumn(columnFamily, column);
             Result result = r.get(get, null);
@@ -93,16 +99,17 @@ public class WALDetection {
               oldValues = olds[0].getValue();
             }
           }
+          */
           //long after = System.currentTimeMillis();
           //LOG.info("DOMINO=PERFORMANCE=CHECK: Construct the old value costs: " + (after - before));
-          
           /*System.out.println("this update fires a trigger: values: " + new String(values, "utf-8") + " | "
               + "old values: " + new String(oldValues, "utf-8"));
           */
-          
           HTriggerKey key = new HTriggerKey(tableName, columnFamily, column);
-          HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion, r);
+//          HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion, r);
+          HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion);
           HTriggerEventQueue.append(firedEvent);
+/*          
         } catch (UnsupportedEncodingException e) {
           // TODO Auto-generated catch block
           e.printStackTrace();
@@ -110,6 +117,7 @@ public class WALDetection {
           // TODO Auto-generated catch block
           e1.printStackTrace();
         }
+*/
       }
     }
     return true;
