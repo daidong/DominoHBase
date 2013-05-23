@@ -49,8 +49,8 @@ public class WritePrepared{
   private static String CurrentRS = "current-rs-need-to-get";
   private static Configuration conf = HBaseConfiguration.create();
   
-  public static ConcurrentHashMap<Integer, ArrayList<WriteUnit>> cachedElements = 
-      new ConcurrentHashMap<Integer, ArrayList<WriteUnit>>();
+  public static HashMap<Integer, ArrayList<WriteUnit>> cachedElements = 
+      new HashMap<Integer, ArrayList<WriteUnit>>();
   
   private static byte[] lock = new byte[0];
   
@@ -64,7 +64,7 @@ public class WritePrepared{
   public static void recordZKWritesFlushed(String node, int tid, long version){
     
   }
-  public synchronized static void addElement(int k, WriteUnit v){
+  public static void addElement(int k, WriteUnit v){
     ArrayList<WriteUnit> curr = cachedElements.get(k);
     if (curr == null){
       curr = new ArrayList<WriteUnit>();
@@ -72,15 +72,17 @@ public class WritePrepared{
     }
     curr.add(v);
   }
-  public synchronized static void removeElement(int k, WriteUnit w){
-    cachedElements.get(k).remove(w);
+  public static void removeElement(int k){
+    cachedElements.get(k).clear();
   }
-  public synchronized static void logElements(int k, String KeyWord){
-    LOG.info("<=============" + KeyWord + "=================>");
-    for (WriteUnit w : cachedElements.get(k)){
-      LOG.info("Trigger" + k + " contains: " + w);
+  
+  public static void logElements(){
+    for (int k : cachedElements.keySet()){
+      LOG.info("=======> Trigger-"+k+ " contains these write units: ");
+      for (WriteUnit w : cachedElements.get(k)){
+        LOG.info(w);
+      }
     }
-    LOG.info("<==============================>");
   }
   /**
    * When trigger function users implelmented call append, it must provide a write instance,
@@ -106,7 +108,7 @@ public class WritePrepared{
     return true;
   }
   
-  private synchronized static HTable getOrNewHTableInstance(byte[] name) throws IOException{
+  private static HTable getOrNewHTableInstance(byte[] name) throws IOException{
     HTable ins = nameToTableMap.get(name);
     if (ins == null){
       ins = new HTable(conf, name);
@@ -123,27 +125,32 @@ public class WritePrepared{
    * @param action
    */
   public static void flush(HTriggerAction action){
+    
     int triggerId = action.getHTrigger().getTriggerId();
     long round = action.getCurrentRound();
     ArrayList<WriteUnit> writes= cachedElements.get(triggerId);
-        
-    synchronized(lock){
-      for (WriteUnit w:writes){
-        try{
-          HTable ins = getOrNewHTableInstance(w.getTableName());
-          logElements(triggerId, "BEFORE REAL PUT AND REMOVE");
-          ins.put(w.getPut());
-          removeElement(triggerId, w);
-          logElements(triggerId, "AFTER REAL PUT AND REMOVE");
-        } catch (IOException e){
-          LOG.info("Exceptions While Calling HTable's Put");
+    int len = writes.size();
+    
+    //LOG.info("Current Flush of action: " + action.getRound());
+    
+    try{
+      //synchronized(lock){
+        for (int i = 0; i < len; i++){
+            WriteUnit w = writes.get(i);
+            HTable ins = getOrNewHTableInstance(w.getTableName());
+            ins.put(w.getPut());
+            //ins.flushCommits();
         }
-      }
+        removeElement(triggerId);
+      //}
+    } catch (IOException e){
+      LOG.info("Exceptions While Calling HTable's Put");
     }
     //record successful flush for future recovery.
     //In fact, there should be a watcher monitoring on these dir and
     //delete entries written by recordZKActionRound.
     recordZKWritesFlushed(CurrentRS, triggerId, round);
+    //LOG.info("Trigger" + triggerId + " at round" + round + " Flush OK");
   }
 
 }

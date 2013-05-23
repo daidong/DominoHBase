@@ -38,13 +38,25 @@ public class HTriggerKey {
     public byte[] tableName;
     public byte[] columnFamily;
     public byte[] column;
+    public long ts;
 
     public HTriggerKey(byte[] tableName, byte[] columnFamily, byte[] column){
         this.tableName = tableName;
         this.columnFamily = columnFamily;
         this.column = column;
     }
+    
+    public HTriggerKey(byte[] tableName, byte[] columnFamily, byte[] column, long ts){
+      this.tableName = tableName;
+      this.columnFamily = columnFamily;
+      this.column = column;
+      this.ts = ts;
+    }
 
+    public long getTS(){ 
+      return this.ts;
+    }
+    
     public byte[] getTableName(){
       return this.tableName;
     }

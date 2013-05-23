@@ -12,7 +12,7 @@ public class PageRankAPI2 extends TriggerConfigured implements TriggerTool {
     TriggerConf tmp = (TriggerConf)this.getConf();
     
     Trigger tg1 = new Trigger(tmp, "PageRankDistAPI2", "wbpages" ,"prvalues", "pr" ,
-        "org.apache.hadoop.hbase.trigger.example.PageRankDistAPI2");
+        "org.apache.hadoop.hbase.trigger.example.PageRankDistAPI2", "INITIALWITHCONVERGE");
     tg1.submit();
     
     Trigger tg2 = new Trigger(tmp, "PageRankSumAPI2", "PageRankAcc", "nodes", "*", 

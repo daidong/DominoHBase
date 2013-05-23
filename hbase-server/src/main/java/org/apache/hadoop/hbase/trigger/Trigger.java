@@ -48,8 +48,28 @@ public class Trigger {
     setTriggerOnColumFamily(columnFamily);
     setTriggerOnColumn(column);
     setActionClassName(className);
+    setTriggerType(TRIGGERTYPE.ORDINARY);
   }
   
+
+  public Trigger(Configuration conf, String triggerName, String tableName, 
+      String columnFamily, String column, String className, String type){
+    this.conf = (TriggerConf) conf;
+    setTriggerName(triggerName);
+    setTriggerOnTable(tableName);
+    setTriggerOnColumFamily(columnFamily);
+    setTriggerOnColumn(column);
+    setActionClassName(className);
+    setTriggerType(TRIGGERTYPE.fromString(type));
+  }
+  
+  public void setTriggerType(TRIGGERTYPE type){
+    conf.set("trigger.type", type.toString());
+  }
+  public TRIGGERTYPE getTriggerType(){
+    String tt = conf.get("trigger.type", "ORDINARY");
+    return TRIGGERTYPE.valueOf(tt);
+  }
   public void setTriggerOnTable(String tableName){
     conf.set("trigger.on.table", tableName);
   }

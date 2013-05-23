@@ -48,7 +48,9 @@ public class TriggerConf extends Configuration{
     return addTriggerResources(conf);
   }
   */
-  
+  public String getTriggerType(){
+    return get("trigger.type");
+  }
   public String getTriggerName() {
     return get("trigger.name");
   }

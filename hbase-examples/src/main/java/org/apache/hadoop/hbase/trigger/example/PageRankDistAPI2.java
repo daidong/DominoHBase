@@ -35,7 +35,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
   @Override
   public void action(HTriggerEvent hte) {
 
-    //LOG.info("Current Action Round is: " + this.getCurrentRound());
+    //LOG.info("Current on " + new String(hte.getRowKey()) + " with value " + new String(hte.getNewValue()) + " at " + this.getCurrentRound());
     
     byte[] currentPageId = hte.getRowKey();
     byte[] values = hte.getNewValue();
@@ -43,9 +43,6 @@ public class PageRankDistAPI2 extends HTriggerAction{
     
     Get g = new Get(currentPageId);
     g.addFamily("outlinks".getBytes());
-    
-    LOG.info("Round " + this.getCurrentRound() + " Action on " +
-              new String(currentPageId) + " with value: " + fvalue);
     
     try {
       Result r = myTable.get(g);
@@ -63,7 +60,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
         WriteUnit write = new WriteUnit(this, "PageRankAcc".getBytes(), 
                                         link, "nodes".getBytes(), currentPageId, sweight.getBytes());
         WritePrepared.append(this, write);
-        LOG.info("Append WriteUnit: " + write);
+        //LOG.info("Append WriteUnit: " + write);
       }
       
       WritePrepared.flush(this);
@@ -80,6 +77,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
     float fnv = Float.parseFloat(new String(nvalue));
     float fov = Float.parseFloat(new String(oldValue));
     if (Math.abs((fnv - fov)) < 0.001){
+      LOG.info("We have converged at: " + new String(hte.getRowKey()));
       return false;
     }
     return true;

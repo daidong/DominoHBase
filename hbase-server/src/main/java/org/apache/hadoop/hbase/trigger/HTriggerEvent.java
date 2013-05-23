@@ -40,7 +40,12 @@ public class HTriggerEvent{
     private HTriggerKey htk;
     private long version;
     private HRegion r;
-
+    private boolean initEvent = false;
+    
+    public boolean isInitEvent(){
+      return this.initEvent;
+    }
+    
     public HTriggerEvent(HTriggerKey htk, byte[] vn, byte[] vo, long ver){
         this.htk = htk;
         this.newValue = vn;
@@ -54,9 +59,13 @@ public class HTriggerEvent{
     }
     
     public HTriggerEvent(HTriggerKey htk, byte[] rowKey, byte[] vn, byte[] vo, long ver, HRegion region){
-      this(htk, vn, vo, ver);
-      this.rowKey = rowKey;
+      this(htk, rowKey, vn, vo, ver);
       this.r = region;
+    }
+    
+    public HTriggerEvent(HTriggerKey htk, byte[] rowKey, byte[] vn, byte[] vo, long ver, HRegion region, boolean init){
+      this(htk, rowKey, vn, vo, ver, region);
+      this.initEvent = init;
     }
     
     public HRegion getRegion(){

@@ -205,7 +205,9 @@ import org.apache.hadoop.hbase.security.User;
 import org.apache.hadoop.hbase.trigger.ActionThreadManager;
 import org.apache.hadoop.hbase.trigger.HTrigger;
 import org.apache.hadoop.hbase.trigger.HTriggerKey;
+import org.apache.hadoop.hbase.trigger.InitialLocalRunner;
 import org.apache.hadoop.hbase.trigger.LocalTriggerManage;
+import org.apache.hadoop.hbase.trigger.TRIGGERTYPE;
 import org.apache.hadoop.hbase.trigger.TriggerConf;
 import org.apache.hadoop.hbase.trigger.TriggerSubmissionFiles;
 import org.apache.hadoop.hbase.util.Bytes;
@@ -1127,8 +1129,7 @@ public class  HRegionServer implements ClientProtocol,
       sb.append(r.getRegionInfo().getEncodedName());
     }
     return sb.toString();
-  }
-
+  }  
   /**
    * Wait on regions close.
    */
@@ -3362,7 +3363,6 @@ public class  HRegionServer implements ClientProtocol,
       
       
       trigger.addResource(localTriggerXMLFile);
-      System.out.println("HRegionServer: ");
       /**
        * setup the trigger
        */
@@ -3372,6 +3372,16 @@ public class  HRegionServer implements ClientProtocol,
       HTriggerKey htk = new HTriggerKey(tableName.getBytes(), columnFamily.getBytes(), column.getBytes());
       HTrigger newTrigger = new HTrigger(triggerId, htk, trigger);
       LocalTriggerManage.register(newTrigger);
+      
+      //if this trigger is an initial trigger. we need to run it 
+      //on local datastore once.
+      TRIGGERTYPE type = TRIGGERTYPE.fromString(trigger.getTriggerType());
+      if (type == TRIGGERTYPE.INITIAL || type == TRIGGERTYPE.INITIALWITHCONVERGE){
+        InitialLocalRunner ir = new InitialLocalRunner(newTrigger, this);
+        Thread irthread = new Thread(ir);
+        irthread.start();
+      }
+      
       System.out.println("current registed htrigger key: " + LocalTriggerManage.prettyPrint());
     } catch (Exception e) {
       // TODO Auto-generated catch block

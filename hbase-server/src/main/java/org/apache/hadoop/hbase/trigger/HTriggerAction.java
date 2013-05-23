@@ -54,6 +54,14 @@ public abstract class HTriggerAction{
       this.belongToInst = hTrigger;
     }
     
+    public boolean filterWrapper(HTriggerEvent hte){
+      //initial vesion must pass the check
+      if (hte.isInitEvent())
+        return true;
+      else
+        return this.filter(hte);
+    }
+    
     public void actionWrapper(HTriggerEvent hte){
       //Do some before work
       this.setRound((hte.getVersion() + 1) % MAX_ROUND); 

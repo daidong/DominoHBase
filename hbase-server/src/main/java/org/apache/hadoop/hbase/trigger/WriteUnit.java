@@ -40,11 +40,13 @@ public class WriteUnit {
   
   public WriteUnit(HTriggerAction action, byte[] tname, byte[] row, byte[] columnFamily, byte[] column ,byte[] value){
     this.tableName = tname;
-    p = new Put(row);
+    p = new Put(row, action.getCurrentRound());
+    /*
     LOG.info("WriteUnit Put with version: " + action.getCurrentRound() + " to " + 
-              new String(tname) + " on " + new String(row) + "at " + new String(columnFamily) + ":" + 
+              new String(tname) + " on " + new String(row) + " at " + new String(columnFamily) + ":" + 
               new String(column) + " with value: " + new String(value));
-    p.add(columnFamily, column, action.getCurrentRound(), value);
+     */
+    p.add(columnFamily, column, value);
   }
   
   public byte[] getTableName(){

@@ -32,8 +32,8 @@ public class GenerateFullWebGraph {
   
   HTable webpage;
   HTable PageRankAcc;
-  int LARGEST_OUT_LINKS = 30;
-  int PAGES_NUMBER = 10000;
+  int LARGEST_OUT_LINKS = 15;
+  int PAGES_NUMBER = 100;
   Random rand = null;
   
   String pagePrefix = "pageid";
@@ -61,13 +61,15 @@ public class GenerateFullWebGraph {
   }
   public void createPage(long pageId) throws IOException{
           
-    int outlinks = rand.nextInt(LARGEST_OUT_LINKS) + 5;
+    int outlinks = rand.nextInt(LARGEST_OUT_LINKS) + 1;
     
     ArrayList<Long> ols = new ArrayList<Long>();
 
-    for (int i = 0; i < outlinks; i++){
+    while (ols.size() < outlinks){
       long outlink = Math.abs(rand.nextLong())%PAGES_NUMBER;
-      if (outlink == pageId) continue;
+      if (outlink == pageId) {
+        continue;
+      }
       ols.add(outlink);
     }
     
@@ -75,13 +77,13 @@ public class GenerateFullWebGraph {
     byte[] rowKey = (pagePrefix+String.valueOf(pageId)).getBytes();
     Put p = new Put(rowKey);   
     ArrayList<Put> AccPuts = new ArrayList<Put>();
-    
     p.add("prvalues".getBytes(), "pr".getBytes(), ts, String.valueOf(1).getBytes());
+
     for (long link:ols){
       String vs = pagePrefix+String.valueOf(link);
       p.add("outlinks".getBytes(), vs.getBytes(), ts, vs.getBytes());
       
-      double avg = 1.0 / (double) outlinks;
+      double avg = 1.0 / (double) (outlinks);
       Put AccPut = new Put(vs.getBytes());
       AccPut.add("nodes".getBytes(), rowKey, ts, String.valueOf(avg).getBytes());
       AccPuts.add(AccPut);

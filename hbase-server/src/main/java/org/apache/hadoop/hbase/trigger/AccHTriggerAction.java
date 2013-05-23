@@ -38,6 +38,12 @@ public abstract class AccHTriggerAction extends HTriggerAction{
   @Override
   public abstract boolean filter(HTriggerEvent hte);
 
+  /**
+   * TODO: HRgion.get() is expensive due to its complexity 
+   * We need a simple way to get the newest value of the same column family
+   * AND
+   * We need a simple way to get the stored intermediate value.
+   */
   @Override
   public void actionWrapper(HTriggerEvent hte){
     HTriggerKey triggeredElement = hte.getEventTriggerKey();
@@ -47,7 +53,6 @@ public abstract class AccHTriggerAction extends HTriggerAction{
     long version = hte.getVersion();
     HRegion r = hte.getRegion();
     this.setRound((version + 1) % MAX_ROUND);
-    //LOG.info("In ActionWrapper, we get version: " + this.getRound());
     
     try {
       this.reader = new AccumulatorReader(tableName, columnFamily, rowKey, this.getRound(), r);

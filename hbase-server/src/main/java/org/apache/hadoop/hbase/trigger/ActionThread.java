@@ -58,7 +58,7 @@ public class ActionThread implements Runnable {
           }
         } else {
           HTriggerEvent currEvent = inputDS.poll();
-          if (action.filter(currEvent)) {
+          if (action.filterWrapper(currEvent)) {
             //Use wrapper instead of just action
             action.actionWrapper(currEvent);
           }

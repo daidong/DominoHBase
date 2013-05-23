@@ -22,7 +22,9 @@ import org.apache.hadoop.hbase.HRegionInfo;
 import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.regionserver.HRegion;
+import org.apache.hadoop.hbase.regionserver.RegionScanner;
 import org.apache.hadoop.hbase.trigger.HTriggerEvent;
 import org.apache.hadoop.hbase.trigger.HTriggerKey;
 import org.apache.hadoop.hbase.trigger.LocalTriggerManage;
@@ -33,6 +35,7 @@ import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -69,9 +72,18 @@ public class WALDetection {
         
 //        try {
           /**
+           * 2013/05/21 REVISE 4
+           * Exps show using RegionScanner directly or using Region.get does not 
+           * change the time consuming significant. SEE xls file for detail.
+           * 
+           * 2013/05/20 REVISE 3
+           * According to our exps, thes part of code is still costing time. 1~2ms each time will
+           * make the writing speed limits in 1000/s/server. It is not right. So, we use scan to 
+           * accelerate the execution time.
+           * 
            * 2013/05/04 REVISE 2
            * In fact, the execution of get old value inside the same Region is quite fast,  
-           * its typical execution time is much less than 1 million seconds. So do not need to 
+           * its typical execution time is much less than 1 ms. So do not need to 
            * move it the the filter function. 
            *  
            * 2013/05/04 REVISE
@@ -81,6 +93,7 @@ public class WALDetection {
            * value or not in filter function, so they should choose whether this part of code
            * should be executed.
            */
+<<<<<<< HEAD
           //long before = System.currentTimeMillis();
           //if contain this trigger, we construct the old value;
         /*	
@@ -88,16 +101,35 @@ public class WALDetection {
           
           if (r != null){
         	  
+=======
+          HRegion r = info.theRegion;
+          /*
+          long before = System.nanoTime();
+          //if contain this trigger, we construct the old value;
+          Scan scan = new Scan();
+          scan.setStartRow(rowKey);
+          scan.setStopRow(rowKey);
+          scan.addColumn(columnFamily, column);
+          RegionScanner rs = r.getScanner(scan);
+          List<KeyValue> kvs = new ArrayList<KeyValue>();
+          rs.next(kvs);
+          oldValues = kvs.get(0).getValue();
+          long after = System.nanoTime();
+          LOG.info("PERFORMANCE CHECK: New Method to Construct the old value costs: " + (after - before));
+          */
+          
+          //long before = System.nanoTime();          
+          if (r != null && LocalTriggerManage.containsConverge(triggerMeta)){
+>>>>>>> Add initial round
             Get get = new Get(rowKey);
             get.addColumn(columnFamily, column);
             Result result = r.get(get, null);
 
-            if (result.size() == 0){  //no element
-              oldValues = "0".getBytes();
-            } else {                  //get element
+            if (result.size() != 0){  //no element
               KeyValue[] olds = result.raw();
               oldValues = olds[0].getValue();
             }
+<<<<<<< HEAD
           }
           */
           //long after = System.currentTimeMillis();
@@ -105,6 +137,16 @@ public class WALDetection {
           /*System.out.println("this update fires a trigger: values: " + new String(values, "utf-8") + " | "
               + "old values: " + new String(oldValues, "utf-8"));
           */
+=======
+
+            //long after = System.nanoTime();
+            //LOG.info("PERFORMANCE CHECK: Old Method to Construct the old value costs: " + (after - before));
+          
+            System.out.println("this update fires a trigger: values: " + new String(values, "utf-8") + " | "
+                + "old values: " + new String(oldValues, "utf-8"));
+          }
+          
+>>>>>>> Add initial round
           HTriggerKey key = new HTriggerKey(tableName, columnFamily, column);
 //          HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion, r);
           HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion);

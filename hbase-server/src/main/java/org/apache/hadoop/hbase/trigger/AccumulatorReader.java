@@ -17,6 +17,7 @@
 package org.apache.hadoop.hbase.trigger;
 
 import java.io.IOException;
+import java.util.Map;
 
 import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.client.Get;
@@ -45,6 +46,14 @@ public class AccumulatorReader {
     //Get all elements that has version number less than 'version'
     get.setTimeRange(0, version).setMaxVersions(1).addFamily(columnFamily);
     this.result = r.get(get, null);
+    
+    Map<byte[], byte[]> nodes  = this.result.getFamilyMap("nodes".getBytes());
+    /*
+    System.out.println("AccumulatorReader Results:");
+    for (byte[] column : nodes.keySet()){
+      System.out.println("Column: " + new String(column) + " Value: " + new String(nodes.get(column)));
+    }
+    */
   }
   
   public Result GetValues(){
