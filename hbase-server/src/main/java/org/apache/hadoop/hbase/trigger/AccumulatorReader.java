@@ -47,8 +47,8 @@ public class AccumulatorReader {
     get.setTimeRange(0, version).setMaxVersions(1).addFamily(columnFamily);
     this.result = r.get(get, null);
     
+    /*    
     Map<byte[], byte[]> nodes  = this.result.getFamilyMap("nodes".getBytes());
-    /*
     System.out.println("AccumulatorReader Results:");
     for (byte[] column : nodes.keySet()){
       System.out.println("Column: " + new String(column) + " Value: " + new String(nodes.get(column)));

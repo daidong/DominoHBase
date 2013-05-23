@@ -17,9 +17,12 @@
 package org.apache.hadoop.hbase.trigger;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.regionserver.HRegion;
 
 public abstract class AccHTriggerAction extends HTriggerAction{
@@ -53,13 +56,35 @@ public abstract class AccHTriggerAction extends HTriggerAction{
     long version = hte.getVersion();
     HRegion r = hte.getRegion();
     this.setRound((version + 1) % MAX_ROUND);
+    boolean flag = true;
     
-    try {
-      this.reader = new AccumulatorReader(tableName, columnFamily, rowKey, this.getRound(), r);
-    } catch (IOException e) {
+    Class currentClass = this.getClass();
+    Class[] cargs = new Class[2];
+    cargs[0] = HTriggerEvent.class;
+    cargs[1] = Result.class;
+    
+    try{
+      Method m = currentClass.getMethod("incr", cargs);
+      PartialResult pr = new PartialResult(tableName, rowKey, columnFamily, r);
+      if (pr.getPartial() != null)
+        m.invoke(hte, pr.getPartial());
+      else
+        flag = true;
+    } catch (NoSuchMethodException e){
+      System.out.println("Current Action Does not Define Incr()");
+      flag = false;
+    } catch (Exception e) {
       e.printStackTrace();
     }
-    this.action(hte);
+    
+    if (flag){
+      try {
+        this.reader = new AccumulatorReader(tableName, columnFamily, rowKey, this.getRound(), r);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      this.action(hte);
+    }
     //Do some after work
   }
   

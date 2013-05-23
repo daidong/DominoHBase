@@ -23,8 +23,10 @@ import java.util.Random;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.client.Result;
 
 public class AlterPrValue {
 
@@ -64,13 +66,24 @@ public class AlterPrValue {
     webpage.flushCommits();
   }
   
+  public void testGetNotExistColumn() throws IOException{
+    Get g = new Get("pageid10".getBytes());
+    g.addColumn("outlinks".getBytes(), "_partial_result_".getBytes());
+    Result r = webpage.get(g);
+    if (r == null){
+      System.out.println("get NULL");
+    } else {
+      System.out.println(r);
+    }
+  }
   /**
    * @param args
    * @throws IOException 
    */
   public static void main(String[] args) throws IOException {
     AlterPrValue gen = new AlterPrValue();
-    gen.alterWebGraph();
+    gen.testGetNotExistColumn();
+    //gen.alterWebGraph();
   }
 
 }

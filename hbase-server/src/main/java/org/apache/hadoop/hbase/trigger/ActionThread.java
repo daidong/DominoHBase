@@ -27,13 +27,6 @@ public class ActionThread implements Runnable {
   private LinkedBlockingQueue<HTriggerEvent> inputDS = null;
   private HTriggerAction action = null;
   private HTrigger ht = null;
-  
-  /*
-   * author : lukuen
-   * add the following variables only for test.
-   */
-  private volatile long feededNum = 0;
-  private volatile long  processedNum = 0;
 
   public ActionThread(HTriggerAction action) {
     inputDS = new LinkedBlockingQueue<HTriggerEvent>();
@@ -41,13 +34,33 @@ public class ActionThread implements Runnable {
   }
 
   /**
-   * The work in run() is simple: 1, init actionClass according to users
-   * submission; 2, wait on the inputDS queue and once new element exist, call
-   * actionClass.action(newElement) 3, Report Status Periodically
+   * The work in run() is simple: 1, wait on the inputDS queue and once new element exist, call
+   * actionClass.action(newElement) 2, Report Status Periodically
    */
   @Override
- /*
   public void run() {    
+    while (true){
+      HTriggerEvent currEvent;
+      try {
+        currEvent = inputDS.take();
+        if (action.filterWrapper(currEvent)){
+          action.actionWrapper(currEvent);
+        }
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+  
+  public void feed(HTriggerEvent hte) {
+    try {
+      inputDS.put(hte);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+  
+  /*
     synchronized (inputDS) {
       while (true) {
         if (inputDS.isEmpty()) {
@@ -67,7 +80,7 @@ public class ActionThread implements Runnable {
       }
     }
   }
-*/
+  
   public void run() {
 	  while(true) {
 		try {
@@ -83,7 +96,7 @@ public class ActionThread implements Runnable {
 		}
 	  }
   }
-  
+  */
   /*
   public void feed(HTriggerEvent hte) {
     synchronized(inputDS) {
@@ -95,18 +108,6 @@ public class ActionThread implements Runnable {
     }
   }
   */
-  
-  public void feed(HTriggerEvent hte) {
-	  try {
-		inputDS.put(hte);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	  //lukuen: the following Statement if only for test
-	  this.feededNum++;
-	  System.out.println("current haven't processed event num = " + (this.feededNum - this.processedNum) 
-    		  + " processedNum="+this.processedNum + " feededNum=" + this.feededNum);
-  }
+
 
 }

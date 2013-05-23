@@ -24,10 +24,10 @@
 # This script sets variables multiple times over the course of starting an hbase process,
 # so try to keep things idempotent unless you want to take an even deeper look
 # into the startup scripts (bin/hbase, etc.)
-
+export HBASE_HOME=/Users/daidong/github/local/DominoHBase/
 # The java implementation to use.  Java 1.6 required.
 # export HADOOP_HOME=/home/hadoop/hadoop
-export JAVA_HOME=/home/hadoop/jdk1.7.0_05/
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home/
 
 # Extra Java CLASSPATH elements.  Optional.
 # export HBASE_CLASSPATH=$HBASE_CLASSPATH
@@ -72,8 +72,6 @@ export HBASE_OPTS="$HBASE_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:+UseConcMarkS
 # export HBASE_THRIFT_OPTS="$HBASE_THRIFT_OPTS $HBASE_JMX_BASE -Dcom.sun.management.jmxremote.port=10103"
 # export HBASE_ZOOKEEPER_OPTS="$HBASE_ZOOKEEPER_OPTS $HBASE_JMX_BASE -Dcom.sun.management.jmxremote.port=10104"
 
-export HBASE_HOME=/home/hadoop/DominoHBase
-
 # File naming hosts on which HRegionServers will run.  $HBASE_HOME/conf/regionservers by default.
 # export HBASE_REGIONSERVERS=${HBASE_HOME}/conf/regionservers
 
@@ -99,7 +97,7 @@ export HBASE_HOME=/home/hadoop/DominoHBase
 # export HBASE_NICENESS=10
 
 # The directory where pid files are stored. /tmp by default.
-export HBASE_PID_DIR=/home/hadoop/Downloads/KevinLu/tmp
+export HBASE_PID_DIR=/tmp/hadoop/pids
 
 
 # Seconds to sleep between slave commands.  Unset by default.  This
