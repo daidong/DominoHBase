@@ -31,7 +31,6 @@ import org.apache.hadoop.hbase.trigger.LocalTriggerManage;
 import org.apache.hadoop.hbase.trigger.HTriggerEventQueue;
 import org.apache.hadoop.hbase.trigger.WritePrepared;
 import org.apache.hadoop.hbase.util.Bytes;
-import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -63,14 +62,12 @@ public class WALDetection {
       //System.out.println("current registered trigger key: " + LocalTriggerManage.prettyPrint());
       
       if (LocalTriggerManage.containsTrigger(triggerMeta)) {
-    	
-    	  
         byte[] oldValues = null;
         byte[] values = null;
         values = kv.getValue();
         oldValues = values;
         
-//        try {
+        try {
           /**
            * 2013/05/21 REVISE 4
            * Exps show using RegionScanner directly or using Region.get does not 
@@ -93,15 +90,6 @@ public class WALDetection {
            * value or not in filter function, so they should choose whether this part of code
            * should be executed.
            */
-<<<<<<< HEAD
-          //long before = System.currentTimeMillis();
-          //if contain this trigger, we construct the old value;
-        /*	
-          HRegion r = info.theRegion;
-          
-          if (r != null){
-        	  
-=======
           HRegion r = info.theRegion;
           /*
           long before = System.nanoTime();
@@ -120,7 +108,6 @@ public class WALDetection {
           
           //long before = System.nanoTime();          
           if (r != null && LocalTriggerManage.containsConverge(triggerMeta)){
->>>>>>> Add initial round
             Get get = new Get(rowKey);
             get.addColumn(columnFamily, column);
             Result result = r.get(get, null);
@@ -129,15 +116,6 @@ public class WALDetection {
               KeyValue[] olds = result.raw();
               oldValues = olds[0].getValue();
             }
-<<<<<<< HEAD
-          }
-          */
-          //long after = System.currentTimeMillis();
-          //LOG.info("DOMINO=PERFORMANCE=CHECK: Construct the old value costs: " + (after - before));
-          /*System.out.println("this update fires a trigger: values: " + new String(values, "utf-8") + " | "
-              + "old values: " + new String(oldValues, "utf-8"));
-          */
-=======
 
             //long after = System.nanoTime();
             //LOG.info("PERFORMANCE CHECK: Old Method to Construct the old value costs: " + (after - before));
@@ -146,12 +124,9 @@ public class WALDetection {
                 + "old values: " + new String(oldValues, "utf-8"));
           }
           
->>>>>>> Add initial round
           HTriggerKey key = new HTriggerKey(tableName, columnFamily, column);
-//          HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion, r);
-          HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion);
+          HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion, r);
           HTriggerEventQueue.append(firedEvent);
-/*          
         } catch (UnsupportedEncodingException e) {
           // TODO Auto-generated catch block
           e.printStackTrace();
@@ -159,7 +134,6 @@ public class WALDetection {
           // TODO Auto-generated catch block
           e1.printStackTrace();
         }
-*/
       }
     }
     return true;
