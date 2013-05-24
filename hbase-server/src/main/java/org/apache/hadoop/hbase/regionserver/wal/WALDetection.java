@@ -58,10 +58,29 @@ public class WALDetection {
       long curVersion = kv.getTimestamp();
       
       HTriggerKey triggerMeta = new HTriggerKey(tableName, columnFamily, column);
-      //System.out.println("processing trigger key: " + triggerMeta.toString() + " at Row: " + new String(rowKey));
-      //System.out.println("current registered trigger key: " + LocalTriggerManage.prettyPrint());
+      /*
+      System.out.println("BEFORE processing event of " + new String(tableName) + " at Row: " + new String(rowKey)
+                            + " column family: " + new String(columnFamily) + 
+                            " column: " + new String(column));
       
-      if (LocalTriggerManage.containsTrigger(triggerMeta)) {
+      System.out.println("current registered trigger key: " + LocalTriggerManage.prettyPrint());
+      */
+      /**
+       * 2013/05/23 REVISE 1
+       * We have to make sure updates on column "_partial_result_" would not cause any trigger happen.
+       */
+      if (
+          ("_partial_result_".compareTo(new String(column)) != 0)
+          && LocalTriggerManage.containsTrigger(triggerMeta)) {
+        
+        /*
+        System.out.println("_partial_result_ Compare result is: " 
+              + "_partial_result_".compareToIgnoreCase(new String(column))); 
+        
+        System.out.println("AFTER processing event of " + new String(tableName) + " at Row: " + new String(rowKey)
+                            + " column family: " + new String(columnFamily) + 
+                            " column: " + new String(column));
+        */
         byte[] oldValues = null;
         byte[] values = null;
         values = kv.getValue();
@@ -107,7 +126,8 @@ public class WALDetection {
           */
           
           //long before = System.nanoTime();          
-          if (r != null && LocalTriggerManage.containsConverge(triggerMeta)){
+          if (r != null && LocalTriggerManage.containsConvergeOrIncr(triggerMeta)){
+            System.out.println("GET Old Value for: " + new String(tableName));
             Get get = new Get(rowKey);
             get.addColumn(columnFamily, column);
             Result result = r.get(get, null);

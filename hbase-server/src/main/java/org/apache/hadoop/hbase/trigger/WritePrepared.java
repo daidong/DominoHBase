@@ -139,6 +139,9 @@ public class WritePrepared{
             WriteUnit w = writes.get(i);
             HTable ins = getOrNewHTableInstance(w.getTableName());
             ins.put(w.getPut());
+            if (w.isWriteToIncr()){
+              ins.put(w.getAccompPut());
+            }
             //ins.flushCommits();
         }
         removeElement(triggerId);

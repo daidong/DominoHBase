@@ -24,7 +24,8 @@ import org.apache.hadoop.hbase.client.Put;
 /**
  * A WriteUnit contains 
  * @author daidong
- *
+ * 
+ * We must make WriteUnit automatically support the incr method.
  */
 public class WriteUnit {
   
@@ -32,6 +33,11 @@ public class WriteUnit {
   
   private Put p = null;
   private byte[] tableName = null;
+  private byte[] row = null;
+  private byte[] columnFamily = null;
+  private byte[] value = null;
+  private boolean writeToIncr = false;
+  private Put accompPut = null;
   
   public WriteUnit(byte[] tname, Put p){
     this.tableName = tname;
@@ -47,15 +53,41 @@ public class WriteUnit {
               new String(column) + " with value: " + new String(value));
      */
     p.add(columnFamily, column, value);
+    this.row = row;
+    this.columnFamily = columnFamily;
+    this.value = value;
   }
   
+  public WriteUnit(HTriggerAction action, byte[] tname, byte[] row, 
+      byte[] columnFamily, byte[] column ,byte[] value, boolean writeToIncr){
+    this(action, tname, row, columnFamily, column, value);
+    this.accompPut= new Put(row, action.getCurrentRound());
+    this.accompPut.add(columnFamily, "_partial_result_".getBytes(), value);
+    this.writeToIncr = writeToIncr;
+  }
+  
+  public boolean isWriteToIncr(){
+    return this.writeToIncr;
+  }
+  
+  public byte[] getRow(){
+    return this.row;
+  }
+  public byte[] getCF(){
+    return this.columnFamily;
+  }
+  public byte[] getValue(){
+    return this.value;
+  }
   public byte[] getTableName(){
     return this.tableName;
   }
   public Put getPut(){
     return this.p;
   }
- 
+  public Put getAccompPut(){
+    return this.accompPut;
+  }
   @Override
   public String toString(){
     StringBuilder sb = new StringBuilder();

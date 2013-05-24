@@ -105,9 +105,14 @@ public class LocalTriggerManage {
     public static boolean containsTrigger(HTriggerKey tk){
         return activeTriggers.containsKey(tk);
     }
-    public static boolean containsConverge(HTriggerKey tk){
+    
+    public static boolean containsConvergeOrIncr(HTriggerKey tk){
         for (HTrigger ht:activeTriggers.get(tk)){
           TRIGGERTYPE curr = TRIGGERTYPE.fromString(ht.getConf().getTriggerType());
+          
+          if (ht.getActionClass().getIncr() != null)
+            return true;
+          
           System.out.println("check type: " + ht.triggerId + " type is: " + ht.getConf().getTriggerType());
           if (curr == TRIGGERTYPE.CONVERGE
                 || curr == TRIGGERTYPE.INITIALWITHCONVERGE

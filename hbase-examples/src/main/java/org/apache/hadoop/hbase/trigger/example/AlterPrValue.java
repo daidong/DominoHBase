@@ -70,7 +70,7 @@ public class AlterPrValue {
     Get g = new Get("pageid10".getBytes());
     g.addColumn("outlinks".getBytes(), "_partial_result_".getBytes());
     Result r = webpage.get(g);
-    if (r == null){
+    if (r.isEmpty()){
       System.out.println("get NULL");
     } else {
       System.out.println(r);

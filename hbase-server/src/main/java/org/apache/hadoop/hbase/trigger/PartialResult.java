@@ -48,13 +48,38 @@ import org.apache.hadoop.hbase.regionserver.HRegion;
 public class PartialResult {
   
   private Result result = null;
+  private byte[] tname = null;
+  private byte[] rowKey = null;
+  private byte[] cf = null;
+  private HRegion r = null;
+  private byte[] value = null;
   
   public PartialResult(byte[] tableName, byte[] rowKey,  byte[] columnFamily, HRegion r) throws IOException{
+    this.tname = tableName;
+    this.rowKey = rowKey;
+    this.cf = columnFamily;
+    this.r = r;
+    
     Get get = new Get(rowKey);
     get.addColumn(columnFamily, "_partial_result_".getBytes()).setMaxVersions(1);
     this.result = r.get(get, null);    
+    value = result.value();
   }
-  
+  public byte[] getValue(){
+    return this.value;
+  }
+  public byte[] getTableName(){
+    return this.tname;
+  }
+  public byte[] getRowKey(){
+    return this.rowKey;
+  }
+  public byte[] getCF(){
+    return this.cf;
+  }
+  public HRegion getRegion(){
+    return this.r;
+  }
   public Result getPartial(){
     return this.result;
   }

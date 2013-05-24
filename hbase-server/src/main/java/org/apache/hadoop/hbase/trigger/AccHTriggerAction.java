@@ -57,28 +57,25 @@ public abstract class AccHTriggerAction extends HTriggerAction{
     HRegion r = hte.getRegion();
     this.setRound((version + 1) % MAX_ROUND);
     boolean flag = true;
-    
-    Class currentClass = this.getClass();
-    Class[] cargs = new Class[2];
-    cargs[0] = HTriggerEvent.class;
-    cargs[1] = Result.class;
-    
-    try{
-      Method m = currentClass.getMethod("incr", cargs);
-      PartialResult pr = new PartialResult(tableName, rowKey, columnFamily, r);
-      if (pr.getPartial() != null)
-        m.invoke(hte, pr.getPartial());
-      else
-        flag = true;
-    } catch (NoSuchMethodException e){
-      System.out.println("Current Action Does not Define Incr()");
-      flag = false;
-    } catch (Exception e) {
+
+    System.out.println("AccHTriggerAction Begins at " + new String(rowKey));
+    Method incrMethod = this.getIncr();
+    try {
+      if (incrMethod != null){
+        System.out.println("ActionWrapper...Execute incr");
+        PartialResult pr = new PartialResult(tableName, rowKey, columnFamily, r);
+        if (!pr.getPartial().isEmpty()){
+          flag = false;
+          incrMethod.invoke(hte, pr);
+        }
+      }
+    } catch (Exception e){
       e.printStackTrace();
     }
     
     if (flag){
       try {
+        System.out.println("ActionWrapper...Execute action");
         this.reader = new AccumulatorReader(tableName, columnFamily, rowKey, this.getRound(), r);
       } catch (IOException e) {
         e.printStackTrace();

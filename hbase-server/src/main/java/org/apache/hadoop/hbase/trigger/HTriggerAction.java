@@ -17,6 +17,10 @@
 
 package org.apache.hadoop.hbase.trigger;
 
+import java.lang.reflect.Method;
+
+import org.apache.hadoop.hbase.client.Result;
+
 /**
  * Created with IntelliJ IDEA.
  * User: daidong
@@ -52,6 +56,22 @@ public abstract class HTriggerAction{
 
     public void setHTrigger(HTrigger hTrigger) {
       this.belongToInst = hTrigger;
+    }
+    
+    public Method getIncr(){
+      Class<?> currentClass = this.getClass();
+      Class<?>[] cargs = new Class[2];
+      cargs[0] = HTriggerEvent.class;
+      cargs[1] = PartialResult.class;
+      Method m = null;
+      try {
+        m = currentClass.getMethod("incr", cargs);
+      } catch (SecurityException e) {
+        return null;
+      } catch (NoSuchMethodException e) {
+        return null;
+      }
+      return m;
     }
     
     public boolean filterWrapper(HTriggerEvent hte){

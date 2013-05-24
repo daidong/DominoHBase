@@ -58,7 +58,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
 
       for (byte[] link: outlinks.values()){
         WriteUnit write = new WriteUnit(this, "PageRankAcc".getBytes(), 
-                                        link, "nodes".getBytes(), currentPageId, sweight.getBytes());
+                                        link, "nodes".getBytes(), currentPageId, sweight.getBytes(), true);
         WritePrepared.append(this, write);
         //LOG.info("Append WriteUnit: " + write);
       }
@@ -77,7 +77,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
     float fnv = Float.parseFloat(new String(nvalue));
     float fov = Float.parseFloat(new String(oldValue));
     if (Math.abs((fnv - fov)) < 0.001){
-      LOG.info("We have converged at: " + new String(hte.getRowKey()));
+      System.out.println("We have converged at: " + new String(hte.getRowKey()));
       return false;
     }
     return true;

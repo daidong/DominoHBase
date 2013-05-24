@@ -83,6 +83,11 @@ public class HTriggerKey {
          * 1) judge whether this.column or that.column equals to "*". 
          * 2) if yes, return true;
          * 2) if not, compare their byte
+         * 3) if updates on _partial_result_ column happen, ignore it.
+        
+        if ("_partial_result_".compareToIgnoreCase(new String(column)) == 0 ||
+            "_partial_result_".compareToIgnoreCase(new String(that.column)) == 0)
+          return false;
          */
         if ("*".compareToIgnoreCase(new String(column)) == 0)
           return true;

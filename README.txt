@@ -12,4 +12,11 @@ What we care about while developing Domino is:
 * How to make programming under such model simpler.
 
 # Architecture
-@TBC
+# Example Program
+# Ordinary Trigger
+# Accumulator Trigger
+# Incremental Function
+# PreparedWriter
+# AccumulatorReader
+# PartialResult
+
