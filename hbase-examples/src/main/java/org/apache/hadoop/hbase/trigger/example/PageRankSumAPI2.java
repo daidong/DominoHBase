@@ -56,6 +56,7 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
         String sw = new String(weight);
         float fw = Float.parseFloat(sw);
         sum += fw;
+        LOG.info("In key: " + hte.getEventTriggerKey() + " we accumulate for round " + this.getCurrentRound());
       }
     }
     
