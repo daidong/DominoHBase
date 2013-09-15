@@ -46,7 +46,7 @@ public class GenerateNIncomingGraph {
 				j++;
 				ArrayList<Long> outs = null;
 				if (!webs.containsKey(inlink)){
-					outs = webs.get(inlink);
+					outs = new ArrayList<Long>();
 					outs.add(i); 
 					webs.put(inlink, outs);
 				} else {
