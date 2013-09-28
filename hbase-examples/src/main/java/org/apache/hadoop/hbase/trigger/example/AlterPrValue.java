@@ -33,8 +33,8 @@ public class AlterPrValue {
   
   HTable webpage;
   HTable PageRankAcc;
-  int LARGEST_OUT_LINKS = 30;
-  int PAGES_NUMBER = 10000;
+  int LARGEST_OUT_LINKS = 200;
+  int PAGES_NUMBER = 1000;
   Random rand = null;
   
   String pagePrefix = "pageid";
