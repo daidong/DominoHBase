@@ -16,3 +16,9 @@ org.eclipse.m2e.core.prefs
 
 
 *.prefs
+
+hbase-server/src/main/java/org/apache/hadoop/.DS_Store
+
+hbase-server/src/main/java/org/apache/hadoop/hbase/.DS_Store
+
+.DS_Store
