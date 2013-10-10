@@ -14,8 +14,8 @@ public class GenerateNIncomingGraph {
 
 	HTable webpage;
 	HTable PageRankAcc;
-	int LINK_IN_NUMBER = 20;
-	int PAGES_NUMBER = 1000;
+	int LINK_IN_NUMBER = 2;
+	int PAGES_NUMBER = 5;
 	Random rand = null;
 
 	String pagePrefix = "pageid";

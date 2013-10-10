@@ -36,7 +36,9 @@ public class PageRankDistAPI2 extends HTriggerAction{
   public void action(HTriggerEvent hte) {
 
     //LOG.info("Current on " + new String(hte.getRowKey()) + " with value " + new String(hte.getNewValue()) + " at " + this.getCurrentRound());
-    
+    System.out.println("PageRankDist ========>" + "Current on " + new String(hte.getRowKey()) + 
+    			" with value " + new String(hte.getNewValue()) + " at " + this.getCurrentRound());
+	  
     byte[] currentPageId = hte.getRowKey();
     byte[] values = hte.getNewValue();
     float fvalue = Float.parseFloat(new String(values));

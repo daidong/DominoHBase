@@ -32,25 +32,21 @@ import org.apache.commons.logging.LogFactory;
  */
 public class HTriggerEventQueue {
 
-  /**
-   * LinkedBlockingQueue and ConcurrentLinkedQueue
-   * 
-   
-  static Comparator<HTriggerEvent> cmp = new Comparator<HTriggerEvent>() {
-    public int compare(HTriggerEvent e1, HTriggerEvent e2) {
-      return (int) (e1.getTimeStamp() - e2.getTimeStamp());
-    }
-  };
-  private static PriorityBlockingQueue<HTriggerEvent> EventQueue = new PriorityBlockingQueue<HTriggerEvent>(1000, cmp);
-   */
-  private static final Log LOG = LogFactory.getLog(HTriggerEventQueue.class);
-  private static LinkedBlockingQueue<HTriggerEvent> EventQueue = new LinkedBlockingQueue<HTriggerEvent>();  
+	private static final Log LOG = LogFactory.getLog(HTriggerEventQueue.class);
+	private static LinkedBlockingQueue<HTriggerEvent> EventQueue = new LinkedBlockingQueue<HTriggerEvent>();  
 	private static Runnable consumer = null;
 
 	public static void register(Runnable t) {
 		HTriggerEventQueue.consumer = t;
 	}
 
+	private static void Print(LinkedBlockingQueue<HTriggerEvent> eq){
+		System.out.println("Start <---------->");
+		for (HTriggerEvent e:eq){
+			System.out.println(e.toString());
+		}
+		System.out.println("<----------> End");
+	}
 	/**
 	 * @author daidong 2013/05/04 LOG: i modify append without check wether the
 	 *         HTriggerEvent is inside EventQueue or not. The Reason is
@@ -60,18 +56,19 @@ public class HTriggerEventQueue {
 	 * @param hte
 	 */
 	public static void append(HTriggerEvent hte) {
-		  if (hte.isAccEvent() && EventQueue.contains(hte)){
-		    EventQueue.remove(hte);
-		    LOG.info("remove redundant");
-		  }
-		  try {
-        EventQueue.put(hte);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
+		if (hte.isAccEvent() && EventQueue.contains(hte)){
+			EventQueue.remove(hte);
+			LOG.info("remove redundant");
+		}
+		try {
+			EventQueue.put(hte);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		Print(EventQueue);
 	}
 
 	public static HTriggerEvent poll() throws InterruptedException {
-			return EventQueue.take();
+		return EventQueue.take();
 	}
 }

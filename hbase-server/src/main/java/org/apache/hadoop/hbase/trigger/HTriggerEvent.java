@@ -115,4 +115,11 @@ public class HTriggerEvent{
       }
       return false;
     }
+
+	@Override
+	public String toString() {
+		return (new String(this.rowKey) + "===" + this.version + "==="); 
+	}
+    
+    
 }
