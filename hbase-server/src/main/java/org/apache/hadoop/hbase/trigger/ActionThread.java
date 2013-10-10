@@ -18,11 +18,16 @@ package org.apache.hadoop.hbase.trigger;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
  * Created with IntelliJ IDEA. User: daidong Date: 13-3-2 Time: To change this
  * template use File | Settings | File Templates.
  */
 public class ActionThread implements Runnable {
+
+  private static final Log LOG = LogFactory.getLog(ActionThread.class);
 
   private LinkedBlockingQueue<HTriggerEvent> inputDS = null;
   private HTriggerAction action = null;
@@ -54,6 +59,10 @@ public class ActionThread implements Runnable {
   
   public void feed(HTriggerEvent hte) {
     try {
+      if (hte.isAccEvent() && inputDS.contains(hte)){
+        inputDS.remove(hte);
+        LOG.info("remove redundant");
+      }
       inputDS.put(hte);
     } catch (InterruptedException e) {
       e.printStackTrace();

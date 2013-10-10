@@ -143,7 +143,6 @@ public class WALDetection {
             System.out.println("this update fires a trigger: values: " + new String(values, "utf-8") + " | "
                 + "old values: " + new String(oldValues, "utf-8"));
           }
-          
           HTriggerKey key = new HTriggerKey(tableName, columnFamily, column);
           HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion, r);
           HTriggerEventQueue.append(firedEvent);

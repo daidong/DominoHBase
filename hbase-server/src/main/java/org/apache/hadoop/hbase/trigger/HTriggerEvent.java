@@ -41,9 +41,19 @@ public class HTriggerEvent{
     private long version;
     private HRegion r;
     private boolean initEvent = false;
+    private boolean isAcc = false;
+    private long timestamp = 0L;
     
     public boolean isInitEvent(){
       return this.initEvent;
+    }
+    
+    public boolean isAccEvent(){
+      return this.isAcc;
+    }
+    
+    public long getTimeStamp(){
+      return this.timestamp;
     }
     
     public HTriggerEvent(HTriggerKey htk, byte[] vn, byte[] vo, long ver){
@@ -51,6 +61,8 @@ public class HTriggerEvent{
         this.newValue = vn;
         this.oldValue = vo;
         this.version = ver;
+        this.isAcc = LocalTriggerManage.containsAccumulator(htk);
+        this.timestamp = System.currentTimeMillis();
     }
     
     public HTriggerEvent(HTriggerKey htk, byte[] rowKey, byte[] vn, byte[] vo, long ver){

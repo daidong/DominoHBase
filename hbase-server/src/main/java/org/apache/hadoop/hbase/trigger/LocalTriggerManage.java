@@ -106,6 +106,16 @@ public class LocalTriggerManage {
         return activeTriggers.containsKey(tk);
     }
     
+    public static boolean containsAccumulator(HTriggerKey tk){
+      for (HTrigger ht:activeTriggers.get(tk)){
+        TRIGGERTYPE curr = TRIGGERTYPE.fromString(ht.getConf().getTriggerType());
+        if (curr == TRIGGERTYPE.ACCUMULATOR ||
+            curr == TRIGGERTYPE.ACCUMULATORWITHCONVERGE)
+          return true;
+      }
+      return false;
+    }
+    
     public static boolean containsConvergeOrIncr(HTriggerKey tk){
         for (HTrigger ht:activeTriggers.get(tk)){
           TRIGGERTYPE curr = TRIGGERTYPE.fromString(ht.getConf().getTriggerType());

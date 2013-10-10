@@ -24,10 +24,10 @@
 # This script sets variables multiple times over the course of starting an hbase process,
 # so try to keep things idempotent unless you want to take an even deeper look
 # into the startup scripts (bin/hbase, etc.)
-export HBASE_HOME=/Users/daidong/github/local/DominoHBase/
+export HBASE_HOME=/Users/daidong/git/DominoHBase/
 # The java implementation to use.  Java 1.6 required.
 # export HADOOP_HOME=/home/hadoop/hadoop
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home/
+export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 
 # Extra Java CLASSPATH elements.  Optional.
 # export HBASE_CLASSPATH=$HBASE_CLASSPATH

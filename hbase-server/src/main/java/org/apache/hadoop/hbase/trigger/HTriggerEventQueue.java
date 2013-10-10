@@ -20,8 +20,11 @@ package org.apache.hadoop.hbase.trigger;
 import java.util.Comparator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
 
-import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Created with IntelliJ IDEA. User: daidong Date: 13-3-2 Time: 下午9:32 To change
@@ -29,8 +32,19 @@ import org.apache.hadoop.hbase.util.EnvironmentEdgeManager;
  */
 public class HTriggerEventQueue {
 
-	private static ConcurrentLinkedQueue<HTriggerEvent> EventQueue = new ConcurrentLinkedQueue<HTriggerEvent>();
-
+  /**
+   * LinkedBlockingQueue and ConcurrentLinkedQueue
+   * 
+   
+  static Comparator<HTriggerEvent> cmp = new Comparator<HTriggerEvent>() {
+    public int compare(HTriggerEvent e1, HTriggerEvent e2) {
+      return (int) (e1.getTimeStamp() - e2.getTimeStamp());
+    }
+  };
+  private static PriorityBlockingQueue<HTriggerEvent> EventQueue = new PriorityBlockingQueue<HTriggerEvent>(1000, cmp);
+   */
+  private static final Log LOG = LogFactory.getLog(HTriggerEventQueue.class);
+  private static LinkedBlockingQueue<HTriggerEvent> EventQueue = new LinkedBlockingQueue<HTriggerEvent>();  
 	private static Runnable consumer = null;
 
 	public static void register(Runnable t) {
@@ -46,18 +60,18 @@ public class HTriggerEventQueue {
 	 * @param hte
 	 */
 	public static void append(HTriggerEvent hte) {
-		synchronized (consumer) {
-			EventQueue.add(hte);
-			consumer.notify();
-		}
+		  if (hte.isAccEvent() && EventQueue.contains(hte)){
+		    EventQueue.remove(hte);
+		    LOG.info("remove redundant");
+		  }
+		  try {
+        EventQueue.put(hte);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
 	}
 
 	public static HTriggerEvent poll() throws InterruptedException {
-		synchronized (consumer) {
-			while (EventQueue.isEmpty()) {
-				consumer.wait();
-			}
-			return EventQueue.poll();
-		}
+			return EventQueue.take();
 	}
 }
