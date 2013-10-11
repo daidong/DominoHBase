@@ -62,7 +62,7 @@ public abstract class AccHTriggerAction extends HTriggerAction{
     Method incrMethod = this.getIncr();
     try {
       if (incrMethod != null){
-        System.out.println("ActionWrapper...Execute incr");
+        //System.out.println("ActionWrapper...Execute incr");
         PartialResult pr = new PartialResult(tableName, rowKey, columnFamily, r);
         if (!pr.getPartial().isEmpty()){
           flag = false;
@@ -75,7 +75,7 @@ public abstract class AccHTriggerAction extends HTriggerAction{
     
     if (flag){
       try {
-        System.out.println("ActionWrapper...Execute action");
+        //System.out.println("ActionWrapper...Execute action");
         this.reader = new AccumulatorReader(tableName, columnFamily, rowKey, this.getRound(), r);
       } catch (IOException e) {
         e.printStackTrace();

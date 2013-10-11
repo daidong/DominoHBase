@@ -19,6 +19,7 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
 
   private static final Log LOG = LogFactory.getLog(PageRankSumAPI2.class);
   
+  /*
   public void incr(HTriggerEvent hte, PartialResult r){
     byte[] oldSum = r.getValue();
     float dOldSum = Float.parseFloat(new String(oldSum));
@@ -37,6 +38,7 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
     WritePrepared.flush(this);
     
   }
+  */
   
   @Override
   public void action(HTriggerEvent hte) {
@@ -56,10 +58,12 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
         float fw = Float.parseFloat(sw);
         sum += fw;
         //LOG.info("In key: " + hte.getEventTriggerKey() + " we accumulate for round " + this.getCurrentRound());
-        System.out.println("PageRankSum ========>" + "In key: " + hte.getEventTriggerKey() + 
-        		" we accumulate for round " + this.getCurrentRound());
       }
     }
+    
+    System.out.println("PageRankSum ========>" + "Current on " + new String(hte.getRowKey()) + 
+        " with value " + new String(hte.getNewValue()) + " at " + this.getCurrentRound());  
+      
     sum = 0.85F * sum + 0.15F;
     String ssum = String.valueOf(sum);
     WriteUnit write = new WriteUnit(this, "wbpages".getBytes(), pageId, "prvalues".getBytes(), "pr".getBytes(), ssum.getBytes());

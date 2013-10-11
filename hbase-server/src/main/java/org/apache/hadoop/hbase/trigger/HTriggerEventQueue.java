@@ -65,7 +65,7 @@ public class HTriggerEventQueue {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		Print(EventQueue);
+		//Print(EventQueue);
 	}
 
 	public static HTriggerEvent poll() throws InterruptedException {

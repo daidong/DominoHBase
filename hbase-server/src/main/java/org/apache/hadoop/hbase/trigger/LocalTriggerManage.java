@@ -123,7 +123,7 @@ public class LocalTriggerManage {
           if (ht.getActionClass().getIncr() != null)
             return true;
           
-          System.out.println("check type: " + ht.triggerId + " type is: " + ht.getConf().getTriggerType());
+          //System.out.println("check type: " + ht.triggerId + " type is: " + ht.getConf().getTriggerType());
           if (curr == TRIGGERTYPE.CONVERGE
                 || curr == TRIGGERTYPE.INITIALWITHCONVERGE
                 || curr == TRIGGERTYPE.ACCUMULATORWITHCONVERGE)
