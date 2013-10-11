@@ -28,8 +28,7 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
     float newSum = dOldSum + (newvalue - oldvalue);
     String snewSum = String.valueOf(newSum);
 
-    System.out.println("PageRankSumAPI2...get newSum: " + snewSum + " from oldSum: " + dOldSum + "" +
-    		" by compare new: " + newvalue + " with old: " + oldvalue);
+    //System.out.println("PageRankSumAPI2...get newSum: " + snewSum + " from oldSum: " + dOldSum + "" + " by compare new: " + newvalue + " with old: " + oldvalue);
     
     WriteUnit write = new WriteUnit(this, "wbpages".getBytes(), hte.getRowKey(), 
         "prvalues".getBytes(), "pr".getBytes(), snewSum.getBytes());
@@ -56,10 +55,12 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
         String sw = new String(weight);
         float fw = Float.parseFloat(sw);
         sum += fw;
-        LOG.info("In key: " + hte.getEventTriggerKey() + " we accumulate for round " + this.getCurrentRound());
+        //LOG.info("In key: " + hte.getEventTriggerKey() + " we accumulate for round " + this.getCurrentRound());
+        System.out.println("PageRankSum ========>" + "In key: " + hte.getEventTriggerKey() + 
+        		" we accumulate for round " + this.getCurrentRound());
       }
     }
-    
+    sum = 0.85F * sum + 0.15F;
     String ssum = String.valueOf(sum);
     WriteUnit write = new WriteUnit(this, "wbpages".getBytes(), pageId, "prvalues".getBytes(), "pr".getBytes(), ssum.getBytes());
     //LOG.info("Append Write Unit:" + write);
