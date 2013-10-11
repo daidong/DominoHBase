@@ -59,6 +59,7 @@ public class PageRank {
         BigDecimal t = new BigDecimal(plainString);
         sum = sum.add(t);
       }
+      sum.multiply(new BigDecimal(0.85)).add(new BigDecimal(0.15));
       Put p = new Put(key.get());
       String newPr = sum.toPlainString();
       p.add("prvalues".getBytes(), "pr".getBytes(), newPr.getBytes());

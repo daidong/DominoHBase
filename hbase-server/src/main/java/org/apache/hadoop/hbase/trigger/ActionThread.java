@@ -57,13 +57,23 @@ public class ActionThread implements Runnable {
     }
   }
   
+  public void PrintQueue(){
+    for (HTriggerEvent e:inputDS){
+      System.out.print(e+"-->");
+    }
+    System.out.println("");
+  }
+
   public void feed(HTriggerEvent hte) {
     try {
-      if (hte.isAccEvent() && inputDS.contains(hte)){
+      //if (hte.isAccEvent() && inputDS.contains(hte)){
+      if (inputDS.contains(hte)){
         inputDS.remove(hte);
-        LOG.info("remove redundant");
+        //System.out.println("remove redundant ActionThread");
       }
       inputDS.put(hte);
+      //System.out.print(this + " Queue: ");
+      //PrintQueue();
     } catch (InterruptedException e) {
       e.printStackTrace();
     }

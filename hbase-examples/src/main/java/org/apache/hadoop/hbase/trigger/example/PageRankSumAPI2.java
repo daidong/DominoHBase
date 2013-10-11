@@ -39,17 +39,24 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
     
   }
   */
-  
+  public void NicePrint(String rowKey, String value, long round){
+    System.out.print("PageRankSum ===>");
+    for (long i = 0; i < round - 1 ; i++){
+      System.out.print("  ");
+    }
+    System.out.print("|--");
+    System.out.println("("+rowKey + ":" + value+")");
+  }
+
+
+
   @Override
   public void action(HTriggerEvent hte) {
 
-    //LOG.info("Current Action Round is: " + this.getCurrentRound());
-
+    NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
+    
     Result r = this.getReader().GetValues();
     byte[] pageId = hte.getRowKey();
-
-    //LOG.info("Action on " + new String(pageId) + " with value: " + new String(hte.getNewValue()) + " at " + this.getCurrentRound());
-    
     float sum = 0F;
     Map<byte[], byte[]> nodes  = r.getFamilyMap("nodes".getBytes());
     if (nodes != null){
@@ -57,17 +64,12 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
         String sw = new String(weight);
         float fw = Float.parseFloat(sw);
         sum += fw;
-        //LOG.info("In key: " + hte.getEventTriggerKey() + " we accumulate for round " + this.getCurrentRound());
       }
     }
     
-    System.out.println("PageRankSum ========>" + "Current on " + new String(hte.getRowKey()) + 
-        " with value " + new String(hte.getNewValue()) + " at " + this.getCurrentRound());  
-      
     sum = 0.85F * sum + 0.15F;
     String ssum = String.valueOf(sum);
     WriteUnit write = new WriteUnit(this, "wbpages".getBytes(), pageId, "prvalues".getBytes(), "pr".getBytes(), ssum.getBytes());
-    //LOG.info("Append Write Unit:" + write);
     WritePrepared.append(this, write);
     WritePrepared.flush(this);
   }

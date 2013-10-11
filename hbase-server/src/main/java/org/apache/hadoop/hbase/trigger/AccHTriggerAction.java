@@ -58,7 +58,7 @@ public abstract class AccHTriggerAction extends HTriggerAction{
     this.setRound((version + 1) % MAX_ROUND);
     boolean flag = true;
 
-    System.out.println("AccHTriggerAction Begins at " + new String(rowKey));
+    //System.out.println("AccHTriggerAction Begins at " + new String(rowKey));
     Method incrMethod = this.getIncr();
     try {
       if (incrMethod != null){

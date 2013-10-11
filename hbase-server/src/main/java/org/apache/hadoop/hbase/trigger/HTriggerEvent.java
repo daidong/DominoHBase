@@ -18,7 +18,7 @@
 package org.apache.hadoop.hbase.trigger;
 
 import java.util.Comparator;
-
+import java.util.Arrays;
 import org.apache.hadoop.hbase.regionserver.HRegion;
 
 /**
@@ -104,21 +104,22 @@ public class HTriggerEvent{
  
     @Override
     public int hashCode() {
-      return htk.hashCode();
+      return (int)this.getVersion();
     }
     
     @Override
     public boolean equals(Object o) {
       if (o instanceof HTriggerEvent){
         HTriggerEvent that = (HTriggerEvent)o;
-        return htk.equals(that.getEventTriggerKey());
+        return (this.getVersion() == that.getVersion() && Arrays.equals(this.getRowKey(), that.getRowKey()));
+        //return htk.equals(that.getEventTriggerKey());
       }
       return false;
     }
 
 	@Override
 	public String toString() {
-		return (new String(this.rowKey) + "===" + this.version + "==="); 
+		return ("["+new String(this.rowKey) + ":" + this.version + "]"); 
 	}
     
     

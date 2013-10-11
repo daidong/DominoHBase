@@ -127,7 +127,7 @@ public class WALDetection {
           
           //long before = System.nanoTime();          
           if (r != null && LocalTriggerManage.containsConvergeOrIncr(triggerMeta)){
-            System.out.println("GET Old Value for: " + new String(tableName));
+            //System.out.println("GET Old Value for: " + new String(tableName));
             Get get = new Get(rowKey);
             get.addColumn(columnFamily, column);
             Result result = r.get(get, null);
@@ -140,8 +140,8 @@ public class WALDetection {
             //long after = System.nanoTime();
             //LOG.info("PERFORMANCE CHECK: Old Method to Construct the old value costs: " + (after - before));
           
-            System.out.println("this update fires a trigger: values: " + new String(values, "utf-8") + " | "
-                + "old values: " + new String(oldValues, "utf-8"));
+            //System.out.println("this update fires a trigger: values: " + new String(values, "utf-8") + " | "
+            //    + "old values: " + new String(oldValues, "utf-8"));
           }
           HTriggerKey key = new HTriggerKey(tableName, columnFamily, column);
           HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion, r);

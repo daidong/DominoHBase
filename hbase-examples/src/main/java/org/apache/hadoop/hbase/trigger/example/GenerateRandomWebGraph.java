@@ -31,9 +31,9 @@ public class GenerateRandomWebGraph {
   
   HTable webpage;
   HTable PageRankAcc;
-  int LARGEST_OUT_LINKS = 30;
-  long LARGEST_PAGE_ID = 1000000;
-  int PAGES_NUMBER = 100;
+  int LARGEST_OUT_LINKS = 2;
+  long LARGEST_PAGE_ID = 3;
+  int PAGES_NUMBER = 3;
   ArrayList<Long> allPages = new ArrayList<Long>();
   ArrayList<Long> waitForCreate = new ArrayList<Long>();
   
@@ -65,7 +65,7 @@ public class GenerateRandomWebGraph {
       return;
     allPages.add(pageId);
       
-    int outlinks = rand.nextInt(LARGEST_OUT_LINKS) + 5;
+    int outlinks = rand.nextInt(LARGEST_OUT_LINKS)+1;
     
     ArrayList<Long> ols = new ArrayList<Long>();
 

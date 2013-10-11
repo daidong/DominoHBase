@@ -32,12 +32,18 @@ public class PageRankDistAPI2 extends HTriggerAction{
     }
   }
   
-  @Override
-  public void action(HTriggerEvent hte) {
+  public void NicePrint(String rowKey, String value, long round){
+    System.out.print("PageRankDist===>");
+    for (long i = 0; i < round - 1 ; i++){
+      System.out.print("  ");
+    }
+    System.out.print("|--");
+    System.out.println("("+rowKey + ":" + value+")");
+  }
 
-    //LOG.info("Current on " + new String(hte.getRowKey()) + " with value " + new String(hte.getNewValue()) + " at " + this.getCurrentRound());
-    System.out.println("PageRankDist ========>" + "Current on " + new String(hte.getRowKey()) + 
-    			" with value " + new String(hte.getNewValue()) + " at " + this.getCurrentRound());
+  @Override
+  public void action(HTriggerEvent hte) {    
+    NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
 	  
     byte[] currentPageId = hte.getRowKey();
     byte[] values = hte.getNewValue();
@@ -62,7 +68,6 @@ public class PageRankDistAPI2 extends HTriggerAction{
         WriteUnit write = new WriteUnit(this, "PageRankAcc".getBytes(), 
                                         link, "nodes".getBytes(), currentPageId, sweight.getBytes(), true);
         WritePrepared.append(this, write);
-        //LOG.info("Append WriteUnit: " + write);
       }
       
       WritePrepared.flush(this);
@@ -79,7 +84,6 @@ public class PageRankDistAPI2 extends HTriggerAction{
     float fnv = Float.parseFloat(new String(nvalue));
     float fov = Float.parseFloat(new String(oldValue));
     if (Math.abs((fnv - fov)) < 0.001){
-      System.out.println("We have converged at: " + new String(hte.getRowKey()));
       return false;
     }
     return true;
