@@ -16,3 +16,5 @@ org.eclipse.m2e.core.prefs
 
 
 *.prefs
+
+.DS_Store
