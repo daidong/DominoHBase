@@ -58,10 +58,11 @@ public class ActionThread implements Runnable {
   }
   
   public void PrintQueue(){
+    String out = this + ":";
     for (HTriggerEvent e:inputDS){
-      System.out.print(e+"-->");
+      out = out + e +"-->";
     }
-    System.out.println("");
+    LOG.info(out);
   }
 
   public void feed(HTriggerEvent hte) {
@@ -69,10 +70,9 @@ public class ActionThread implements Runnable {
       //if (hte.isAccEvent() && inputDS.contains(hte)){
       if (inputDS.contains(hte)){
         inputDS.remove(hte);
-        //System.out.println("remove redundant ActionThread");
+        System.out.println("remove redundant ActionThread");
       }
       inputDS.put(hte);
-      //System.out.print(this + " Queue: ");
       //PrintQueue();
     } catch (InterruptedException e) {
       e.printStackTrace();

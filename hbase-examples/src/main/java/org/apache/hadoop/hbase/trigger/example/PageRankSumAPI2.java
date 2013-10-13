@@ -53,20 +53,24 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
   @Override
   public void action(HTriggerEvent hte) {
 
-    NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
+    //NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
     
-    Result r = this.getReader().GetValues();
+    String loginfo = "";
+    
+    LOG.info("Inside PageRankSumAPI Action");
+    Map<byte[], byte[]> nodes = this.getReader().GetMapValues();
     byte[] pageId = hte.getRowKey();
+    loginfo = loginfo + "Sum: " + new String(pageId);
     float sum = 0F;
-    Map<byte[], byte[]> nodes  = r.getFamilyMap("nodes".getBytes());
     if (nodes != null){
       for (byte[] weight:nodes.values()){
         String sw = new String(weight);
+        loginfo += (sw + ":");
         float fw = Float.parseFloat(sw);
         sum += fw;
       }
     }
-    
+    LOG.info(loginfo);
     sum = 0.85F * sum + 0.15F;
     String ssum = String.valueOf(sum);
     WriteUnit write = new WriteUnit(this, "wbpages".getBytes(), pageId, "prvalues".getBytes(), "pr".getBytes(), ssum.getBytes());
@@ -76,6 +80,7 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
 
   @Override
   public boolean filter(HTriggerEvent hte) {
+    LOG.info("Inside PageRankSumAPI Filter");
     return true;
   }
 

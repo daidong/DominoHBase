@@ -17,8 +17,11 @@
 package org.apache.hadoop.hbase.trigger;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.Result;
@@ -39,24 +42,29 @@ import org.apache.hadoop.hbase.regionserver.HRegion;
  */
 public class AccumulatorReader {
   
+  private static final Log LOG = LogFactory.getLog(AccumulatorReader.class);
   private Result result = null;
+  private Map<byte[], byte[]> values = null;
   
   public AccumulatorReader(byte[] tableName, byte[] columnFamily, byte[] rowKey, long version, HRegion r) throws IOException{
     Get get = new Get(rowKey);
-    //Get all elements that has version number less than 'version'
+    //Get all elements that has version number less than 'version'. setTimeRange is Exclusive API
     get.setTimeRange(0, version).setMaxVersions(1).addFamily(columnFamily);
     this.result = r.get(get, null);
+        
+    LOG.info("After Get Result");
     
-    /*    
-    Map<byte[], byte[]> nodes  = this.result.getFamilyMap("nodes".getBytes());
-    System.out.println("AccumulatorReader Results:");
-    for (byte[] column : nodes.keySet()){
-      System.out.println("Column: " + new String(column) + " Value: " + new String(nodes.get(column)));
-    }
-    */
+    values  = this.result.getFamilyMap("nodes".getBytes());
+    values.remove("_partial_result_".getBytes());
+    
+    LOG.info("After Remove Partial");
   }
   
   public Result GetValues(){
     return this.result;
+  }
+  
+  public Map<byte[], byte[]> GetMapValues(){
+    return this.values;
   }
 }

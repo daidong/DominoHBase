@@ -19,6 +19,8 @@ package org.apache.hadoop.hbase.trigger;
 
 import java.lang.reflect.Method;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.hbase.client.Result;
 
 /**
@@ -30,6 +32,8 @@ import org.apache.hadoop.hbase.client.Result;
  */
 public abstract class HTriggerAction{
     long MAX_ROUND = Long.MAX_VALUE; 
+    
+    private static final Log LOG = LogFactory.getLog(HTriggerAction.class);
     
     public String TestAlive(){
       return "Lives";

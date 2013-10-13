@@ -43,7 +43,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
 
   @Override
   public void action(HTriggerEvent hte) {    
-    NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
+    //NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
 	  
     byte[] currentPageId = hte.getRowKey();
     byte[] values = hte.getNewValue();
@@ -84,6 +84,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
     float fnv = Float.parseFloat(new String(nvalue));
     float fov = Float.parseFloat(new String(oldValue));
     if (Math.abs((fnv - fov)) < 0.001){
+      System.out.println("Converge at " + new String(hte.getRowKey()));
       return false;
     }
     return true;

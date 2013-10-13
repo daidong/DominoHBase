@@ -7,15 +7,19 @@ import java.util.Random;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.HColumnDescriptor;
+import org.apache.hadoop.hbase.HTableDescriptor;
+import org.apache.hadoop.hbase.client.HBaseAdmin;
 import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
 
 public class GenerateNIncomingGraph {
 
+  HBaseAdmin admin;
 	HTable webpage;
 	HTable PageRankAcc;
-	int LINK_IN_NUMBER = 2;
-	int PAGES_NUMBER = 4;
+	int LINK_IN_NUMBER = 10;
+	int PAGES_NUMBER = 40;
 	Random rand = null;
 
 	String pagePrefix = "pageid";
@@ -25,6 +29,24 @@ public class GenerateNIncomingGraph {
 	public GenerateNIncomingGraph()  throws IOException{
 		rand = new Random(System.currentTimeMillis());
 		Configuration conf = HBaseConfiguration.create();
+		admin = new HBaseAdmin(conf);
+    if (admin.tableExists("wbpages")){
+      admin.disableTable("wbpages");
+      admin.deleteTable("wbpages");
+    }
+    if (admin.tableExists("PageRankAcc")){
+      admin.disableTable("PageRankAcc");
+      admin.deleteTable("PageRankAcc");
+    }
+    HTableDescriptor wb = new HTableDescriptor("wbpages");
+    wb.addFamily(new HColumnDescriptor("prvalues"));
+    wb.addFamily(new HColumnDescriptor("outlinks"));
+    
+    HTableDescriptor pr = new HTableDescriptor("PageRankAcc");
+    pr.addFamily(new HColumnDescriptor("nodes"));
+    
+    admin.createTable(wb);
+    admin.createTable(pr);
 		webpage = new HTable(conf, "wbpages".getBytes());
 		PageRankAcc = new HTable(conf, "PageRankAcc".getBytes());
 	}
