@@ -35,8 +35,8 @@ public class GenerateFullWebGraph {
 	HBaseAdmin admin;
 	HTable webpage;
 	HTable PageRankAcc;
-	int LARGEST_OUT_LINKS = 5;
-	int PAGES_NUMBER = 10;
+	int LARGEST_OUT_LINKS = 200;
+	int PAGES_NUMBER = 1000;
 	Random rand = null;
 
 	String pagePrefix = "pageid";
@@ -97,7 +97,7 @@ public class GenerateFullWebGraph {
 
 		long ts = 0L;          
 		String content = "Hello, World!";
-        for (int ki = 0; ki < 100; ki++)
+        for (int ki = 0; ki < 10; ki++)
             content = content + " " + content;
         
 		byte[] rowKey = (pagePrefix+String.valueOf(pageId)).getBytes();
