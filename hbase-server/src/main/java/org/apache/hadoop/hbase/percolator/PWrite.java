@@ -19,11 +19,11 @@ package org.apache.hadoop.hbase.percolator;
 
 public class PWrite {
   
-  private String tableName;
-  private byte[] row;
-  private byte[] cfamily;
-  private byte[] column;
-  private byte[] value;
+  String tableName;
+  byte[] row;
+  byte[] cfamily;
+  byte[] column;
+  byte[] value;
   
   public PWrite(String tableName, byte[] row, byte[] cf, byte[] c, byte[] v){
     this.tableName = tableName;

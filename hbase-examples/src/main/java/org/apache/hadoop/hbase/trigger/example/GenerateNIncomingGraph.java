@@ -15,7 +15,7 @@ import org.apache.hadoop.hbase.client.Put;
 
 public class GenerateNIncomingGraph {
 
-  HBaseAdmin admin;
+  	HBaseAdmin admin;
 	HTable webpage;
 	HTable PageRankAcc;
 	int LINK_IN_NUMBER = 10;
@@ -41,6 +41,7 @@ public class GenerateNIncomingGraph {
     HTableDescriptor wb = new HTableDescriptor("wbpages");
     wb.addFamily(new HColumnDescriptor("prvalues"));
     wb.addFamily(new HColumnDescriptor("outlinks"));
+    wb.addFamily(new HColumnDescriptor("contents"));
     
     HTableDescriptor pr = new HTableDescriptor("PageRankAcc");
     pr.addFamily(new HColumnDescriptor("nodes"));
@@ -75,16 +76,20 @@ public class GenerateNIncomingGraph {
 					outs = webs.get(inlink);
 					outs.add(i);
 				}
-			}
-			
+			}	
+					
 		}
 		
 		long ts = 0L;
+		String content = "Hello, World!";
+        for (int ki = 0; ki < 100; ki++)
+            content = content + " " + content;
 		
 		for (long i = 0; i < PAGES_NUMBER; i++){
 			byte[] rowKey = (pagePrefix+String.valueOf(i)).getBytes();
 			Put p = new Put(rowKey);  
 			p.add("prvalues".getBytes(), "pr".getBytes(), ts, String.valueOf(1).getBytes());
+			p.add("contents".getBytes(), "en".getBytes(), ts, content.getBytes());
 
 			ArrayList<Put> AccPuts = new ArrayList<Put>();
 			

@@ -25,5 +25,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/hbase-client"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/hbase-protocol"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/hbase-server"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hbase-hadoop-compat"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hbase-common"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
