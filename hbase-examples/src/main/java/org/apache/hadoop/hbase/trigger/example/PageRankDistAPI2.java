@@ -43,7 +43,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
 
   @Override
   public void action(HTriggerEvent hte) {    
-    //NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
+    NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
 	  
     byte[] currentPageId = hte.getRowKey();
     byte[] values = hte.getNewValue();

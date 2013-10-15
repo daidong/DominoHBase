@@ -52,12 +52,12 @@ public class AccumulatorReader {
     get.setTimeRange(0, version).setMaxVersions(1).addFamily(columnFamily);
     this.result = r.get(get, null);
         
-    LOG.info("After Get Result");
+    //LOG.info("After Get Result");
     
     values  = this.result.getFamilyMap("nodes".getBytes());
     values.remove("_partial_result_".getBytes());
     
-    LOG.info("After Remove Partial");
+    //LOG.info("After Remove Partial");
   }
   
   public Result GetValues(){

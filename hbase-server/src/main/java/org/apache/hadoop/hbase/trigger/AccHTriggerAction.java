@@ -58,11 +58,11 @@ public abstract class AccHTriggerAction extends HTriggerAction{
     this.setRound((version + 1) % MAX_ROUND);
     boolean flag = true;
 
-    LOG.info("AccHTriggerAction Begins at " + new String(rowKey));
+    //LOG.info("AccHTriggerAction Begins at " + new String(rowKey));
     Method incrMethod = this.getIncr();
     try {
       if (incrMethod != null){
-        LOG.info("ActionWrapper...Execute incr");
+        //LOG.info("ActionWrapper...Execute incr");
         PartialResult pr = new PartialResult(tableName, rowKey, columnFamily, r);
         if (!pr.getPartial().isEmpty()){
           flag = false;
@@ -75,9 +75,9 @@ public abstract class AccHTriggerAction extends HTriggerAction{
     
     if (flag){
       try {
-        LOG.info("ActionWrapper...Execute action: Before AccumulatorReader");
+        //LOG.info("ActionWrapper...Execute action: Before AccumulatorReader");
         this.reader = new AccumulatorReader(tableName, columnFamily, rowKey, this.getRound(), r);
-        LOG.info("ActionWrapper...Execute action: After AccumulatorReader");
+        //LOG.info("ActionWrapper...Execute action: After AccumulatorReader");
       } catch (IOException e) {
         e.printStackTrace();
       }
