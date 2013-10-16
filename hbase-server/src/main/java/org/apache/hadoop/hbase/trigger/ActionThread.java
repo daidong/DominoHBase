@@ -48,7 +48,6 @@ public class ActionThread implements Runnable {
       HTriggerEvent currEvent;
       try {
         currEvent = inputDS.take();
-        System.out.println("ActionThread " + this + " EventQueue size: " + inputDS.size());
         if (action.filterWrapper(currEvent)){
           action.actionWrapper(currEvent);
         }

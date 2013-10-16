@@ -22,11 +22,13 @@ public class PageRankDistAPI2 extends HTriggerAction{
   private static final Log LOG = LogFactory.getLog(PageRankDistAPI2.class);
   
   private HTable myTable;
+  private HTable reTable;
   
   public PageRankDistAPI2(){
     try {
       Configuration conf = HBaseConfiguration.create();
       this.myTable = new HTable(conf, "wbpages".getBytes());
+      this.reTable = new HTable(conf, "PageRankAcc".getBytes());
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -43,7 +45,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
 
   @Override
   public void action(HTriggerEvent hte) {    
-    NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
+    //NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
 	  
     byte[] currentPageId = hte.getRowKey();
     byte[] values = hte.getNewValue();
@@ -64,18 +66,20 @@ public class PageRankDistAPI2 extends HTriggerAction{
         weight = fvalue / n;
       String sweight = String.valueOf(weight);
 
-      System.out.println("in pagerankdist, we have read all the outlinks of " + new String(currentPageId));
-      
+      //System.out.println("in pagerankdist, we have read all the outlinks of " + new String(currentPageId));
+      ArrayList<Put> ps = new ArrayList<Put>();
       for (byte[] link: outlinks.values()){
+    	/*
         WriteUnit write = new WriteUnit(this, "PageRankAcc".getBytes(), 
                                         link, "nodes".getBytes(), currentPageId, sweight.getBytes(), true);
-        WritePrepared.append(this, write);
+        lazyOutput(write);
+        */
+    	Put p = new Put(link);
+    	p.add("nodes".getBytes(), currentPageId, this.getCurrentRound(), sweight.getBytes());
+    	ps.add(p);
       }
-      System.out.println("in pagerankdist, we have written all the outlinks to PageRankAcc");
-      
-      WritePrepared.flush(this);
-      
-      System.out.println("in pagerankdist, we have flushed all the outlinks to PageRankAcc");
+      reTable.put(ps);
+      //lazyCommit();
       
     } catch (IOException e) {
       System.out.println("PageRankDist Error in Action function");
@@ -89,7 +93,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
     float fnv = Float.parseFloat(new String(nvalue));
     float fov = Float.parseFloat(new String(oldValue));
     if (Math.abs((fnv - fov)) < 0.001){
-      System.out.println("Converge at " + new String(hte.getRowKey()));
+      LOG.info("Converge at " + new String(hte.getRowKey()) + " at " + System.currentTimeMillis());
       return false;
     }
     return true;

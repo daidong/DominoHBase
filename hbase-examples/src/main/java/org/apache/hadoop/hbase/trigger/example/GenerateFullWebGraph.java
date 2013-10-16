@@ -35,8 +35,8 @@ public class GenerateFullWebGraph {
 	HBaseAdmin admin;
 	HTable webpage;
 	HTable PageRankAcc;
-	int LARGEST_OUT_LINKS = 20;
-	int PAGES_NUMBER = 100;
+	int LARGEST_OUT_LINKS = 200;
+	int PAGES_NUMBER = 10000;
 	Random rand = null;
 
 	String pagePrefix = "pageid";

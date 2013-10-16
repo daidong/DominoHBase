@@ -74,8 +74,11 @@ public class PageRank {
    * @throws InterruptedException 
    */
   public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+	long start = System.currentTimeMillis();
+
+	for (int i = 0; i < 16; i++){
     Configuration config = HBaseConfiguration.create();
-    Job job = new Job(config,"PageRankHBase");
+    Job job = new Job(config,"PageRankHBase"+i);
     job.setJarByClass(PageRank.class);    
 
     Scan scan = new Scan();
@@ -100,6 +103,10 @@ public class PageRank {
     if (!b) {
         throw new IOException("error with job!");
     }
+    }
+    
+    long end = System.currentTimeMillis();
+    System.out.println("One Round Time: " + (end - start));
   }
 
 }

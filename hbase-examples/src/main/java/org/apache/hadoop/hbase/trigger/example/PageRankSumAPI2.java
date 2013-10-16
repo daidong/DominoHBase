@@ -5,8 +5,11 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.client.Get;
+import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.trigger.AccHTriggerAction;
@@ -39,6 +42,18 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
     
   }
   */
+  
+  private HTable myTable = null;
+  
+  public PageRankSumAPI2(){
+    try {
+      Configuration conf = HBaseConfiguration.create();
+      this.myTable = new HTable(conf, "wbpages".getBytes());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  
   public void NicePrint(String rowKey, String value, long round){
     System.out.print("PageRankSum ===>");
     for (long i = 0; i < round - 1 ; i++){
@@ -54,28 +69,33 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
   public void action(HTriggerEvent hte) {
 
     //NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
-    
-    String loginfo = "";
-    
-    //LOG.info("Inside PageRankSumAPI Action");
+
     Map<byte[], byte[]> nodes = this.getReader().GetMapValues();
     byte[] pageId = hte.getRowKey();
-    loginfo = loginfo + "Sum: " + new String(pageId);
     float sum = 0F;
     if (nodes != null){
       for (byte[] weight:nodes.values()){
         String sw = new String(weight);
-        loginfo += (sw + ":");
         float fw = Float.parseFloat(sw);
         sum += fw;
       }
     }
-    //LOG.info(loginfo);
     sum = 0.85F * sum + 0.15F;
     String ssum = String.valueOf(sum);
-    WriteUnit write = new WriteUnit(this, "wbpages".getBytes(), pageId, "prvalues".getBytes(), "pr".getBytes(), ssum.getBytes());
-    WritePrepared.append(this, write);
-    WritePrepared.flush(this);
+    
+    Put p = new Put(pageId);
+    p.add("prvalues".getBytes(), "pr".getBytes(), this.getCurrentRound(), ssum.getBytes());
+    try {
+		myTable.put(p);
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+    
+    //WriteUnit write = new WriteUnit(this, "wbpages".getBytes(), pageId, "prvalues".getBytes(), "pr".getBytes(), ssum.getBytes());
+    //lazyOutput(write);
+    //lazyCommit();
+    //WritePrepared.append(this, write);
+    //WritePrepared.flush(this);
   }
 
   @Override

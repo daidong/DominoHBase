@@ -67,7 +67,6 @@ public class HTriggerEventQueue {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("HTriggerEventQueue Size: " + EventQueue.size());
 		//Print(EventQueue);
 	}
 

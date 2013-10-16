@@ -19,9 +19,12 @@ package org.apache.hadoop.hbase.trigger;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -49,8 +52,10 @@ public class WritePrepared{
   private static String CurrentRS = "current-rs-need-to-get";
   private static Configuration conf = HBaseConfiguration.create();
   
-  public static HashMap<Integer, ArrayList<WriteUnit>> cachedElements = 
-      new HashMap<Integer, ArrayList<WriteUnit>>();
+  public static ConcurrentHashMap<Integer, LinkedBlockingQueue<WriteUnit>> cachedElements = 
+      new ConcurrentHashMap<Integer, LinkedBlockingQueue<WriteUnit>>();
+  
+  public static ConcurrentHashMap<Integer, AtomicBoolean> flags = new ConcurrentHashMap<Integer, AtomicBoolean>();
   
   private static byte[] lock = new byte[0];
   
@@ -64,17 +69,20 @@ public class WritePrepared{
   public static void recordZKWritesFlushed(String node, int tid, long version){
     
   }
-  public static void addElement(int k, WriteUnit v){
-    ArrayList<WriteUnit> curr = cachedElements.get(k);
+  public static void addElement(int k, WriteUnit v) throws InterruptedException{
+	  LinkedBlockingQueue<WriteUnit> curr = cachedElements.get(k);
     if (curr == null){
-      curr = new ArrayList<WriteUnit>();
+      curr = new LinkedBlockingQueue<WriteUnit>();
       cachedElements.put(k, curr);
     }
-    curr.add(v);
+    curr.put(v);
+    if (!flags.containsKey(k)){
+    	AtomicBoolean n = new AtomicBoolean(false);
+    	flags.put(k, n);
+    }
+    	
   }
-  public static void removeElement(int k){
-    cachedElements.get(k).clear();
-  }
+
   
   public static void logElements(){
     for (int k : cachedElements.keySet()){
@@ -85,11 +93,11 @@ public class WritePrepared{
     }
   }
   /**
-   * When trigger function users implelmented call append, it must provide a write instance,
+   * When trigger function users implemented call append, it must provide a write instance,
    * and 'this'. We will get current round id and trigger id by 'this' and
-   * record this information into ZooKeeper. So, in the furture, if the
+   * record this information into ZooKeeper. So, in the future, if the
    * 'flush()' operation does not success, we can recover it by knowing the round id 
-   * that we have not flush.
+   * that we have not flushed.
    * @param action
    * @param write
    * @return
@@ -125,32 +133,32 @@ public class WritePrepared{
    * @param action
    */
   public static void flush(HTriggerAction action){
-    System.out.println("Inside Flush 1");
+    System.out.println("enter Flush");
     int triggerId = action.getHTrigger().getTriggerId();
     long round = action.getCurrentRound();
-    ArrayList<WriteUnit> writes= cachedElements.get(triggerId);
-    int len = writes.size();
-    System.out.println("We need to flush " + len + " elements");
-    //LOG.info("Current Flush of action: " + action.getRound());
+    LinkedBlockingQueue<WriteUnit> writes= cachedElements.get(triggerId);
+    //AtomicBoolean flag = flags.get(triggerId);
     
+    //if other thread is flushing, we should just leave.
+    /*
+     * It is not necessary to stop other flushes as there is no possible other flush existing.
+    if (!flag.compareAndSet(false, true))
+    	return;
+    */
+
     try{
-      //synchronized(lock){
-        for (int i = 0; i < len; i++){
-            System.out.println("begin to flush one");
-            WriteUnit w = writes.get(i);
-            HTable ins = getOrNewHTableInstance(w.getTableName());
-            ins.put(w.getPut());
-            if (w.isWriteToIncr()){
-              ins.put(w.getAccompPut());
-            }
-            System.out.println("success to flush one");
-            //ins.flushCommits();
-        }
-        System.out.println("we have flushed elements");
-        removeElement(triggerId);
-      //}
-    } catch (IOException e){
-      LOG.info("Exceptions While Calling HTable's Put");
+    	WriteUnit w = writes.poll();
+    	HTable ins = null;
+    	while (w != null){
+    		System.out.println("start flush: " + w + "remain: " + writes.size());
+    		ins = getOrNewHTableInstance(w.getTableName());
+    		ins.put(w.getPut());
+    		w = writes.poll();
+    		System.out.println("end flush: " + w + "remain: " + writes.size());
+    	}
+    	ins.flushCommits();
+    } catch (Exception e){
+    	LOG.info("Exceptions While Calling HTable's Put");
     }
     //record successful flush for future recovery.
     //In fact, there should be a watcher monitoring on these dir and
@@ -159,4 +167,31 @@ public class WritePrepared{
     //LOG.info("Trigger" + triggerId + " at round" + round + " Flush OK");
   }
 
+  
+  
+  
+  /*
+  try{
+  	System.out.println("before while");
+  	while (writes.size() != 0){
+  		System.out.println("inside while");
+  		for (int i = 0; i < writes.size(); i++){
+  			WriteUnit w = writes.get(i);
+  			HTable ins = getOrNewHTableInstance(w.getTableName());
+  			ins.put(w.getPut());
+
+          	if (w.isWriteToIncr()){
+            		ins.put(w.getAccompPut());
+          	}
+  			writes.remove(i);
+  			System.out.println("flush " + i++);
+  			//ins.flushCommits();
+  		}
+  	}
+  	System.out.println("we have flushed all elements");
+      removeElement(triggerId);
+  } catch (IOException e){
+    LOG.info("Exceptions While Calling HTable's Put");
+  }
+  */
 }

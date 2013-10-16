@@ -36,10 +36,11 @@ public abstract class HTriggerAction{
     private static final Log LOG = LogFactory.getLog(HTriggerAction.class);
     
     public String TestAlive(){
-      return "Lives";
+      return "Lives at " + System.currentTimeMillis();
     }
     HTrigger belongToInst = null;
     long round = 0L;
+    WritePreparedInst wpi = null;
     
     public abstract void action(HTriggerEvent hte);
     public abstract boolean filter(HTriggerEvent hte);
@@ -88,10 +89,20 @@ public abstract class HTriggerAction{
     
     public void actionWrapper(HTriggerEvent hte){
       //Do some before work
-      System.out.println("HTriggerAction Begins at " + new String(hte.getRowKey()));
       this.setRound((hte.getVersion() + 1) % MAX_ROUND); 
       this.action(hte);
-      System.out.println("HTriggerAction After at " + new String(hte.getRowKey()));
       //Do some after work
+    }
+    
+    public boolean lazyOutput(WriteUnit w){    	
+    	if (this.wpi == null)
+    		wpi = new WritePreparedInst(this);
+    	return wpi.append(w);
+    }
+    
+    public boolean lazyCommit(){
+    	if (this.wpi == null)
+    		return false;
+    	return wpi.flush(this);
     }
 }
