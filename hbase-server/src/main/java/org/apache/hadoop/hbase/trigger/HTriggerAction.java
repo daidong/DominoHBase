@@ -88,8 +88,10 @@ public abstract class HTriggerAction{
     
     public void actionWrapper(HTriggerEvent hte){
       //Do some before work
+      System.out.println("HTriggerAction Begins at " + new String(hte.getRowKey()));
       this.setRound((hte.getVersion() + 1) % MAX_ROUND); 
       this.action(hte);
+      System.out.println("HTriggerAction After at " + new String(hte.getRowKey()));
       //Do some after work
     }
 }

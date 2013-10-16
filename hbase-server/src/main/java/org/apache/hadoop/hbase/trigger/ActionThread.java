@@ -48,11 +48,12 @@ public class ActionThread implements Runnable {
       HTriggerEvent currEvent;
       try {
         currEvent = inputDS.take();
+        System.out.println("ActionThread " + this + " EventQueue size: " + inputDS.size());
         if (action.filterWrapper(currEvent)){
           action.actionWrapper(currEvent);
         }
       } catch (InterruptedException e) {
-        e.printStackTrace();
+        System.out.println("ERROR IN ActionThread run()");
       }
     }
   }
@@ -70,7 +71,7 @@ public class ActionThread implements Runnable {
       //if (hte.isAccEvent() && inputDS.contains(hte)){
       if (inputDS.contains(hte)){
         inputDS.remove(hte);
-        System.out.println("remove redundant ActionThread");
+        //LOG.info("remove redundant ActionThread");
       }
       inputDS.put(hte);
       //PrintQueue();

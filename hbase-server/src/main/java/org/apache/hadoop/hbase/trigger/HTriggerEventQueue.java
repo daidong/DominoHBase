@@ -41,11 +41,12 @@ public class HTriggerEventQueue {
 	}
 
 	private static void Print(LinkedBlockingQueue<HTriggerEvent> eq){
-		System.out.println("Start <---------->");
+	  String info = "start ---> ";
 		for (HTriggerEvent e:eq){
-			System.out.println(e.toString());
+		  info = info + e + " ---> ";
 		}
-		System.out.println("<----------> End");
+		info = info + "---> End";
+		System.out.println(info);
 	}
 	/**
 	 * @author daidong 2013/05/04 LOG: i modify append without check wether the
@@ -56,15 +57,17 @@ public class HTriggerEventQueue {
 	 * @param hte
 	 */
 	public static void append(HTriggerEvent hte) {
-		if (hte.isAccEvent() && EventQueue.contains(hte)){
+	  //if (hte.isAccEvent() && EventQueue.contains(hte)){
+	  if (EventQueue.contains(hte)){
 			EventQueue.remove(hte);
-			LOG.info("remove redundant");
+			//LOG.info("remove redundant");
 		}
 		try {
 			EventQueue.put(hte);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		System.out.println("HTriggerEventQueue Size: " + EventQueue.size());
 		//Print(EventQueue);
 	}
 

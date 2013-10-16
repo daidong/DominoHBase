@@ -59,10 +59,11 @@ public abstract class AccHTriggerAction extends HTriggerAction{
     boolean flag = true;
 
     //LOG.info("AccHTriggerAction Begins at " + new String(rowKey));
+    //System.out.println("AccHTriggerAction Begins at " + new String(rowKey));
     Method incrMethod = this.getIncr();
     try {
       if (incrMethod != null){
-        //LOG.info("ActionWrapper...Execute incr");
+        //System.out.println("ActionWrapper...Execute incr");
         PartialResult pr = new PartialResult(tableName, rowKey, columnFamily, r);
         if (!pr.getPartial().isEmpty()){
           flag = false;
@@ -70,16 +71,16 @@ public abstract class AccHTriggerAction extends HTriggerAction{
         }
       }
     } catch (Exception e){
-      e.printStackTrace();
+      System.out.println("Error in actionWrapper");
     }
     
     if (flag){
       try {
-        //LOG.info("ActionWrapper...Execute action: Before AccumulatorReader");
+        //System.out.println("ActionWrapper...Execute action: Before AccumulatorReader");
         this.reader = new AccumulatorReader(tableName, columnFamily, rowKey, this.getRound(), r);
-        //LOG.info("ActionWrapper...Execute action: After AccumulatorReader");
+        //System.out.println("ActionWrapper...Execute action: After AccumulatorReader");
       } catch (IOException e) {
-        e.printStackTrace();
+        //System.out.println("Error in AccumulatorReader");
       }
       this.action(hte);
     }

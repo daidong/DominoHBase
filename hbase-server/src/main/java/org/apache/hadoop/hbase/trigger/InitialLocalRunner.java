@@ -91,15 +91,17 @@ public class InitialLocalRunner implements Runnable{
          * addition. 
          */
         while (rs.next(results)){}
-        
+          
         for (KeyValue kv : results){
           rowKey = kv.getRow();
           values = oldValues = kv.getValue();
           version = kv.getTimestamp();
-          
+
           HTriggerEvent firedEvent = new HTriggerEvent(htk, rowKey, values, oldValues, version, r, true);
+          //System.out.println("intial event: " + firedEvent);
           HTriggerEventQueue.append(firedEvent);
         }
+        //}
         
       } catch (IOException e) {
         // TODO Auto-generated catch block

@@ -64,16 +64,21 @@ public class PageRankDistAPI2 extends HTriggerAction{
         weight = fvalue / n;
       String sweight = String.valueOf(weight);
 
+      System.out.println("in pagerankdist, we have read all the outlinks of " + new String(currentPageId));
+      
       for (byte[] link: outlinks.values()){
         WriteUnit write = new WriteUnit(this, "PageRankAcc".getBytes(), 
                                         link, "nodes".getBytes(), currentPageId, sweight.getBytes(), true);
         WritePrepared.append(this, write);
       }
+      System.out.println("in pagerankdist, we have written all the outlinks to PageRankAcc");
       
       WritePrepared.flush(this);
       
+      System.out.println("in pagerankdist, we have flushed all the outlinks to PageRankAcc");
+      
     } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println("PageRankDist Error in Action function");
     }
   }
 

@@ -53,7 +53,7 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
   @Override
   public void action(HTriggerEvent hte) {
 
-    NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
+    //NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
     
     String loginfo = "";
     
@@ -80,7 +80,7 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
 
   @Override
   public boolean filter(HTriggerEvent hte) {
-    LOG.info("Inside PageRankSumAPI Filter");
+    //LOG.info("Inside PageRankSumAPI Filter");
     return true;
   }
 

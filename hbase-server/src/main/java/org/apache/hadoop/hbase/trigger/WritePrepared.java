@@ -125,25 +125,28 @@ public class WritePrepared{
    * @param action
    */
   public static void flush(HTriggerAction action){
-    
+    System.out.println("Inside Flush 1");
     int triggerId = action.getHTrigger().getTriggerId();
     long round = action.getCurrentRound();
     ArrayList<WriteUnit> writes= cachedElements.get(triggerId);
     int len = writes.size();
-    
+    System.out.println("We need to flush " + len + " elements");
     //LOG.info("Current Flush of action: " + action.getRound());
     
     try{
       //synchronized(lock){
         for (int i = 0; i < len; i++){
+            System.out.println("begin to flush one");
             WriteUnit w = writes.get(i);
             HTable ins = getOrNewHTableInstance(w.getTableName());
             ins.put(w.getPut());
             if (w.isWriteToIncr()){
               ins.put(w.getAccompPut());
             }
+            System.out.println("success to flush one");
             //ins.flushCommits();
         }
+        System.out.println("we have flushed elements");
         removeElement(triggerId);
       //}
     } catch (IOException e){
