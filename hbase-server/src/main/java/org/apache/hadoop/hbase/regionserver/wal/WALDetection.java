@@ -145,6 +145,7 @@ public class WALDetection {
           }
           HTriggerKey key = new HTriggerKey(tableName, columnFamily, column);
           HTriggerEvent firedEvent = new HTriggerEvent(key, rowKey, values, oldValues, curVersion, r);
+          System.out.println("event calls");
           HTriggerEventQueue.append(firedEvent);
         } catch (UnsupportedEncodingException e) {
           // TODO Auto-generated catch block

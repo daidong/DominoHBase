@@ -70,7 +70,7 @@ public class ActionThread implements Runnable {
       //if (hte.isAccEvent() && inputDS.contains(hte)){
       if (inputDS.contains(hte)){
         inputDS.remove(hte);
-        //LOG.info("remove redundant ActionThread");
+        System.out.println("remove redundant");
       }
       inputDS.put(hte);
       //PrintQueue();

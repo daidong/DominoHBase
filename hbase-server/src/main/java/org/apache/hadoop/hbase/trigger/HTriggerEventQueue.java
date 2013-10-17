@@ -60,7 +60,7 @@ public class HTriggerEventQueue {
 	  //if (hte.isAccEvent() && EventQueue.contains(hte)){
 	  if (EventQueue.contains(hte)){
 			EventQueue.remove(hte);
-			//LOG.info("remove redundant");
+			System.out.println("remove redundant");
 		}
 		try {
 			EventQueue.put(hte);

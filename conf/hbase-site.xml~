@@ -61,6 +61,15 @@
     <value>200</value>
   </property>
   
+  <property>
+      <name>hbase.coprocessor.region.classes</name>
+      <value>org.apache.hadoop.hbase.coprocessor.example.PageRankDistCoprocessor</value>
+   </property>
+   
+   <property>
+       <name>hbase.coprocessor.region.classes</name>
+       <value>org.apache.hadoop.hbase.coprocessor.example.PageRankSumCoprocessor</value>
+    </property>
   
-  
+	
 </configuration>
