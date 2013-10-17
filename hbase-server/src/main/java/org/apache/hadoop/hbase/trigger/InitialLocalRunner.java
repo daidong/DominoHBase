@@ -101,7 +101,8 @@ public class InitialLocalRunner implements Runnable{
           //System.out.println("intial event: " + firedEvent);
           HTriggerEventQueue.append(firedEvent);
         }
-        //}
+        
+        rs.close();
         
       } catch (IOException e) {
         // TODO Auto-generated catch block

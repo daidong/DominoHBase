@@ -20,10 +20,10 @@ import org.apache.hadoop.hbase.trigger.WriteUnit;
 public class PageRankDistAPI2 extends HTriggerAction{
 
   private static final Log LOG = LogFactory.getLog(PageRankDistAPI2.class);
-  
+
   private HTable myTable;
   private HTable reTable;
-  
+
   public PageRankDistAPI2(){
     try {
       Configuration conf = HBaseConfiguration.create();
@@ -33,7 +33,7 @@ public class PageRankDistAPI2 extends HTriggerAction{
       e.printStackTrace();
     }
   }
-  
+
   public void NicePrint(String rowKey, String value, long round){
     System.out.print("PageRankDist===>");
     for (long i = 0; i < round - 1 ; i++){
@@ -46,14 +46,14 @@ public class PageRankDistAPI2 extends HTriggerAction{
   @Override
   public void action(HTriggerEvent hte) {    
     //NicePrint(new String(hte.getRowKey()), new String(hte.getNewValue()), this.getCurrentRound());
-	  
+
     byte[] currentPageId = hte.getRowKey();
     byte[] values = hte.getNewValue();
     float fvalue = Float.parseFloat(new String(values));
-    
+
     Get g = new Get(currentPageId);
     g.addFamily("outlinks".getBytes());
-    
+
     try {
       Result r = myTable.get(g);
       NavigableMap<byte[],byte[]> outlinks = r.getFamilyMap("outlinks".getBytes());
@@ -69,18 +69,18 @@ public class PageRankDistAPI2 extends HTriggerAction{
       //System.out.println("in pagerankdist, we have read all the outlinks of " + new String(currentPageId));
       ArrayList<Put> ps = new ArrayList<Put>();
       for (byte[] link: outlinks.values()){
-    	/*
+        /*
         WriteUnit write = new WriteUnit(this, "PageRankAcc".getBytes(), 
                                         link, "nodes".getBytes(), currentPageId, sweight.getBytes(), true);
         lazyOutput(write);
-        */
-    	Put p = new Put(link);
-    	p.add("nodes".getBytes(), currentPageId, this.getCurrentRound(), sweight.getBytes());
-    	ps.add(p);
+         */
+        Put p = new Put(link);
+        p.add("nodes".getBytes(), currentPageId, this.getCurrentRound(), sweight.getBytes());
+        ps.add(p);
       }
       reTable.put(ps);
       //lazyCommit();
-      
+
     } catch (IOException e) {
       System.out.println("PageRankDist Error in Action function");
     }

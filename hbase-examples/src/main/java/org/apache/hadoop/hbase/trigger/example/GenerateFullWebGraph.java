@@ -56,17 +56,18 @@ public class GenerateFullWebGraph {
 	      admin.deleteTable("PageRankAcc");
 	    }
 	    HTableDescriptor wb = new HTableDescriptor("wbpages");
-	    wb.addFamily(new HColumnDescriptor("prvalues"));
-	    wb.addFamily(new HColumnDescriptor("outlinks"));
+	    //wb.setMemStoreFlushSize(memstoreFlushSize);
+	    wb.addFamily(new HColumnDescriptor("prvalues").setInMemory(true));
+	    wb.addFamily(new HColumnDescriptor("outlinks").setInMemory(true));
 	    wb.addFamily(new HColumnDescriptor("contents"));
 	    
 	    HTableDescriptor pr = new HTableDescriptor("PageRankAcc");
-	    pr.addFamily(new HColumnDescriptor("nodes"));
+	    pr.addFamily(new HColumnDescriptor("nodes").setInMemory(true));
 	    
 	    admin.createTable(wb);
 	    admin.createTable(pr);
-		webpage = new HTable(conf, "wbpages".getBytes());
-		PageRankAcc = new HTable(conf, "PageRankAcc".getBytes());
+	    webpage = new HTable(conf, "wbpages".getBytes());
+	    PageRankAcc = new HTable(conf, "PageRankAcc".getBytes());
 	}
 
 

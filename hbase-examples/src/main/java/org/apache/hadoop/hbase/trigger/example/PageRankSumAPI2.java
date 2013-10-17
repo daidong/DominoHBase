@@ -21,30 +21,30 @@ import org.apache.hadoop.hbase.trigger.WriteUnit;
 public class PageRankSumAPI2 extends AccHTriggerAction{
 
   private static final Log LOG = LogFactory.getLog(PageRankSumAPI2.class);
-  
+
   /*
   public void incr(HTriggerEvent hte, PartialResult r){
     byte[] oldSum = r.getValue();
     float dOldSum = Float.parseFloat(new String(oldSum));
     float newvalue = Float.parseFloat(new String(hte.getNewValue()));
     float oldvalue = Float.parseFloat(new String(hte.getOldValue()));
-    
+
     float newSum = dOldSum + (newvalue - oldvalue);
     String snewSum = String.valueOf(newSum);
 
     //System.out.println("PageRankSumAPI2...get newSum: " + snewSum + " from oldSum: " + dOldSum + "" + " by compare new: " + newvalue + " with old: " + oldvalue);
-    
+
     WriteUnit write = new WriteUnit(this, "wbpages".getBytes(), hte.getRowKey(), 
         "prvalues".getBytes(), "pr".getBytes(), snewSum.getBytes());
-    
+
     WritePrepared.append(this, write);
     WritePrepared.flush(this);
-    
+
   }
-  */
-  
+   */
+
   private HTable myTable = null;
-  
+
   public PageRankSumAPI2(){
     try {
       Configuration conf = HBaseConfiguration.create();
@@ -53,7 +53,7 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
       e.printStackTrace();
     }
   }
-  
+
   public void NicePrint(String rowKey, String value, long round){
     System.out.print("PageRankSum ===>");
     for (long i = 0; i < round - 1 ; i++){
@@ -82,15 +82,15 @@ public class PageRankSumAPI2 extends AccHTriggerAction{
     }
     sum = 0.85F * sum + 0.15F;
     String ssum = String.valueOf(sum);
-    
+
     Put p = new Put(pageId);
     p.add("prvalues".getBytes(), "pr".getBytes(), this.getCurrentRound(), ssum.getBytes());
     try {
-		myTable.put(p);
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
-    
+      myTable.put(p);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
     //WriteUnit write = new WriteUnit(this, "wbpages".getBytes(), pageId, "prvalues".getBytes(), "pr".getBytes(), ssum.getBytes());
     //lazyOutput(write);
     //lazyCommit();
