@@ -60,8 +60,8 @@ public class PageRankDistCoprocessor extends BaseRegionObserver{
 		
 		
 		System.out.println("enter PageRankDistCoprocessor");
-		//if (this.stop)
-		//	return;
+		if (this.stop)
+			return;
 		
 		byte[] currentPageId = put.getRow();
 		ArrayList<KeyValue> values = (ArrayList<KeyValue>) edit.getKeyValues();

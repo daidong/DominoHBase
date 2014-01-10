@@ -33,7 +33,7 @@ public class AlterPrValue {
   
   HTable webpage;
   HTable PageRankAcc;
-  int LARGEST_OUT_LINKS = 200;
+  int LARGEST_OUT_LINKS = 100;
   int PAGES_NUMBER = 1000;
   Random rand = null;
   
@@ -82,7 +82,7 @@ public class AlterPrValue {
    */
   public static void main(String[] args) throws IOException {
     AlterPrValue gen = new AlterPrValue();
-    gen.testGetNotExistColumn();
+    gen.alterWebGraph();
     //gen.alterWebGraph();
   }
 
