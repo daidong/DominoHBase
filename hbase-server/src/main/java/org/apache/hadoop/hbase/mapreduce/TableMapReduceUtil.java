@@ -442,6 +442,7 @@ public class TableMapReduceUtil {
           // explicitly pull a class from each module
           org.apache.hadoop.hbase.protobuf.generated.ClientProtos.class, // hbase-protocol
           org.apache.hadoop.hbase.client.Put.class,                      // hbase-client
+          com.google.common.collect.ListMultimap.class,                        // google-guava
           // pull necessary dependencies
           org.apache.zookeeper.ZooKeeper.class,
           com.google.protobuf.Message.class,
