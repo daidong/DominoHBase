@@ -135,10 +135,10 @@ public class KMeans {
  public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
  long start = System.currentTimeMillis();
 
- for (int i = 0; i < 1; i++){
+ for (int i = 0; i < 3; i++){
    Configuration config = HBaseConfiguration.create();
    Job job = new Job(config,"KMeans"+i);
-   job.setJarByClass(WordCount.class);    
+   job.setJarByClass(KMeans.class);    
 
    Scan scan = new Scan();
    scan.setCaching(500);        // 1 is the default in Scan, which will be bad for MapReduce jobs

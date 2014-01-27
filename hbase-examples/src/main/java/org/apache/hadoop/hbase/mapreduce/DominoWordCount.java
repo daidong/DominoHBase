@@ -102,7 +102,7 @@ public class DominoWordCount {
   public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
 	long start = System.currentTimeMillis();
 
-	for (int i = 0; i < 16; i++){
+	for (int i = 0; i < 3; i++){
     Configuration config = HBaseConfiguration.create();
     Job job = new Job(config,"DominoWordCount"+i);
     job.setJarByClass(DominoWordCount.class);    
