@@ -26,12 +26,14 @@ import java.util.Map;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper.Context;
 
 /**
  * There are two tables in WordCount MapReduce: 'wbcontent', 'wordcount'.
@@ -44,6 +46,18 @@ import org.apache.hadoop.mapreduce.Job;
 public class WordCount {
 
   public static class WordCountMapper extends TableMapper<ImmutableBytesWritable, Text> {
+    
+    private HTable centrals = null;
+    
+    @Override
+    public void setup(Context context){
+      Configuration conf = HBaseConfiguration.create();
+      try {
+       HTable centrals = new HTable(conf, "central".getBytes());
+      } catch (IOException e) {
+      }
+    }
+      
     public void map(ImmutableBytesWritable row, Result value, Context context) throws InterruptedException, IOException{
       byte[] content = value.getValue("content".getBytes(), "en".getBytes());
       String c = new String(content);

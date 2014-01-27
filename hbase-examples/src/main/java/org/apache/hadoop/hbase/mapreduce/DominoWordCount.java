@@ -116,8 +116,8 @@ public class DominoWordCount {
       "wbcontent",      // input table
       scan,           // Scan instance to control CF and attribute selection
       DominoWordCountMapper.class,   // mapper class
-      ImmutableBytesWritable.class,           // mapper output key
-      Text.class,           // mapper output value
+      null,           // mapper output key
+      null,           // mapper output value
       job);
     
     //job.setOutputFormatClass(cls);
