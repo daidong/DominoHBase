@@ -22,6 +22,8 @@ package org.apache.hadoop.hbase.mapreduce;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.hadoop.conf.Configuration;
@@ -48,9 +50,11 @@ public class DominoWordCount {
   public static class DominoWordCountMapper extends TableMapper<ImmutableBytesWritable, Text> {
     
     private HTable wordcount;
+    HashMap<String, Long> localFreq = null;
 
     @Override
     public void setup(Context context) {
+      localFreq = new HashMap<String, Long>();
       Configuration conf = HBaseConfiguration.create();
       try {
         wordcount = new HTable(conf, "wordcount".getBytes());
@@ -60,13 +64,30 @@ public class DominoWordCount {
       }
     }
     
+    @Override
+    public void cleanup(Context context){
+      for (String word:localFreq.keySet()){
+        byte[] w = word.getBytes();
+        try {
+          wordcount.incrementColumnValue(w, "count".getBytes(), "number".getBytes(), localFreq.get(word), false);
+        } catch (IOException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        } 
+      }
+    }
+    
     public void map(ImmutableBytesWritable row, Result value, Context context) throws InterruptedException, IOException{
       byte[] content = value.getValue("content".getBytes(), "en".getBytes());
       String c = new String(content);
       String[] splitc = c.split(" ");
       for (String word:splitc){
-        byte[] w = word.getBytes();
-        wordcount.incrementColumnValue(w, "count".getBytes(), "number".getBytes(), (long)1);
+        if (!localFreq.containsKey(word)){
+          localFreq.put(word, 1L);
+        } else {
+          localFreq.put(word, localFreq.get(word)+1);
+        }
+        
       }
     }
   }
