@@ -49,23 +49,24 @@ public class DominoWordCount {
 
   public static class DominoWordCountMapper extends TableMapper<ImmutableBytesWritable, Text> {
     
-    private HTable wordcount;
+    //private HTable wordcount;
     HashMap<String, Long> localFreq = null;
 
     @Override
     public void setup(Context context) {
       localFreq = new HashMap<String, Long>();
+    }
+    
+    @Override
+    public void cleanup(Context context){
       Configuration conf = HBaseConfiguration.create();
+      HTable wordcount = null;
       try {
         wordcount = new HTable(conf, "wordcount".getBytes());
       } catch (IOException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
       }
-    }
-    
-    @Override
-    public void cleanup(Context context){
       for (String word:localFreq.keySet()){
         byte[] w = word.getBytes();
         try {
