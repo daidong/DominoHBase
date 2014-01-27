@@ -49,6 +49,7 @@ public class WordCount {
     
     private HTable centrals = null;
     
+    /*
     @Override
     public void setup(Context context){
       System.out.println("In WordCountMapper's Setup");
@@ -61,8 +62,10 @@ public class WordCount {
       }
       return;
     }
+    */
       
     public void map(ImmutableBytesWritable row, Result value, Context context) throws InterruptedException, IOException{
+      System.out.println("In side wordcount map");
       byte[] content = value.getValue("content".getBytes(), "en".getBytes());
       String c = new String(content);
       String[] splitc = c.split(" ");
