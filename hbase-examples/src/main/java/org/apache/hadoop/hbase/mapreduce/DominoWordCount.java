@@ -32,6 +32,7 @@ import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.lib.NullOutputFormat;
 import org.apache.hadoop.mapreduce.Job;
 
 /**
@@ -96,6 +97,8 @@ public class DominoWordCount {
       ImmutableBytesWritable.class,           // mapper output key
       Text.class,           // mapper output value
       job);
+    
+    job.setOutputFormatClass(NullOutputFormat.class);
     
     boolean b = job.waitForCompletion(true);
     if (!b) {
