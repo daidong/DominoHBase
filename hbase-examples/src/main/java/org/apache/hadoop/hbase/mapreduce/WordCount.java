@@ -49,20 +49,21 @@ public class WordCount {
     
     private HTable centrals = null;
     
-    /*
+    
     @Override
     public void setup(Context context){
       System.out.println("In WordCountMapper's Setup");
       Configuration conf = HBaseConfiguration.create();
       System.out.println("Build HBaseConfiguration");
+      /*
       try {
        HTable centrals = new HTable(conf, "central".getBytes());
        System.out.println("Build HTable");
       } catch (IOException e) {
       }
+      */
       return;
     }
-    */
       
     public void map(ImmutableBytesWritable row, Result value, Context context) throws InterruptedException, IOException{
       System.out.println("In side wordcount map");
