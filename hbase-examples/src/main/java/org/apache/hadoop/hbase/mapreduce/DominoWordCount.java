@@ -32,8 +32,8 @@ import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.lib.NullOutputFormat;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.output.NullOutputFormat;
 
 /**
  * There are two tables in WordCount MapReduce: 'wbcontent', 'wordcount'.
@@ -98,6 +98,7 @@ public class DominoWordCount {
       Text.class,           // mapper output value
       job);
     
+    //job.setOutputFormatClass(cls);
     job.setOutputFormatClass(NullOutputFormat.class);
     
     boolean b = job.waitForCompletion(true);
