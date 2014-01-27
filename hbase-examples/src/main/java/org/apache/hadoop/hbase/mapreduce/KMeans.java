@@ -37,7 +37,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 
 /**
-* There are two tables in WordCount MapReduce: 'items', 'cluster'.
+* There are two tables in WordCount MapReduce: 'items', 'central'.
 * 'items' contains 'vec:value(K1:K2:..)' column
 * 'central' contains 'central:k1-k50' column
 * 
@@ -46,13 +46,26 @@ import org.apache.hadoop.mapreduce.Job;
 */
 public class KMeans {
 
- public static class KMeansMapper extends TableMapper<ImmutableBytesWritable, Text> {   
+ public static class KMeansMapper extends TableMapper<ImmutableBytesWritable, Text> {  
+   
+   private HTable centrals = null;
+   
+   @SuppressWarnings("resource")
+   @Override
+   public void setup(Context context){
+     Configuration conf = HBaseConfiguration.create();
+     try {
+      HTable centrals = new HTable(conf, "central".getBytes());
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+     
+   }
    public void map(ImmutableBytesWritable row, Result value, Context context) throws InterruptedException, IOException{
      byte[] vector = value.getValue("vec".getBytes(), "value".getBytes());
      String[] v = Bytes.toString(vector).split(":");
      
-     Configuration conf = HBaseConfiguration.create();
-     HTable centrals = new HTable(conf, "central".getBytes());
      double least = Double.MAX_VALUE;
      int belongto = -1;
      
@@ -141,7 +154,7 @@ public class KMeans {
      job);
    
    TableMapReduceUtil.initTableReducerJob(
-     "cluster",      // output table
+     "central",      // output table
      KMeansReducer.class,             // reducer class
      job);
 
