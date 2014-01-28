@@ -75,7 +75,7 @@ public class KMeans {
      for (int i = 0; i < 120; i++){
        String[] rs = new String[50];
        for (int j = 0; j < 50; j++){
-         rs[i] = r.nextDouble() * 100 + "";
+         rs[j] = r.nextDouble() * 100 + "";
        }
        Thread.sleep(165);
        /*
