@@ -86,7 +86,7 @@ public class KMeans {
        */
        
        double distance = 0.0;
-       for (int j = 0; j < v.length; j++){
+       for (int j = 0; j < 50; j++){
          double v1 = Double.parseDouble(v[j]);
          double v2 = Double.parseDouble(rs[j]);
          distance += Math.abs(v1 - v2); 
