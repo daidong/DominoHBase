@@ -99,7 +99,7 @@ public class KMeans {
      }
      
      byte[] clustering = Bytes.toBytes(belongto);
-     context.write(new ImmutableBytesWritable(clustering), new Text(vector));
+     context.write(new ImmutableBytesWritable(clustering), new Text(Bytes.toString(vector)));
      
    }
  }
@@ -113,10 +113,15 @@ public class KMeans {
      int num = 0;
      for (Text v : value){
        num ++;
-       byte[] vec = v.getBytes();
+       String vec = v.toString();
+       //byte[] vec = v.getBytes();
        int i = 0;
-       for (String vi : Bytes.toString(vec).split(":")){
-         avg[i++] += Double.parseDouble(vi);
+       for (String vi : vec.split(":")){
+         try {
+           avg[i++] += Double.parseDouble(vi);
+         } catch (NumberFormatException ne){
+           avg[i++] += 0.0;
+         }
        }
      }
      for (int i = 0; i < 50; i++){
