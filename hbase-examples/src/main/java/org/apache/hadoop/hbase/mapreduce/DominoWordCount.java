@@ -59,6 +59,7 @@ public class DominoWordCount {
     
     @Override
     public void cleanup(Context context){
+      /*
       Configuration conf = HBaseConfiguration.create();
       HTable wordcount = null;
       try {
@@ -67,14 +68,23 @@ public class DominoWordCount {
         // TODO Auto-generated catch block
         e.printStackTrace();
       }
+      */
       for (String word:localFreq.keySet()){
         byte[] w = word.getBytes();
+        try {
+          Thread.sleep(1L);
+        } catch (InterruptedException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
+        /*
         try {
           wordcount.incrementColumnValue(w, "count".getBytes(), "number".getBytes(), localFreq.get(word), false);
         } catch (IOException e) {
           // TODO Auto-generated catch block
           e.printStackTrace();
         } 
+        */
       }
     }
     
