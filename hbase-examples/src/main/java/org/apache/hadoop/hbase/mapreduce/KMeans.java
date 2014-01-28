@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.Map;
+import java.util.Random;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -48,6 +49,7 @@ public class KMeans {
 
  public static class KMeansMapper extends TableMapper<ImmutableBytesWritable, Text> {  
    
+   /*
    private HTable centrals = null;
    
    @SuppressWarnings("resource")
@@ -62,18 +64,26 @@ public class KMeans {
     }
      
    }
+   */
    public void map(ImmutableBytesWritable row, Result value, Context context) throws InterruptedException, IOException{
      byte[] vector = value.getValue("vec".getBytes(), "value".getBytes());
      String[] v = Bytes.toString(vector).split(":");
-     
+     Random r = new Random();
      double least = Double.MAX_VALUE;
      int belongto = -1;
      
      for (int i = 0; i < 120; i++){
+       String[] rs = new String[50];
+       for (int j = 0; j < 50; j++){
+         rs[i] = r.nextDouble() * 100 + "";
+       }
+       Thread.sleep(165);
+       /*
        Get g = new Get(Bytes.toBytes(i));
        Result t = centrals.get(g);
        byte[] r = t.getValue("central".getBytes(), "value".getBytes());
        String[] rs = Bytes.toString(r).split(":");
+       */
        
        double distance = 0.0;
        for (int j = 0; j < v.length; j++){
