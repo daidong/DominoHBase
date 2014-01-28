@@ -77,7 +77,7 @@ public class KMeans {
        for (int j = 0; j < 50; j++){
          rs[j] = r.nextDouble() * 100 + "";
        }
-       Thread.sleep(165);
+       //Thread.sleep(165);
        /*
        Get g = new Get(Bytes.toBytes(i));
        Result t = centrals.get(g);
